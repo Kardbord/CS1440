@@ -1,6 +1,8 @@
 // Tanner Kvarfordt
 // A02052217
 
+#include <cstdlib>
+
 int main(int argv, char *argc[]) {
     // Keep the main function simple.  It's responsibility should be limited to handle
     // the program argument, creating the initial object(s), stimulating them to do
@@ -8,4 +10,5 @@ int main(int argv, char *argc[]) {
 
     // For example, think about defining a Comparer class, creating an instance of that
     // class here, and then have it load the analyst data and doing the comparison.
+    return EXIT_SUCCESS;
 }
