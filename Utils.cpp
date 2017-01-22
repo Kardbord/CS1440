@@ -67,12 +67,12 @@ std::string centerString(const std::string &str, int width) {
     std::string tmp = str;
     int strLength = (int) tmp.length();
     if (strLength > width)
-        tmp.erase(width, strLength - width);
+        tmp.erase((unsigned long long int) width, (unsigned long long int) (strLength - width));
     else if (strLength < width) {
         int paddingLeft = (width - strLength) / 2;
         int paddingRight = width - strLength - paddingLeft;
-        tmp.insert(0, paddingLeft, ' ');
-        tmp.append(paddingRight, ' ');
+        tmp.insert(0, (unsigned long long int) paddingLeft, ' ');
+        tmp.append((unsigned long long int) paddingRight, ' ');
     }
 
     return tmp;

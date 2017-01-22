@@ -1,3 +1,0 @@
-"C:\Program Files (x86)\JetBrains\CLion 2016.3.2\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\AnalystComparer.dir/objects.a
-C:\mingw-w64\x86_64-6.2.0-posix-seh-rt_v5-rev1\mingw64\bin\ar.exe cr CMakeFiles\AnalystComparer.dir/objects.a @CMakeFiles\AnalystComparer.dir\objects1.rsp
-C:\mingw-w64\x86_64-6.2.0-posix-seh-rt_v5-rev1\mingw64\bin\g++.exe  -g   -Wl,--whole-archive CMakeFiles\AnalystComparer.dir/objects.a -Wl,--no-whole-archive  -o AnalystComparer.exe -Wl,--out-implib,libAnalystComparer.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\AnalystComparer.dir\linklibs.rsp
