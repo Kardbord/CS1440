@@ -30,3 +30,4 @@ _ReSharper*/
 .DS_Store
 Package.txt
 [Pp]ackages/
+cmake-build-debug/CMakeFiles/CMakeTmp/
