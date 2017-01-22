@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 
+//TODO add documentation
 int main(int argv, char *argc[]) {
     // Keep the main function simple.  It's responsibility should be limited to handle
     // the program argument, creating the initial object(s), stimulating them to do
