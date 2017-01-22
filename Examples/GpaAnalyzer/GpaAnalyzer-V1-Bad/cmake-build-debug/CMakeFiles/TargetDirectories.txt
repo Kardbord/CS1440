@@ -1,0 +1,3 @@
+/Users/swc/Dropbox/UnderGit/cs1440s17-shared/Examples/GpaAnalyzer/GpaAnalyzer-V1-Bad/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/swc/Dropbox/UnderGit/cs1440s17-shared/Examples/GpaAnalyzer/GpaAnalyzer-V1-Bad/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/swc/Dropbox/UnderGit/cs1440s17-shared/Examples/GpaAnalyzer/GpaAnalyzer-V1-Bad/cmake-build-debug/CMakeFiles/GpaAnalyzer.dir
