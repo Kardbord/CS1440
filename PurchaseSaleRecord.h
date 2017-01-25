@@ -13,7 +13,7 @@ class PurchaseSaleRecord {
 public:
     PurchaseSaleRecord();
 
-    bool profitOrLoss();
+    double computeProfitLoss();
 
     std::string getCompany() { return _company; }
 
