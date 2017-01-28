@@ -6,12 +6,17 @@
 #define ANALYSTCOMPARER_PURCHASESALERECORD_H
 
 #include <string>
+#include <fstream>
 
 //TODO add documentation
 
 class PurchaseSaleRecord {
 public:
-    PurchaseSaleRecord();
+    PurchaseSaleRecord() {}
+
+    PurchaseSaleRecord(std::ifstream &fin) { load(fin); }
+
+    void load(std::ifstream &fin);
 
     double computeProfitLoss();
 
@@ -31,9 +36,10 @@ public:
 
 private:
     std::string _company;
+    int _numShares;
     int _purchaseDate;
-    double _purchasePrice;
-    double _purchaseFee;
+    int _purchasePrice;
+    int _purchaseFee;
     int _saleDate;
     double _salePrice;
     double _saleFee;

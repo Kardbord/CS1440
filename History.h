@@ -8,14 +8,22 @@
 
 #include <vector>
 #include "PurchaseSaleRecord.h"
+#include <fstream>
 
 class History {
 public:
+
+    History() {}
+
+    History(std::ifstream &fin) { load(fin); }
+
+    void load(std::ifstream &fin);
+
     int getSimDays() { return _simDays; }
 
     int getSeedMoney() { return _seedMoney; }
 
-    int getNumRecords() { return static_cast<int>(_records.size()); }
+    int getNumRecords() { return _numRecords; }
 
 private:
     int _simDays;

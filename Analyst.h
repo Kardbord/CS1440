@@ -14,7 +14,11 @@
 
 class Analyst {
 public:
-    Analyst();
+    Analyst() {}
+
+    Analyst(std::ifstream);
+
+    void load(std::ifstream & fin);
 
     double computeTotalProfitLoss();
 

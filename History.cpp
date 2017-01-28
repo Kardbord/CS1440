@@ -3,3 +3,14 @@
 //
 
 #include "History.h"
+
+void History::load(std::ifstream &fin) {
+
+    fin >> _simDays;
+    fin >> _seedMoney;
+    fin >> _numRecords;
+
+    for (int i = 0; i < _numRecords; ++i) {
+        _records.push_back(PurchaseSaleRecord(fin));
+    }
+}
