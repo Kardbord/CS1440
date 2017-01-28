@@ -21,22 +21,22 @@ public:
 
     double getPurchasePrice() { return _purchasePrice; }
 
-    double getPurchaseTransFee() { return _purchaseTransFee; }
+    double getPurchaseFee() { return _purchaseFee; }
 
     int getSaleDate() { return _saleDate; }
 
     double getSalePrice() { return _salePrice; }
 
-    double getSaleTransFee() { return _saleTransFee; }
+    double getSaleFee() { return _saleFee; }
 
 private:
     std::string _company;
     int _purchaseDate;
     double _purchasePrice;
-    double _purchaseTransFee;
+    double _purchaseFee;
     int _saleDate;
     double _salePrice;
-    double _saleTransFee;
+    double _saleFee;
 };
 
 

@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include "PurchaseSaleRecord.h"
+#include "History.h"
 
 //TODO add documentation
 
@@ -26,6 +27,7 @@ public:
 private:
     std::string _name;
     std::string _initials;
+    History _history;
 };
 
 
