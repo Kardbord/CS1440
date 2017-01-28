@@ -3,5 +3,5 @@ project(AnalystComparer)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp Utils.cpp Utils.h PurchaseSaleRecord.cpp PurchaseSaleRecord.h Analyst.cpp Analyst.h)
+set(SOURCE_FILES main.cpp Utils.cpp Utils.h PurchaseSaleRecord.cpp PurchaseSaleRecord.h Analyst.cpp Analyst.h History.cpp History.h)
 add_executable(AnalystComparer ${SOURCE_FILES})

@@ -17,23 +17,15 @@ public:
 
     double computeTotalProfitLoss();
 
-    double profitLossPerDay();
+    double computeProfitLossPerDay();
 
     std::string getName() { return _name; }
 
     std::string getInitials() { return _initials; }
 
-    int getSimulatedDays() { return _simDays; }
-
-    int getNumRecords() { return _numRecords; }
-
 private:
     std::string _name;
     std::string _initials;
-    int _simDays;
-    int _seedMoney;
-    int _numRecords;
-    std::vector<PurchaseSaleRecord> _history;
 };
 
 
