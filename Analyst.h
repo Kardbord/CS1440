@@ -27,7 +27,7 @@ public:
 private:
     std::string _name;
     std::string _initials;
-    History _history;
+    std::vector<History> _simulations;
 };
 
 

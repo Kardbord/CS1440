@@ -31,3 +31,7 @@ _ReSharper*/
 Package.txt
 [Pp]ackages/
 cmake-build-debug/
+UML/*.bak
+UML/AnalystComparer.vpp.bak_005d
+UML/AnalystComparer.vpp.bak_006d
+UML/AnalystComparer.vpp.bak_007d
