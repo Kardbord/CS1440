@@ -8,10 +8,8 @@
 #include "Comparer.h"
 #include "Utils.h"
 
-int Comparer::load(int argv, char* argc[])
-{
-    if (argv<3)
-    {
+int Comparer::load(int argv, char *argc[]) {
+    if (argv < 3) {
         std::cout << "Invalid parameters" << std::endl;
         std::cout << "usage: AnalystComparer <output file> <input file 1> <input file 2> ..." << std::endl;
         return -1;
@@ -25,8 +23,7 @@ int Comparer::load(int argv, char* argc[])
     // m_analysts = new Analyst*[m_analystCount];
 
     int analystIndex = 0;
-    for (int i = 0; i < _analystCount; i++)
-    {
+    for (int i = 0; i < _analystCount; i++) {
         std::ifstream inputStream(argc[2 + analystIndex]);
 
         // TODO: Create a new analyst, load it from the input stream, and put it into the container if that load succeeded
@@ -50,16 +47,13 @@ int Comparer::load(int argv, char* argc[])
     return result;
 }
 
-int Comparer::compare() const
-{
-    if (_analystCount < 2)
-    {
+int Comparer::compare() const {
+    if (_analystCount < 2) {
         std::cout << "Cannot do comparison with " << _analystCount << " analysts" << std::endl;
         return -1;
     }
 
-    if (_outputFilename == "")
-    {
+    if (_outputFilename == "") {
         std::cout << "Cannot do comparison because no output file is specified" << std::endl;
         return -1;
     }
@@ -72,8 +66,7 @@ int Comparer::compare() const
     return 0;
 }
 
-void Comparer::loadSymbols()
-{
+void Comparer::loadSymbols() {
     _symbolCount = 0;
     // TODO: Go through all analysts' histories and build a list of symbols used in any Purchase-Sale.
     // According to the design, every analyst has a design and a history contains purchase-sale objects.
@@ -101,17 +94,14 @@ void Comparer::loadSymbols()
 }
 
 
-void Comparer::outputInvestorNames(std::ofstream& outputStream) const
-{
+void Comparer::outputInvestorNames(std::ofstream &outputStream) const {
     // TODO: Write out investor names
 }
 
-void Comparer::outputOverallPerformance(std::ofstream& outputStream) const
-{
+void Comparer::outputOverallPerformance(std::ofstream &outputStream) const {
     // TODO: Write out Overall Performance table.  The classes from the FormattedTable example might be helpful.
 };
 
-void Comparer::outputStockPerformance(std::ofstream& outputStream) const
-{
+void Comparer::outputStockPerformance(std::ofstream &outputStream) const {
     // TODO: Write out Stock Performance table.  The classes from the FormattedTable example might be helpful.
 }

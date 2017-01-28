@@ -10,8 +10,10 @@
 
 class Comparer {
 public:
-    int load(int argv, char* argc[]);
+    int load(int argv, char *argc[]);
+
     int compare() const;
+
 private:
 
     // private data members
@@ -25,9 +27,12 @@ private:
     // private member functions
 
     void loadSymbols();
-    void outputInvestorNames(std::ofstream& outputStream) const;
-    void outputOverallPerformance(std::ofstream& outputStream) const;
-    void outputStockPerformance(std::ofstream& outputStream) const;
+
+    void outputInvestorNames(std::ofstream &outputStream) const;
+
+    void outputOverallPerformance(std::ofstream &outputStream) const;
+
+    void outputStockPerformance(std::ofstream &outputStream) const;
 };
 
 
