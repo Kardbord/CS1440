@@ -10,6 +10,10 @@
 
 class Comparer {
 public:
+    Comparer() {}
+
+    Comparer(int argv, char *argc[]) { load(argv, argc); }
+
     int load(int argv, char *argc[]);
 
     int compare() const;
