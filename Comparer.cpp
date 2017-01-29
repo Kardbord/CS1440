@@ -7,6 +7,7 @@
 #include <fstream>
 #include <iomanip>
 #include "Comparer.h"
+#include <algorithm>
 
 int Comparer::load(int argv, char *argc[]) {
     if (argv < 3) {
@@ -59,15 +60,18 @@ int Comparer::compare() const {
 void Comparer::loadSymbols() {
     _symbolCount = 0;
     // TODO: Go through all analysts' histories and build a list of symbols used in any Purchase-Sale.
-    /*for (auto &&a: _analysts) {
-        const std::vector<History>* histories = &(a.getSimulations());
+    for (auto &&a: _analysts) {
+        std::vector<History> histories = (a.getSimulations());
         for (auto &&h : histories) {
-            const std::vector<PurchaseSaleRecord>* records = &(h->getRecords());
+            const std::vector<PurchaseSaleRecord> records = h.getRecords();
             for (auto && r : records){
-                const std::string symbol = &(r->getCompany());
+                std::string symbol = r.getCompany();
+                if (std::find(std::begin(_symbols), std::end(_symbols), symbol) == std::end(_symbols)){
+                    _symbols.push_back(symbol);
+                }
             }
         }
-    }*/
+    }
 
 
     // According to the design, every analyst has a design and a history contains purchase-sale objects.
