@@ -14,8 +14,13 @@ int main(int argv, char *argc[]) {
     for (auto &&a : comparer.getAnalysts()) {
         std::cout << a.getName() << std::endl;
         for (auto &&h :  a.getSimulations()) {
-            std::cout << "TPL: " << h.computeTotalProfitLoss() << std::endl;
-            std::cout << "PLPD: " << h.computeProfitLossPerDay() << std::endl;
+            std::cout << "Stock Performance: " << std::endl;
+            for (auto &&s : comparer.getSymbols()) {
+                std::cout << s << std::endl;
+                try {
+                    std::cout << h.computeStockPerformance(s) << std::endl;
+                } catch (const char *msg) { std::cout << msg << std::endl; }
+            }
         }
         std::cout << "---------------------------" << std::endl;
     }

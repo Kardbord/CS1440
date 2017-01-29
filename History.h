@@ -23,6 +23,8 @@ public:
 
     double computeProfitLossPerDay();
 
+    double computeStockPerformance(std::string const & symbol);
+
     int getSimDays() const { return _simDays; }
 
     int getSeedMoney() const { return _seedMoney; }

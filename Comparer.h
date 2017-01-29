@@ -20,6 +20,10 @@ public:
 
     std::vector<Analyst> getAnalysts() const { return _analysts; }
 
+    int getSymbolCount() { return _symbolCount; }
+
+    std::vector<std::string> getSymbols() { return _symbols; }
+
 private:
 
     // private data members
