@@ -11,21 +11,14 @@ int main(int argv, char *argc[]) {
     Comparer comparer;
     comparer.load(argv, argc);
 
-    std::vector<Analyst> test = comparer.getAnalysts();
-
-    for (auto &&e : test) {
-        std::cout << e.getName() << ": " << e.getInitials() << std::endl;
-        std::vector<History> histories = e.getSimulations();
-        for (auto &&f : histories) {
-            std::cout << "numRecords: " << f.getNumRecords() << std::endl
-                      << "simDays: " << f.getSimDays() << std::endl
-                      << "seed: " << f.getSeedMoney() << std::endl;
-            std::vector<PurchaseSaleRecord> recs = f.getRecords();
-            for (auto &&g : recs) {
-                std::cout << g.getCompany() << std::endl;
+    for (auto &&a : comparer.getAnalysts()) {
+        std::cout << a.getName() << std::endl;
+        for (auto &&h :  a.getSimulations()) {
+            for (auto &&r : h.getRecords()) {
+                std::cout << "PL: " << r.computeProfitLoss() << std::endl;
             }
         }
-        std::cout << "-----------------------------------" << std::endl;
+        std::cout << "---------------------------" << std::endl;
     }
 
     // Have the comparer load all the input files and then do the comparison,

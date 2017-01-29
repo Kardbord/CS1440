@@ -35,3 +35,9 @@ void PurchaseSaleRecord::load(std::ifstream &fin) {
 
     fin >> _saleFee;
 }
+
+double PurchaseSaleRecord::computeProfitLoss() {
+    double totInvestment = (_numShares * _purchasePrice) + _purchaseFee + _saleFee;
+
+    return (_numShares * _salePrice) - totInvestment;
+}
