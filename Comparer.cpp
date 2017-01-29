@@ -1,12 +1,12 @@
 //
-// Created by Stephen Clyde on 1/16/17.
+// Base code created by Stephen Clyde on 1/16/17.
+// Modified by Tanner Kvarfordt 1/28/17
 //
 
 #include <iostream>
 #include <fstream>
 #include <iomanip>
 #include "Comparer.h"
-#include "Utils.h"
 
 int Comparer::load(int argv, char *argc[]) {
     if (argv < 3) {
@@ -18,15 +18,12 @@ int Comparer::load(int argv, char *argc[]) {
     _outputFilename = argc[1];
     _analystCount = argv - 2;
 
-    Analyst tempAnalyst;  // used for loading analysts into _analysts
-
     int analystIndex = 0;
     for (int i = 0; i < _analystCount; i++) {
         std::ifstream inputStream(argc[2 + analystIndex]);
         if (!inputStream) std::cout << "Failed to load " << argc[analystIndex] << std::endl;
         else {
-            tempAnalyst.load(inputStream);
-            _analysts.push_back(tempAnalyst);
+            _analysts.push_back(Analyst(inputStream));
             ++analystIndex;
         }
     }
