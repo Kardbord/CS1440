@@ -15,14 +15,19 @@ public:
 
     History() {}
 
+    // Initializes data members based on the input file provided in the cmd arguments
     History(std::ifstream &fin) { load(fin); }
 
+    // Initializes data members based on the input file provided in the cmd arguments
     void load(std::ifstream &fin);
 
+    // Computes, in pennies, the total profit/loss for all PurchasesSales in the History
     double computeTotalProfitLoss();
 
+    // Computes, in pennies, the total profit/loss per day for all PurchasesSales in the History
     double computeProfitLossPerDay();
 
+    // Computes, in pennies, the total profit/loss per day for a given company's stock
     double computeStockPerformance(std::string const & symbol);
 
     int getSimDays() const { return _simDays; }

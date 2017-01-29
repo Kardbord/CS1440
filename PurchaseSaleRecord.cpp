@@ -6,6 +6,7 @@
 
 #include "PurchaseSaleRecord.h"
 
+// Initializes data members based on the input file provided in the cmd arguments
 void PurchaseSaleRecord::load(std::ifstream &fin) {
     std::getline(fin, _company, ',');
 
@@ -36,6 +37,7 @@ void PurchaseSaleRecord::load(std::ifstream &fin) {
     fin >> _saleFee;
 }
 
+// Computes the profit/loss for the PurchaseSaleRecord
 double PurchaseSaleRecord::computeProfitLoss() {
     double totInvestment = (_numShares * _purchasePrice) + _purchaseFee + _saleFee;
 

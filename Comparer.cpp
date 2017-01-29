@@ -9,6 +9,7 @@
 #include "Comparer.h"
 #include <algorithm>
 
+// Creates Analysts and their histories, etc. from the command line arguments
 int Comparer::load(int argv, char *argc[]) {
     if (argv < 3) {
         std::cout << "Invalid parameters" << std::endl;
@@ -57,6 +58,7 @@ int Comparer::compare() const {
     return 0;
 }
 
+// Stores the stock symbol of every company that an Analyst invested in
 void Comparer::loadSymbols() {
     _symbolCount = 0;
     for (auto &&a: _analysts) {

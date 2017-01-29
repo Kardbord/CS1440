@@ -12,8 +12,10 @@ class Comparer {
 public:
     Comparer() {}
 
+    // Initializes data members based on the input file provided in the cmd arguments
     Comparer(int argv, char *argc[]) { load(argv, argc); }
 
+    // Creates Analysts and their histories, etc. from the command line arguments
     int load(int argv, char *argc[]);
 
     int compare() const;
@@ -36,6 +38,7 @@ private:
 
     // private member functions
 
+    // Stores the stock symbol of every company that an Analyst invested in
     void loadSymbols();
 
     void outputInvestorNames(std::ofstream &outputStream) const;

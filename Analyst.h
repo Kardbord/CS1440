@@ -16,8 +16,10 @@ class Analyst {
 public:
     Analyst() {}
 
+    // Initializes data members based on the input file provided in the cmd arguments
     Analyst(std::ifstream &fin) { load(fin); }
 
+    // Initializes data members based on the input file provided in the cmd arguments
     void load(std::ifstream &fin);
 
     std::string getName() const { return _name; }

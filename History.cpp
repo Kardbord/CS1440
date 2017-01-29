@@ -4,6 +4,7 @@
 
 #include "History.h"
 
+// Initializes data members based on the input file provided in the cmd arguments
 void History::load(std::ifstream &fin) {
 
     fin >> _simDays;
@@ -15,6 +16,7 @@ void History::load(std::ifstream &fin) {
     }
 }
 
+// Computes, in pennies, the total profit/loss for all PurchasesSales in the History
 double History::computeTotalProfitLoss() {
     double tpl = 0;
     for (auto &&r : _records) {
@@ -23,11 +25,12 @@ double History::computeTotalProfitLoss() {
     return tpl;
 }
 
+// Computes, in pennies, the total profit/loss per day for all PurchasesSales in the History
 double History::computeProfitLossPerDay() {
     return computeTotalProfitLoss() / _simDays;
 }
 
-// Returns, in pennies per day, a stock's profit/loss per day
+// Computes, in pennies, the total profit/loss per day for a given company's stock
 double History::computeStockPerformance(std::string const &symbol) {
 
     if (_records.empty()) throw "Error! This history has no records!";

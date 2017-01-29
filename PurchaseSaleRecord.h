@@ -14,10 +14,13 @@ class PurchaseSaleRecord {
 public:
     PurchaseSaleRecord() {}
 
+    // Initializes data members based on the input file provided in the cmd arguments
     PurchaseSaleRecord(std::ifstream &fin) { load(fin); }
 
+    // Initializes data members based on the input file provided in the cmd arguments
     void load(std::ifstream &fin);
 
+    // Computes the profit/loss for the PurchaseSaleRecord
     double computeProfitLoss();
 
     std::string getCompany() const { return _company; }
