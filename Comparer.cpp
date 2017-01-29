@@ -59,6 +59,17 @@ int Comparer::compare() const {
 void Comparer::loadSymbols() {
     _symbolCount = 0;
     // TODO: Go through all analysts' histories and build a list of symbols used in any Purchase-Sale.
+    /*for (auto &&a: _analysts) {
+        const std::vector<History>* histories = &(a.getSimulations());
+        for (auto &&h : histories) {
+            const std::vector<PurchaseSaleRecord>* records = &(h->getRecords());
+            for (auto && r : records){
+                const std::string symbol = &(r->getCompany());
+            }
+        }
+    }*/
+
+
     // According to the design, every analyst has a design and a history contains purchase-sale objects.
     // Each purchase-sale object is for a symbol.
     //

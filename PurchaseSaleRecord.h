@@ -20,19 +20,19 @@ public:
 
     double computeProfitLoss();
 
-    std::string getCompany() { return _company; }
+    std::string getCompany() { return _company; } const
 
-    int getPurchaseDate() { return _purchaseDate; }
+    int getPurchaseDate() { return _purchaseDate; } const
 
-    double getPurchasePrice() { return _purchasePrice; }
+    double getPurchasePrice() { return _purchasePrice; } const
 
-    double getPurchaseFee() { return _purchaseFee; }
+    double getPurchaseFee() { return _purchaseFee; } const
 
-    int getSaleDate() { return _saleDate; }
+    int getSaleDate() { return _saleDate; } const
 
-    double getSalePrice() { return _salePrice; }
+    double getSalePrice() { return _salePrice; } const
 
-    double getSaleFee() { return _saleFee; }
+    double getSaleFee() { return _saleFee; } const
 
 private:
     std::string _company;

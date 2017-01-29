@@ -19,13 +19,13 @@ public:
 
     void load(std::ifstream &fin);
 
-    int getSimDays() { return _simDays; }
+    int getSimDays() { return _simDays; } const
 
-    int getSeedMoney() { return _seedMoney; }
+    int getSeedMoney() { return _seedMoney; } const
 
-    int getNumRecords() { return _numRecords; }
+    int getNumRecords() { return _numRecords; } const
 
-    std::vector<PurchaseSaleRecord> getRecords() { return _records; }
+    std::vector<PurchaseSaleRecord> getRecords() { return _records; } const
 
 private:
     int _simDays;

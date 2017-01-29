@@ -24,11 +24,11 @@ public:
 
     double computeProfitLossPerDay();
 
-    std::string getName() { return _name; }
+    std::string getName() { return _name; } const
 
-    std::string getInitials() { return _initials; }
+    std::string getInitials() { return _initials; } const
 
-    std::vector<History> getSimulations() { return _simulations; }
+    std::vector<History> getSimulations() { return _simulations; } const
 
 private:
     std::string _name;
