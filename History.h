@@ -25,6 +25,8 @@ public:
 
     int getNumRecords() { return _numRecords; }
 
+    std::vector<PurchaseSaleRecord> getRecords() { return _records; }
+
 private:
     int _simDays;
     int _seedMoney;

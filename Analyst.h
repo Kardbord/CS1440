@@ -16,9 +16,9 @@ class Analyst {
 public:
     Analyst() {}
 
-    Analyst(std::ifstream);
+    Analyst(std::ifstream &fin) { load(fin); }
 
-    void load(std::ifstream & fin);
+    void load(std::ifstream &fin);
 
     double computeTotalProfitLoss();
 
@@ -27,6 +27,8 @@ public:
     std::string getName() { return _name; }
 
     std::string getInitials() { return _initials; }
+
+    std::vector<History> getSimulations() { return _simulations; }
 
 private:
     std::string _name;

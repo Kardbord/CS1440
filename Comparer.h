@@ -18,6 +18,8 @@ public:
 
     int compare() const;
 
+    std::vector<Analyst> getAnalysts() { return _analysts; }
+
 private:
 
     // private data members
