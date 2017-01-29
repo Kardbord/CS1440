@@ -14,9 +14,8 @@ int main(int argv, char *argc[]) {
     for (auto &&a : comparer.getAnalysts()) {
         std::cout << a.getName() << std::endl;
         for (auto &&h :  a.getSimulations()) {
-            for (auto &&r : h.getRecords()) {
-                std::cout << "PL: " << r.computeProfitLoss() << std::endl;
-            }
+            std::cout << "TPL: " << h.computeTotalProfitLoss() << std::endl;
+            std::cout << "PLPD: " << h.computeProfitLossPerDay() << std::endl;
         }
         std::cout << "---------------------------" << std::endl;
     }

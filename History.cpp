@@ -14,3 +14,15 @@ void History::load(std::ifstream &fin) {
         _records.push_back(PurchaseSaleRecord(fin));
     }
 }
+
+double History::computeTotalProfitLoss() {
+    double tpl = 0;
+    for (auto &&r : _records) {
+        tpl += r.computeProfitLoss();
+    }
+    return tpl;
+}
+
+double History::computeProfitLossPerDay() {
+    return computeTotalProfitLoss() / _simDays;
+}
