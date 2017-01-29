@@ -18,7 +18,7 @@ public:
 
     int compare() const;
 
-    std::vector<Analyst> getAnalysts() { return _analysts; } const
+    std::vector<Analyst> getAnalysts() const { return _analysts; }
 
 private:
 
