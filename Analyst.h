@@ -20,10 +20,6 @@ public:
 
     void load(std::ifstream &fin);
 
-    double computeTotalProfitLoss();
-
-    double computeProfitLossPerDay();
-
     std::string getName() const { return _name; }
 
     std::string getInitials() const { return _initials; }

@@ -19,6 +19,10 @@ public:
 
     void load(std::ifstream &fin);
 
+    double computeTotalProfitLoss();
+
+    double computeProfitLossPerDay();
+
     int getSimDays() const { return _simDays; }
 
     int getSeedMoney() const { return _seedMoney; }
