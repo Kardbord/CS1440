@@ -51,6 +51,8 @@ int Comparer::compare() const {
     }
 
     std::ofstream outputStream(_outputFilename);
+    outputStream << "Analyst Comparison\n"
+            << "==================\n\n";
     outputInvestorNames(outputStream);
     outputOverallPerformance(outputStream);
     outputStockPerformance(outputStream);
@@ -77,7 +79,11 @@ void Comparer::loadSymbols() {
 
 
 void Comparer::outputInvestorNames(std::ofstream &outputStream) const {
-    // TODO: Write out investor names
+    outputStream << "Investors:\n";
+    for (auto &&a : _analysts){
+        outputStream << "     ";
+        outputStream << a.getName() << std::endl;
+    }
 }
 
 void Comparer::outputOverallPerformance(std::ofstream &outputStream) const {
