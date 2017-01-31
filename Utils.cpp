@@ -28,6 +28,9 @@ std::string formatDouble(double num, int const &precision,  bool const &penniesT
 
     int cutOffDigit = digitsLeftofDec + precision + 1;
 
+    // we need an additional cutOffDigit if our output is a whole number
+    if (std::floor(formattedNum) == formattedNum) ++cutOffDigit;
+
     if (num > 0) {
         numString.erase((unsigned long long int) cutOffDigit, (unsigned long long int) (cutOffDigit + 1));
     } else { numString.erase((unsigned long long int) cutOffDigit + 1, (unsigned long long int) (cutOffDigit + 2)); }
