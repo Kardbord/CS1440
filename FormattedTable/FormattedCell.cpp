@@ -87,7 +87,7 @@ void FormattedCell::setupFormattedValue(std::ostream& outputStream)
             ss <<  *((int *) m_value);
             break;
         case ColumnDefinition::Money:
-            ss <<  ((float) *((int *) m_value)) / 100.0;
+            ss << ((float) *((int *) m_value)) / 100.0;
             break;
         case ColumnDefinition::FixedPrecision:
             ss << std::fixed << std::setprecision(m_columnDefinition->getPrecision())

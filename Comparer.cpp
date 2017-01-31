@@ -84,16 +84,26 @@ void Comparer::outputInvestorNames(std::ofstream &outputStream) const {
         outputStream << "     ";
         outputStream << a.getName() << std::endl;
     }
-    outputStream << std::endl << std::endl << std::endl;
+    outputStream << std::endl << std::endl;
 }
 
 void Comparer::outputOverallPerformance(std::ofstream &outputStream) const {
-    FormattedTable table(4, _analystCount + 1);
+    FormattedTable table(_analystCount, 5);
 
-    table.addColumn(new ColumnDefinition("Info", 20, ColumnDefinition::String, ColumnDefinition::Center));
+    table.addColumn(new ColumnDefinition("Analyst", 9, ColumnDefinition::String, ColumnDefinition::Center));
+    table.addColumn(new ColumnDefinition("Days", 8, ColumnDefinition::Integer, ColumnDefinition::Right));
+    table.addColumn(new ColumnDefinition("Seed Amount ($)", 18, ColumnDefinition::Money, ColumnDefinition::Right, 2));
+    table.addColumn(new ColumnDefinition("TPL ($)", 13, ColumnDefinition::Money, ColumnDefinition::Right, 2));
+    table.addColumn(new ColumnDefinition("PLPD ($)", 13, ColumnDefinition::Money, ColumnDefinition::Right, 2));
 
-    for (auto &&a : _analysts) { // TODO: Figure out why justification is not working
-        table.addColumn(new ColumnDefinition(a.getInitials(), 14, ColumnDefinition::Money, ColumnDefinition::Center));
+    for (auto &&a : _analysts){
+        FormattedRow *row = new FormattedRow(&table);
+        row->addCell(new FormattedCell(a.getInitials()));
+        row->addCell(new FormattedCell(a.getHistory().getSimDays()));
+        row->addCell(new FormattedCell(a.getHistory().getSeedMoney()));
+        row->addCell(new FormattedCell(a.getHistory().computeTotalProfitLoss()));
+        row->addCell(new FormattedCell(a.getHistory().computeProfitLossPerDay()));
+        table.addRow(row);
     }
 
     table.write(outputStream);

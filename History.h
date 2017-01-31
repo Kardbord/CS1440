@@ -22,10 +22,10 @@ public:
     void load(std::ifstream &fin);
 
     // Computes, in pennies, the total profit/loss for all PurchasesSales in the History
-    double computeTotalProfitLoss();
+    int computeTotalProfitLoss();
 
     // Computes, in pennies, the total profit/loss per day for all PurchasesSales in the History
-    double computeProfitLossPerDay();
+    int computeProfitLossPerDay();
 
     // Computes, in pennies, the total profit/loss per day for a given company's stock
     double computeStockPerformance(std::string const & symbol);

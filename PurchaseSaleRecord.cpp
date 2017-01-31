@@ -38,8 +38,8 @@ void PurchaseSaleRecord::load(std::ifstream &fin) {
 }
 
 // Computes the profit/loss for the PurchaseSaleRecord
-double PurchaseSaleRecord::computeProfitLoss() {
-    double totInvestment = (_numShares * _purchasePrice) + _purchaseFee + _saleFee;
+int PurchaseSaleRecord::computeProfitLoss() {
+    int totInvestment = (_numShares * _purchasePrice) + _purchaseFee + _saleFee;
 
     return (_numShares * _salePrice) - totInvestment;
 }

@@ -9,7 +9,6 @@
 int main(int argv, char *argc[]) {
     // Declare (and create) a comparer object
     Comparer comparer;
-    //comparer.load(argv, argc);
 
     // Have the comparer load all the input files and then do the comparison,
     // which creates the output file
