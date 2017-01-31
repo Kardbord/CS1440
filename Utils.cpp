@@ -5,7 +5,35 @@
 #include <sstream>
 #include <fstream>
 #include <algorithm>
+#include <cmath>
 #include "Utils.h"
+
+std::string formatDouble(double num, int const &precision,  bool const &penniesToDollars) {
+
+    if (precision < 0) return std::to_string(num);
+
+    int multiplier = 1;
+    for (int i = 0; i < precision; ++i) {
+        multiplier *= 10;
+    }
+
+    if (penniesToDollars) num /= 100;
+    double formattedNum = std::floor(num * multiplier) / multiplier;
+    std::string numString = std::to_string(formattedNum);
+
+    int digitsLeftofDec = 1;
+    for (int i = 10; i < std::abs(num); i *= 10) {
+        ++digitsLeftofDec;
+    }
+
+    int cutOffDigit = digitsLeftofDec + precision + 1;
+
+    if (num > 0) {
+        numString.erase((unsigned long long int) cutOffDigit, (unsigned long long int) (cutOffDigit + 1));
+    } else { numString.erase((unsigned long long int) cutOffDigit + 1, (unsigned long long int) (cutOffDigit + 2)); }
+
+    return numString;
+}
 
 bool split(const std::string &s, char delimiter, std::string elements[], int expectedNumberOfElements) {
     std::stringstream ss;
