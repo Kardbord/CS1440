@@ -1,5 +1,4 @@
 #ignore .idea
-.idea/workspace.xml
 .idea/tasks.xml
 #ignore thumbnails created by windows
 Thumbs.db
