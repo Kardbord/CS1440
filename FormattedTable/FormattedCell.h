@@ -11,7 +11,7 @@
 
 class FormattedCell {
 private:
-    enum allocatedDataType { Unknown, String, Integer, Float};
+    enum allocatedDataType { Unknown, String, Integer, Float, Double};
     allocatedDataType   m_dataType = allocatedDataType::Unknown;
     void*               m_value = nullptr;
     std::string         m_formattedValue;
@@ -21,6 +21,7 @@ public:
     FormattedCell(std::string value);
     FormattedCell(int value);
     FormattedCell(float value);
+    FormattedCell(double value);
     ~FormattedCell();
 
     void setColumnDefinition(ColumnDefinition* columnDefinition);

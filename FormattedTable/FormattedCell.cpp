@@ -25,6 +25,12 @@ FormattedCell::FormattedCell(float value)
     m_value = new float(value);
 }
 
+FormattedCell::FormattedCell(double value)
+{
+    m_dataType = allocatedDataType::Double;
+    m_value = new double(value);
+}
+
 FormattedCell::~FormattedCell()
 {
     if (m_value)
@@ -42,6 +48,10 @@ FormattedCell::~FormattedCell()
             }
             case allocatedDataType::Float: {
                 delete (float *) m_value;
+                break;
+            }
+            case allocatedDataType::Double: {
+                delete (double *) m_value;
                 break;
             }
             case allocatedDataType::Unknown: {
