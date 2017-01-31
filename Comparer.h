@@ -46,6 +46,8 @@ private:
     void outputOverallPerformance(std::ofstream &outputStream) const;
 
     void outputStockPerformance(std::ofstream &outputStream) const;
+
+
 };
 
 

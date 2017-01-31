@@ -10,6 +10,7 @@
 #include <algorithm>
 #include "./FormattedTable/FormattedTable.h"
 #include <cmath>
+#include "Utils.h"
 
 // Creates Analysts and their histories, etc. from the command line arguments
 int Comparer::load(int argv, char *argc[]) {
@@ -105,9 +106,15 @@ void Comparer::outputOverallPerformance(std::ofstream &outputStream) const {
         FormattedRow *row = new FormattedRow(&table);
         row->addCell(new FormattedCell(a.getInitials()));
         row->addCell(new FormattedCell(a.getHistory().getSimDays()));
+
+
         row->addCell(new FormattedCell(a.getHistory().getSeedMoney()));
-        row->addCell(new FormattedCell(a.getHistory().computeTotalProfitLoss()));
+
+        double pL = a.getHistory().computeTotalProfitLoss();
+        row->addCell(new FormattedCell(pL));
+
         row->addCell(new FormattedCell(a.getHistory().computeProfitLossPerDay()));
+
         table.addRow(row);
     }
 
@@ -135,12 +142,12 @@ void Comparer::outputStockPerformance(std::ofstream &outputStream) const {
                     row->addCell(new FormattedCell(""));
                 } else {
 
-                    // This block of code formats the output to look how I want it, the form x.xxx
+                    /* This block of code formats the output to look nice
                     performance /= 100; //account for money being in pennies
                     performance = std::floor(performance * 10000) / 10000;
                     std::string perfString = std::to_string(performance);
-                    perfString.erase(7, 8);
-                    row->addCell(new FormattedCell(perfString));
+                    perfString.erase(7, 8);*/
+                    row->addCell(new FormattedCell(formatDouble(performance, 4, true)));
                 }
 
             } catch (char *msg) { std::cerr << msg << std::endl; }
@@ -149,5 +156,6 @@ void Comparer::outputStockPerformance(std::ofstream &outputStream) const {
     }
 
     table.write(outputStream);
-
 }
+
+

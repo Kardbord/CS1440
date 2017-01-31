@@ -17,8 +17,8 @@ void History::load(std::ifstream &fin) {
 }
 
 // Computes, in pennies, the total profit/loss for all PurchasesSales in the History
-int History::computeTotalProfitLoss() {
-    int tpl = 0;
+double History::computeTotalProfitLoss() {
+    double tpl = 0;
     for (auto &&r : _records) {
         tpl += r.computeProfitLoss();
     }
@@ -26,7 +26,7 @@ int History::computeTotalProfitLoss() {
 }
 
 // Computes, in pennies, the total profit/loss per day for all PurchasesSales in the History
-int History::computeProfitLossPerDay() {
+double History::computeProfitLossPerDay() {
     return computeTotalProfitLoss() / _simDays;
 }
 

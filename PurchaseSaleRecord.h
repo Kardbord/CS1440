@@ -21,7 +21,7 @@ public:
     void load(std::ifstream &fin);
 
     // Computes the profit/loss for the PurchaseSaleRecord
-    int computeProfitLoss();
+    double computeProfitLoss();
 
     std::string getCompany() const { return _company; }
 
