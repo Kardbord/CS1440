@@ -3,8 +3,6 @@
 // A02052217
 //
 
-//TODO add documentation
-
 #include "PurchaseSaleRecord.h"
 #include "Utils.h"
 

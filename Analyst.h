@@ -11,8 +11,6 @@
 #include "PurchaseSaleRecord.h"
 #include "History.h"
 
-//TODO add documentation
-
 class Analyst {
 public:
     Analyst() {}

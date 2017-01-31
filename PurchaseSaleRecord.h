@@ -9,8 +9,6 @@
 #include <string>
 #include <fstream>
 
-//TODO add documentation
-
 class PurchaseSaleRecord {
 public:
     PurchaseSaleRecord() {}

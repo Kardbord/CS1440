@@ -3,7 +3,6 @@
 
 #include "Comparer.h"
 
-//TODO add documentation, name, and A number to every file
 int main(int argv, char *argc[]) {
     // Declare (and create) a comparer object
     Comparer comparer;

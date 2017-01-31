@@ -10,6 +10,7 @@
 #include "Utils.h"
 
 // This function was added by Tanner Kvarfordt on 1/31/17
+// Given a double, returns a string of that double with the given precision
 std::string formatDouble(double num, int const &precision, bool const &penniesToDollars) {
 
     if (precision < 0) return std::to_string(num);
