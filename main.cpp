@@ -1,8 +1,6 @@
 // Tanner Kvarfordt
 // A02052217
 
-#include <cstdlib>
-#include <iostream>
 #include "Comparer.h"
 
 //TODO add documentation, name, and A number to every file

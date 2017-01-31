@@ -42,6 +42,7 @@ int Comparer::load(int argv, char *argc[]) {
     return result;
 }
 
+// Compare the performance of all Analysts in _analysts
 int Comparer::compare() const {
     if (_analystCount < 2) {
         std::cout << "Cannot do comparison with " << _analystCount << " analysts" << std::endl;
@@ -80,7 +81,6 @@ void Comparer::loadSymbols() {
 
     }
 }
-
 
 void Comparer::outputInvestorNames(std::ofstream &outputStream) const {
     outputStream << "Investors:\n";

@@ -1,5 +1,6 @@
 //
-// Created by Tanner on 1/28/2017.
+// Created by Tanner Kvarfordt on 1/28/2017.
+// A02052217
 //
 
 #include "History.h"

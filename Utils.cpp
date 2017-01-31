@@ -1,5 +1,6 @@
 //
-// Created by Stephen Clyde on 1/16/17.
+// Base code created by Stephen Clyde on 1/16/17.
+// Modified by Tanner Kvarfordt on 1/31/17
 //
 
 #include <sstream>
@@ -8,6 +9,7 @@
 #include <cmath>
 #include "Utils.h"
 
+// This function was added by Tanner Kvarfordt on 1/31/17
 std::string formatDouble(double num, int const &precision, bool const &penniesToDollars) {
 
     if (precision < 0) return std::to_string(num);
