@@ -137,7 +137,7 @@ void Comparer::outputStockPerformance(std::ofstream &outputStream) const {
             try {
                 double performance = a.getHistory().computeStockPerformance(s);
 
-                if (performance == -1000000) { // if the symbol wasn't in that analyst's history
+                if (performance == -1000000) { // if the symbol wasn't in that analyst's _history
                     row->addCell(new FormattedCell(""));
                 } else {
                     row->addCell(new FormattedCell(formatDouble(performance, 4, true)));

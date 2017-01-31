@@ -34,7 +34,7 @@ double History::computeProfitLossPerDay() {
 // Computes, in pennies, the total profit/loss per day for a given company's stock
 double History::computeStockPerformance(std::string const &symbol) {
 
-    if (_records.empty()) throw "Error! This history has no records!";
+    if (_records.empty()) throw "Error! This _history has no records!";
 
     /* Find min purchase date and max sale date to calculate date range for stock,
      * and find total profit/loss for the stock*/
@@ -58,7 +58,7 @@ double History::computeStockPerformance(std::string const &symbol) {
         }
     }
 
-    if (!hadSymbol) return -1000000; // if the symbol was not in the history
+    if (!hadSymbol) return -1000000; // if the symbol was not in the _history
 
     double investmentDays = (maxSDate - minPDate) / (24 * 60); // 24 hours in a day, 60 minutes in an hour
 

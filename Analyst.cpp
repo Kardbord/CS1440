@@ -10,5 +10,5 @@ void Analyst::load(std::ifstream & fin) {
     std::getline(fin, _name);
     std::getline(fin, _initials);
 
-    history.load(fin);
+    _history.load(fin);
 }

@@ -25,12 +25,12 @@ public:
 
     std::string getInitials() const { return _initials; }
 
-    History getHistory() const { return history; }
+    History getHistory() const { return _history; }
 
 private:
     std::string _name;
     std::string _initials;
-    History history;
+    History _history;
 };
 
 
