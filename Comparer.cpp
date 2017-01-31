@@ -86,13 +86,11 @@ void Comparer::outputInvestorNames(std::ofstream &outputStream) const {
     outputStream << "Investors:\n";
     for (auto &&a : _analysts) {
         outputStream << "     (";
-        outputStream << a.getInitials() << ")    " << a.getName()  << std::endl;
+        outputStream << a.getInitials() << ")    " << a.getName() << std::endl;
     }
     outputStream << std::endl << std::endl;
 }
 
-// TODO: modify this method to display money to 2 decimal places
-// TODO: modify all "compute" methods to use doubles like God intended
 void Comparer::outputOverallPerformance(std::ofstream &outputStream) const {
     FormattedTable table(_analystCount, 5);
 

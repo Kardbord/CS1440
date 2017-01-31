@@ -22,6 +22,6 @@ bool IsNotWhiteSpace(char ch);
 
 std::string centerString(const std::string &str, int width);
 
-std::string formatDouble(double num, int const &precision = 2,  bool const &penniesToDollars = false);
+std::string formatDouble(double num, int const &precision = 2, bool const &penniesToDollars = false);
 
 #endif //ANALYSTCOMPARER_UTILS_H

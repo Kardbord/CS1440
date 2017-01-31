@@ -28,7 +28,7 @@ public:
     double computeProfitLossPerDay();
 
     // Computes, in pennies, the total profit/loss per day for a given company's stock
-    double computeStockPerformance(std::string const & symbol);
+    double computeStockPerformance(std::string const &symbol);
 
     int getSimDays() const { return _simDays; }
 

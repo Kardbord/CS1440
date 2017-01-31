@@ -8,7 +8,7 @@
 #include <cmath>
 #include "Utils.h"
 
-std::string formatDouble(double num, int const &precision,  bool const &penniesToDollars) {
+std::string formatDouble(double num, int const &precision, bool const &penniesToDollars) {
 
     if (precision < 0) return std::to_string(num);
 

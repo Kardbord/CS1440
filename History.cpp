@@ -51,7 +51,7 @@ double History::computeStockPerformance(std::string const &symbol) {
             if (r.getPurchaseDate() < minPDate || minPDate < 0) {
                 minPDate = r.getPurchaseDate();
             }
-            if (r.getSaleDate() > maxSDate || maxSDate < 0){
+            if (r.getSaleDate() > maxSDate || maxSDate < 0) {
                 maxSDate = r.getSaleDate();
             }
         }
