@@ -2,16 +2,16 @@ Analyst Comparison
 ==================
 
 Investors:
-     Mary G. Richardson
-     Samuel J Larsen
-     Tammy R. Samuelson
+     (MGR)    Mary G. Richardson
+     (SJL)    Samuel J Larsen
+     (TRS)    Tammy R. Samuelson
 
 
  Analyst |    Days|   Seed Amount ($)|      TPL ($)|     PLPD ($)|
 ---------|--------|------------------|-------------|-------------|
-   MGR   |     220|            100000|            0| 7.80903e+006|
-   SJL   |     204|            100000|            0|-1.51587e+007|
-   TRS   |     200|            100000|            0|-8.58993e+006|
+   MGR   |     220|         100000.00|      3749.20|        17.04|
+   SJL   |     204|         100000.00|      3260.25|        15.98|
+   TRS   |     200|         100000.00|      2862.65|        14.31|
 
 
  Analyst |      AMZN|      MSFT|      AAPL|     GOOGL|

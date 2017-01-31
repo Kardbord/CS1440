@@ -85,8 +85,8 @@ void Comparer::loadSymbols() {
 void Comparer::outputInvestorNames(std::ofstream &outputStream) const {
     outputStream << "Investors:\n";
     for (auto &&a : _analysts) {
-        outputStream << "     ";
-        outputStream << a.getName() << std::endl;
+        outputStream << "     (";
+        outputStream << a.getInitials() << ")    " << a.getName()  << std::endl;
     }
     outputStream << std::endl << std::endl;
 }
@@ -98,22 +98,23 @@ void Comparer::outputOverallPerformance(std::ofstream &outputStream) const {
 
     table.addColumn(new ColumnDefinition("Analyst", 9, ColumnDefinition::String, ColumnDefinition::Center));
     table.addColumn(new ColumnDefinition("Days", 8, ColumnDefinition::Integer, ColumnDefinition::Right));
-    table.addColumn(new ColumnDefinition("Seed Amount ($)", 18, ColumnDefinition::Money, ColumnDefinition::Right, 2));
-    table.addColumn(new ColumnDefinition("TPL ($)", 13, ColumnDefinition::Money, ColumnDefinition::Right, 2));
-    table.addColumn(new ColumnDefinition("PLPD ($)", 13, ColumnDefinition::Money, ColumnDefinition::Right, 2));
+    table.addColumn(new ColumnDefinition("Seed Amount ($)", 18, ColumnDefinition::String, ColumnDefinition::Right, 2));
+    table.addColumn(new ColumnDefinition("TPL ($)", 13, ColumnDefinition::String, ColumnDefinition::Right, 2));
+    table.addColumn(new ColumnDefinition("PLPD ($)", 13, ColumnDefinition::String, ColumnDefinition::Right, 2));
 
     for (auto &&a : _analysts) {
         FormattedRow *row = new FormattedRow(&table);
         row->addCell(new FormattedCell(a.getInitials()));
         row->addCell(new FormattedCell(a.getHistory().getSimDays()));
 
+        double seed = a.getHistory().getSeedMoney();
+        row->addCell(new FormattedCell(formatDouble(seed, 2, true)));
 
-        row->addCell(new FormattedCell(a.getHistory().getSeedMoney()));
+        double profitLoss = a.getHistory().computeTotalProfitLoss();
+        row->addCell(new FormattedCell(formatDouble(profitLoss, 2, true)));
 
-        double pL = a.getHistory().computeTotalProfitLoss();
-        row->addCell(new FormattedCell(pL));
-
-        row->addCell(new FormattedCell(a.getHistory().computeProfitLossPerDay()));
+        double plPerDay = a.getHistory().computeProfitLossPerDay();
+        row->addCell(new FormattedCell(formatDouble(plPerDay, 2, true)));
 
         table.addRow(row);
     }
@@ -141,12 +142,6 @@ void Comparer::outputStockPerformance(std::ofstream &outputStream) const {
                 if (performance == -1000000) { // if the symbol wasn't in that analyst's history
                     row->addCell(new FormattedCell(""));
                 } else {
-
-                    /* This block of code formats the output to look nice
-                    performance /= 100; //account for money being in pennies
-                    performance = std::floor(performance * 10000) / 10000;
-                    std::string perfString = std::to_string(performance);
-                    perfString.erase(7, 8);*/
                     row->addCell(new FormattedCell(formatDouble(performance, 4, true)));
                 }
 
