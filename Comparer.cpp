@@ -9,6 +9,7 @@
 #include "Comparer.h"
 #include <algorithm>
 #include "./FormattedTable/FormattedTable.h"
+#include <cmath>
 
 // Creates Analysts and their histories, etc. from the command line arguments
 int Comparer::load(int argv, char *argc[]) {
@@ -56,6 +57,7 @@ int Comparer::compare() const {
                  << "==================\n\n";
     outputInvestorNames(outputStream);
     outputOverallPerformance(outputStream);
+    outputStream << std::endl << std::endl;
     outputStockPerformance(outputStream);
 
     return 0;
@@ -71,6 +73,7 @@ void Comparer::loadSymbols() {
             std::string symbol = r.getCompany();
             if (std::find(std::begin(_symbols), std::end(_symbols), symbol) == std::end(_symbols)) {
                 _symbols.push_back(symbol);
+                ++_symbolCount;
             }
         }
 
@@ -96,7 +99,7 @@ void Comparer::outputOverallPerformance(std::ofstream &outputStream) const {
     table.addColumn(new ColumnDefinition("TPL ($)", 13, ColumnDefinition::Money, ColumnDefinition::Right, 2));
     table.addColumn(new ColumnDefinition("PLPD ($)", 13, ColumnDefinition::Money, ColumnDefinition::Right, 2));
 
-    for (auto &&a : _analysts){
+    for (auto &&a : _analysts) {
         FormattedRow *row = new FormattedRow(&table);
         row->addCell(new FormattedCell(a.getInitials()));
         row->addCell(new FormattedCell(a.getHistory().getSimDays()));
@@ -110,5 +113,37 @@ void Comparer::outputOverallPerformance(std::ofstream &outputStream) const {
 };
 
 void Comparer::outputStockPerformance(std::ofstream &outputStream) const {
-    // TODO: Write out Stock Performance table.  The classes from the FormattedTable example might be helpful.
+
+    FormattedTable table(_analystCount, _symbolCount + 1);
+
+    table.addColumn(new ColumnDefinition("Analyst", 9, ColumnDefinition::String, ColumnDefinition::Center));
+
+    for (auto &&s : _symbols) {
+        table.addColumn(new ColumnDefinition(s, 10, ColumnDefinition::String, ColumnDefinition::Right));
+    }
+
+    for (auto &&a : _analysts) {
+        FormattedRow *row = new FormattedRow(&table);
+        row->addCell(new FormattedCell(a.getInitials()));
+        for (auto &&s : _symbols) {
+            try {
+                double performance = a.getHistory().computeStockPerformance(s);
+
+                if (performance == -1000000) { // if the symbol wasn't in that analyst's history
+                    row->addCell(new FormattedCell(""));
+                } else {
+                    performance /= 100; //account for money being in pennies
+                    performance = std::floor(performance * 1000) / 1000;
+                    std::string perfString = std::to_string(performance);
+                    perfString.erase(5, 6);
+                    row->addCell(new FormattedCell(perfString));
+                }
+
+            } catch (char *msg) { std::cerr << msg << std::endl; }
+        }
+        table.addRow(row);
+    }
+
+    table.write(outputStream);
+
 }

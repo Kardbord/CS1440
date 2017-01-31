@@ -5,10 +5,13 @@
 //TODO add documentation
 
 #include "PurchaseSaleRecord.h"
+#include "Utils.h"
 
 // Initializes data members based on the input file provided in the cmd arguments
 void PurchaseSaleRecord::load(std::ifstream &fin) {
     std::getline(fin, _company, ',');
+    _company = ltrim(_company);
+    _company = rtrim(_company);
 
     std::string shares;
     std::getline(fin, shares, ',');

@@ -40,8 +40,11 @@ double History::computeStockPerformance(std::string const &symbol) {
     double minPDate = -1;
     double maxSDate = -1;
     double TPL = 0;
+    bool hadSymbol = false;
     for (auto &&r : _records) {
         if (r.getCompany() == symbol) {
+
+            hadSymbol = true;
 
             TPL += r.computeProfitLoss();
 
@@ -53,6 +56,8 @@ double History::computeStockPerformance(std::string const &symbol) {
             }
         }
     }
+
+    if (!hadSymbol) return -1000000; // if the symbol was not in the history
 
     double investmentDays = (maxSDate - minPDate) / (24 * 60); // 24 hours in a day, 60 minutes in an hour
 
