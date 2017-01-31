@@ -90,6 +90,8 @@ void Comparer::outputInvestorNames(std::ofstream &outputStream) const {
     outputStream << std::endl << std::endl;
 }
 
+// TODO: modify this method to display money to 2 decimal places
+// TODO: modify all "compute" methods to use doubles like God intended
 void Comparer::outputOverallPerformance(std::ofstream &outputStream) const {
     FormattedTable table(_analystCount, 5);
 
