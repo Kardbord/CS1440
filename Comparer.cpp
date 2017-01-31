@@ -134,10 +134,12 @@ void Comparer::outputStockPerformance(std::ofstream &outputStream) const {
                 if (performance == -1000000) { // if the symbol wasn't in that analyst's history
                     row->addCell(new FormattedCell(""));
                 } else {
+
+                    // This block of code formats the output to look how I want it, the form x.xxx
                     performance /= 100; //account for money being in pennies
-                    performance = std::floor(performance * 1000) / 1000;
+                    performance = std::floor(performance * 10000) / 10000;
                     std::string perfString = std::to_string(performance);
-                    perfString.erase(5, 6);
+                    perfString.erase(7, 8);
                     row->addCell(new FormattedCell(perfString));
                 }
 
