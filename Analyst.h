@@ -26,12 +26,12 @@ public:
 
     std::string getInitials() const { return _initials; }
 
-    std::vector<History> getSimulations() const { return _simulations; }
+    History getHistory() const { return history; }
 
 private:
     std::string _name;
     std::string _initials;
-    std::vector<History> _simulations;
+    History history;
 };
 
 

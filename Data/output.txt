@@ -5,3 +5,8 @@ Investors:
      Mary G. Richardson
      Samuel J Larsen
      Tammy R. Samuelson
+
+
+
+        Info        |           MGR|           SJL|           TRS|
+--------------------|--------------|--------------|--------------|
