@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Compiled Object files
 *.slo
 *.lo
@@ -27,3 +28,59 @@
 *.exe
 *.out
 *.app
+=======
+#ignore .idea
+.idea/tasks.xml
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
+*.obj
+*.exe
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+*.lib
+*.sbr
+obj/
+Deploy/
+_ReSharper*/
+[Tt]est[Rr]esult*
+.DS_Store
+Package.txt
+[Pp]ackages/
+cmake-build-debug/
+UML/*.bak
+UML/AnalystComparer.vpp.bak_005d
+UML/AnalystComparer.vpp.bak_006d
+UML/AnalystComparer.vpp.bak_007d
+UML/AnalystComparer.vpp.bak_008d
+UML/AnalystComparer.vpp.bak_009f
+UML/AnalystComparer.vpp.bak_010d
+UML/AnalystComparer.vpp.bak_011d
+UML/AnalystComparer.vpp.bak_012d
+UML/AnalystComparer.vpp.bak_013d
+UML/AnalystComparer.vpp.bak_014d
+UML/.AnalystComparer.vpp.lck
+UML/AnalystComparer.vpp.bak_015d
+UML/AnalystComparer.vpp.bak_016d
+UML/AnalystComparer.vpp.bak_017d
+UML/AnalystComparer.vpp.bak_018d
+UML/AnalystComparer.vpp.bak_019d
+UML/AnalystComparer.vpp.bak_020d
+UML/AnalystComparer.vpp.bak_021d
+UML/AnalystComparer.vpp.bak_022d
+UML/AnalystComparer.vpp.bak_023d
+UML/AnalystComparer.vpp.bak_024d
+>>>>>>> AnalystComparer/master
