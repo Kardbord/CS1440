@@ -186,7 +186,7 @@ void EdgeTester::testParallelEdges() {
         std::cout << "Failure in e5.isParallelTo(e5) - should be parallel" << std::endl;
     }
 
-    // Integer Points with negative slope tests
+    // Integer Points with negative slope tests:
 
     Point p10(0, 0, 0);
     Point p11(-1, -1, 1);
@@ -224,8 +224,79 @@ void EdgeTester::testParallelEdges() {
         std::cout << "Failure in e8.isParallelTo(e8) - should be parallel" << std::endl;
     }
 
-    // TODO: Writing a representative set of test cases for edges that are parallel with other
-    // TODO: test non-integers
+    // Non-integer Points with positive and negative slope tests:
+
+    Point p16(1.84, 1.84, 1.84);
+    Point p17(2.84, 2.84, 2.84);
+    Edge e9(&p16, &p17);
+
+    Point p18(2.84, 1.84, 1.84);
+    Point p19(3.84, 2.84, 2.84);
+    Edge e10(&p18, &p19);
+
+    Point p20(4.84, 4.84, 4.84);
+    Point p21(5.84, 5.84, 5.84);
+    Edge e11(&p21, &p20);
+
+    if (!e9.isParallelTo(e9)){
+        std::cout << "Failure in e9.isParallelTo(e9) - should be parallel" << std::endl;
+    }
+
+    if (!e10.isParallelTo(e10)){
+        std::cout << "Failure in e10.isParallelTo(e10) - should be parallel" << std::endl;
+    }
+
+    if (!e11.isParallelTo(e11)){
+        std::cout << "Failure in e11.isParallelTo(e11) - should be parallel" << std::endl;
+    }
+
+    if (!e9.isParallelTo(e10)){
+        std::cout << "Failure in e9.isParallelTo(e10) - should be parallel" << std::endl;
+    }
+
+    if (!e9.isParallelTo(e11)){
+        std::cout << "Failure in e9.isParallelTo(e11) - should be parallel" << std::endl;
+    }
+
+    if (!e10.isParallelTo(e11)){
+        std::cout << "Failure in e8.isParallelTo(e8) - should be parallel" << std::endl;
+    }
+
+    Point p22(1.84, 1.84, 1.84);
+    Point p23(0.84, 0.84, 2.84);
+    Edge e12(&p22, &p23);
+
+    Point p24(2.84, 1.84, 1.84);
+    Point p25(1.84, 0.84, 2.84);
+    Edge e13(&p24, &p25);
+
+    Point p26(4.84, 4.84, 4.84);
+    Point p27(3.84, 3.84, 5.84);
+    Edge e14(&p26, &p27);
+
+    if (!e12.isParallelTo(e12)){
+        std::cout << "Failure in e12.isParallelTo(e12) - should be parallel" << std::endl;
+    }
+
+    if (!e13.isParallelTo(e13)){
+        std::cout << "Failure in e13.isParallelTo(e13) - should be parallel" << std::endl;
+    }
+
+    if (!e14.isParallelTo(e14)){
+        std::cout << "Failure in e14.isParallelTo(e14) - should be parallel" << std::endl;
+    }
+
+    if (!e12.isParallelTo(e13)){
+        std::cout << "Failure in e12.isParallelTo(e13) - should be parallel" << std::endl;
+    }
+
+    if (!e12.isParallelTo(e14)){
+        std::cout << "Failure in e12.isParallelTo(e14) - should be parallel" << std::endl;
+    }
+
+    if (!e13.isParallelTo(e14)){
+        std::cout << "Failure in e13.isParallelTo(e14) - should be parallel" << std::endl;
+    }
 }
 
 void EdgeTester::testNonParallelEdges() {
