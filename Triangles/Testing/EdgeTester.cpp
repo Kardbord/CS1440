@@ -104,6 +104,8 @@ void EdgeTester::testEdge02() {
 void EdgeTester::testParallelEdges() {
     std::cout << "Execute EdgeTester::testParallelEdges" << std::endl;
 
+    // Integer points with positive slope tests:
+
     Point p0(0, 0, 0);
     Point p1(1, 1, 1);
     Edge e1(&p0, &p1);
@@ -114,37 +116,116 @@ void EdgeTester::testParallelEdges() {
 
     Point p4(0, 0, 0);
     Point p5(-1, -1, -1);
-    Edge e3(&p4, &p5); // TODO: order seems to matter... if params are flipped results are different
+    Edge e3(&p4, &p5);
 
     Point p6(-4, -4, -4);
     Point p7(-5, -5, -5);
     Edge e4(&p6, &p7);
 
-    if (!e1.isParallelTo(e2)){
+    Point p8(1, 0, 0);
+    Point p9(2, 1, 1);
+    Edge e5(&p8, &p9);
+
+    if (!e1.isParallelTo(e2)) {
         std::cout << "Failure in e1.isParallelTo(e2) - should be parallel" << std::endl;
     }
 
-    if (!e3.isParallelTo(e4)){
+    if (!e3.isParallelTo(e4)) {
         std::cout << "Failure in e3.isParallelTo(e4) - should be parallel" << std::endl;
     }
 
-    if (!e1.isParallelTo(e3)){
+    if (!e1.isParallelTo(e3)) {
         std::cout << "Failure in e1.isParallelTo(e3) - should be parallel" << std::endl;
     }
 
-    if (!e1.isParallelTo(e4)){
+    if (!e1.isParallelTo(e4)) {
         std::cout << "Failure in e1.isParallelTo(e4) - should be parallel" << std::endl;
     }
 
-    if (!e2.isParallelTo(e3)){
+    if (!e2.isParallelTo(e3)) {
         std::cout << "Failure in e2.isParallelTo(e3) - should be parallel" << std::endl;
     }
 
-    if (!e2.isParallelTo(e4)){
+    if (!e2.isParallelTo(e4)) {
         std::cout << "Failure in e2.isParallelTo(e4) - should be parallel" << std::endl;
     }
 
+    if (!e1.isParallelTo(e1)) {
+        std::cout << "Failure in e1.isParallelTo(e1) - should be parallel" << std::endl;
+    }
+
+    if (!e2.isParallelTo(e2)) {
+        std::cout << "Failure in e2.isParallelTo(e2) - should be parallel" << std::endl;
+    }
+
+    if (!e3.isParallelTo(e3)) {
+        std::cout << "Failure in e3.isParallelTo(e3) - should be parallel" << std::endl;
+    }
+
+    if (!e4.isParallelTo(e4)) {
+        std::cout << "Failure in e4.isParallelTo(e4) - should be parallel" << std::endl;
+    }
+
+    if (!e5.isParallelTo(e1)) {
+        std::cout << "Failure in e5.isParallelTo(e1) - should be parallel" << std::endl;
+    }
+
+    if (!e5.isParallelTo(e2)) {
+        std::cout << "Failure in e5.isParallelTo(e2) - should be parallel" << std::endl;
+    }
+
+    if (!e5.isParallelTo(e3)) {
+        std::cout << "Failure in e5.isParallelTo(e3) - should be parallel" << std::endl;
+    }
+
+    if (!e5.isParallelTo(e4)) {
+        std::cout << "Failure in e5.isParallelTo(e4) - should be parallel" << std::endl;
+    }
+
+    if (!e5.isParallelTo(e5)) {
+        std::cout << "Failure in e5.isParallelTo(e5) - should be parallel" << std::endl;
+    }
+
+    // Integer Points with negative slope tests
+
+    Point p10(0, 0, 0);
+    Point p11(-1, -1, 1);
+    Edge e6(&p10, &p11);
+
+    Point p12(5, 5, 5);
+    Point p13(4, 4, 6);
+    Edge e7(&p12, &p13);
+
+    Point p14(1, 0, 0);
+    Point p15(0, -1, 1);
+    Edge e8(&p14, &p15);
+
+    if (!e6.isParallelTo(e7)){
+        std::cout << "Failure in e6.isParallelTo(e7) - should be parallel" << std::endl;
+    }
+
+    if (!e8.isParallelTo(e6)){
+        std::cout << "Failure in e8.isParallelTo(e6) - should be parallel" << std::endl;
+    }
+
+    if (!e8.isParallelTo(e7)){
+        std::cout << "Failure in e8.isParallelTo(e7) - should be parallel" << std::endl;
+    }
+
+    if (!e6.isParallelTo(e6)){
+        std::cout << "Failure in e6.isParallelTo(e6) - should be parallel" << std::endl;
+    }
+
+    if (!e7.isParallelTo(e7)){
+        std::cout << "Failure in e7.isParallelTo(e7) - should be parallel" << std::endl;
+    }
+
+    if (!e8.isParallelTo(e8)){
+        std::cout << "Failure in e8.isParallelTo(e8) - should be parallel" << std::endl;
+    }
+
     // TODO: Writing a representative set of test cases for edges that are parallel with other
+    // TODO: test non-integers
 }
 
 void EdgeTester::testNonParallelEdges() {
