@@ -32,7 +32,7 @@ bool Point::isEquivalentTo(const Point &otherPoint) const {
         return false;
 
     Edge edge(this, &otherPoint);
-    return edge.getLength() > m_minDistance;
+    return edge.getLength() < m_minDistance;
 }
 
 void Point::initialize(const std::string &pointStr) {
