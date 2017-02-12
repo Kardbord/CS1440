@@ -146,7 +146,7 @@ void PointTester::testConstructorWithStrings() {
 
     // Test second constructor by creating for new points that should be the same as the previous four
     Point q0("0,0,0");
-    if (!q0.isValid() || !q0.isEquivalentTo(p0)) {
+    if (!q0.isValid() || !q0.isEquivalentTo(p0)) { // TODO: fix isEquivalentTO; it is the source of many problems
         std::cout << "Failure in constructing Point(\"0,0,0\") isValid()="
                   << q0.isValid()
                   << " x=" << q0.getX()
