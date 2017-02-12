@@ -146,17 +146,44 @@ void PointTester::testConstructorWithStrings() {
 
     // Test second constructor by creating for new points that should be the same as the previous four
     Point q0("0,0,0");
-    if (!q0.isValid() || !q0.isEquivalentTo(p0)) { // TODO: fix isEquivalentTO; it is the source of many problems
+    if (!q0.isValid() || !q0.isEquivalentTo(p0)) {
         std::cout << "Failure in constructing Point(\"0,0,0\") isValid()="
                   << q0.isValid()
                   << " x=" << q0.getX()
                   << " y=" << q0.getY()
                   << " z=" << q0.getZ()
                   << std::endl;
-        return;
     }
 
-    // TODO: Write additional meaningful test cases for Point's string-based constructor
+    Point q1("1,2,3");
+    if (!q1.isValid() || !q1.isEquivalentTo(p1)) {
+        std::cout << "Failure in constructing Point(\"1,2,3\") isValid()="
+                  << q1.isValid()
+                  << " x=" << q1.getX()
+                  << " y=" << q1.getY()
+                  << " z=" << q1.getZ()
+                  << std::endl;
+    }
+
+    Point q2("2.235,43.2,0");
+    if (!q2.isValid() || !q2.isEquivalentTo(p2)) {
+        std::cout << "Failure in constructing Point(\"2.235,43.2,0\") isValid()="
+                  << q2.isValid()
+                  << " x=" << q2.getX()
+                  << " y=" << q2.getY()
+                  << " z=" << q2.getZ()
+                  << std::endl;
+    }
+
+    Point q3("2.235,43.2,0.00001");
+    if (!q3.isValid() || !q3.isEquivalentTo(p3)) {
+        std::cout << "Failure in constructing Point(\"2.235,43.2,0.00001\") isValid()="
+                  << q3.isValid()
+                  << " x=" << q3.getX()
+                  << " y=" << q3.getY()
+                  << " z=" << q3.getZ()
+                  << std::endl;
+    }
 }
 
 void PointTester::testInvalid() {
