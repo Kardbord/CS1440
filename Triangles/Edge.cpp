@@ -8,45 +8,36 @@
 #include "Utils.h"
 #include <valarray>
 
-Edge::Edge(const Point* point1, const Point* point2) : m_point1(point1), m_point2(point2)
-{
-    m_isValid = (m_point1!= nullptr && m_point2!= nullptr);
+Edge::Edge(const Point *point1, const Point *point2) : m_point1(point1), m_point2(point2) {
+    m_isValid = (m_point1 != nullptr && m_point2 != nullptr);
 }
 
-double Edge::getLength() const
-{
+double Edge::getLength() const {
     double result = 0;
-    if (isValid())
-    {
+    if (isValid()) {
         double diffX = m_point2->getX() - m_point1->getX();
         double diffY = m_point2->getY() - m_point1->getX();
         double diffZ = m_point2->getZ() - m_point1->getZ();
 
-        double sumOfSquares = std::pow(diffX,static_cast<double>(2)) + std::pow(diffY,static_cast<double>(2))
-                              + std::pow(diffZ,static_cast<double>(2));
+        double sumOfSquares = std::pow(diffX, 2.0) + std::pow(diffY, 2.0) + std::pow(diffZ, 2.0);
         result = std::sqrt(sumOfSquares);
     }
     return result;
 }
 
 // Returns for X-slope of the line
-double Edge::getSlopeX() const
-{
+double Edge::getSlopeX() const {
     double result = NAN;
 
-    if (isValid() && !m_point1->isEquivalentTo(*m_point2))
-    {
+    if (isValid() && !m_point1->isEquivalentTo(*m_point2)) {
         double diffY = m_point2->getY() - m_point1->getY();
         double diffZ = m_point2->getZ() - m_point1->getZ();
-        double sumOfSquares = std::pow(diffY, static_cast<double>(2)) + std::pow(diffZ, static_cast<double>(2));
+        double sumOfSquares = std::pow(diffY, 2.0) + std::pow(diffZ, 2.0);
         double yzOffset = std::sqrt(sumOfSquares);
 
-        if (yzOffset == 0)
-        {
+        if (yzOffset == 0) {
             result = INFINITY;
-        }
-        else
-        {
+        } else {
             double diffX = m_point2->getX() - m_point1->getX();
             result = diffX / yzOffset;
         }
@@ -56,23 +47,18 @@ double Edge::getSlopeX() const
 }
 
 // Returns for X-slope of the line
-double Edge::getSlopeY() const
-{
+double Edge::getSlopeY() const {
     double result = NAN;
 
-    if (isValid() && !m_point1->isEquivalentTo(*m_point2))
-    {
+    if (isValid() && !m_point1->isEquivalentTo(*m_point2)) {
         double diffX = m_point2->getX() - m_point1->getX();
         double diffZ = m_point2->getZ() - m_point1->getZ();
-        double sumOfSquares = std::pow(diffX, static_cast<double>(2)) + std::pow(diffZ, static_cast<double>(2));
+        double sumOfSquares = std::pow(diffX, 2.0) + std::pow(diffZ, 2.0);
         double xzOffset = std::sqrt(sumOfSquares);
 
-        if (xzOffset == 0)
-        {
+        if (xzOffset == 0) {
             result = INFINITY;
-        }
-        else
-        {
+        } else {
             double diffY = m_point2->getY() - m_point1->getY();
             result = diffY / xzOffset;
         }
@@ -82,23 +68,18 @@ double Edge::getSlopeY() const
 }
 
 // Returns for Z-slope of the line
-double Edge::getSlopeZ() const
-{
+double Edge::getSlopeZ() const {
     double result = NAN;
 
-    if (isValid() && !m_point1->isEquivalentTo(*m_point2))
-    {
+    if (isValid() && !m_point1->isEquivalentTo(*m_point2)) {
         double diffX = m_point2->getX() - m_point1->getX();
         double diffY = m_point2->getY() - m_point1->getY();
-        double sumOfSquares = std::pow(diffX, static_cast<double>(2)) + std::pow(diffY, static_cast<double>(2));
+        double sumOfSquares = std::pow(diffX, 2.0) + std::pow(diffY, 2.0);
         double xyOffset = std::sqrt(sumOfSquares);
 
-        if (xyOffset != 0)
-        {
+        if (xyOffset != 0) {
             result = INFINITY;
-        }
-        else
-        {
+        } else {
             double diffZ = m_point2->getZ() - m_point1->getZ();
             result = diffZ / xyOffset;
         }
@@ -108,8 +89,7 @@ double Edge::getSlopeZ() const
 }
 
 // Returns true if this edge is parallel to the other edge
-bool Edge::isParallelTo(const Edge &otherEdge)
-{
+bool Edge::isParallelTo(const Edge &otherEdge) {
     return isValid() &&
            otherEdge.isValid() &&
            areSlopesEquivalent(getSlopeX(), otherEdge.getSlopeX()) &&
@@ -118,8 +98,7 @@ bool Edge::isParallelTo(const Edge &otherEdge)
 }
 
 // Returns true if true slopes are equivalent, i.e. both INFINITY or the same within a small margin of error
-bool Edge::areSlopesEquivalent(double slope1, double slope2) const
-{
-    return (slope1==INFINITY && slope2==INFINITY) ||
-            approximatelyEquals(slope1, slope2, m_slopeMarginOfError);
+bool Edge::areSlopesEquivalent(double slope1, double slope2) const {
+    return (slope1 == INFINITY && slope2 == INFINITY) ||
+           approximatelyEquals(slope1, slope2, m_slopeMarginOfError);
 }

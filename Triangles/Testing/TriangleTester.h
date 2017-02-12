@@ -9,11 +9,17 @@
 class TriangleTester {
 public:
     void testFirstConstructor();
+
     void testSecondConstructor();
+
     void testEquilateralTriangles();
+
     void testIsoscelesTriangles();
+
     void testScaleneTriangles();
+
     void testNonTriangles();
+
     void testInvalid();
 };
 

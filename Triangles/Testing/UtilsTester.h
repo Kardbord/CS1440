@@ -17,10 +17,15 @@ public:
 
     // Test suites for approximatelyEquals()
     void testForNormalCases();
+
     void testForBadMargin();
+
     void testForZeros();
+
     void testForMaxDouble();
+
     void testForInfinity();
+
     void testForNegativeNumbers();
 };
 

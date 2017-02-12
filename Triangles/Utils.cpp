@@ -14,18 +14,16 @@
 // to see if the expected number of pieces were found in the string
 //
 // Return a true if the string was split into the expected number of pieces, otherwise a it return a false.
-bool split(const std::string& s, char delimiter, std::string pieces[], int expectedNumberOfPieces)
-{
+bool split(const std::string &s, char delimiter, std::string pieces[], int expectedNumberOfPieces) {
     std::stringstream ss;
     ss.str(s);
     std::string item;
 
-    int i=0;
-    while (std::getline(ss, item, delimiter) && i<expectedNumberOfPieces)
-    {
+    int i = 0;
+    while (std::getline(ss, item, delimiter) && i < expectedNumberOfPieces) {
         pieces[i++] = item;
     }
-    return (i==expectedNumberOfPieces);
+    return (i == expectedNumberOfPieces);
 }
 
 // Converts a string to a double
@@ -33,25 +31,22 @@ bool split(const std::string& s, char delimiter, std::string pieces[], int expec
 // Return the double value represented (0 if the string is not value) and set a valid flag, if provided, if the string
 // represented an acceptable double.  The valid flag is a point to a bool.  If the pointer is null, then the function
 // will still try to convert the string, but it will not try to set the valid flag.
-double convertStringToDouble(const std::string& s, bool* valid)
-{
+double convertStringToDouble(const std::string &s, bool *valid) {
     double result = 0;
-    if (valid!= nullptr)
+    if (valid != nullptr)
         *valid = false;
 
     std::size_t numberOfConvertedCharacters = 0;
-    if (s!="")
-    {
+    if (s != "") {
         try {
             std::string trimmedString = trim(s);
             result = std::stod(trimmedString, &numberOfConvertedCharacters);
-            if (valid!=nullptr && numberOfConvertedCharacters==trimmedString.length())
+            if (valid != nullptr && numberOfConvertedCharacters == trimmedString.length())
                 *valid = true;
-            else if (numberOfConvertedCharacters!=trimmedString.length())
+            else if (numberOfConvertedCharacters != trimmedString.length())
                 result = 0;
         }
-        catch (std::exception)
-        {
+        catch (std::exception) {
             // do nothing, let the result remain 0 and the valid flag false
         }
     }
@@ -59,8 +54,7 @@ double convertStringToDouble(const std::string& s, bool* valid)
     return result;
 }
 
-bool approximatelyEquals(double d1, double d2, double margin)
-{
+bool approximatelyEquals(double d1, double d2, double margin) {
     return fabs(d1 - d2) < margin;
 }
 
@@ -69,24 +63,23 @@ bool approximatelyEquals(double d1, double d2, double margin)
 //      http://stackoverflow.com/questions/25829143/c-trim-whitespace-from-a-string
 
 // Removes leading and trailing whitespace, include space, tabs, newlines, and returns
-std::string trim(const std::string& str) {
+std::string trim(const std::string &str) {
     return ltrim(rtrim(str));
 }
 
 // Removes leading whitespace, include space, tabs, newlines, and returns
-std::string ltrim(const std::string& inputStr) {
+std::string ltrim(const std::string &inputStr) {
     std::string str = inputStr;
-    auto it2 =  std::find_if( str.begin() , str.end() , IsNotWhiteSpace );
-    str.erase( str.begin() , it2);
+    auto it2 = std::find_if(str.begin(), str.end(), IsNotWhiteSpace);
+    str.erase(str.begin(), it2);
     return str;
 }
 
 // Removes trailing whitespace, include space, tabs, newlines, and returns
-std::string rtrim(const std::string& inputStr)
-{
+std::string rtrim(const std::string &inputStr) {
     std::string str = inputStr;
-    auto it1 =  std::find_if( str.rbegin() , str.rend() , IsNotWhiteSpace );
-    str.erase( it1.base() , str.end() );
+    auto it1 = std::find_if(str.rbegin(), str.rend(), IsNotWhiteSpace);
+    str.erase(it1.base(), str.end());
     return str;
 }
 
@@ -97,6 +90,6 @@ std::string rtrim(const std::string& inputStr)
 //      carriage return (0x0d, '\r')
 //      horizontal tab (0x09, '\t')
 //       vertical tab (0x0b, '\v')
-bool IsNotWhiteSpace (char ch) {
-    return !std::isspace<char>(ch , std::locale::classic() );
+bool IsNotWhiteSpace(char ch) {
+    return !std::isspace<char>(ch, std::locale::classic());
 }

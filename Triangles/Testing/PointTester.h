@@ -9,8 +9,11 @@
 class PointTester {
 public:
     void testConstructorWithDoubles();
+
     void testConstructorWithStrings();
+
     void testIsEquivalentTo();
+
     void testInvalid();
 };
 

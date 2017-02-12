@@ -6,14 +6,18 @@
 #define TRIANGLES_EDGETESTER_H
 
 
-class EdgeTester
-{
+class EdgeTester {
 public:
     void testEdge01();
+
     void testEdge02();
+
     void testParallelEdges();
+
     void testNonParallelEdges();
+
     void testNonLengthEdges();
+
     void testBadEdges();
 
     // TODO: Create other meaningful suites of test cases and test cases
