@@ -40,7 +40,7 @@ void Point::initialize(const std::string &pointStr) {
     if (split(pointStr, ',', values, 3)) {
         m_x = convertStringToDouble(values[0], &m_valid);
         m_y = convertStringToDouble(values[1], &m_valid);
-        m_y = convertStringToDouble(values[2], &m_valid);
+        m_z = convertStringToDouble(values[2], &m_valid);
         checkForInfinity();
     }
 }
