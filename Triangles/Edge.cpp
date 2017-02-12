@@ -38,7 +38,7 @@ double Edge::getSlopeX() const {
         if (yzOffset == 0) {
             result = INFINITY;
         } else {
-            double diffX = m_point2->getX() - m_point1->getX();
+            double diffX = std::abs(m_point2->getX() - m_point1->getX()); // TODO: take abs of diffX?
             result = diffX / yzOffset;
         }
     }
@@ -46,7 +46,7 @@ double Edge::getSlopeX() const {
     return result;
 }
 
-// Returns for X-slope of the line
+// Returns for Y-slope of the line
 double Edge::getSlopeY() const {
     double result = NAN;
 
@@ -59,7 +59,7 @@ double Edge::getSlopeY() const {
         if (xzOffset == 0) {
             result = INFINITY;
         } else {
-            double diffY = m_point2->getY() - m_point1->getY();
+            double diffY = std::abs(m_point2->getY() - m_point1->getY()); // TODO: take abs of diffY?
             result = diffY / xzOffset;
         }
     }
@@ -80,7 +80,7 @@ double Edge::getSlopeZ() const {
         if (xyOffset == 0) {
             result = INFINITY;
         } else {
-            double diffZ = m_point2->getZ() - m_point1->getZ();
+            double diffZ = std::abs(m_point2->getZ() - m_point1->getZ()); // TODO: take abs of diffZ?
             result = diffZ / xyOffset;
         }
     }
@@ -94,7 +94,7 @@ bool Edge::isParallelTo(const Edge &otherEdge) {
            otherEdge.isValid() &&
            areSlopesEquivalent(getSlopeX(), otherEdge.getSlopeX()) &&
            areSlopesEquivalent(getSlopeY(), otherEdge.getSlopeY()) &&
-           areSlopesEquivalent(getSlopeZ(), otherEdge.getSlopeX());
+           areSlopesEquivalent(getSlopeZ(), otherEdge.getSlopeZ()); // TODO: second param was getSlopeX
 }
 
 // Returns true if true slopes are equivalent, i.e. both INFINITY or the same within a small margin of error
