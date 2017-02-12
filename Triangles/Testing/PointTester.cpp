@@ -234,6 +234,128 @@ void PointTester::testInvalid() {
         std::cout << "p8(s2) should be invalid" << std::endl;
     }
 
-    // TODO: Write meaningful test cases to check for invalid points
+    //*************************************************************************************************************
+
+    Point p9(INFINITY, 1, -1);
+    Point p10(1, INFINITY, -1);
+    Point p11(1, -1, INFINITY);
+
+    if (p9.isValid()) {
+        std::cout << "p9(INFINITY, 1, -1) should be invalid" << std::endl;
+    }
+    if (p10.isValid()) {
+        std::cout << "p10(1, INFINITY, -1) should be invalid" << std::endl;
+    }
+    if (p11.isValid()) {
+        std::cout << "p11(1, -1, INFINITY) should be invalid" << std::endl;
+    }
+
+    Point p12("INFINITY,1,-1");
+    Point p13("-1,INFINITY,1");
+    Point p14("1,-1,INFINITY");
+
+    if (p12.isValid()) {
+        std::cout << "p12(\"INFINITY,1,-1\") should be invalid" << std::endl;
+    }
+    if (p13.isValid()) {
+        std::cout << "p13(\"-1,INFINITY,1\") should be invalid" << std::endl;
+    }
+    if (p14.isValid()) {
+        std::cout << "p14(\"1,-1,INFINITY\") should be invalid" << std::endl;
+    }
+
+    std::string s3 = "INFINITY,1,-1";
+    std::string s4 = "-1,INFINITY,1";
+    std::string s5 = "1,-1,INFINITY";
+    Point p15(s3);
+    Point p16(s4);
+    Point p17(s5);
+
+    if (p15.isValid()) {
+        std::cout << "p15(s3) should be invalid" << std::endl;
+    }
+    if (p16.isValid()) {
+        std::cout << "p16(s4) should be invalid" << std::endl;
+    }
+    if (p17.isValid()) {
+        std::cout << "p17(s5) should be invalid" << std::endl;
+    }
+
+    //*************************************************************************************************************
+
+    Point p18(0, 1.486, -1.254);
+    Point p19(1.486, 0, -1.254);
+    Point p20(1.486, -1.254, 0);
+
+    if (!p18.isValid()) {
+        std::cout << "p18(0, 1.486, -1.254) should be valid" << std::endl;
+    }
+    if (!p19.isValid()) {
+        std::cout << "p19(1.486, 0, -1.254) should be valid" << std::endl;
+    }
+    if (!p20.isValid()) {
+        std::cout << "p20(1.486, -1.254, 0) should be valid" << std::endl;
+    }
+
+    Point p21("0, 1.486, -1.254");
+    Point p22("1.486, 0, -1.254");
+    Point p23("1.486, -1.254, 0");
+
+    if (!p21.isValid()) {
+        std::cout << "p21(\"0, 1.486, -1.254\") should be valid" << std::endl;
+    }
+    if (!p22.isValid()) {
+        std::cout << "p22(\"1.486, 0, -1.254\") should be valid" << std::endl;
+    }
+    if (!p23.isValid()) {
+        std::cout << "p23(\"1.486, -1.254, 0\") should be valid" << std::endl;
+    }
+
+    std::string s6 = "0, 1.486, -1.254";
+    std::string s7 = "1.486, 0, -1.254";
+    std::string s8 = "1.486, -1.254, 0";
+    Point p24(s6);
+    Point p25(s7);
+    Point p26(s8);
+
+    if (!p24.isValid()) {
+        std::cout << "p24(s6) should be valid" << std::endl;
+    }
+    if (!p25.isValid()) {
+        std::cout << "p25(s7)) should be valid" << std::endl;
+    }
+    if (!p26.isValid()) {
+        std::cout << "p26(s8) should be valid" << std::endl;
+    }
+
+    //*************************************************************************************************************
+
+    Point p27(6, 1.486, -1.254);
+    Point p28(1.486, 6, -1.254);
+    Point p29(1.486, -1.254, 6);
+
+    if (!p27.isValid()) {
+        std::cout << "p27(6, 1.486, -1.254) should be valid" << std::endl;
+    }
+    if (!p28.isValid()) {
+        std::cout << "p28(1.486, 6, -1.254) should be valid" << std::endl;
+    }
+    if (!p29.isValid()) {
+        std::cout << "p29(1.486, -1.254, 6) should be valid" << std::endl;
+    }
+
+    Point p30(6.0, 1.486, -1.254);
+    Point p31(1.486, 6.0, -1.254);
+    Point p32(1.486, -1.254, 6.0);
+
+    if (!p30.isValid()) {
+        std::cout << "p30(6.0, 1.486, -1.254) should be valid" << std::endl;
+    }
+    if (!p31.isValid()) {
+        std::cout << "p31(1.486, 6.0, -1.254) should be valid" << std::endl;
+    }
+    if (!p32.isValid()) {
+        std::cout << "p32(1.486, -1.254, 6.0) should be valid" << std::endl;
+    }
 }
 
