@@ -104,6 +104,46 @@ void EdgeTester::testEdge02() {
 void EdgeTester::testParallelEdges() {
     std::cout << "Execute EdgeTester::testParallelEdges" << std::endl;
 
+    Point p0(0, 0, 0);
+    Point p1(1, 1, 1);
+    Edge e1(&p0, &p1);
+
+    Point p2(4, 4, 4);
+    Point p3(5, 5, 5);
+    Edge e2(&p2, &p3);
+
+    Point p4(0, 0, 0);
+    Point p5(-1, -1, -1);
+    Edge e3(&p4, &p5); // TODO: order seems to matter... if params are flipped results are different
+
+    Point p6(-4, -4, -4);
+    Point p7(-5, -5, -5);
+    Edge e4(&p6, &p7);
+
+    if (!e1.isParallelTo(e2)){
+        std::cout << "Failure in e1.isParallelTo(e2) - should be parallel" << std::endl;
+    }
+
+    if (!e3.isParallelTo(e4)){
+        std::cout << "Failure in e3.isParallelTo(e4) - should be parallel" << std::endl;
+    }
+
+    if (!e1.isParallelTo(e3)){
+        std::cout << "Failure in e1.isParallelTo(e3) - should be parallel" << std::endl;
+    }
+
+    if (!e1.isParallelTo(e4)){
+        std::cout << "Failure in e1.isParallelTo(e4) - should be parallel" << std::endl;
+    }
+
+    if (!e2.isParallelTo(e3)){
+        std::cout << "Failure in e2.isParallelTo(e3) - should be parallel" << std::endl;
+    }
+
+    if (!e2.isParallelTo(e4)){
+        std::cout << "Failure in e2.isParallelTo(e4) - should be parallel" << std::endl;
+    }
+
     // TODO: Writing a representative set of test cases for edges that are parallel with other
 }
 
