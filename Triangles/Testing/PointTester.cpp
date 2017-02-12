@@ -189,6 +189,19 @@ void PointTester::testConstructorWithStrings() {
 void PointTester::testInvalid() {
     std::cout << "Execute PointTester::testInvalid" << std::endl;
 
+    Point p0(INFINITY, 0, 0);
+    Point p1(0, INFINITY, 0);
+    Point p2(0, 0, INFINITY);
+
+    if (p0.isValid()) {
+        std::cout << "p0(INFINITY, 0, 0) should be invalid" << std::endl;
+    }
+    if (p1.isValid()) {
+        std::cout << "p1(0, INFINITY, 0) should be invalid" << std::endl;
+    }
+    if (p2.isValid()) {
+        std::cout << "p2(0, 0, INFINITY) should be invalid" << std::endl;
+    }
 
     // TODO: Write meaningful test cases to check for invalid points
 }
