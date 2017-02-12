@@ -27,7 +27,7 @@ void EdgeTester::testEdge01() {
     }
 
     if (e.getLength() != 1) {
-        std::cout << "Failure in e.getLenth(), length="
+        std::cout << "Failure in e.getLength(), length="
                   << e.getLength() << " (expecting 1)"
                   << std::endl;
         return;
