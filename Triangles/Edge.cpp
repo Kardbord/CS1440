@@ -16,7 +16,7 @@ double Edge::getLength() const {
     double result = 0;
     if (isValid()) {
         double diffX = m_point2->getX() - m_point1->getX();
-        double diffY = m_point2->getY() - m_point1->getX(); // TODO: should this be getY?
+        double diffY = m_point2->getY() - m_point1->getY();
         double diffZ = m_point2->getZ() - m_point1->getZ();
 
         double sumOfSquares = std::pow(diffX, 2.0) + std::pow(diffY, 2.0) + std::pow(diffZ, 2.0);

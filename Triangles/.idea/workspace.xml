@@ -15,6 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d43c2fba-d44f-473f-acbe-6b1f6bb0fe20" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Edge.cpp" afterPath="$PROJECT_DIR$/Edge.cpp" />
     </list>
     <ignored path="Triangles.iws" />
@@ -39,8 +40,8 @@
       <file leaf-file-name="PointTester.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Testing/PointTester.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1408">
-              <caret line="69" column="16" lean-forward="false" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+            <state relative-caret-position="278">
+              <caret line="148" column="40" lean-forward="true" selection-start-line="148" selection-start-column="40" selection-end-line="148" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -49,8 +50,8 @@
       <file leaf-file-name="Point.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Point.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+            <state relative-caret-position="393">
+              <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
               <folding>
                 <element signature="e#46#63#0" expanded="true" />
               </folding>
@@ -58,11 +59,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Edge.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Edge.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" column="59" lean-forward="false" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
+              <folding>
+                <element signature="e#46#62#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utils.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Utils.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="185">
+              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -106,9 +119,9 @@
         <option value="$PROJECT_DIR$/Testing/TriangleTester.h" />
         <option value="$PROJECT_DIR$/Testing/TriangleTester.cpp" />
         <option value="$PROJECT_DIR$/Testing/PointTester.h" />
-        <option value="$PROJECT_DIR$/Testing/PointTester.cpp" />
         <option value="$PROJECT_DIR$/Testing/EdgeTester.h" />
         <option value="$PROJECT_DIR$/Testing/EdgeTester.cpp" />
+        <option value="$PROJECT_DIR$/Testing/PointTester.cpp" />
         <option value="$PROJECT_DIR$/Edge.cpp" />
       </list>
     </option>
@@ -394,12 +407,12 @@
       <workItem from="1486256342601" duration="1445000" />
       <workItem from="1486586016156" duration="1097000" />
       <workItem from="1486594260494" duration="975000" />
-      <workItem from="1486853432069" duration="9389000" />
+      <workItem from="1486853432069" duration="11192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47808000" />
+    <option name="totallyTimeSpent" value="49611000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -420,11 +433,11 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.50219434" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.49780566" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32842582" sideWeight="0.49780566" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40656853" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40656853" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -470,13 +483,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Point.cpp</url>
-          <line>39</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="42" />
     </breakpoint-manager>
     <watches-manager />
@@ -766,39 +772,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Edge.cpp">
+    <entry file="file://$PROJECT_DIR$/Utils.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-          <folding>
-            <element signature="e#46#62#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="185">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Testing/PointTester.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1408">
-          <caret line="69" column="16" lean-forward="false" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+        <state relative-caret-position="278">
+          <caret line="148" column="40" lean-forward="true" selection-start-line="148" selection-start-column="40" selection-end-line="148" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Point.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+        <state relative-caret-position="393">
+          <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
           <folding>
             <element signature="e#46#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utils.cpp">
+    <entry file="file://$PROJECT_DIR$/Edge.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="396">
+          <caret line="18" column="59" lean-forward="false" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
+          <folding>
+            <element signature="e#46#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
