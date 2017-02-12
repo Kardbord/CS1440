@@ -6,6 +6,7 @@
 #include <complex>
 #include "Edge.h"
 #include "Utils.h"
+#include <valarray>
 
 Edge::Edge(const Point* point1, const Point* point2) : m_point1(point1), m_point2(point2)
 {
@@ -21,7 +22,8 @@ double Edge::getLength() const
         double diffY = m_point2->getY() - m_point1->getX();
         double diffZ = m_point2->getZ() - m_point1->getZ();
 
-        double sumOfSquares = std::pow(diffX,2) + std::pow(diffY,2) + std::pow(diffZ,2);
+        double sumOfSquares = std::pow(diffX,static_cast<double>(2)) + std::pow(diffY,static_cast<double>(2))
+                              + std::pow(diffZ,static_cast<double>(2));
         result = std::sqrt(sumOfSquares);
     }
     return result;
@@ -36,7 +38,7 @@ double Edge::getSlopeX() const
     {
         double diffY = m_point2->getY() - m_point1->getY();
         double diffZ = m_point2->getZ() - m_point1->getZ();
-        double sumOfSquares = std::pow(diffY, 2) + std::pow(diffZ, 2);
+        double sumOfSquares = std::pow(diffY, static_cast<double>(2)) + std::pow(diffZ, static_cast<double>(2));
         double yzOffset = std::sqrt(sumOfSquares);
 
         if (yzOffset == 0)
@@ -62,7 +64,7 @@ double Edge::getSlopeY() const
     {
         double diffX = m_point2->getX() - m_point1->getX();
         double diffZ = m_point2->getZ() - m_point1->getZ();
-        double sumOfSquares = std::pow(diffX, 2) + std::pow(diffZ, 2);
+        double sumOfSquares = std::pow(diffX, static_cast<double>(2)) + std::pow(diffZ, static_cast<double>(2));
         double xzOffset = std::sqrt(sumOfSquares);
 
         if (xzOffset == 0)
@@ -88,7 +90,7 @@ double Edge::getSlopeZ() const
     {
         double diffX = m_point2->getX() - m_point1->getX();
         double diffY = m_point2->getY() - m_point1->getY();
-        double sumOfSquares = std::pow(diffX, 2) + std::pow(diffY, 2);
+        double sumOfSquares = std::pow(diffX, static_cast<double>(2)) + std::pow(diffY, static_cast<double>(2));
         double xyOffset = std::sqrt(sumOfSquares);
 
         if (xyOffset != 0)
