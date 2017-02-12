@@ -203,6 +203,37 @@ void PointTester::testInvalid() {
         std::cout << "p2(0, 0, INFINITY) should be invalid" << std::endl;
     }
 
+    Point p3("INFINITY,0,0");
+    Point p4("0,INFINITY,0");
+    Point p5("0,0,INFINITY");
+
+    if (p3.isValid()) {
+        std::cout << "p3(\"INFINITY,0,0\") should be invalid" << std::endl;
+    }
+    if (p4.isValid()) {
+        std::cout << "p4(\"0,INFINITY,1\") should be invalid" << std::endl;
+    }
+    if (p5.isValid()) {
+        std::cout << "p5(\"0,0,INFINITY\") should be invalid" << std::endl;
+    }
+
+    std::string s0 = "INFINITY,0,0";
+    std::string s1 = "0,INFINITY,0";
+    std::string s2 = "0,0,INFINITY";
+    Point p6(s0);
+    Point p7(s1);
+    Point p8(s2);
+
+    if (p6.isValid()) {
+        std::cout << "p6(s0) should be invalid" << std::endl;
+    }
+    if (p7.isValid()) {
+        std::cout << "p7(s1) should be invalid" << std::endl;
+    }
+    if (p8.isValid()) {
+        std::cout << "p8(s2) should be invalid" << std::endl;
+    }
+
     // TODO: Write meaningful test cases to check for invalid points
 }
 
