@@ -54,7 +54,5 @@ void Point::initialize(const std::string &pointStr)
 // Computes m_valid based on whether any of the points are infinity
 void Point::checkForInfinity()
 {
-    m_valid = (m_x != std::numeric_limits<double>::infinity() &&
-            m_y != std::numeric_limits<double>::infinity() &&
-            m_z != std::numeric_limits<double>::infinity());
+    m_valid = (m_x != INFINITY && m_y != INFINITY && m_z != INFINITY);
 }
