@@ -28,7 +28,7 @@ void PointTester::testConstructorWithDoubles()
     Point p1(1,2,3);
     if (!p1.isValid() || p1.getX()!=1 || p1.getY()!=2 || p1.getZ()!=3)
     {
-        std::cout << "Failure in constructing Point(0,0,0) isValid()="
+        std::cout << "Failure in constructing Point(1,2,3) isValid()="
                   << p1.isValid()
                   << " x=" << p1.getX()
                   << " y=" << p1.getY()
@@ -40,7 +40,7 @@ void PointTester::testConstructorWithDoubles()
     Point p2(2.235,43.2,0);
     if (!p2.isValid() || p2.getX()!=2.235 || p2.getY()!=43.2 || p2.getZ()!=0)
     {
-        std::cout << "Failure in constructing Point(0,0,0) isValid()="
+        std::cout << "Failure in constructing Point(2.235,43.2,0) isValid()="
                   << p1.isValid()
                   << " x=" << p1.getX()
                   << " y=" << p1.getY()
@@ -52,7 +52,7 @@ void PointTester::testConstructorWithDoubles()
     Point p3(2.235,43.2,0.00001);
     if (!p3.isValid() || p3.getX()!=2.235 || p3.getY()!=43.2 || p3.getZ()!=0.00001)
     {
-        std::cout << "Failure in constructing Point(0,0,0) isValid()="
+        std::cout << "Failure in constructing Point(2.235,43.2,0.00001) isValid()="
                   << p3.isValid()
                   << " x=" << p3.getX()
                   << " y=" << p3.getY()
