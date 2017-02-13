@@ -100,5 +100,6 @@ bool Edge::isParallelTo(const Edge &otherEdge) {
 // Returns true if true slopes are equivalent, i.e. both INFINITY or the same within a small margin of error
 bool Edge::areSlopesEquivalent(double slope1, double slope2) const {
     return (slope1 == INFINITY && slope2 == INFINITY) ||
-           approximatelyEquals(slope1, slope2, m_slopeMarginOfError); // TODO: what if both are NAN?
+            (std::isnan(slope1) && std::isnan(slope2)) ||
+           approximatelyEquals(slope1, slope2, m_slopeMarginOfError); // TODO: do I want to include isnan in this comparison?
 }
