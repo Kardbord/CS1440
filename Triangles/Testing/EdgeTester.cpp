@@ -352,7 +352,7 @@ void EdgeTester::testNonLengthEdges() {
 
     if (e1.getLength() != 0) {
         std::cout << "Failure in e1.getLength()=" << e1.getLength()
-                  << "\nshould be 0" << std::endl;
+                  << "\n- should be 0" << std::endl;
     }
 
     Point p2(0, 0, 0);
@@ -361,7 +361,32 @@ void EdgeTester::testNonLengthEdges() {
 
     if (e2.getLength() != 0.01) {
         std::cout << "Failure in e2.getLength()=" << e2.getLength()
-                  << "- should be 0.01" << std::endl;
+                  << "\n- should be 0.01" << std::endl;
+    }
+
+    Point p4(0, 0, 0);
+    Point p5(0.001, 0, 0);
+    Edge e3(&p4, &p5);
+
+    if (e3.getLength() != 0.001) {
+        std::cout << "Failure in e3.getLength()=" << e3.getLength()
+                  << "\n- should be 0.001" << std::endl;
+    }
+
+    if (!e2.isParallelTo(e2)){
+        std::cout << "Failure in e2.isParallelTo(e2)=" << e2.isParallelTo(e2) << " Should be 1\n";
+    }
+
+    if (!e3.isParallelTo(e3)){
+        std::cout << "Failure in e3.isParallelTo(e3)=" << e3.isParallelTo(e3) << " Should be 1\n";
+    }
+
+    if (!e1.isParallelTo(e1)){
+        std::cout << "Failure in e1.isParallelTo(e1)=" << e1.isParallelTo(e1) << " Should be 1\n";
+    }
+
+    if (!e2.isParallelTo(e3)){
+        std::cout << "Failure in e2.isParallelTo(e3)=" << e2.isParallelTo(e3) << " Should be 1\n";
     }
 
     // TODO: Writing a representative set of test cases for edges have a length of zero or approximately zero
