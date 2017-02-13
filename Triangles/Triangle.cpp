@@ -17,7 +17,7 @@ Triangle::Triangle(std::string &triangleStr) {
         m_points = new Point *[3];
         m_points[0] = new Point(values[0]);
         m_points[1] = new Point(values[1]);
-        m_points[2] = new Point(values[1]);
+        m_points[2] = new Point(values[1]); // TODO: I suspect this should be 2
         setupEdges();
     }
 }
