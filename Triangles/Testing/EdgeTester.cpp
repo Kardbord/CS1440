@@ -314,37 +314,55 @@ void EdgeTester::testNonParallelEdges() {
     Point p5(-1, -1, 1);
     Edge e3(&p4, &p5);
 
-    Point p6(-1.84,-1.84,2);
-    Point p7(1,3.0,4.524);
+    Point p6(-1.84, -1.84, 2);
+    Point p7(1, 3.0, 4.524);
     Edge e4(&p6, &p7);
 
-    if (e1.isParallelTo(e2)){
+    if (e1.isParallelTo(e2)) {
         std::cout << "Failure in e1.isParallelTo(e2) - should not be parallel" << std::endl;
     }
 
-    if (e1.isParallelTo(e3)){
+    if (e1.isParallelTo(e3)) {
         std::cout << "Failure in e1.isParallelTo(e3) - should not be parallel" << std::endl;
     }
 
-    if (e1.isParallelTo(e4)){
+    if (e1.isParallelTo(e4)) {
         std::cout << "Failure in e1.isParallelTo(e4) - should not be parallel" << std::endl;
     }
 
-    if (e2.isParallelTo(e3)){
+    if (e2.isParallelTo(e3)) {
         std::cout << "Failure in e2isParallelTo(e3) - should not be parallel" << std::endl;
     }
 
-    if (e2.isParallelTo(e4)){
+    if (e2.isParallelTo(e4)) {
         std::cout << "Failure in e2.isParallelTo(e4) - should not be parallel" << std::endl;
     }
 
-    if (e3.isParallelTo(e4)){
+    if (e3.isParallelTo(e4)) {
         std::cout << "Failure in e3.isParallelTo(e4) - should not be parallel" << std::endl;
     }
 }
 
 void EdgeTester::testNonLengthEdges() {
     std::cout << "Execute EdgeTester::testNonLengthEdges" << std::endl;
+
+    Point p0(0, 0, 0);
+    Point p1(0, 0, 0);
+    Edge e1(&p0, &p1);
+
+    if (e1.getLength() != 0) {
+        std::cout << "Failure in e1.getLength()=" << e1.getLength()
+                  << "\nshould be 0" << std::endl;
+    }
+
+    Point p2(0, 0, 0);
+    Point p3(0.01, 0, 0);
+    Edge e2(&p2, &p3);
+
+    if (e2.getLength() != 0.01) {
+        std::cout << "Failure in e2.getLength()=" << e2.getLength()
+                  << "- should be 0.01" << std::endl;
+    }
 
     // TODO: Writing a representative set of test cases for edges have a length of zero or approximately zero
 }
