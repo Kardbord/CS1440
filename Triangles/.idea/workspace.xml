@@ -14,11 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d43c2fba-d44f-473f-acbe-6b1f6bb0fe20" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Edge.cpp" afterPath="$PROJECT_DIR$/Edge.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing/EdgeTester.cpp" afterPath="$PROJECT_DIR$/Testing/EdgeTester.cpp" />
-    </list>
+    <list default="true" id="d43c2fba-d44f-473f-acbe-6b1f6bb0fe20" name="Default" comment="" />
     <ignored path="Triangles.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -38,7 +34,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="EdgeTester.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EdgeTester.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Testing/EdgeTester.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="366">
@@ -74,21 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Edge.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Edge.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Edge.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
+            <state relative-caret-position="674">
               <caret line="103" column="125" lean-forward="false" selection-start-line="103" selection-start-column="125" selection-end-line="103" selection-end-column="125" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Utils.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Utils.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -424,12 +410,12 @@
       <workItem from="1486926227535" duration="32000" />
       <workItem from="1486926273315" duration="11154000" />
       <workItem from="1487010608848" duration="2110000" />
-      <workItem from="1487021295074" duration="1642000" />
+      <workItem from="1487021295074" duration="1897000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67884000" />
+    <option name="totallyTimeSpent" value="68139000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -450,7 +436,7 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.50219434" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32842582" sideWeight="0.49780566" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.49780566" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -518,13 +504,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Testing/EdgeTester.cpp</url>
-          <line>383</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="57" />
     </breakpoint-manager>
     <watches-manager>
@@ -809,6 +788,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Edge.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="674">
+          <caret line="103" column="125" lean-forward="false" selection-start-line="103" selection-start-column="125" selection-end-line="103" selection-end-column="125" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Testing/EdgeTester.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
@@ -820,14 +807,6 @@
             <element signature="e#3180#8861#0" expanded="false" />
             <element signature="e#8863#10062#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Edge.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="103" column="125" lean-forward="false" selection-start-line="103" selection-start-column="125" selection-end-line="103" selection-end-column="125" />
-          <folding />
         </state>
       </provider>
     </entry>
