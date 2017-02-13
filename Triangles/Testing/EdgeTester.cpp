@@ -471,8 +471,6 @@ void EdgeTester::testNonLengthEdges() {
     if (!e3.isParallelTo(e4)) {
         std::cout << "Failure in e2.isParallelTo(e2)=" << e3.isParallelTo(e4) << " Should be 1\n";
     }
-
-    // TODO: Writing a representative set of test cases for edges have a length of zero or approximately zero
 }
 
 void EdgeTester::testBadEdges() {
