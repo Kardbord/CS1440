@@ -476,5 +476,41 @@ void EdgeTester::testNonLengthEdges() {
 void EdgeTester::testBadEdges() {
     std::cout << "Execute EdgeTester::testBadEdges" << std::endl;
 
+    Point p0(0, 0, 0);
+    Edge e1(nullptr, &p0);
+    Edge e2(&p0, nullptr);
+
+    if (e1.isValid()){
+        std::cout << "Failure in e1.isValid - should be invalid" << std::endl;
+    }
+
+    if (e2.isValid()){
+        std::cout << "Failure in e2.isValid - should be invalid" << std::endl;
+    }
+
+    if (!std::isnan(e1.getSlopeX())){
+        std::cout << "Failure in e1.getSlopeX() - should be NAN" << std::endl;
+    }
+
+    if (!std::isnan(e1.getSlopeY())){
+        std::cout << "Failure in e1.getSlopeY() - should be NAN" << std::endl;
+    }
+
+    if (!std::isnan(e1.getSlopeZ())){
+        std::cout << "Failure in e1.getSlopeZ() - should be NAN" << std::endl;
+    }
+
+    if (!std::isnan(e2.getSlopeX())){
+        std::cout << "Failure in e2.getSlopeX() - should be NAN" << std::endl;
+    }
+
+    if (!std::isnan(e2.getSlopeY())){
+        std::cout << "Failure in e2.getSlopeY() - should be NAN" << std::endl;
+    }
+
+    if (!std::isnan(e2.getSlopeZ())){
+        std::cout << "Failure in e2.getSlopeZ() - should be NAN" << std::endl;
+    }
+
     // TODO: Writing a representative set of test cases for edges not formed correctly
 }
