@@ -297,6 +297,68 @@ void EdgeTester::testParallelEdges() {
     if (!e13.isParallelTo(e14)) {
         std::cout << "Failure in e13.isParallelTo(e14) - should be parallel" << std::endl;
     }
+
+    // Edges with infinite or undefined slopes
+
+    Point p28(0, 1, 0);
+    Point p29(0, 0, 0);
+    Edge e15(&p28, &p29);
+
+    Point p30(0, 3, 0);
+    Point p31(0, 2, 0);
+    Edge e16(&p30, &p31);
+
+    if (!e15.isParallelTo(e15)) {
+        std::cout << "Failure in e15.isParallelTo(e15) - should be parallel" << std::endl;
+    }
+
+    if (!e16.isParallelTo(e16)) {
+        std::cout << "Failure in e16.isParallelTo(e16) - should be parallel" << std::endl;
+    }
+
+    if (!e15.isParallelTo(e16)) {
+        std::cout << "Failure in e15.isParallelTo(e16) - should be parallel" << std::endl;
+    }
+
+    Point p32(1, 0, 0);
+    Point p33(0, 0, 0);
+    Edge e17(&p32, &p33);
+
+    Point p34(5, 1, 0);
+    Point p35(20, 1, 0);
+    Edge e18(&p34, &p35);
+
+    if (!e17.isParallelTo(e17)) {
+        std::cout << "Failure in e17.isParallelTo(e17) - should be parallel" << std::endl;
+    }
+
+    if (!e18.isParallelTo(e18)) {
+        std::cout << "Failure in e18.isParallelTo(e18) - should be parallel" << std::endl;
+    }
+
+    if (!e17.isParallelTo(e18)) {
+        std::cout << "Failure in e17.isParallelTo(e18) - should be parallel" << std::endl;
+    }
+
+    Point p36(0, 0, 1);
+    Point p37(0, 0, 0);
+    Edge e19(&p36, &p37);
+
+    Point p38(0, 1, 5);
+    Point p39(0, 1, 20);
+    Edge e20(&p38, &p39);
+
+    if (!e19.isParallelTo(e19)) {
+        std::cout << "Failure in e19.isParallelTo(e19) - should be parallel" << std::endl;
+    }
+
+    if (!e20.isParallelTo(e20)) {
+        std::cout << "Failure in e20.isParallelTo(e20) - should be parallel" << std::endl;
+    }
+
+    if (!e19.isParallelTo(e20)) {
+        std::cout << "Failure in e19.isParallelTo(e20) - should be parallel" << std::endl;
+    }
 }
 
 void EdgeTester::testNonParallelEdges() {
