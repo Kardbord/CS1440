@@ -51,7 +51,7 @@ bool Triangle::isTriangle() const {
 char Triangle::getTriangleType() const {
     char result = 'X';
     if (isValid()) {
-        if (!isTriangle()) {
+        if (isTriangle()) {
             double a = m_edges[0]->getLength();
             double b = m_edges[1]->getLength();
             double c = m_edges[2]->getLength();
@@ -62,7 +62,7 @@ char Triangle::getTriangleType() const {
                 // If any two sides are the same, then its an isosceles
             else if (approximatelyEquals(a, b, m_edgeLengthThreshold) ||
                      approximatelyEquals(b, c, m_edgeLengthThreshold) ||
-                     approximatelyEquals(c, c, m_edgeLengthThreshold)) {
+                     approximatelyEquals(a, c, m_edgeLengthThreshold)) {
                 result = 'I';
             }
                 // Otherwise its an scalene
@@ -110,6 +110,6 @@ void Triangle::setupEdges() {
         m_edges[1] = new Edge(m_points[1], m_points[2]);
         m_edges[2] = new Edge(m_points[2], m_points[0]);
 
-        m_isValid = m_edges[0]->isValid() || m_edges[1]->isValid() || m_edges[2]->isValid();
+        m_isValid = m_edges[0]->isValid() || m_edges[1]->isValid() || m_edges[2]->isValid(); // TODO: should this be &&?
     }
 }

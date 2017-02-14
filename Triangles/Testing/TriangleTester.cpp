@@ -11,7 +11,7 @@
 #include "../Utils.h"
 
 void TriangleTester::testFirstConstructor() {
-    std::cout << "Execute TriangleTester::testConstructorWithStrings" << std::endl;
+    std::cout << "Execute TriangleTester::testFirstConstructor with Point**" << std::endl;
 
     Point **points = new Point *[3];
     points[0] = new Point(1, 2, 8);
