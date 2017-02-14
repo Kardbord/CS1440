@@ -400,5 +400,56 @@ void TriangleTester::testInvalid() {
         std::cout << "Failure in constructing Triangle with nullptr - should not be a Triangle" << std::endl;
     }
 
+    std::string triangleStr = "nullptr|-6,1,2|0,0,0";
+    Triangle t2(triangleStr);
+
+    if (t2.isValid()) {
+        std::cout << "Failure in constructing Triangle t2 with bad string - should be invalid" << std::endl;
+    }
+    if (t2.isTriangle()) {
+        std::cout << "Failure in constructing Triangle t2 with bad string - should not be a Triangle" << std::endl;
+    }
+
+    triangleStr = "INFINITY,0,0|1,1,1|2,2,5";
+    Triangle t3(triangleStr);
+
+    if (t3.isValid()) {
+        std::cout << "Failure in constructing Triangle t3 with bad string - should be invalid" << std::endl;
+    }
+    if (t3.isTriangle()) {
+        std::cout << "Failure in constructing Triangle t3 with bad string - should not be a Triangle" << std::endl;
+    }
+
+    triangleStr = "INFINITY|1,1,1|2,2,5";
+    Triangle t4(triangleStr);
+
+    if (t4.isValid()) {
+        std::cout << "Failure in constructing Triangle t4 with bad string - should be invalid" << std::endl;
+    }
+    if (t4.isTriangle()) {
+        std::cout << "Failure in constructing Triangle t4 with bad string - should not be a Triangle" << std::endl;
+    }
+
+    triangleStr = "NAN,0,0|1,1,1|2,2,5";
+    Triangle t5(triangleStr);
+
+    if (t5.isValid()) {
+        std::cout << "Failure in constructing Triangle t5 with bad string - should be invalid" << std::endl;
+    }
+    if (t5.isTriangle()) {
+        std::cout << "Failure in constructing Triangle t5 with bad string - should not be a Triangle" << std::endl;
+    }
+
+    triangleStr = "NAN|1,1,1|2,2,5";
+    Triangle t6(triangleStr);
+
+    if (t6.isValid()) {
+        std::cout << "Failure in constructing Triangle t6 with bad string - should be invalid" << std::endl;
+    }
+    if (t6.isTriangle()) {
+        std::cout << "Failure in constructing Triangle t6 with bad string - should not be a Triangle" << std::endl;
+    }
+
+
     // TODO: Write additional representative test cases invalid triangles
 }
