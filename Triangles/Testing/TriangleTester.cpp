@@ -220,28 +220,51 @@ void TriangleTester::testIsoscelesTriangles() {
     Triangle t1(triangleStr);
 
     if (!t1.isValid()) {
-        std::cout << "Failure to constructor a triangle from 3 points; unexpectedly invalid" << std::endl;
+        std::cout << "Failure to constructor a triangle t1 from 3 points; unexpectedly invalid" << std::endl;
         return;
     }
 
     if (!t1.isTriangle()) {
-        std::cout << "Failure to constructor a triangle from 3 points; unexpectedly not a triangle" << std::endl;
+        std::cout << "Failure to constructor a triangle t1 from 3 points; unexpectedly not a triangle" << std::endl;
         return;
     }
 
     if (t1.getTriangleType() != 'I') {
-        std::cout << "Triangle: unexpected type of "
+        std::cout << "Triangle t1: unexpected type of "
                   << t1.getTriangleType() << std::endl;
         return;
     }
 
     if (!approximatelyEquals(t1.computeArea(), 4.69, 0.001)) {
-        std::cout << "Triangle: unexpected area of "
+        std::cout << "Triangle t1: unexpected area of "
                   << t1.computeArea() << std::endl;
         return;
     }
 
-    // TODO: Write additional representative test cases isosceles triangles
+    triangleStr = "-2,2,0|1,0,0|-2,0,2";
+    Triangle t2(triangleStr);
+
+    if (!t2.isValid()) {
+        std::cout << "Failure to constructor a triangle t2 from 3 points; unexpectedly invalid" << std::endl;
+        return;
+    }
+
+    if (!t2.isTriangle()) {
+        std::cout << "Failure to constructor a triangle t2 from 3 points; unexpectedly not a triangle" << std::endl;
+        return;
+    }
+
+    if (t2.getTriangleType() != 'I') {
+        std::cout << "Triangle t2: unexpected type of "
+                  << t2.getTriangleType() << std::endl;
+        return;
+    }
+
+    if (!approximatelyEquals(t2.computeArea(), 4.69, 0.001)) {
+        std::cout << "Triangle t2: unexpected area of "
+                  << t2.computeArea() << std::endl;
+        return;
+    }
 }
 
 void TriangleTester::testScaleneTriangles() {
