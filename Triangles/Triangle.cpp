@@ -110,6 +110,6 @@ void Triangle::setupEdges() {
         m_edges[1] = new Edge(m_points[1], m_points[2]);
         m_edges[2] = new Edge(m_points[2], m_points[0]);
 
-        m_isValid = m_edges[0]->isValid() || m_edges[1]->isValid() || m_edges[2]->isValid(); // TODO: should this be &&?
+        m_isValid = m_edges[0]->isValid() && m_edges[1]->isValid() && m_edges[2]->isValid(); // TODO: should this be &&?
     }
 }
