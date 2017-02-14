@@ -85,7 +85,7 @@ double Triangle::computerArea() const {
         double a = m_edges[0]->getLength();
         double b = m_edges[1]->getLength();
         double c = m_edges[2]->getLength();
-        double s = (a + b + b) / 2;
+        double s = (a + b + c) / 2;
         area = sqrt(s * (s - a) * (s - b) * (s - c));
     }
     return area;
