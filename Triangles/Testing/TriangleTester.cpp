@@ -76,10 +76,65 @@ void TriangleTester::testFirstConstructor() {
 }
 
 void TriangleTester::testSecondConstructor() {
-    std::cout << "Execute TriangleTester::testSecondConstructor" << std::endl;
+    std::cout << "Execute TriangleTester::testSecondConstructor with string" << std::endl;
 
-    // TODO: Write representative test cases for the Triangle's second constructor
+    std::string triangleStr = "1,2,8|3,1,4|6,4,3";
 
+    Triangle t(triangleStr);
+    if (!t.isValid()) {
+        std::cout << "Failure to construct a triangle from a string; unexpectedly invalid" << std::endl;
+        return;
+    }
+
+    if (!t.isTriangle()) {
+        std::cout << "Failure to constructor a triangle from a string; unexpectedly not a triangle" << std::endl;
+        return;
+    }
+
+    if (t.getTriangleType() != 'S') {
+        std::cout << "Triangle: unexpected type of "
+                  << t.getTriangleType() << std::endl;
+        return;
+    }
+
+    if (!approximatelyEquals(t.computeArea(), 9.35414, 0.001)) {
+        std::cout << "Triangle: unexpected area of "
+                  << t.computeArea() << std::endl;
+        return;
+    }
+
+    const Point *p = t.getPoint(0);
+    if (p == nullptr) {
+        std::cout << "Failure to get point 0 from triangle" << std::endl;
+        return;
+    }
+
+    if (p->getX() != 1 || p->getY() != 2 || p->getZ() != 8) {
+        std::cout << "Point 0 of triangle is not as expected, namely (1,2,8)" << std::endl;
+        return;
+    }
+
+    p = t.getPoint(1);
+    if (p == nullptr) {
+        std::cout << "Failure to get point 1 from triangle" << std::endl;
+        return;
+    }
+
+    if (p->getX() != 3 || p->getY() != 1 || p->getZ() != 4) {
+        std::cout << "Point 1 of triangle is not as expected, namely (3,1,4)" << std::endl;
+        return;
+    }
+
+    p = t.getPoint(2);
+    if (p == nullptr) {
+        std::cout << "Failure to get point 1 from triangle" << std::endl;
+        return;
+    }
+
+    if (p->getX() != 6 || p->getY() != 4 || p->getZ() != 3) {
+        std::cout << "Point 2 of triangle is not as expected, namely (6,4,3)" << std::endl;
+        return;
+    }
 }
 
 void TriangleTester::testEquilateralTriangles() {
