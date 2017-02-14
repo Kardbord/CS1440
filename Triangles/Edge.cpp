@@ -50,7 +50,7 @@ double Edge::getSlopeX() const {
             }
             result = diffX / yzOffset;
         }
-    } // TODO: figure out how to accurately represent negative slope...
+    }
 
     return result;
 }
@@ -80,7 +80,7 @@ double Edge::getSlopeY() const {
             }
             result = diffY / xzOffset;
         }
-    } // TODO: figure out how to accurately represent negative slope...
+    }
 
     return result;
 }
@@ -111,7 +111,7 @@ double Edge::getSlopeZ() const {
 
             result = diffZ / xyOffset;
         }
-    } // TODO: figure out how to accurately represent negative slope...
+    }
 
     return result;
 }
