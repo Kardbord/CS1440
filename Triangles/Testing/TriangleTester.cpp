@@ -143,28 +143,74 @@ void TriangleTester::testEquilateralTriangles() {
     std::string triangleStr = "-10,0,0|10,0,0|0,17.32050808,0";
     Triangle t1(triangleStr);
     if (!t1.isValid()) {
-        std::cout << "Failure to constructor a triangle from 3 points; unexpectedly invalid" << std::endl;
+        std::cout << "Failure to constructor t1 from 3 points; unexpectedly invalid" << std::endl;
         return;
     }
 
     if (!t1.isTriangle()) {
-        std::cout << "Failure to constructor a triangle from 3 points; unexpectedly not a triangle" << std::endl;
+        std::cout << "Failure to constructor t1 from 3 points; unexpectedly not a triangle" << std::endl;
         return;
     }
 
     if (t1.getTriangleType() != 'E') {
-        std::cout << "Triangle: unexpected type of "
+        std::cout << "Triangle t1: unexpected type of "
                   << t1.getTriangleType() << std::endl;
         return;
     }
 
     if (!approximatelyEquals(t1.computeArea(), 173.205, 0.001)) {
-        std::cout << "Triangle: unexpected area of "
+        std::cout << "Triangle t1: unexpected area of "
                   << t1.computeArea() << std::endl;
         return;
     }
 
-    // TODO: Write additional representative test cases equilateral triangles
+    triangleStr = "10,0,0|-10,0,0|0,17.32050808,0";
+    Triangle t2(triangleStr);
+    if (!t2.isValid()) {
+        std::cout << "Failure to constructor t2 from 3 points; unexpectedly invalid" << std::endl;
+        return;
+    }
+
+    if (!t2.isTriangle()) {
+        std::cout << "Failure to constructor t2 points; unexpectedly not a triangle" << std::endl;
+        return;
+    }
+
+    if (t2.getTriangleType() != 'E') {
+        std::cout << "Triangle t2: unexpected type of "
+                  << t2.getTriangleType() << std::endl;
+        return;
+    }
+
+    if (!approximatelyEquals(t2.computeArea(), 173.205, 0.001)) {
+        std::cout << "Triangle t2: unexpected area of "
+                  << t2.computeArea() << std::endl;
+        return;
+    }
+
+    triangleStr = "10,0,0|-10,0,0|0,-17.32050808,0";
+    Triangle t3(triangleStr);
+    if (!t3.isValid()) {
+        std::cout << "Failure to constructor t3 from 3 points; unexpectedly invalid" << std::endl;
+        return;
+    }
+
+    if (!t3.isTriangle()) {
+        std::cout << "Failure to constructor t3 from 3 points; unexpectedly not a triangle" << std::endl;
+        return;
+    }
+
+    if (t3.getTriangleType() != 'E') {
+        std::cout << "Triangle: unexpected type of "
+                  << t3.getTriangleType() << std::endl;
+        return;
+    }
+
+    if (!approximatelyEquals(t3.computeArea(), 173.205, 0.001)) {
+        std::cout << "Triangle: unexpected area of "
+                  << t3.computeArea() << std::endl;
+        return;
+    }
 }
 
 void TriangleTester::testIsoscelesTriangles() {
