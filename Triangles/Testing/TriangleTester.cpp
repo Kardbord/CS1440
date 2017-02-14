@@ -170,17 +170,80 @@ void TriangleTester::testEquilateralTriangles() {
 void TriangleTester::testIsoscelesTriangles() {
     std::cout << "Execute TriangleTester::testIsoscelesTriangles" << std::endl;
 
-    // TODO: Write representative test cases isosceles triangles
+    std::string triangleStr = "2,2,0|-1,0,0|2,0,2";
+    Triangle t1(triangleStr);
+
+    if (!t1.isValid()) {
+        std::cout << "Failure to constructor a triangle from 3 points; unexpectedly invalid" << std::endl;
+        return;
+    }
+
+    if (!t1.isTriangle()) {
+        std::cout << "Failure to constructor a triangle from 3 points; unexpectedly not a triangle" << std::endl;
+        return;
+    }
+
+    if (t1.getTriangleType() != 'I') {
+        std::cout << "Triangle: unexpected type of "
+                  << t1.getTriangleType() << std::endl;
+        return;
+    }
+
+    if (!approximatelyEquals(t1.computeArea(), 4.69, 0.001)) {
+        std::cout << "Triangle: unexpected area of "
+                  << t1.computeArea() << std::endl;
+        return;
+    }
+
+    // TODO: Write additional representative test cases isosceles triangles
 }
 
 void TriangleTester::testScaleneTriangles() {
     std::cout << "Execute TriangleTester::testScaleneTriangles" << std::endl;
 
-    // TODO: Write representative test cases scalene triangles
+    std::string triangleStr = "2.554,-4.2,0|-1,0,5.3|2,0,2";
+    Triangle t1(triangleStr);
+
+    if (!t1.isValid()) {
+        std::cout << "Failure to constructor a triangle from 3 points; unexpectedly invalid" << std::endl;
+        return;
+    }
+
+    if (!t1.isTriangle()) {
+        std::cout << "Failure to constructor a triangle from 3 points; unexpectedly not a triangle" << std::endl;
+        return;
+    }
+
+    if (t1.getTriangleType() != 'S') {
+        std::cout << "Triangle: unexpected type of "
+                  << t1.getTriangleType() << std::endl;
+        return;
+    }
+
+    if (!approximatelyEquals(t1.computeArea(), 9.595, 0.001)) {
+        std::cout << "Triangle: unexpected area of "
+                  << t1.computeArea() << std::endl;
+        return;
+    }
+
+    // TODO: Write additional representative test cases scalene triangles
 }
 
 void TriangleTester::testNonTriangles() {
     std::cout << "Execute TriangleTester::testNonTriangles" << std::endl;
+
+    std::string triangleStr = "2,2,2|0,0,0|2,2,2";
+    Triangle t1(triangleStr);
+
+    if (t1.isValid()) {
+        std::cout << "Failure in constructing Triangle - should be invalid" << std::endl;
+        return;
+    }
+
+    if (!t1.isTriangle()) {
+        std::cout << "Failure in constructing Triangle; should not be a triangle" << std::endl;
+        return;
+    }
 
     // TODO: Write representative test cases non-triangles triangles
 }
