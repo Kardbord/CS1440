@@ -353,16 +353,40 @@ void TriangleTester::testNonTriangles() {
     Triangle t1(triangleStr);
 
     if (!t1.isValid()) {
-        std::cout << "Failure in constructing Triangle - should be valid" << std::endl;
+        std::cout << "Failure in constructing Triangle t1 - should be valid" << std::endl;
         return;
     }
 
     if (t1.isTriangle()) {
-        std::cout << "Failure in constructing Triangle; should not be a triangle" << std::endl;
+        std::cout << "Failure in constructing Triangle t1; should not be a triangle" << std::endl;
         return;
     }
 
-    // TODO: Write additional representative test cases non-triangles triangles
+    triangleStr = "2,2,2|2,2,2|2,2,2";
+    Triangle t2(triangleStr);
+
+    if (!t2.isValid()) {
+        std::cout << "Failure in constructing Triangle t2 - should be valid" << std::endl;
+        return;
+    }
+
+    if (t2.isTriangle()) {
+        std::cout << "Failure in constructing Triangle t2; should not be a triangle" << std::endl;
+        return;
+    }
+
+    triangleStr = "0,0,0|1,0,0|2,0,0";
+    Triangle t3(triangleStr);
+
+    if (!t3.isValid()) {
+        std::cout << "Failure in constructing Triangle t3 - should be valid" << std::endl;
+        return;
+    }
+
+    if (t3.isTriangle()) {
+        std::cout << "Failure in constructing Triangle t3; should not be a triangle" << std::endl;
+        return;
+    }
 }
 
 void TriangleTester::testInvalid() {
