@@ -251,5 +251,13 @@ void TriangleTester::testNonTriangles() {
 void TriangleTester::testInvalid() {
     std::cout << "Execute TriangleTester::testInvalid" << std::endl;
 
-    // TODO: Write representative test cases invalid triangles
+    Triangle t1(nullptr);
+    if (t1.isValid()) {
+        std::cout << "Failure in constructing Triangle with nullptr - should be invalid" << std::endl;
+    }
+    if (t1.isTriangle()) {
+        std::cout << "Failure in constructing Triangle with nullptr - should not be a Triangle" << std::endl;
+    }
+
+    // TODO: Write additional representative test cases invalid triangles
 }
