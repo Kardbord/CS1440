@@ -13,7 +13,7 @@ int main() {
         } else {
             Triangle triangle(userInput);
             std::cout << "Type = " << triangle.getTriangleType() << std::endl;
-            std::cout << "Area = " << triangle.computerArea() << std::endl;
+            std::cout << "Area = " << triangle.computeArea() << std::endl;
             std::cout << std::endl;
         }
 

@@ -76,7 +76,7 @@ char Triangle::getTriangleType() const {
     return result;
 }
 
-double Triangle::computerArea() const {
+double Triangle::computeArea() const {
     double area = 0;
 
     if (isTriangle()) {

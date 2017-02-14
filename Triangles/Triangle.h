@@ -27,7 +27,7 @@ public:
 
     char getTriangleType() const;
 
-    double computerArea() const;
+    double computeArea() const;
 
     const Point *getPoint(int index) const;
 
