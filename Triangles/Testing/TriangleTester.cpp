@@ -274,28 +274,76 @@ void TriangleTester::testScaleneTriangles() {
     Triangle t1(triangleStr);
 
     if (!t1.isValid()) {
-        std::cout << "Failure to constructor a triangle from 3 points; unexpectedly invalid" << std::endl;
+        std::cout << "Failure to constructor a triangle t1 from 3 points; unexpectedly invalid" << std::endl;
         return;
     }
 
     if (!t1.isTriangle()) {
-        std::cout << "Failure to constructor a triangle from 3 points; unexpectedly not a triangle" << std::endl;
+        std::cout << "Failure to constructor a triangle t1 from 3 points; unexpectedly not a triangle" << std::endl;
         return;
     }
 
     if (t1.getTriangleType() != 'S') {
-        std::cout << "Triangle: unexpected type of "
+        std::cout << "Triangle t1: unexpected type of "
                   << t1.getTriangleType() << std::endl;
         return;
     }
 
     if (!approximatelyEquals(t1.computeArea(), 9.595, 0.001)) {
-        std::cout << "Triangle: unexpected area of "
+        std::cout << "Triangle t1: unexpected area of "
                   << t1.computeArea() << std::endl;
         return;
     }
 
-    // TODO: Write additional representative test cases scalene triangles
+    triangleStr = "-2.554,-4.2,0|1,0,5.3|-2,0,2";
+    Triangle t2(triangleStr);
+
+    if (!t2.isValid()) {
+        std::cout << "Failure to constructor a triangle t2 from 3 points; unexpectedly invalid" << std::endl;
+        return;
+    }
+
+    if (!t2.isTriangle()) {
+        std::cout << "Failure to constructor a triangle t2 from 3 points; unexpectedly not a triangle" << std::endl;
+        return;
+    }
+
+    if (t2.getTriangleType() != 'S') {
+        std::cout << "Triangle t2: unexpected type of "
+                  << t1.getTriangleType() << std::endl;
+        return;
+    }
+
+    if (!approximatelyEquals(t2.computeArea(), 9.595, 0.001)) {
+        std::cout << "Triangle t2: unexpected area of "
+                  << t1.computeArea() << std::endl;
+        return;
+    }
+
+    triangleStr = "-2.554,4.2,0|1,0,5.3|-2,0,2";
+    Triangle t3(triangleStr);
+
+    if (!t3.isValid()) {
+        std::cout << "Failure to constructor a triangle t3 from 3 points; unexpectedly invalid" << std::endl;
+        return;
+    }
+
+    if (!t3.isTriangle()) {
+        std::cout << "Failure to constructor a triangle t3 from 3 points; unexpectedly not a triangle" << std::endl;
+        return;
+    }
+
+    if (t3.getTriangleType() != 'S') {
+        std::cout << "Triangle t3: unexpected type of "
+                  << t1.getTriangleType() << std::endl;
+        return;
+    }
+
+    if (!approximatelyEquals(t3.computeArea(), 9.595, 0.001)) {
+        std::cout << "Triangle t3: unexpected area of "
+                  << t1.computeArea() << std::endl;
+        return;
+    }
 }
 
 void TriangleTester::testNonTriangles() {

@@ -40,8 +40,8 @@
       <file leaf-file-name="TriangleTester.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Testing/TriangleTester.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="243" column="3" lean-forward="false" selection-start-line="243" selection-start-column="3" selection-end-line="266" selection-end-column="5" />
+            <state relative-caret-position="45">
+              <caret line="345" column="5" lean-forward="false" selection-start-line="345" selection-start-column="5" selection-end-line="345" selection-end-column="5" />
               <folding>
                 <element signature="e#161#2124#0" expanded="false" />
                 <element signature="e#2126#3999#0" expanded="false" />
@@ -435,12 +435,12 @@
       <workItem from="1487021295074" duration="7471000" />
       <workItem from="1487038387136" duration="200000" />
       <workItem from="1487038608020" duration="16062000" />
-      <workItem from="1487097210659" duration="2574000" />
+      <workItem from="1487097210659" duration="3655000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92549000" />
+    <option name="totallyTimeSpent" value="93630000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -452,7 +452,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15282919" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -828,8 +828,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Testing/TriangleTester.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="243" column="3" lean-forward="false" selection-start-line="243" selection-start-column="3" selection-end-line="266" selection-end-column="5" />
+        <state relative-caret-position="45">
+          <caret line="345" column="5" lean-forward="false" selection-start-line="345" selection-start-column="5" selection-end-line="345" selection-end-column="5" />
           <folding>
             <element signature="e#161#2124#0" expanded="false" />
             <element signature="e#2126#3999#0" expanded="false" />
