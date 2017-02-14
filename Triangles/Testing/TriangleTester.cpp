@@ -235,17 +235,17 @@ void TriangleTester::testNonTriangles() {
     std::string triangleStr = "2,2,2|0,0,0|2,2,2";
     Triangle t1(triangleStr);
 
-    if (t1.isValid()) {
-        std::cout << "Failure in constructing Triangle - should be invalid" << std::endl;
+    if (!t1.isValid()) {
+        std::cout << "Failure in constructing Triangle - should be valid" << std::endl;
         return;
     }
 
-    if (!t1.isTriangle()) {
+    if (t1.isTriangle()) {
         std::cout << "Failure in constructing Triangle; should not be a triangle" << std::endl;
         return;
     }
 
-    // TODO: Write representative test cases non-triangles triangles
+    // TODO: Write additional representative test cases non-triangles triangles
 }
 
 void TriangleTester::testInvalid() {
