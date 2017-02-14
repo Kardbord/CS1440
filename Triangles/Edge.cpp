@@ -38,10 +38,19 @@ double Edge::getSlopeX() const {
         if (yzOffset == 0) {
             result = INFINITY;
         } else {
-            double diffX = std::abs(m_point2->getX() - m_point1->getX());
+            double diffX;
+            if (m_point1->getX() > m_point2->getX() &&
+                m_point1->getY() > m_point2->getY() &&
+                m_point1->getZ() > m_point2->getZ()) {
+
+                diffX = m_point1->getX() - m_point2->getX();
+
+            } else {
+                diffX = m_point2->getX() - m_point1->getX();
+            }
             result = diffX / yzOffset;
         }
-    }
+    } // TODO: figure out how to accurately represent negative slope...
 
     return result;
 }
@@ -59,10 +68,19 @@ double Edge::getSlopeY() const {
         if (xzOffset == 0) {
             result = INFINITY;
         } else {
-            double diffY = std::abs(m_point2->getY() - m_point1->getY());
+            double diffY;
+            if (m_point1->getX() > m_point2->getX() &&
+                m_point1->getY() > m_point2->getY() &&
+                m_point1->getZ() > m_point2->getZ()) {
+
+                diffY = m_point1->getY() - m_point2->getY();
+
+            } else {
+                diffY = m_point2->getY() - m_point1->getY();
+            }
             result = diffY / xzOffset;
         }
-    }
+    } // TODO: figure out how to accurately represent negative slope...
 
     return result;
 }
@@ -80,10 +98,20 @@ double Edge::getSlopeZ() const {
         if (xyOffset == 0) {
             result = INFINITY;
         } else {
-            double diffZ = std::abs(m_point2->getZ() - m_point1->getZ());
+            double diffZ;
+            if (m_point1->getX() > m_point2->getX() &&
+                m_point1->getY() > m_point2->getY() &&
+                m_point1->getZ() > m_point2->getZ()) {
+
+                diffZ = m_point1->getZ() - m_point2->getZ();
+
+            } else {
+                diffZ = m_point2->getZ() - m_point1->getZ();
+            }
+
             result = diffZ / xyOffset;
         }
-    }
+    } // TODO: figure out how to accurately represent negative slope...
 
     return result;
 }
@@ -100,6 +128,7 @@ bool Edge::isParallelTo(const Edge &otherEdge) {
 // Returns true if true slopes are equivalent, i.e. both INFINITY or the same within a small margin of error
 bool Edge::areSlopesEquivalent(double slope1, double slope2) const {
     return (slope1 == INFINITY && slope2 == INFINITY) ||
-            (std::isnan(slope1) && std::isnan(slope2)) ||
-           approximatelyEquals(slope1, slope2, m_slopeMarginOfError); // TODO: do I want to include isnan in this comparison?
+           (std::isnan(slope1) && std::isnan(slope2)) ||
+           approximatelyEquals(slope1, slope2,
+                               m_slopeMarginOfError); // TODO: do I want to include isnan in this comparison?
 }

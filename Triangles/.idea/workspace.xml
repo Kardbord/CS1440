@@ -16,6 +16,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d43c2fba-d44f-473f-acbe-6b1f6bb0fe20" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Edge.cpp" afterPath="$PROJECT_DIR$/Edge.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing/EdgeTester.cpp" afterPath="$PROJECT_DIR$/Testing/EdgeTester.cpp" />
     </list>
     <ignored path="Triangles.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/Testing/TriangleTester.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="152" column="5" lean-forward="true" selection-start-line="152" selection-start-column="5" selection-end-line="152" selection-end-column="5" />
+              <caret line="149" column="20" lean-forward="false" selection-start-line="149" selection-start-column="20" selection-end-line="149" selection-end-column="20" />
               <folding>
                 <element signature="e#161#2124#0" expanded="false" />
                 <element signature="e#2126#3999#0" expanded="false" />
@@ -49,11 +51,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Triangle.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Triangle.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Triangle.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="51" column="22" lean-forward="true" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+            <state relative-caret-position="660">
+              <caret line="39" column="35" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EdgeTester.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Testing/EdgeTester.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="117" column="15" lean-forward="false" selection-start-line="117" selection-start-column="15" selection-end-line="117" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -62,9 +74,23 @@
       <file leaf-file-name="Edge.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Edge.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="958">
+              <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+              <folding>
+                <element signature="e#46#62#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Edge.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Edge.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+              <folding>
+                <marker date="1487048053272" expanded="true" signature="128:726" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,7 +130,6 @@
         <option value="$PROJECT_DIR$/testMain.cpp" />
         <option value="$PROJECT_DIR$/Testing/testMain.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/Edge.h" />
         <option value="$PROJECT_DIR$/Triangle.h" />
         <option value="$PROJECT_DIR$/Point.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
@@ -117,10 +142,11 @@
         <option value="$PROJECT_DIR$/Testing/EdgeTester.h" />
         <option value="$PROJECT_DIR$/Point.cpp" />
         <option value="$PROJECT_DIR$/Testing/PointTester.cpp" />
-        <option value="$PROJECT_DIR$/Edge.cpp" />
-        <option value="$PROJECT_DIR$/Testing/EdgeTester.cpp" />
         <option value="$PROJECT_DIR$/Testing/TriangleTester.cpp" />
         <option value="$PROJECT_DIR$/Triangle.cpp" />
+        <option value="$PROJECT_DIR$/Edge.h" />
+        <option value="$PROJECT_DIR$/Edge.cpp" />
+        <option value="$PROJECT_DIR$/Testing/EdgeTester.cpp" />
       </list>
     </option>
   </component>
@@ -131,10 +157,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-8" />
+    <option name="width" value="976" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -411,12 +436,12 @@
       <workItem from="1487010608848" duration="2110000" />
       <workItem from="1487021295074" duration="7471000" />
       <workItem from="1487038387136" duration="200000" />
-      <workItem from="1487038608020" duration="4462000" />
+      <workItem from="1487038608020" duration="8895000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78375000" />
+    <option name="totallyTimeSpent" value="82808000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -428,16 +453,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-8" y="0" width="976" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16499206" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34983853" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3238958" sideWeight="0.49780566" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.50219434" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33182332" sideWeight="0.49780566" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33906072" sideWeight="0.49780566" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -694,13 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Point.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Testing/UtilsTester.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -729,24 +747,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Testing/EdgeTester.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="512" column="5" lean-forward="true" selection-start-line="512" selection-start-column="5" selection-end-line="512" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Testing/EdgeTester.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Edge.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -772,26 +776,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Edge.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Point.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Testing/TriangleTester.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="152" column="5" lean-forward="true" selection-start-line="152" selection-start-column="5" selection-end-line="152" selection-end-column="5" />
+          <caret line="149" column="20" lean-forward="false" selection-start-line="149" selection-start-column="20" selection-end-line="149" selection-end-column="20" />
           <folding>
             <element signature="e#161#2124#0" expanded="false" />
             <element signature="e#2126#3999#0" expanded="false" />
@@ -801,8 +789,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Triangle.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="51" column="22" lean-forward="true" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+        <state relative-caret-position="660">
+          <caret line="39" column="35" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Point.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Point.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Edge.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding>
+            <marker date="1487048053272" expanded="true" signature="128:726" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Edge.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="958">
+          <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+          <folding>
+            <element signature="e#46#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing/EdgeTester.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="117" column="15" lean-forward="false" selection-start-line="117" selection-start-column="15" selection-end-line="117" selection-end-column="15" />
           <folding />
         </state>
       </provider>
