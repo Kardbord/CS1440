@@ -62,7 +62,7 @@ char Triangle::getTriangleType() const {
                 // If any two sides are the same, then its an isosceles
             else if (approximatelyEquals(a, b, m_edgeLengthThreshold) ||
                      approximatelyEquals(b, c, m_edgeLengthThreshold) ||
-                     approximatelyEquals(a, c, m_edgeLengthThreshold)) {
+                     approximatelyEquals(c, a, m_edgeLengthThreshold)) {
                 result = 'I';
             }
                 // Otherwise its an scalene
