@@ -450,6 +450,36 @@ void TriangleTester::testInvalid() {
         std::cout << "Failure in constructing Triangle t6 with bad string - should not be a Triangle" << std::endl;
     }
 
+    triangleStr = "badString";
+    Triangle t7(triangleStr);
+
+    if (t7.isValid()) {
+        std::cout << "Failure in constructing Triangle t7 with bad string - should be invalid" << std::endl;
+    }
+    if (t7.isTriangle()) {
+        std::cout << "Failure in constructing Triangle t7 with bad string - should not be a Triangle" << std::endl;
+    }
+
+    triangleStr = "badString|badstring|badStrINg";
+    Triangle t8(triangleStr);
+
+    if (t8.isValid()) {
+        std::cout << "Failure in constructing Triangle t8 with bad string - should be invalid" << std::endl;
+    }
+    if (t8.isTriangle()) {
+        std::cout << "Failure in constructing Triangle t8 with bad string - should not be a Triangle" << std::endl;
+    }
+
+    triangleStr = "a,b,c|d,e,f|g,h,i";
+    Triangle t9(triangleStr);
+
+    if (t9.isValid()) {
+        std::cout << "Failure in constructing Triangle t9 with letter string - should be invalid" << std::endl;
+    }
+    if (t9.isTriangle()) {
+        std::cout << "Failure in constructing Triangle t9 with letter string - should not be a Triangle" << std::endl;
+    }
+
 
     // TODO: Write additional representative test cases invalid triangles
 }
