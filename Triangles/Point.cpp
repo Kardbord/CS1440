@@ -39,9 +39,18 @@ void Point::initialize(const std::string &pointStr) {
     std::string values[3];
     if (split(pointStr, ',', values, 3)) {
         m_x = convertStringToDouble(values[0], &m_valid);
-        m_y = convertStringToDouble(values[1], &m_valid);
-        m_z = convertStringToDouble(values[2], &m_valid);
-        checkForInfinity();
+        if (m_valid) {
+            m_y = convertStringToDouble(values[1], &m_valid);
+            if (m_valid) {
+                m_z = convertStringToDouble(values[2], &m_valid);
+            } else { m_z = convertStringToDouble(values[2], nullptr); }
+        } else {
+            m_y = convertStringToDouble(values[1], nullptr);
+            m_z = convertStringToDouble(values[2], nullptr);
+        }
+
+        // Only check for INFINITY and NAN if the points were valid
+        if (m_valid) checkForInfinity();
     }
 }
 
