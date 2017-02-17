@@ -19,8 +19,6 @@ public:
     void testNonLengthEdges();
 
     void testBadEdges();
-
-    // TODO: Create other meaningful suites of test cases and test cases
 };
 
 #endif //TRIANGLES_EDGETESTER_H

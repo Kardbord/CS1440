@@ -9,7 +9,7 @@
 #include <valarray>
 
 Edge::Edge(const Point *point1, const Point *point2) : m_point1(point1), m_point2(point2) {
-    m_isValid = (m_point1 != nullptr && m_point2 != nullptr); // TODO: do I need to check m_point1->isValid? etc.
+    m_isValid = (m_point1 != nullptr && m_point2 != nullptr);
 }
 
 double Edge::getLength() const {
@@ -129,6 +129,5 @@ bool Edge::isParallelTo(const Edge &otherEdge) {
 bool Edge::areSlopesEquivalent(double slope1, double slope2) const {
     return (slope1 == INFINITY && slope2 == INFINITY) ||
            (std::isnan(slope1) && std::isnan(slope2)) ||
-           approximatelyEquals(slope1, slope2,
-                               m_slopeMarginOfError); // TODO: do I want to include isnan in this comparison?
+           approximatelyEquals(slope1, slope2, m_slopeMarginOfError);
 }

@@ -511,6 +511,4 @@ void EdgeTester::testBadEdges() {
     if (!std::isnan(e2.getSlopeZ())){
         std::cout << "Failure in e2.getSlopeZ() - should be NAN" << std::endl;
     }
-
-    // TODO: Writing a representative set of test cases for edges not formed correctly
 }

@@ -479,7 +479,4 @@ void TriangleTester::testInvalid() {
     if (t9.isTriangle()) {
         std::cout << "Failure in constructing Triangle t9 with letter string - should not be a Triangle" << std::endl;
     }
-
-
-    // TODO: Write additional representative test cases invalid triangles
 }
