@@ -28,6 +28,8 @@ public:
 
     int getNumberMax() const { return m_numberMax; }
 
+    std::vector<Card> getCards() { return m_cards; }
+
 private:
     int m_cardSize;
     int m_cardCount;
