@@ -20,6 +20,12 @@ public:
 
     void print(std::ostream &out, int cardIndex) const;
 
+    int getCardSize() const { return m_cardSize; }
+
+    int getCardCount() const { return m_cardCount; }
+
+    int getNumberMax() const { return m_numberMax; }
+
 private:
     int m_cardSize;
     int m_cardCount;
