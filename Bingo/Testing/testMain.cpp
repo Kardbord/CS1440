@@ -22,7 +22,7 @@ int main() {
     cellTester.testGetVal();
 
     CardTester cardTester;
-    cardTester.testConstructor();
+    cardTester.testConstructorAndGetters();
 
     MenuOptionTester menuOptionTester;
     menuOptionTester.testConstructorAndGetter();

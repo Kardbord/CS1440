@@ -8,8 +8,8 @@
 #include <algorithm>
 
 // TODO: Implement
-void CardTester::testConstructor() {
-    std::cout << std::endl << "Test Suite: CardTester::testConstructor" << std::endl;
+void CardTester::testConstructorAndGetters() {
+    std::cout << std::endl << "Test Suite: CardTester::testConstructorAndGetters" << std::endl;
 
     int size = 5;
     int max = 100;
