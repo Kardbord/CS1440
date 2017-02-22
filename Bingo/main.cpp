@@ -3,6 +3,7 @@
 
 #include "UserInterface.h"
 
+// TODO: make sure all getters are const
 int main() {
 
     // Initialize the random number generator
