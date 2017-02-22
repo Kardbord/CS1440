@@ -121,7 +121,7 @@ int UserInterface::getNumberInput(std::string prompt, int rangeMin, int rangeMax
                   << rangeMax << " or <enter> to go back): " << std::endl;
         std::cin >> userInput;
         if (userInput == "") {
-            gotValidInput = true;
+            gotValidInput = true; // TODO: possible bug, should this be false?
         } else {
             result = std::stoi(userInput);
             gotValidInput = (rangeMin <= result && result <= rangeMax);
