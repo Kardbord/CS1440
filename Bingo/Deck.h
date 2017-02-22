@@ -6,6 +6,8 @@
 #define BINGO_DECK_H
 
 #include <ostream>
+#include <vector>
+#include "Card.h"
 
 // TODO: Extend this definition as you see fit
 
@@ -30,6 +32,8 @@ private:
     int m_cardSize;
     int m_cardCount;
     int m_numberMax;
+
+    std::vector<Card> m_cards;
 };
 
 #endif //BINGO_DECK_H

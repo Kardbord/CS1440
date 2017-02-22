@@ -8,7 +8,8 @@ Deck::Deck(int cardSize, int cardCount, int numberMax)
         : m_cardSize(cardSize), m_cardCount(cardCount), m_numberMax(numberMax) {}
 
 Deck::~Deck() {
-    // TODO: Implement
+    // TODO: Verify correct implementation
+    m_cards.clear();
 }
 
 void Deck::print(std::ostream &out) const {
