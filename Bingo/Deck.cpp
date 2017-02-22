@@ -10,6 +10,7 @@ Deck::Deck(int cardSize, int cardCount, int numberMax)
 Deck::~Deck() {
     // TODO: Verify correct implementation
     m_cards.clear();
+    m_cards.shrink_to_fit();
 }
 
 void Deck::print(std::ostream &out) const {
