@@ -11,18 +11,22 @@ class Deck;
 
 class UserInterface {
 private:
-    Deck*   currentDeck = nullptr;
+    Deck *currentDeck = nullptr;
 
 public:
     void run();
 
 private:
     void createDeck();
+
     void deckMenu();
+
     void printCard();
+
     void saveDeck();
 
     std::string getStringInput(std::string prompt);
+
     int getNumberInput(std::string prompt, int rangeMin, int rangeMax);
 };
 

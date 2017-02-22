@@ -8,8 +8,7 @@
 #include "MenuOptionTester.h"
 #include "MenuTester.h"
 
-int main()
-{
+int main() {
 
     // Initialize the random number generator
     unsigned int seed = (unsigned int) time(NULL);

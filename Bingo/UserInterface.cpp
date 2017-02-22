@@ -11,8 +11,7 @@
 #include "Deck.h"
 #include "Menu.h"
 
-void UserInterface::run()
-{
+void UserInterface::run() {
     std::cout << "Welcome to the Bingo Deck Generate" << std::endl << std::endl;
 
     Menu menu("Main");
@@ -20,35 +19,28 @@ void UserInterface::run()
     menu.addOption("D", "Delete the current deck");
 
     bool keepGoing = true;
-    while (keepGoing)
-    {
+    while (keepGoing) {
         std::string command = menu.show();
-        if (command=="C")
-        {
+        if (command == "C") {
             createDeck();
-        }
-        else if (command=="D")
-        {
+        } else if (command == "D") {
             if (currentDeck)
                 delete currentDeck;
             currentDeck = nullptr;
-        }
-        else if (command=="X")
-        {
+        } else if (command == "X") {
             keepGoing = false;
         }
     }
 }
 
-void UserInterface::createDeck()
-{
+void UserInterface::createDeck() {
     // Get the user to specify the card size, max number, and number of cards
     int cardSize = getNumberInput("Enter card size", 3, 15);
     if (cardSize < 0)
         return;
 
-    int numberRangeMin = 2*cardSize*cardSize;
-    int numberRangeMax = 2*numberRangeMin;
+    int numberRangeMin = 2 * cardSize * cardSize;
+    int numberRangeMax = 2 * numberRangeMin;
     int maxNumber = getNumberInput("Enter max number", numberRangeMin, numberRangeMax);
     if (maxNumber < 0)
         return;
@@ -57,7 +49,7 @@ void UserInterface::createDeck()
     if (cardCount < 0)
         return;
 
-    if (currentDeck!=nullptr)
+    if (currentDeck != nullptr)
         delete currentDeck;
 
     // Create a new deck;
@@ -67,60 +59,46 @@ void UserInterface::createDeck()
     deckMenu();
 }
 
-void UserInterface::deckMenu()
-{
+void UserInterface::deckMenu() {
     Menu menu("Deck");
     menu.addOption("P", "Print a card to the screen");
     menu.addOption("D", "Display the whole deck to the screen");
     menu.addOption("S", "Save the whole deck to a file");
 
     bool keepGoing = true;
-    while (keepGoing)
-    {
+    while (keepGoing) {
         std::string command = menu.show();
-        if (command=="P")
-        {
+        if (command == "P") {
             printCard();
-        }
-        else if (command=="D")
-        {
+        } else if (command == "D") {
             std::cout << std::endl;
             currentDeck->print(std::cout);
-        }
-        else if (command=="S")
-        {
+        } else if (command == "S") {
             saveDeck();
-        }
-        else if (command=="X")
-        {
+        } else if (command == "X") {
             keepGoing = false;
         }
     }
 }
 
-void UserInterface::printCard()
-{
+void UserInterface::printCard() {
     int cardToPrint = getNumberInput("Id of card to print", 1, 9999);
-    if (cardToPrint>0)
-    {
+    if (cardToPrint > 0) {
         std::cout << std::endl;
         currentDeck->print(std::cout, cardToPrint);
     }
 }
 
-void UserInterface::saveDeck()
-{
+void UserInterface::saveDeck() {
     std::string fileName = getStringInput("Enter output file name");
-    if (fileName!="")
-    {
+    if (fileName != "") {
         std::ofstream outputStream(fileName);
         currentDeck->print(outputStream);
         std::cout << "Done!" << std::endl;
     }
 }
 
-std::string UserInterface::getStringInput(std::string prompt)
-{
+std::string UserInterface::getStringInput(std::string prompt) {
     std::string userInput;
 
     std::cout << std::endl;
@@ -131,8 +109,7 @@ std::string UserInterface::getStringInput(std::string prompt)
     return userInput;
 }
 
-int UserInterface::getNumberInput(std::string prompt, int rangeMin, int rangeMax)
-{
+int UserInterface::getNumberInput(std::string prompt, int rangeMin, int rangeMax) {
     int result = -1;
     bool gotValidInput;
     std::string userInput;
@@ -143,11 +120,9 @@ int UserInterface::getNumberInput(std::string prompt, int rangeMin, int rangeMax
                   << rangeMin << " - "
                   << rangeMax << " or <enter> to go back): " << std::endl;
         std::cin >> userInput;
-        if (userInput == "")
-        {
+        if (userInput == "") {
             gotValidInput = true;
-        } else
-        {
+        } else {
             result = std::stoi(userInput);
             gotValidInput = (rangeMin <= result && result <= rangeMax);
         }
