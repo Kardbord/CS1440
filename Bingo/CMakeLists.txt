@@ -8,7 +8,8 @@ set(SOURCE_FILES
         Deck.cpp Deck.h
         MenuOption.cpp MenuOption.h
         Menu.cpp Menu.h
-        Card.cpp Card.h)
+        Card.cpp Card.h
+        CardCell.cpp CardCell.h)
 
 add_executable(Bingo main.cpp ${SOURCE_FILES})
 
