@@ -22,6 +22,7 @@ private:
     int m_cardSize;
     int m_numberMax;
     std::vector<CardCell> m_cells;
+    std::vector<int> m_possNums;
 };
 
 
