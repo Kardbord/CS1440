@@ -12,11 +12,15 @@
 class Card {
 
 public:
-    Card(int const & cardSize, int const & numberMax);
+    Card(int const &cardSize, int const &numberMax);
 
-    int getCardSize() { return m_cardSize; }
+    int getCardSize() const { return m_cardSize; }
 
-    int getNumberMax() { return m_numberMax; }
+    int getNumberMax() const { return m_numberMax; }
+
+    std::vector<int> getPossNums() const { return m_possNums; }
+
+    std::vector<CardCell> getCells() const { return m_cells; }
 
 private:
     int m_cardSize;
