@@ -7,7 +7,8 @@
 
 // TODO: Implement
 class CardTester {
-
+public:
+    void testConstructor();
 };
 
 

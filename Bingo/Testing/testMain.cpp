@@ -8,6 +8,7 @@
 #include "MenuOptionTester.h"
 #include "MenuTester.h"
 #include "CardCellTester.h"
+#include "CardTester.h"
 
 int main() {
 
@@ -19,6 +20,9 @@ int main() {
 
     CardCellTester cellTester;
     cellTester.testGetVal();
+
+    CardTester cardTester;
+    cardTester.testConstructor();
 
     MenuOptionTester menuOptionTester;
     menuOptionTester.testConstructorAndGetter();
