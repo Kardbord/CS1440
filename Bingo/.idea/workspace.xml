@@ -14,7 +14,6 @@
   <component name="ChangeListManager">
     <list default="true" id="97110257-4ff2-44f7-930d-307abc813a09" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing/CardTester.cpp" afterPath="$PROJECT_DIR$/Testing/CardTester.cpp" />
     </list>
     <ignored path="Bingo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/Card.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
-              <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
               <folding>
                 <element signature="e#42#62#0" expanded="true" />
               </folding>
@@ -156,7 +155,6 @@
         <option value="$PROJECT_DIR$/Testing/DeckTester.h" />
         <option value="$PROJECT_DIR$/Deck.h" />
         <option value="$PROJECT_DIR$/Deck.cpp" />
-        <option value="$PROJECT_DIR$/Card.cpp" />
         <option value="$PROJECT_DIR$/CardCell.h" />
         <option value="$PROJECT_DIR$/Testing/CardCellTester.h" />
         <option value="$PROJECT_DIR$/Testing/CardCellTester.cpp" />
@@ -165,6 +163,7 @@
         <option value="$PROJECT_DIR$/Testing/testMain.cpp" />
         <option value="$PROJECT_DIR$/Testing/CardTester.h" />
         <option value="$PROJECT_DIR$/Testing/CardTester.cpp" />
+        <option value="$PROJECT_DIR$/Card.cpp" />
       </list>
     </option>
   </component>
@@ -466,12 +465,12 @@
       <workItem from="1487644298064" duration="65000" />
       <workItem from="1487644447957" duration="73000" />
       <workItem from="1487644588337" duration="396000" />
-      <workItem from="1487724912624" duration="10041000" />
+      <workItem from="1487724912624" duration="10187000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40551000" />
+    <option name="totallyTimeSpent" value="40697000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -819,7 +818,7 @@
     <entry file="file://$PROJECT_DIR$/Card.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
-          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
           <folding>
             <element signature="e#42#62#0" expanded="true" />
           </folding>
