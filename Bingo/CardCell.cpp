@@ -3,3 +3,5 @@
 //
 
 #include "CardCell.h"
+
+CardCell::CardCell(int val) : m_val(val) {}

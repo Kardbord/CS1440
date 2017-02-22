@@ -7,7 +7,11 @@
 
 
 class CardCell {
+public:
+    CardCell(int val);
 
+private:
+    int m_val;
 };
 
 
