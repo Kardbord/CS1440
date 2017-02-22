@@ -7,7 +7,8 @@
 
 // TODO: Implement
 class DeckTester {
-
+public:
+    void testConstructorAndGetters();
 };
 
 
