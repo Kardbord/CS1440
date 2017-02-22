@@ -5,6 +5,7 @@
 #include <iostream>
 #include "CardTester.h"
 #include "../Card.h"
+#include <algorithm>
 
 // TODO: Implement
 void CardTester::testConstructor() {
@@ -29,5 +30,15 @@ void CardTester::testConstructor() {
 
     if (card.getPossNums().size() != max - 1) {
         std::cout << "Error in constructor: getPossNums().size() should be max - 1" << std::endl;
+    }
+
+    std::vector<int> usedVals = {-1};
+    for (auto &&c : card.getCells()) {
+        auto it = std::find(usedVals.begin(), usedVals.end(), c.getVal());
+        if (it != usedVals.end()) {
+            std::cout << "Error in Card(): same value is used more than once per card" << std::endl;
+        } else {
+            usedVals.push_back(c.getVal());
+        }
     }
 }
