@@ -15,12 +15,12 @@ void CardTester::testConstructor() {
 
     Card card(size, max);
 
-    if (card.getCardSize() != 5) {
-        std::cout << "Error in getCardSize(): should be 5" << std::endl;
+    if (card.getCardSize() != size) {
+        std::cout << "Error in getCardSize(): should be size" << std::endl;
     }
 
-    if (card.getNumberMax() != 100) {
-        std::cout << "Error in getNumberMax(): should be 100" << std::endl;
+    if (card.getNumberMax() != max) {
+        std::cout << "Error in getNumberMax(): should be max" << std::endl;
     }
 
     if (card.getCells().size() != size * size) {
