@@ -4,8 +4,12 @@
 
 #include "Deck.h"
 
-Deck::Deck(int cardSize, int cardCount, int numberMax)
-        : m_cardSize(cardSize), m_cardCount(cardCount), m_numberMax(numberMax) {}
+Deck::Deck(int const &cardSize, int const &cardCount, int const &numberMax)
+        : m_cardSize(cardSize), m_cardCount(cardCount), m_numberMax(numberMax) {
+    for (int i = 0; i < m_cardCount; ++i){
+        m_cards.push_back(Card(m_cardSize, m_numberMax));
+    }
+}
 
 Deck::~Deck() {
     // TODO: Verify correct implementation

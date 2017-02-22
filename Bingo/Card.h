@@ -6,10 +6,13 @@
 #define BINGO_CARD_H
 
 
+#include <vector>
+#include "CardCell.h"
+
 class Card {
 
 public:
-    Card(int cardSize, int numberMax);
+    Card(int const & cardSize, int const & numberMax);
 
     int getCardSize() { return m_cardSize; }
 
@@ -18,6 +21,7 @@ public:
 private:
     int m_cardSize;
     int m_numberMax;
+    std::vector<CardCell> m_cells;
 };
 
 

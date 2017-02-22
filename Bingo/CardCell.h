@@ -8,7 +8,7 @@
 
 class CardCell {
 public:
-    CardCell(int val);
+    CardCell(int const & val);
 
 private:
     int m_val;

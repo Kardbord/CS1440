@@ -4,4 +4,4 @@
 
 #include "CardCell.h"
 
-CardCell::CardCell(int val) : m_val(val) {}
+CardCell::CardCell(int const & val) : m_val(val) {}

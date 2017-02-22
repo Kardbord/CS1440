@@ -14,7 +14,7 @@
 class Deck {
 
 public:
-    Deck(int cardSize, int cardCount, int numberMax);
+    Deck(int const &cardSize, int const &cardCount, int const &numberMax);
 
     ~Deck();
 
