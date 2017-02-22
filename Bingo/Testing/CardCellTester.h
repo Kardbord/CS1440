@@ -7,7 +7,8 @@
 
 // TODO: Implement
 class CardCellTester {
-
+public:
+    void testGetVal();
 };
 
 
