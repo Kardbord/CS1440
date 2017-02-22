@@ -8,6 +8,6 @@
 Card::Card(int const & cardSize, int const & numberMax) : m_cardSize(cardSize), m_numberMax(numberMax) {
     int totCells = m_cardSize * m_cardSize;
     for (int i = 0; i < totCells; ++i){
-        m_cells.push_back(CardCell(std::rand() % m_numberMax));
+        m_cells.push_back(CardCell(std::rand() % m_numberMax)); // TODO: make sure no two numbers are used on the same card
     }
 }
