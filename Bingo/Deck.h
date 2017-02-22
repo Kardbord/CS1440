@@ -13,10 +13,17 @@ class Deck {
 
 public:
     Deck(int cardSize, int cardCount, int numberMax);
+
     ~Deck();
 
-    void print(std::ostream& out) const;
-    void print(std::ostream& out, int cardIndex) const;
+    void print(std::ostream &out) const;
+
+    void print(std::ostream &out, int cardIndex) const;
+
+private:
+    int m_cardSize;
+    int m_cardCount;
+    int m_numberMax;
 };
 
 #endif //BINGO_DECK_H
