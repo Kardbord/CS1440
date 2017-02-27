@@ -30,6 +30,3 @@ void Deck::print(std::ostream &out, int cardIndex) const {
         out << std::endl;
     }
 }
-
-
-
