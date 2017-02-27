@@ -10,6 +10,7 @@
 #include "CardCellTester.h"
 #include "CardTester.h"
 #include "DeckTester.h"
+#include "../Deck.h"
 
 int main() {
 
@@ -33,4 +34,12 @@ int main() {
 
     MenuTester menuTester;
     menuTester.testConstructorAndGetter();
+
+    int numMax = 100;
+    int cSize = 5;
+    int numCards = 20;
+
+    Deck deck(cSize, numCards, numMax);
+
+    deck.print(std::cout, 0);
 }
