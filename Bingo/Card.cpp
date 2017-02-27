@@ -7,7 +7,7 @@
 
 Card::Card(int const &cardSize, int const &numberMax) : m_cardSize(cardSize), m_numberMax(numberMax) {
 
-    for (int i = 1; i < m_numberMax; ++i) {
+    for (int i = 1; i <= m_numberMax; ++i) {
         m_possNums.push_back(i);
     }
 
