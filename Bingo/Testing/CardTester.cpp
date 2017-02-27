@@ -28,7 +28,7 @@ void CardTester::testConstructorAndGetters() {
         std::cout << "Error in constructor: getCells().getSize() should be size * size" << std::endl;
     }
 
-    if (card.getPossNums().size() != max - 1) {
+    if (card.getPossNums().size() != max) {
         std::cout << "Error in constructor: getPossNums().size() should be max - 1" << std::endl;
     }
 
