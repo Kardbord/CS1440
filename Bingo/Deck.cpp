@@ -6,7 +6,7 @@
 
 Deck::Deck(int const &cardSize, int const &cardCount, int const &numberMax)
         : m_cardSize(cardSize), m_cardCount(cardCount), m_numberMax(numberMax) {
-    for (int i = 0; i < m_cardCount; ++i){
+    for (int i = 0; i < m_cardCount; ++i) {
         m_cards.push_back(Card(m_cardSize, m_numberMax));
     }
 }
@@ -22,7 +22,13 @@ void Deck::print(std::ostream &out) const {
 }
 
 void Deck::print(std::ostream &out, int cardIndex) const {
-    // TODO: Implement
+    auto cells = m_cards[cardIndex].getCells();
+    for (int i = m_cardSize * m_cardSize; i < m_cards[cardIndex].getCells().size(); ++i) {
+        for (int j = 0; j < m_cardSize; ++j) {
+            out << cells[i].getVal() << "    ";
+        }
+        out << std::endl;
+    }
 }
 
 
