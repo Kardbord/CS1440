@@ -22,6 +22,7 @@ int main() {
 
     CardCellTester cellTester;
     cellTester.testGetVal();
+    cellTester.testOperatorOverloads();
 
     CardTester cardTester;
     cardTester.testConstructorAndGetters();

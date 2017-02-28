@@ -27,3 +27,22 @@ void CardCellTester::testGetVal() {
         std::cout << "Error in cell3.getVal: should be -50" << std::endl;
     }
 }
+
+void CardCellTester::testOperatorOverloads() {
+    std::cout << std::endl << "Test Suite: CardCellTester::testOperatorOverloads" << std::endl;
+
+    CardCell cell(12);
+    if (!(cell == cell)) {
+        std::cout << "Error in cell == cell, should be equal" << std::endl;
+    }
+
+    CardCell cell2(12);
+    if (!(cell == cell2)) {
+        std::cout << "Error in cell == cell2, should be equal" << std::endl;
+    }
+
+    CardCell cell3(20);
+    if (cell == cell3) {
+        std::cout << "Error in cell == cell3, should not be equal" << std::endl;
+    }
+}

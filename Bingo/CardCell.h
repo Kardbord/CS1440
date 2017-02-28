@@ -12,6 +12,8 @@ public:
 
     int getVal() const { return m_val; }
 
+    bool operator==(CardCell const &c);
+
 private:
     int m_val;
 };

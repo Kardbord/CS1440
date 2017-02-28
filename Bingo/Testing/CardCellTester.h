@@ -9,6 +9,7 @@
 class CardCellTester {
 public:
     void testGetVal();
+    void testOperatorOverloads();
 };
 
 
