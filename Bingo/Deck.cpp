@@ -22,17 +22,31 @@ void Deck::print(std::ostream &out) const {
 }
 
 void Deck::print(std::ostream &out, int cardIndex) const {
+
+    out << "+--";
+    for (int i = 0; i < 2 * m_cardSize; ++i) {
+        out << "--";
+    }
+    out << "--+" << std::endl << "| ";
+
     int lineEnd = 1;
-    for (auto && cell : m_cards[cardIndex].getCells()){
-        out << cell.getVal() << "----";
-        if (lineEnd == m_cardSize){
+    for (auto &&cell : m_cards[cardIndex].getCells()) {
+        out << cell.getVal() << " | ";
+        if (lineEnd == m_cardSize && cell == m_cards[cardIndex].getCells().back()) {
             out << std::endl;
+        } else if (lineEnd == m_cardSize) {
+            out << std::endl << "| ";
             lineEnd = 1;
-        }
-        else {
+        } else {
             ++lineEnd;
         }
     }
+
+    out << "+--";
+    for (int i = 0; i < 2 * m_cardSize; ++i) {
+        out << "--";
+    }
+    out << "--+" << std::endl;
 
 }
 
