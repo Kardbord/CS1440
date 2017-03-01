@@ -4,7 +4,6 @@
 
 #include "Menu.h"
 #include <locale>
-#include <string.h>
 #include <iostream>
 #include <iomanip>
 
