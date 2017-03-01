@@ -36,7 +36,7 @@ void Deck::print(std::ostream &out) const {
 void Deck::print(std::ostream &out, int cardIndex) const {
 
     if (m_charsPerCell != 10 && cardIndex < m_cards.size()) {
-        out << "Card: " << cardIndex << std::endl;
+        out << "Card: " << cardIndex + 1 << std::endl;
         printHelper(out, true, false, false); // print the top of the card
     }
 

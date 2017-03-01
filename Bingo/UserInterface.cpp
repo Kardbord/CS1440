@@ -83,9 +83,9 @@ void UserInterface::deckMenu() {
 
 void UserInterface::printCard() {
     int cardToPrint = getNumberInput("Id of card to print", 1, 9999);
-    if (cardToPrint > 0) {
+    if (cardToPrint - 1 >= 0 && cardToPrint - 1 < currentDeck->getCards().size()) {
         std::cout << std::endl;
-        currentDeck->print(std::cout, cardToPrint);
+        currentDeck->print(std::cout, cardToPrint - 1);
     }
 }
 
