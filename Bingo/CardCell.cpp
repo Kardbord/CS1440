@@ -6,6 +6,6 @@
 
 CardCell::CardCell(int const & val) : m_val(val) {}
 
-bool CardCell::operator==(CardCell const &c) {
+bool CardCell::operator==(CardCell const &c) const {
     return c.getVal() == this->getVal();
 }

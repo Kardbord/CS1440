@@ -26,7 +26,7 @@ public:
 
     int getNumberMax() const { return m_numberMax; }
 
-    std::vector<Card> getCards() { return m_cards; }
+    std::vector<Card> getCards() const { return m_cards; }
 
 private:
 

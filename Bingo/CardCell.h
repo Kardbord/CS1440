@@ -12,7 +12,7 @@ public:
 
     int getVal() const { return m_val; }
 
-    bool operator==(CardCell const &c);
+    bool operator==(CardCell const &c) const;
 
 private:
     int m_val;
