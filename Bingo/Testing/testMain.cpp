@@ -18,8 +18,6 @@ int main() {
     unsigned int seed = (unsigned int) time(NULL);
     srand(seed);
 
-    // TODO: Test your components
-
     CardCellTester cellTester;
     cellTester.testGetVal();
     cellTester.testOperatorOverloads();

@@ -9,8 +9,6 @@
 #include <vector>
 #include "Card.h"
 
-// TODO: Extend this definition as you see fit
-
 class Deck {
 
 public:

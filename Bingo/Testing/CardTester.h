@@ -5,7 +5,6 @@
 #ifndef BINGO_CARDTESTER_H
 #define BINGO_CARDTESTER_H
 
-// TODO: Implement
 class CardTester {
 public:
     void testConstructorAndGetters();

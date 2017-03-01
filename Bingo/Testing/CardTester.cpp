@@ -7,7 +7,6 @@
 #include "../Card.h"
 #include <algorithm>
 
-// TODO: Implement
 void CardTester::testConstructorAndGetters() {
     std::cout << std::endl << "Test Suite: CardTester::testConstructorAndGetters" << std::endl;
 
