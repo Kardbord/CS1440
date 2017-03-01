@@ -10,7 +10,7 @@
 #include "CardCellTester.h"
 #include "CardTester.h"
 #include "DeckTester.h"
-#include "../Deck.h"
+//#include "../Deck.h"
 
 int main() {
 
@@ -34,7 +34,8 @@ int main() {
     MenuTester menuTester;
     menuTester.testConstructorAndGetter();
 
-    std::cout << "\nTest individual card prints:" << std::endl << std::endl;
+    // Uncomment below to test outputs. Also uncomment #include "../Deck.h"
+    /*std::cout << "\nTest individual card prints:" << std::endl << std::endl;
 
     int numMax = 100;
     int cSize = 5;
@@ -67,5 +68,5 @@ int main() {
 
     deck2.print(std::cout);
 
-    std::cout << "\nScroll up to see all test cases" << std::endl;
+    std::cout << "\nScroll up to see all test cases" << std::endl;*/
 }
