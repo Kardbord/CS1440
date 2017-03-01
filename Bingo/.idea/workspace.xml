@@ -13,7 +13,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97110257-4ff2-44f7-930d-307abc813a09" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Deck.cpp" afterPath="$PROJECT_DIR$/Deck.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Deck.h" afterPath="$PROJECT_DIR$/Deck.h" />
     </list>
@@ -36,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Deck.h" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Deck.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Deck.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="652">
-              <caret line="49" column="80" lean-forward="false" selection-start-line="49" selection-start-column="80" selection-end-line="49" selection-end-column="80" />
+            <state relative-caret-position="291">
+              <caret line="52" column="75" lean-forward="false" selection-start-line="52" selection-start-column="75" selection-end-line="52" selection-end-column="75" />
               <folding>
                 <element signature="e#90#108#0" expanded="true" />
               </folding>
@@ -48,12 +47,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Deck.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Deck.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Deck.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="1215">
+              <caret line="80" column="57" lean-forward="false" selection-start-line="80" selection-start-column="57" selection-end-line="80" selection-end-column="57" />
+              <folding>
+                <element signature="e#47#65#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,8 +101,8 @@
         <option value="$PROJECT_DIR$/Testing/testMain.cpp" />
         <option value="$PROJECT_DIR$/CardCell.cpp" />
         <option value="$PROJECT_DIR$/Testing/CardCellTester.cpp" />
-        <option value="$PROJECT_DIR$/Deck.h" />
         <option value="$PROJECT_DIR$/Deck.cpp" />
+        <option value="$PROJECT_DIR$/Deck.h" />
       </list>
     </option>
   </component>
@@ -408,12 +409,12 @@
       <workItem from="1488232514205" duration="40000" />
       <workItem from="1488232569717" duration="3743000" />
       <workItem from="1488236355718" duration="2845000" />
-      <workItem from="1488322900890" duration="5828000" />
+      <workItem from="1488322900890" duration="8094000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57984000" />
+    <option name="totallyTimeSpent" value="60250000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -657,6 +658,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="22" column="62" lean-forward="true" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -725,21 +727,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Deck.h">
+    <entry file="file://$PROJECT_DIR$/Deck.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="49" column="80" lean-forward="false" selection-start-line="49" selection-start-column="80" selection-end-line="49" selection-end-column="80" />
+        <state relative-caret-position="1215">
+          <caret line="80" column="57" lean-forward="false" selection-start-line="80" selection-start-column="57" selection-end-line="80" selection-end-column="57" />
           <folding>
-            <element signature="e#90#108#0" expanded="true" />
+            <element signature="e#47#65#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Deck.cpp">
+    <entry file="file://$PROJECT_DIR$/Deck.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="291">
+          <caret line="52" column="75" lean-forward="false" selection-start-line="52" selection-start-column="75" selection-end-line="52" selection-end-column="75" />
+          <folding>
+            <element signature="e#90#108#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
