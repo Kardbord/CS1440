@@ -27,18 +27,18 @@ Deck::~Deck() {
 }
 
 void Deck::print(std::ostream &out) const {
-    for (int i = 0; i < m_cards.size(); ++i){
-        out << "Card " << i + 1 << ":" << std::endl;
-
+    for (int i = 0; i < m_cards.size(); ++i) {
         print(out, i);
-
         out << std::endl << std::endl;
     }
 }
 
 void Deck::print(std::ostream &out, int cardIndex) const {
 
-    if (m_charsPerCell != 10) printHelper(out, true, false, false); // print the top of the card
+    if (m_charsPerCell != 10 && cardIndex < m_cards.size()) {
+        out << "Card: " << cardIndex << std::endl;
+        printHelper(out, true, false, false); // print the top of the card
+    }
 
     int lineEnd = 1;
     for (auto &&cell : m_cards[cardIndex].getCells()) {
