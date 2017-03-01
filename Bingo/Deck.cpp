@@ -27,7 +27,13 @@ Deck::~Deck() {
 }
 
 void Deck::print(std::ostream &out) const {
-    // TODO: Implement
+    for (int i = 0; i < m_cards.size(); ++i){
+        out << "Card " << i + 1 << ":" << std::endl;
+
+        print(out, i);
+
+        out << std::endl << std::endl;
+    }
 }
 
 void Deck::print(std::ostream &out, int cardIndex) const {

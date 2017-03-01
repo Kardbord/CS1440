@@ -36,11 +36,11 @@ int main() {
     MenuTester menuTester;
     menuTester.testConstructorAndGetter();
 
-    std::cout << "\nTest that things print nicely:" << std::endl << std::endl;
+    std::cout << "\nTest individual card prints:" << std::endl << std::endl;
 
     int numMax = 100;
     int cSize = 5;
-    int numCards = 20;
+    int numCards = 5;
 
     Deck deck(cSize, numCards, numMax);
 
@@ -49,7 +49,7 @@ int main() {
 
     numMax = 900;
     cSize = 15;
-    numCards = 20;
+    numCards = 6;
 
     std::cout << std::endl << std::endl;
 
@@ -57,4 +57,17 @@ int main() {
 
     std::cout << "15x15" << std::endl;
     deck2.print(std::cout, 0);
+
+
+    std::cout << "\nTest deck prints:" << std::endl << std::endl;
+
+    std::cout << "Deck 1 (Size " << deck.getCards().size() << "):" << std::endl;
+
+    deck.print(std::cout);
+
+    std::cout << std::endl << std::endl << "Deck 2 (Size " << deck2.getCards().size() << "):" << std::endl;
+
+    deck2.print(std::cout);
+
+    std::cout << "\nScroll up to see all test cases" << std::endl;
 }
