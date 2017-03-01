@@ -18,3 +18,10 @@ Card::Card(int const &cardSize, int const &numberMax) : m_cardSize(cardSize), m_
         m_cells.push_back(CardCell(m_possNums[i]));
     }
 }
+
+Card::~Card() {
+    m_cells.clear();
+    m_cells.shrink_to_fit();
+    m_possNums.clear();
+    m_possNums.shrink_to_fit();
+}

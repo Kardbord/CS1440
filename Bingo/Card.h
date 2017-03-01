@@ -14,6 +14,8 @@ class Card {
 public:
     Card(int const &cardSize, int const &numberMax);
 
+    ~Card();
+
     int getCardSize() const { return m_cardSize; }
 
     int getNumberMax() const { return m_numberMax; }
