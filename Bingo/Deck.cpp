@@ -4,6 +4,8 @@
 
 #include <iomanip>
 #include <ios>
+#include <iostream>
+#include <cmath>
 #include "Deck.h"
 
 Deck::Deck(int const &cardSize, int const &cardCount, int const &numberMax)
@@ -15,8 +17,8 @@ Deck::Deck(int const &cardSize, int const &cardCount, int const &numberMax)
     if (numberMax < 10) m_charsPerCell = 4;
     else if (numberMax < 100) m_charsPerCell = 5;
     else if (numberMax < 1000) m_charsPerCell = 6;
-    else m_charsPerCell = 7;
-    // If numberMax > 10,000, you're playing some weird bingo
+    else if (numberMax < 10000) m_charsPerCell = 7;
+    else m_charsPerCell = 10;     // If numberMax > 10,000, you're playing some weird bingo
 }
 
 Deck::~Deck() {
@@ -31,7 +33,7 @@ void Deck::print(std::ostream &out) const {
 
 void Deck::print(std::ostream &out, int cardIndex) const {
 
-    printHelper(out, true, false, false); // print the top of the card
+    if (m_charsPerCell != 10) printHelper(out, true, false, false); // print the top of the card
 
     int lineEnd = 1;
     for (auto &&cell : m_cards[cardIndex].getCells()) {
@@ -58,7 +60,8 @@ void Deck::print(std::ostream &out, int cardIndex) const {
                 out << std::setw(2) << " |";
                 break;
             default: // default case means you're playing bingo with weirdly huge numbers
-                break;
+                std::cerr << "You play bingo with weirdly huge numbers. Cannot print card(s).\n";
+                return;
         }
 
         if (lineEnd == m_cardSize && cell == m_cards[cardIndex].getCells().back()) {
