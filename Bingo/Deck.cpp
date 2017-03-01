@@ -35,7 +35,8 @@ void Deck::print(std::ostream &out, int cardIndex) const {
         if (lineEnd == m_cardSize && cell == m_cards[cardIndex].getCells().back()) {
             out << std::endl;
         } else if (lineEnd == m_cardSize) {
-            out << std::endl << "| ";
+            out << std::endl
+                << "|------------------------|" << std::endl << "| ";
             lineEnd = 1;
         } else {
             ++lineEnd;
