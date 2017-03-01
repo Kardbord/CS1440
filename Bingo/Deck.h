@@ -31,11 +31,23 @@ public:
     std::vector<Card> getCards() { return m_cards; }
 
 private:
+
     int m_cardSize;
     int m_cardCount;
     int m_numberMax;
 
+    /**
+     * m_charsPerCell is the amount of monospace characters needed to represent the biggest cell
+     * we need to deal with, in this case, a number consisting of no more than 3
+     * digits plus a space on either side and a '|' on either side needs 7 spaces
+     */
+    int m_charsPerCell;
+
     std::vector<Card> m_cards;
+
+    // Private member functions
+
+    void printHelper(std::ostream &out, bool isFirst, bool isLast, bool isSpacer) const;
 };
 
 #endif //BINGO_DECK_H
