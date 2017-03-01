@@ -65,4 +65,5 @@
 **/UML/*.bak
 **/UML/.AnalystComparer.vpp.lck
 **/*.vpp.bak_*
->>>>>>> AnalystComparer/master
+**/*.dia~
+>>>>>>> CS1440/master
