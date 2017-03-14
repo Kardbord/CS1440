@@ -9,6 +9,8 @@
 
 #include <string>
 
+
+// TODO: Counties can have cities -- needs implemented
 class County : public Region {
 public:
     County(const std::string data[]);
