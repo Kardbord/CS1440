@@ -65,6 +65,7 @@
 **/UML/*.bak
 **/UML/.AnalystComparer.vpp.lck
 **/*.vpp.bak_*
+**/*.vpp.vbak*
 **/*.dia~
 **/*.dia.autosave
 >>>>>>> CS1440/master
