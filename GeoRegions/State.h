@@ -9,6 +9,7 @@
 
 #include <string>
 
+// TODO: Implement States having cities and counties
 class State : public Region {
 public:
     State(const std::string data[]);
