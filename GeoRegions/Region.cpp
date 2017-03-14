@@ -207,6 +207,7 @@ void Region::loadChildren(std::istream& in)
             if (child!= nullptr)
             {
                 // TODO: Add the new sub-region to this region
+                m_subRegions = child; // TODO: implement this correctly...
                 child->loadChildren(in);
             }
         }

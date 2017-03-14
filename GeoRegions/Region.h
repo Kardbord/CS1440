@@ -20,9 +20,12 @@ protected:
     bool            m_isValid = false;
 
     // TODO: Add data members to manage sub-regions
+    // TODO: figure out how to do this... can I grow by one efficiently, or do I copy the whole thing and double size when I need to?
+    Region* m_subRegions = new Region[10];
 
 private:
     static unsigned int m_nextId;
+    int subRegionsAlloc = 10;
 
 public:
     static Region* create(std::istream &in);
