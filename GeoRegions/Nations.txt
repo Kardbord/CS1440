@@ -1,5 +1,5 @@
 1,World,0,5.101e+08
-2,Duetschland,3523523,352644
+2,Deutscheland,3523523,352644
 ^^^
 2,United States,64363,234235
 3,Utah,425,234
