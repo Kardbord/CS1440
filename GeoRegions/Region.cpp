@@ -66,7 +66,15 @@ Region* Region::create(RegionType regionType, const std::string& data)
             case NationType:
                 region = new Nation(fields);
                 break;
-       // TODO: Add cases for State, County, and City
+            case StateType:
+                region = new State(fields);
+                break;
+            case CountyType:
+                region = new County(fields);
+                break;
+            case CityType:
+                region = new City(fields);
+                break;
             default:
                 break;
         }
