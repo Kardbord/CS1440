@@ -6,6 +6,7 @@
 #define GEO_REGIONS_REGION_H
 
 #include <string>
+#include <vector>
 
 class Region {
 public:
@@ -19,9 +20,8 @@ protected:
     double          m_area = 0;
     bool            m_isValid = false;
 
-    // TODO: Add data members to manage sub-regions
-    // TODO: figure out how to do this... can I grow by one efficiently, or do I copy the whole thing and double size when I need to?
-    Region* m_subRegions = new Region[10];
+    // TODO: Add data members to manage sub-region
+    std::vector<Region*> m_subRegions;
 
 private:
     static unsigned int m_nextId;
