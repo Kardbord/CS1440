@@ -10,6 +10,7 @@
 #include <string>
 
 class City : public Region {
+public:
     City(const std::string data[]);
 };
 
