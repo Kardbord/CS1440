@@ -10,7 +10,7 @@
 #include <string>
 
 
-// TODO: Counties can have cities -- needs implemented
+// TODO: Counties can have cities and only cities -- needs implemented
 class County : public Region {
 public:
     County(const std::string data[]);

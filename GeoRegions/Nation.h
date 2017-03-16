@@ -9,7 +9,7 @@
 
 #include <string>
 
-// TODO: Implement Nations having States
+// TODO: Implement Nations having States and only states
 class Nation : public Region
 {
 public:
