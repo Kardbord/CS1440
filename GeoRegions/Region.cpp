@@ -159,8 +159,6 @@ void Region::display(std::ostream &out, unsigned int displayLevel, bool showChil
     double area = getArea();
     double density = (double) totalPopulation / area;
 
-    // TODO: compute the totalPopulation using a method
-
     out << std::setw(6) << getId() << "  "
         << getName() << ", population="
         << totalPopulation
@@ -168,9 +166,10 @@ void Region::display(std::ostream &out, unsigned int displayLevel, bool showChil
         << ", density=" << density << std::endl;
 
     if (showChild) {
-        // TODO: implement loop in display method
-        // foreach subregion
-        //      display that subregion at displayLevel+1 with the same showChild value
+        // TODO: test me
+        for (auto &&r : m_subRegions) {
+            r->display(out, displayLevel + 1, showChild);
+        }
     }
 }
 
@@ -183,7 +182,7 @@ void Region::save(std::ostream &out) {
 
     // TODO: implement loop in save method to save each sub-region
     // TODO: test this
-    for (auto && r : m_subRegions) {
+    for (auto &&r : m_subRegions) {
         r->save(out);
     }
 
