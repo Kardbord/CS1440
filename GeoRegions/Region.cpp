@@ -138,7 +138,12 @@ std::string Region::getRegionLabel() const
 
 unsigned int Region::computeTotalPopulation()
 {
-    // TODO: implement computeTotalPopulation, such that the result is m_population + the total population for all sub-regions
+    // TODO: test me
+    unsigned int population = m_population;
+    for (auto && r : m_subRegions) {
+        population += r->getPopulation();
+    }
+    return population;
 }
 
 void Region::list(std::ostream& out)
