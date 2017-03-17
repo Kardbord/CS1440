@@ -182,8 +182,10 @@ void Region::save(std::ostream &out) {
         << std::endl;
 
     // TODO: implement loop in save method to save each sub-region
-    // foreach subregion,
-    //      save that region
+    // TODO: test this
+    for (auto && r : m_subRegions) {
+        r->save(out);
+    }
 
     out << regionDelimiter << std::endl;
 }
