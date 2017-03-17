@@ -146,6 +146,10 @@ void Region::list(std::ostream &out) {
     out << getName() << ":" << std::endl;
 
     // TODO: implement the loop in the list method
+    // TODO: test
+    for (auto &&r : m_subRegions) {
+        r->list(out);
+    }
     // foreach subregion, print out
     //      id    name
 }
