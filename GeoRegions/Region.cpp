@@ -16,34 +16,30 @@ const std::string regionDelimiter = "^^^";
 const int TAB_SIZE = 4;
 unsigned int Region::m_nextId = 0;
 
-Region* Region::create(std::istream &in)
-{
-    Region* region = nullptr;
+Region *Region::create(std::istream &in) {
+    Region *region = nullptr;
     std::string line;
     std::getline(in, line);
-    if (line!="")
-    {
+    if (line != "") {
         region = create(line);
-        if (region!= nullptr)
+        if (region != nullptr)
             region->loadChildren(in);
     }
     return region;
 }
-Region* Region::create(const std::string& data)
-{
-    Region* region = nullptr;
+
+Region *Region::create(const std::string &data) {
+    Region *region = nullptr;
     std::string regionData;
     unsigned long commaPos = (int) data.find(",");
-    if (commaPos != std::string::npos)
-    {
-        std::string regionTypeStr = data.substr(0,commaPos);
-        regionData = data.substr(commaPos+1);
+    if (commaPos != std::string::npos) {
+        std::string regionTypeStr = data.substr(0, commaPos);
+        regionData = data.substr(commaPos + 1);
 
         bool isValid;
         RegionType regionType = (RegionType) convertStringToInt(regionTypeStr, &isValid);
 
-        if (isValid)
-        {
+        if (isValid) {
             region = create(regionType, regionData);
         }
 
@@ -52,9 +48,8 @@ Region* Region::create(const std::string& data)
     return region;
 }
 
-Region* Region::create(RegionType regionType, const std::string& data)
-{
-    Region* region = nullptr;
+Region *Region::create(RegionType regionType, const std::string &data) {
+    Region *region = nullptr;
     std::string fields[3];
     if (split(data, ',', fields, 3)) {
 
@@ -89,11 +84,9 @@ Region* Region::create(RegionType regionType, const std::string& data)
     return region;
 }
 
-std::string Region::regionLabel(RegionType regionType)
-{
+std::string Region::regionLabel(RegionType regionType) {
     std::string label = "Unknown";
-    switch (regionType)
-    {
+    switch (regionType) {
         case Region::WorldType:
             label = "World";
             break;
@@ -115,39 +108,40 @@ std::string Region::regionLabel(RegionType regionType)
     return label;
 }
 
-Region::Region() { }
+Region::Region() {}
 
 Region::Region(RegionType type, const std::string data[]) :
-        m_id(getNextId()), m_regionType(type), m_isValid(true)
-{
+        m_id(getNextId()), m_regionType(type), m_isValid(true) {
     m_name = data[0];
     m_population = convertStringToUnsignedInt(data[1], &m_isValid);
     if (m_isValid)
         m_area = convertStringToDouble(data[2], &m_isValid);
 }
 
-Region::~Region()
-{
+Region::~Region() {
     // TODO: cleanup any dynamically allocated objects
+    // TODO: verify this is correct...
+    for (auto &&r : m_subRegions) {
+        delete r; // call the destructor to delete any subRegions of the subRegion
+        r = nullptr;
+    }
+    m_subRegions.clear();
 }
 
-std::string Region::getRegionLabel() const
-{
+std::string Region::getRegionLabel() const {
     return regionLabel(getType());
 }
 
-unsigned int Region::computeTotalPopulation()
-{
+unsigned int Region::computeTotalPopulation() {
     // TODO: test me
     unsigned int population = m_population;
-    for (auto && r : m_subRegions) {
+    for (auto &&r : m_subRegions) {
         population += r->getPopulation();
     }
     return population;
 }
 
-void Region::list(std::ostream& out)
-{
+void Region::list(std::ostream &out) {
     out << std::endl;
     out << getName() << ":" << std::endl;
 
@@ -156,10 +150,8 @@ void Region::list(std::ostream& out)
     //      id    name
 }
 
-void Region::display(std::ostream& out, unsigned int displayLevel, bool showChild)
-{
-    if (displayLevel>0)
-    {
+void Region::display(std::ostream &out, unsigned int displayLevel, bool showChild) {
+    if (displayLevel > 0) {
         out << std::setw(displayLevel * TAB_SIZE) << " ";
     }
 
@@ -175,16 +167,14 @@ void Region::display(std::ostream& out, unsigned int displayLevel, bool showChil
         << ", area=" << area
         << ", density=" << density << std::endl;
 
-    if (showChild)
-    {
+    if (showChild) {
         // TODO: implement loop in display method
         // foreach subregion
         //      display that subregion at displayLevel+1 with the same showChild value
     }
 }
 
-void Region::save(std::ostream& out)
-{
+void Region::save(std::ostream &out) {
     out << getType()
         << "," << getName()
         << "," << getPopulation()
@@ -198,27 +188,20 @@ void Region::save(std::ostream& out)
     out << regionDelimiter << std::endl;
 }
 
-void Region::validate()
-{
-    m_isValid = (m_area!=UnknownRegionType && m_name!="" && m_area>=0);
+void Region::validate() {
+    m_isValid = (m_area != UnknownRegionType && m_name != "" && m_area >= 0);
 }
 
-void Region::loadChildren(std::istream& in)
-{
+void Region::loadChildren(std::istream &in) {
     std::string line;
     bool done = false;
-    while (!in.eof() && !done)
-    {
+    while (!in.eof() && !done) {
         std::getline(in, line);
-        if (line==regionDelimiter)
-        {
+        if (line == regionDelimiter) {
             done = true;
-        }
-        else
-        {
-            Region* child = create(line);
-            if (child!= nullptr)
-            {
+        } else {
+            Region *child = create(line);
+            if (child != nullptr) {
                 m_subRegions.push_back(child);
                 child->loadChildren(in);
             }
@@ -226,10 +209,9 @@ void Region::loadChildren(std::istream& in)
     }
 }
 
-unsigned int Region::getNextId()
-{
-    if (m_nextId==UINT32_MAX)
-        m_nextId=1;
+unsigned int Region::getNextId() {
+    if (m_nextId == UINT32_MAX)
+        m_nextId = 1;
 
     return m_nextId++;
 }
