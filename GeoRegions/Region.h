@@ -52,7 +52,6 @@ public:
 
     // TODO: Add methods to manage sub-regions
 
-    // TODO: Add method to compute total population, as m_population + the total population for all sub-regions
     unsigned int computeTotalPopulation();
 
     void list(std::ostream& out);
