@@ -71,7 +71,6 @@ void UserInterface::add() {
         if (data != "") {
             Region *region = Region::create(m_subRegionType, data);
             if (region != nullptr) {
-                // TODO: Add region to the m_currentRegion
                 m_currentRegion->create(data); // TODO verify this is correct
                 std::cout << Region::regionLabel(m_subRegionType) << " added" << std::endl;
             } else {
@@ -97,7 +96,6 @@ void UserInterface::edit() {
         if (valid && id > 0) {
             Region *region = nullptr;
             auto index = id - 1; // subtract 1 from id since id begins numbering at 1 instead of 0
-            // TODO: Look the region by Id and assign it to region variable
             region = m_currentRegion->findSubRegion(index);
 
             if (region != nullptr) {
@@ -190,6 +188,8 @@ void UserInterface::changeToSubRegion() {
         if (valid && id > 0) {
             Region *region;
             // TODO: Lookup the region by Id and assign it to the region variable.
+            auto index = id - 1; // subtract 1 from id since ids begin at 1 but vectors begin indexing at 0
+            region = m_currentRegion->findSubRegion(index);
             if (region != nullptr) {
                 UserInterface *nextUI = nullptr;
                 if (region->getType() == Region::CountyType) {
