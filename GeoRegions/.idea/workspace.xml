@@ -12,11 +12,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63cdb798-da35-4f5e-aaf2-6acc4cbc9337" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Region.h" afterPath="$PROJECT_DIR$/Region.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing/RegionTester.cpp" afterPath="$PROJECT_DIR$/Testing/RegionTester.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing/testMain.cpp" afterPath="$PROJECT_DIR$/Testing/testMain.cpp" />
-    </list>
+    <list default="true" id="63cdb798-da35-4f5e-aaf2-6acc4cbc9337" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,11 +56,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegionTester.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserInterface.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/UserInterface.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="189" column="43" lean-forward="false" selection-start-line="189" selection-start-column="43" selection-end-line="189" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegionTester.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Testing/RegionTester.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7818">
-              <caret line="61" column="9" lean-forward="false" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
+            <state relative-caret-position="696">
+              <caret line="448" column="1" lean-forward="true" selection-start-line="448" selection-start-column="1" selection-end-line="448" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -73,11 +79,21 @@
       <file leaf-file-name="Region.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Region.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="79" column="78" lean-forward="false" selection-start-line="79" selection-start-column="78" selection-end-line="79" selection-end-column="78" />
+            <state relative-caret-position="302">
+              <caret line="100" column="7" lean-forward="false" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="7" />
               <folding>
                 <element signature="e#105#122#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Region.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Region.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="181" column="0" lean-forward="false" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,8 +135,6 @@
         <option value="$PROJECT_DIR$/City.cpp" />
         <option value="$PROJECT_DIR$/County.h" />
         <option value="$PROJECT_DIR$/City.h" />
-        <option value="$PROJECT_DIR$/Region.cpp" />
-        <option value="$PROJECT_DIR$/UserInterface.cpp" />
         <option value="$PROJECT_DIR$/UserInterface.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/Testing/RegionTester.h" />
@@ -146,6 +160,8 @@
         <option value="$PROJECT_DIR$/Testing/testMain.cpp" />
         <option value="$PROJECT_DIR$/Region.h" />
         <option value="$PROJECT_DIR$/Testing/RegionTester.cpp" />
+        <option value="$PROJECT_DIR$/Region.cpp" />
+        <option value="$PROJECT_DIR$/UserInterface.cpp" />
       </list>
     </option>
   </component>
@@ -454,12 +470,12 @@
       <workItem from="1489546871093" duration="658000" />
       <workItem from="1489701285040" duration="3404000" />
       <workItem from="1489861970118" duration="2864000" />
-      <workItem from="1489871332443" duration="3079000" />
+      <workItem from="1489871332443" duration="3686000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64955000" />
+    <option name="totallyTimeSpent" value="65562000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -597,14 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
           <caret line="87" column="8" lean-forward="false" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserInterface.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="175" column="5" lean-forward="false" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,14 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Region.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/State.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -858,20 +858,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Testing/RegionTester.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="448" column="1" lean-forward="true" selection-start-line="448" selection-start-column="1" selection-end-line="448" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Region.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="181" column="0" lean-forward="false" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Region.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="79" column="78" lean-forward="false" selection-start-line="79" selection-start-column="78" selection-end-line="79" selection-end-column="78" />
+        <state relative-caret-position="302">
+          <caret line="100" column="7" lean-forward="false" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="7" />
           <folding>
             <element signature="e#105#122#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Testing/RegionTester.cpp">
+    <entry file="file://$PROJECT_DIR$/UserInterface.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7818">
-          <caret line="61" column="9" lean-forward="false" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
+        <state relative-caret-position="190">
+          <caret line="189" column="43" lean-forward="false" selection-start-line="189" selection-start-column="43" selection-end-line="189" selection-end-column="43" />
           <folding />
         </state>
       </provider>
