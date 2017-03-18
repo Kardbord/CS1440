@@ -83,6 +83,8 @@ public:
 
     Region *findSubRegion(unsigned int const &id) const;
 
+    void addSubRegion(Region* region);
+
     unsigned int computeTotalPopulation();
 
     void list(std::ostream &out);

@@ -240,3 +240,9 @@ void Region::removeSubRegions() {
         removeSubRegion((const unsigned int &) i);
     }
 }
+
+void Region::addSubRegion(Region *region) {
+    if (region != nullptr){
+        m_subRegions.push_back(region);
+    }
+}
