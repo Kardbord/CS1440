@@ -124,6 +124,7 @@ void UserInterface::edit()
         {
             Region* region;
             // TODO: Look the region by Id and assign it to region variable
+            // TODO: subtract 1 from id since numbering starts at one for some reason in Region, but vectors sure don't
             if (region!=nullptr)
             {
                 std::cout << "Editing: ";
