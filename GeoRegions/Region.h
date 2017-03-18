@@ -29,6 +29,8 @@ private:
     static unsigned int m_nextId;
     int subRegionsAlloc = 10;
 
+    Region* binaryFindSubRegion(int const start, int const end, int const target) const;
+
 public:
     static Region *create(std::istream &in);
 

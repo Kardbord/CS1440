@@ -95,7 +95,7 @@ void UserInterface::edit() {
         unsigned int id = convertStringToUnsignedInt(input, &valid);
         if (valid && id > 0) {
             Region *region = nullptr;
-            auto index = id - 1; // subtract 1 from id since id begins numbering at 1 instead of 0
+            auto index = id;
             region = m_currentRegion->findSubRegion(index);
 
             if (region != nullptr) {
@@ -165,7 +165,7 @@ void UserInterface::remove() {
         bool valid;
         unsigned int id = convertStringToUnsignedInt(input, &valid);
         if (valid && id > 0) {
-            auto index = id - 1; // subtract one from id since region ids start at one but vectors start at 0
+            auto index = id;
             m_currentRegion->removeSubRegion(index);
             std::cout << "Deleted!" << std::endl;
         } else {
@@ -188,7 +188,7 @@ void UserInterface::changeToSubRegion() {
         if (valid && id > 0) {
             Region *region;
             // TODO: verify this is correct
-            auto index = id - 1; // subtract 1 from id since ids begin at 1 but vectors begin indexing at 0
+            auto index = id;
             region = m_currentRegion->findSubRegion(index);
             if (region != nullptr) {
                 UserInterface *nextUI = nullptr;

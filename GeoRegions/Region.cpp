@@ -220,9 +220,21 @@ unsigned int Region::getNextId() {
     return m_nextId++;
 }
 
+// TODO: verify that the vector index is not null before accessing it
 Region *Region::findSubRegion(unsigned int const &id) const {
-    if (id < 0 || id > m_subRegions.size()) return nullptr;
-    return m_subRegions[id];
+    if (id < 0 || id > m_nextId) return nullptr;
+
+    int mid = (int) (m_subRegions.size() / 2);
+
+
+    if (m_subRegions[mid] != nullptr && m_subRegions[mid]->getId() == id) return m_subRegions[mid];
+
+    if (m_subRegions[mid]->getId() < id) {
+        return binaryFindSubRegion(0, mid - 1, id);
+    } else {
+        return binaryFindSubRegion(mid + 1, (int) m_subRegions.size(), id);
+    }
+
 }
 
 bool Region::removeSubRegion(unsigned int const &id) {
@@ -242,7 +254,24 @@ void Region::removeSubRegions() {
 }
 
 void Region::addSubRegion(Region *region) {
-    if (region != nullptr){
+    if (region != nullptr) {
         m_subRegions.push_back(region);
     }
+}
+
+
+// TODO: verify that the vector index is not null before accessing it
+Region *Region::binaryFindSubRegion(int const start, int const end, int const target) const {
+    if (start < 0 || start > end || end > m_subRegions.size()) return nullptr;
+
+    int mid = (start + end) / 2;
+
+    if (m_subRegions[mid]->getId() == target) return m_subRegions[mid];
+
+    if (m_subRegions[mid]->getId() < target) {
+        return binaryFindSubRegion(start, mid - 1, target);
+    } else {
+        return binaryFindSubRegion(mid + 1, end, target);
+    }
+
 }
