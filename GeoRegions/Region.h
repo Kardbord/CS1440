@@ -52,6 +52,8 @@ public:
 
     // TODO: Add methods to manage sub-regions
 
+    Region* findSubRegion(unsigned int const &id) const;
+
     unsigned int computeTotalPopulation();
 
     void list(std::ostream& out);

@@ -220,3 +220,8 @@ unsigned int Region::getNextId() {
 
     return m_nextId++;
 }
+
+Region *Region::findSubRegion(unsigned int const &id) const {
+    if (id < 0 || id > m_subRegions.size()) return nullptr;
+    return m_subRegions[id];
+}
