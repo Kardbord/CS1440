@@ -121,8 +121,10 @@ Region::Region(RegionType type, const std::string data[]) :
 Region::~Region() {
     // TODO: verify this is correct...
     for (auto &&r : m_subRegions) {
-        delete r; // call the destructor to delete any subRegions of the subRegion
-        r = nullptr;
+        if (r != nullptr) {
+            delete r; // call the destructor to delete any subRegions of the subRegion
+            r = nullptr;
+        }
     }
     m_subRegions.clear();
 }
@@ -135,7 +137,9 @@ unsigned int Region::computeTotalPopulation() {
     // TODO: test me
     unsigned int population = m_population;
     for (auto &&r : m_subRegions) {
-        population += r->getPopulation();
+        if (r != nullptr) {
+            population += r->getPopulation();
+        }
     }
     return population;
 }
@@ -146,7 +150,7 @@ void Region::list(std::ostream &out) {
 
     // TODO: test
     for (auto &&r : m_subRegions) {
-        r->list(out);
+        if (r != nullptr) r->list(out);
     }
 }
 
@@ -168,7 +172,7 @@ void Region::display(std::ostream &out, unsigned int displayLevel, bool showChil
     if (showChild) {
         // TODO: test me
         for (auto &&r : m_subRegions) {
-            r->display(out, displayLevel + 1, showChild);
+            if (r != nullptr) r->display(out, displayLevel + 1, showChild);
         }
     }
 }
@@ -182,7 +186,7 @@ void Region::save(std::ostream &out) {
 
     // TODO: test this
     for (auto &&r : m_subRegions) {
-        r->save(out);
+        if (r != nullptr) r->save(out);
     }
 
     out << regionDelimiter << std::endl;
