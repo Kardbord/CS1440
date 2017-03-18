@@ -122,9 +122,11 @@ void UserInterface::edit()
         unsigned int id = convertStringToUnsignedInt(input, &valid);
         if (valid && id>0)
         {
-            Region* region;
+            Region* region = nullptr;
+            auto index = id - 1; // subtract 1 from id since id begins numbering at 1 instead of 0
             // TODO: Look the region by Id and assign it to region variable
-            // TODO: subtract 1 from id since numbering starts at one for some reason in Region, but vectors sure don't
+            region = m_currentRegion->findSubRegion(index);
+
             if (region!=nullptr)
             {
                 std::cout << "Editing: ";
