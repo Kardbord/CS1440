@@ -220,7 +220,8 @@ void UserInterface::remove()
         unsigned int id = convertStringToUnsignedInt(input, &valid);
         if (valid && id>0)
         {
-            // TODO: Look up the region by Id and assign it to the region variable
+            auto index = id - 1; // subtract one from id since region ids start at one but vectors start at 0
+            m_currentRegion->removeSubRegion(index);
             std::cout << "Deleted!" << std::endl;
         }
         else
