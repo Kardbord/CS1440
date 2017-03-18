@@ -7,13 +7,13 @@
 
 #include "UserInterface.h"
 
-class CountyUserInterface : public UserInterface
-{
+class CountyUserInterface : public UserInterface {
 public:
-    CountyUserInterface(Region* region);
+    CountyUserInterface(Region *region);
 
 protected:
     Region::RegionType getSubRegionType();
+
     void setupMenu();
 
 };

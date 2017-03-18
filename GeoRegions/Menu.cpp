@@ -9,58 +9,49 @@
 #include <iomanip>
 #include <algorithm>
 
-Menu::Menu(const std::string& header) : m_header(header)
-{
+Menu::Menu(const std::string &header) : m_header(header) {
     m_optionAllocation = 2;
-    m_options = new MenuOption* [m_optionAllocation];
+    m_options = new MenuOption *[m_optionAllocation];
 }
 
-Menu::~Menu()
-{
+Menu::~Menu() {
     // When a menu object is destroyed, it must release all of things it allocated dynamically.
     // This includes the menu options and the array of pointers to memory options
 
-    for (int i=0; i<getOptionCount(); i++)
+    for (int i = 0; i < getOptionCount(); i++)
         delete m_options[i];
     delete[] m_options;
 }
 
-void Menu::addOption(const std::string& command, const std::string& description)
-{
-    if (command!="")
-    {
+void Menu::addOption(const std::string &command, const std::string &description) {
+    if (command != "") {
         if (m_optionCount == m_optionAllocation)
             growOptionAllocation();
 
-        MenuOption* menuOption = new MenuOption(command, description);
+        MenuOption *menuOption = new MenuOption(command, description);
         m_options[m_optionCount++] = menuOption;
     }
 }
 
-const MenuOption* Menu::getOption(int optionIndex) const
-{
-    const MenuOption* option = nullptr;
-    if (optionIndex>=0 && optionIndex<getOptionCount())
+const MenuOption *Menu::getOption(int optionIndex) const {
+    const MenuOption *option = nullptr;
+    if (optionIndex >= 0 && optionIndex < getOptionCount())
         option = m_options[optionIndex];
     return option;
 }
 
-std::string Menu::show() const
-{
+std::string Menu::show() const {
     std::string command;
     bool keepGoing = true;
 
-    while (keepGoing)
-    {
+    while (keepGoing) {
         std::string optionList;
 
         std::cout << std::endl;
         std::cout << getHeader() << " menu:" << std::endl;
-        for (int i=0; i<getOptionCount(); i++)
-        {
-            const MenuOption* option = getOption(i);
-            if (option!= nullptr)
-            {
+        for (int i = 0; i < getOptionCount(); i++) {
+            const MenuOption *option = getOption(i);
+            if (option != nullptr) {
                 std::cout << std::setw(6) << option->getCommand() << " - " << option->getDescription() << std::endl;
                 optionList += option->getCommand() + ", ";
             }
@@ -71,7 +62,8 @@ std::string Menu::show() const
         std::cout << std::endl;
         std::cout << "Enter a " << getHeader() << " command (" << optionList << "): " << std::endl;
         std::getline(std::cin, command);
-        std::transform(command.begin(), command.end(), command.begin(), ::toupper);     // Convert the command to upper case
+        std::transform(command.begin(), command.end(), command.begin(),
+                       ::toupper);     // Convert the command to upper case
 
         keepGoing = !isValidCommand(command);
     }
@@ -79,16 +71,13 @@ std::string Menu::show() const
     return command;
 }
 
-bool Menu::isValidCommand(std::string command) const
-{
+bool Menu::isValidCommand(std::string command) const {
     bool isValid = false;
 
-    if (command=="X")
+    if (command == "X")
         isValid = true;
-    else
-    {
-        for (int i=0; i<getOptionCount() && !isValid; i++)
-        {
+    else {
+        for (int i = 0; i < getOptionCount() && !isValid; i++) {
             if (command == getOption(i)->getCommand())
                 isValid = true;
         }
@@ -97,12 +86,10 @@ bool Menu::isValidCommand(std::string command) const
     return isValid;
 }
 
-void Menu::growOptionAllocation()
-{
+void Menu::growOptionAllocation() {
     m_optionAllocation = 2 * m_optionAllocation;
-    MenuOption** newArray = new MenuOption* [m_optionAllocation];
-    for (int i=0; i<m_optionCount; i++)
-    {
+    MenuOption **newArray = new MenuOption *[m_optionAllocation];
+    for (int i = 0; i < m_optionCount; i++) {
         newArray[i] = m_options[i];
     }
     delete[] m_options;

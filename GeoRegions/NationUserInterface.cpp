@@ -5,19 +5,16 @@
 #include "NationUserInterface.h"
 #include "Menu.h"
 
-NationUserInterface::NationUserInterface(Region* contextRegion) :
-        UserInterface(contextRegion)
-{
+NationUserInterface::NationUserInterface(Region *contextRegion) :
+        UserInterface(contextRegion) {
 
 }
 
-Region::RegionType NationUserInterface::getSubRegionType()
-{
+Region::RegionType NationUserInterface::getSubRegionType() {
     return Region::NationType;
 }
 
-void NationUserInterface::setupMenu()
-{
+void NationUserInterface::setupMenu() {
     UserInterface::setupMenu();
 
     m_menu->addOption("C", "Create a new state");

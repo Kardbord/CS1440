@@ -14,8 +14,10 @@ private:
 
 public:
     MenuOption(std::string command, std::string description);
-    const std::string& getCommand() const { return m_command; }
-    const std::string& getDescription() const { return m_description; }
+
+    const std::string &getCommand() const { return m_command; }
+
+    const std::string &getDescription() const { return m_description; }
 };
 
 #endif //GEO_REGIONS_MENUOPTION_H

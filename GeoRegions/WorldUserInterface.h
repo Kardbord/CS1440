@@ -8,13 +8,13 @@
 #include "UserInterface.h"
 #include "World.h"
 
-class WorldUserInterface : public UserInterface
-{
+class WorldUserInterface : public UserInterface {
 public:
-    WorldUserInterface(Region* region);
+    WorldUserInterface(Region *region);
 
 protected:
     Region::RegionType getSubRegionType();
+
     void setupMenu();
 };
 

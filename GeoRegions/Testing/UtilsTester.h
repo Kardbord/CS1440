@@ -10,12 +10,17 @@ class UtilsTester {
 
 public:
     void testSplit();
+
     void testConvertToInt();
+
     void testConvertToUnsignedInt();
+
     void testConvertToDouble();
 
     void testLeftTrim();
+
     void testRightTrim();
+
     void testTrim();
 };
 

@@ -9,28 +9,25 @@
 
 #include <iostream>
 
-StateUserInterface::StateUserInterface(Region* contextRegion) :
-        UserInterface(contextRegion)
-{
+StateUserInterface::StateUserInterface(Region *contextRegion) :
+        UserInterface(contextRegion) {
 
 }
 
-Region::RegionType StateUserInterface::getSubRegionType()
-{
+Region::RegionType StateUserInterface::getSubRegionType() {
     Region::RegionType result = Region::RegionType::UnknownRegionType;
 
     std::string input = getStringInput("Do you want to create a 1) County or 2) City?  Enter a 1 or 2:");
     int choice = convertStringToInt(input);
-    if (choice==1)
+    if (choice == 1)
         result = Region::RegionType::CountyType;
-    else if (choice==2)
+    else if (choice == 2)
         result = Region::RegionType::CityType;
 
     return result;
 }
 
-void StateUserInterface::setupMenu()
-{
+void StateUserInterface::setupMenu() {
     UserInterface::setupMenu();
 
     m_menu->addOption("C", "Create a new county or city");

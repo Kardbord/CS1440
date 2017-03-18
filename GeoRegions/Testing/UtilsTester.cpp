@@ -9,8 +9,7 @@
 
 #include "../Utils.h"
 
-void UtilsTester::testSplit()
-{
+void UtilsTester::testSplit() {
     std::cout << "Execute UtilsTester::testSplit" << std::endl;
 
     // Check good cases
@@ -90,8 +89,7 @@ void UtilsTester::testSplit()
     }
 }
 
-void UtilsTester::testConvertToInt()
-{
+void UtilsTester::testConvertToInt() {
     std::cout << "Execute UtilsTester::testConvertToInt" << std::endl;
 
     bool isValid;
@@ -188,8 +186,7 @@ void UtilsTester::testConvertToInt()
     }
 }
 
-void UtilsTester::testConvertToUnsignedInt()
-{
+void UtilsTester::testConvertToUnsignedInt() {
     std::cout << "Execute UtilsTester::testConvertToUnsignedInt" << std::endl;
 
     bool isValid;
@@ -280,8 +277,7 @@ void UtilsTester::testConvertToUnsignedInt()
 }
 
 
-void UtilsTester::testConvertToDouble()
-{
+void UtilsTester::testConvertToDouble() {
     std::cout << "Execute UtilsTester::testConvertToDouble" << std::endl;
 
     bool isValid;
@@ -411,8 +407,7 @@ void UtilsTester::testConvertToDouble()
 
 }
 
-void UtilsTester::testLeftTrim()
-{
+void UtilsTester::testLeftTrim() {
     std::cout << "Execute UtilsTester::testLeftTrim" << std::endl;
 
     std::string s = "ABC";
@@ -490,8 +485,7 @@ void UtilsTester::testLeftTrim()
 }
 
 
-void UtilsTester::testRightTrim()
-{
+void UtilsTester::testRightTrim() {
     std::cout << "Execute UtilsTester::testRightTrim" << std::endl;
 
     std::string s = "ABC";
@@ -568,8 +562,7 @@ void UtilsTester::testRightTrim()
 
 }
 
-void UtilsTester::testTrim()
-{
+void UtilsTester::testTrim() {
     std::cout << "Execute UtilsTester::testTrim" << std::endl;
 
     std::string s = "ABC";

@@ -5,17 +5,14 @@
 #include "CountyUserInterface.h"
 #include "Menu.h"
 
-CountyUserInterface::CountyUserInterface(Region* region) : UserInterface(region)
-{
+CountyUserInterface::CountyUserInterface(Region *region) : UserInterface(region) {
 }
 
-Region::RegionType CountyUserInterface::getSubRegionType()
-{
+Region::RegionType CountyUserInterface::getSubRegionType() {
     return Region::CityType;
 }
 
-void CountyUserInterface::setupMenu()
-{
+void CountyUserInterface::setupMenu() {
     UserInterface::setupMenu();
 
     m_menu->addOption("C", "Create a new city");

@@ -4,7 +4,6 @@
 
 #include "Nation.h"
 
-Nation::Nation(const std::string data[]) : Region(NationType, data)
-{
+Nation::Nation(const std::string data[]) : Region(NationType, data) {
     validate();
 }

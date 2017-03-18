@@ -7,12 +7,12 @@
 
 #include "UserInterface.h"
 
-class StateUserInterface : public UserInterface
-{
+class StateUserInterface : public UserInterface {
 public:
-    StateUserInterface(Region* contextRegion);
+    StateUserInterface(Region *contextRegion);
 
     Region::RegionType getSubRegionType();
+
     void setupMenu();
 };
 

@@ -11,37 +11,30 @@
 
 #include <iostream>
 
-UserInterface::UserInterface(Region* contextRegion) : m_currentRegion(contextRegion)
-{
+UserInterface::UserInterface(Region *contextRegion) : m_currentRegion(contextRegion) {
 }
 
-UserInterface::~UserInterface()
-{
+UserInterface::~UserInterface() {
     cleanup();
 }
 
-void UserInterface::setupMenu()
-{
+void UserInterface::setupMenu() {
     m_menu = new Menu(m_currentRegion->getName());
 }
 
-Region::RegionType UserInterface::getSubRegionType()
-{
+Region::RegionType UserInterface::getSubRegionType() {
     return Region::UnknownRegionType;
 }
 
-void UserInterface::cleanup()
-{
-    if (m_menu != nullptr)
-    {
+void UserInterface::cleanup() {
+    if (m_menu != nullptr) {
         delete m_menu;
         m_menu = nullptr;
     }
 
 }
 
-void UserInterface::run()
-{
+void UserInterface::run() {
     setupMenu();
 
     std::cout << "Current context: " << m_currentRegion->getName() << std::endl;
@@ -49,45 +42,30 @@ void UserInterface::run()
     list();
 
     bool keepGoing = true;
-    while (keepGoing)
-    {
+    while (keepGoing) {
         std::string command = m_menu->show();
-        if (command=="C")
-        {
+        if (command == "C") {
             add();
-        }
-        else if (command=="L")
-        {
+        } else if (command == "L") {
             list();
-        }
-        else if (command=="E")
-        {
+        } else if (command == "E") {
             edit();
-        }
-        else if (command=="D")
-        {
+        } else if (command == "D") {
             remove();
-        }
-        else if (command=="P")
-        {
+        } else if (command == "P") {
             print();
-        }
-        else if (command=="M")
-        {
+        } else if (command == "M") {
             changeToSubRegion();
-        }
-        else if (command=="X")
-        {
+        } else if (command == "X") {
             keepGoing = false;
         }
     }
 }
 
-void UserInterface::add()
-{
+void UserInterface::add() {
     m_subRegionType = getSubRegionType();
 
-    if (m_subRegionType!=Region::RegionType::UnknownRegionType) {
+    if (m_subRegionType != Region::RegionType::UnknownRegionType) {
         std::string data = getStringInput(
                 "Enter name,population,areas for " + Region::regionLabel(m_subRegionType) + ":");
         if (data != "") {
@@ -102,33 +80,27 @@ void UserInterface::add()
         } else {
             std::cout << "Nothing entered - no region created" << std::endl;
         }
-    }
-    else {
+    } else {
         std::cout << "Cannot create a region of an unknown type" << std::endl;
     }
 }
 
-void UserInterface::list()
-{
+void UserInterface::list() {
     m_currentRegion->list(std::cout);
 }
 
-void UserInterface::edit()
-{
+void UserInterface::edit() {
     std::string input = getStringInput("Which region would you like to edit? Enter the id:");
-    if (input!="")
-    {
+    if (input != "") {
         bool valid;
         unsigned int id = convertStringToUnsignedInt(input, &valid);
-        if (valid && id>0)
-        {
-            Region* region = nullptr;
+        if (valid && id > 0) {
+            Region *region = nullptr;
             auto index = id - 1; // subtract 1 from id since id begins numbering at 1 instead of 0
             // TODO: Look the region by Id and assign it to region variable
             region = m_currentRegion->findSubRegion(index);
 
-            if (region!=nullptr)
-            {
+            if (region != nullptr) {
                 std::cout << "Editing: ";
                 region->display(std::cout, 0, false);
                 editName(region);
@@ -136,144 +108,102 @@ void UserInterface::edit()
                 editArea(region);
 
             }
-        }
-        else
-        {
+        } else {
             std::cout << "Invalid id -- nothing selected for edit" << std::endl;
         }
-    }
-    else
-    {
+    } else {
         std::cout << "No id entered -- nothing selected for edit" << std::endl;
     }
 
 }
 
-void UserInterface::editName(Region* region)
-{
+void UserInterface::editName(Region *region) {
     std::string updatedName = getStringInput("Enter an updated name (<enter> to keep current value):");
-    if (updatedName!="")
-    {
+    if (updatedName != "") {
         region->setName(updatedName);
         std::cout << "Name updated" << std::endl;
-    }
-    else
-    {
+    } else {
         std::cout << "Nothing entered - nothing updated" << std::endl;
     }
 }
 
-void UserInterface::editPopulation(Region* region)
-{
+void UserInterface::editPopulation(Region *region) {
     std::string population = getStringInput("Enter an updated population (<enter> to keep current value):");
-    if (population!="")
-    {
+    if (population != "") {
         bool valid;
         unsigned int newPopulation = convertStringToUnsignedInt(population, &valid);
-        if (valid)
-        {
+        if (valid) {
             region->setPopulation(newPopulation);
             std::cout << "Population updated" << std::endl;
-        }
-        else
-        {
+        } else {
             std::cout << "Invalid integer - population not updated" << std::endl;
         }
-    }
-    else
-    {
+    } else {
         std::cout << "Nothing entered - nothing updated" << std::endl;
     }
 
 }
 
-void UserInterface::editArea(Region* region)
-{
+void UserInterface::editArea(Region *region) {
     std::string area = getStringInput("Enter an updated area (<enter> to keep current value):");
-    if (area!="")
-    {
+    if (area != "") {
         bool valid;
         double newArea = convertStringToDouble(area, &valid);
-        if (valid)
-        {
+        if (valid) {
             region->setArea(newArea);
             std::cout << "Area updated" << std::endl;
-        }
-        else
-        {
+        } else {
             std::cout << "Invalid integer - area not updated" << std::endl;
         }
-    }
-    else
-    {
+    } else {
         std::cout << "Nothing entered - nothing updated" << std::endl;
     }
 }
 
 
-void UserInterface::remove()
-{
+void UserInterface::remove() {
     std::string input = getStringInput("Which region would you like to remove? Enter the id:");
-    if (input!="")
-    {
+    if (input != "") {
         bool valid;
         unsigned int id = convertStringToUnsignedInt(input, &valid);
-        if (valid && id>0)
-        {
+        if (valid && id > 0) {
             auto index = id - 1; // subtract one from id since region ids start at one but vectors start at 0
             m_currentRegion->removeSubRegion(index);
             std::cout << "Deleted!" << std::endl;
-        }
-        else
-        {
+        } else {
             std::cout << "Invalid region id -- nothing deleted" << std::endl;
         }
-    }
-    else
-    {
+    } else {
         std::cout << "No id entered - nothing removed" << std::endl;
     }
 }
 
-void UserInterface::print()
-{
+void UserInterface::print() {
     m_currentRegion->display(std::cout, 0, true);
 };
 
-void UserInterface::changeToSubRegion()
-{
+void UserInterface::changeToSubRegion() {
     std::string input = getStringInput("Which region would you work with (enter the id):");
-    if (input!="")
-    {
+    if (input != "") {
         bool valid;
         unsigned int id = convertStringToUnsignedInt(input, &valid);
-        if (valid && id>0)
-        {
-            Region* region;
+        if (valid && id > 0) {
+            Region *region;
             // TODO: Lookup the region by Id and assign it to the region variable.
-            if (region!=nullptr)
-            {
-                UserInterface* nextUI = nullptr;
-                if (region->getType()==Region::CountyType)
-                {
+            if (region != nullptr) {
+                UserInterface *nextUI = nullptr;
+                if (region->getType() == Region::CountyType) {
                     nextUI = new CountyUserInterface(region);
-                }
-                else if (region->getType()==Region::StateType)
-                {
+                } else if (region->getType() == Region::StateType) {
                     nextUI = new StateUserInterface(region);
-                }
-                else if (region->getType()==Region::NationType)
-                {
+                } else if (region->getType() == Region::NationType) {
                     nextUI = new NationUserInterface(region);
                 }
 
-                if (nextUI != nullptr)
-                {
+                if (nextUI != nullptr) {
                     nextUI->run();
                     delete nextUI;
-                }
-                else
-                {
+                } else {
                     std::cout << "Can't move into the context of " << region->getName();
                 }
             }

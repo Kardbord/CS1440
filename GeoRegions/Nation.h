@@ -10,8 +10,7 @@
 #include <string>
 
 // TODO: Implement Nations having States and only states
-class Nation : public Region
-{
+class Nation : public Region {
 public:
     Nation(const std::string data[]);
 };

@@ -5,17 +5,14 @@
 #include "WorldUserInterface.h"
 #include "Menu.h"
 
-WorldUserInterface::WorldUserInterface(Region* region) : UserInterface(region)
-{
+WorldUserInterface::WorldUserInterface(Region *region) : UserInterface(region) {
 }
 
-Region::RegionType WorldUserInterface::getSubRegionType()
-{
+Region::RegionType WorldUserInterface::getSubRegionType() {
     return Region::NationType;
 }
 
-void WorldUserInterface::setupMenu()
-{
+void WorldUserInterface::setupMenu() {
     UserInterface::setupMenu();
 
     m_menu->addOption("C", "Create a new nation");
