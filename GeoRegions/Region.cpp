@@ -119,7 +119,6 @@ Region::Region(RegionType type, const std::string data[]) :
 }
 
 Region::~Region() {
-    // TODO: cleanup any dynamically allocated objects
     // TODO: verify this is correct...
     for (auto &&r : m_subRegions) {
         delete r; // call the destructor to delete any subRegions of the subRegion
@@ -145,13 +144,10 @@ void Region::list(std::ostream &out) {
     out << std::endl;
     out << getName() << ":" << std::endl;
 
-    // TODO: implement the loop in the list method
     // TODO: test
     for (auto &&r : m_subRegions) {
         r->list(out);
     }
-    // foreach subregion, print out
-    //      id    name
 }
 
 void Region::display(std::ostream &out, unsigned int displayLevel, bool showChild) {
@@ -184,7 +180,6 @@ void Region::save(std::ostream &out) {
         << "," << getArea()
         << std::endl;
 
-    // TODO: implement loop in save method to save each sub-region
     // TODO: test this
     for (auto &&r : m_subRegions) {
         r->save(out);

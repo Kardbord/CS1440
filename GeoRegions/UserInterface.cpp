@@ -187,7 +187,7 @@ void UserInterface::changeToSubRegion() {
         unsigned int id = convertStringToUnsignedInt(input, &valid);
         if (valid && id > 0) {
             Region *region;
-            // TODO: Lookup the region by Id and assign it to the region variable.
+            // TODO: verify this is correct
             auto index = id - 1; // subtract 1 from id since ids begin at 1 but vectors begin indexing at 0
             region = m_currentRegion->findSubRegion(index);
             if (region != nullptr) {
