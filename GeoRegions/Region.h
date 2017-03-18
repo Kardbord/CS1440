@@ -8,7 +8,6 @@
 #include <string>
 #include <vector>
 
-// TODO: whenever iterating through m_subRegions, ensure that we don't try and follow a null pointer
 class Region {
 public:
     typedef enum RegionType {
