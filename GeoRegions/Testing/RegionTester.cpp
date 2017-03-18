@@ -52,7 +52,7 @@ void RegionTester::testCreateFromStream() {
         }
 
         for (unsigned int nationIndex = 0; nationIndex < world->getSubRegionCount(); nationIndex++) {
-            Region *nation = world->getSubRegionByIndex(nationIndex);
+            Region *nation = world->findSubRegion(nationIndex);
             if (nation->getType() != Region::RegionType::NationType) {
                 std::cout << "Failed to create correct type of sub-region in the world from " << inputFile << std::endl;
                 std::cout << "\tExpected nation sub-region type, but created a " << nation->getRegionLabel()

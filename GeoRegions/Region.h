@@ -77,6 +77,8 @@ public:
      */
     void removeSubRegions();
 
+    unsigned long long int getSubRegionCount() { return m_subRegions.size(); }
+
     // TODO: Add methods to manage sub-regions
 
     Region *findSubRegion(unsigned int const &id) const;
