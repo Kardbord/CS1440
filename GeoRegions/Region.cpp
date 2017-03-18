@@ -225,3 +225,19 @@ Region *Region::findSubRegion(unsigned int const &id) const {
     if (id < 0 || id > m_subRegions.size()) return nullptr;
     return m_subRegions[id];
 }
+
+bool Region::removeSubRegion(unsigned int const &id) {
+    if (id < 0 || id > m_subRegions.size()) return false;
+    if (m_subRegions[id] != nullptr) {
+        delete m_subRegions[id];
+        m_subRegions[id] = nullptr;
+        return true;
+    }
+    return false;
+}
+
+void Region::removeSubRegions() {
+    for (int i = 0; i < m_subRegions.size(); ++i) {
+        removeSubRegion((const unsigned int &) i);
+    }
+}

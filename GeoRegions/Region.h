@@ -50,6 +50,17 @@ public:
     void setArea(double area) { m_area = area; }
     bool getIsValid() const { return m_isValid; }
 
+    /**
+     * @param id is the id (index in m_subRegions) of the subRegion to be removed
+     * @return true if a region was found and removed, false otherwise
+     */
+    bool removeSubRegion(unsigned int const &id);
+
+    /**
+     * Removes all sub-Regions of the Region
+     */
+    void removeSubRegions();
+
     // TODO: Add methods to manage sub-regions
 
     Region* findSubRegion(unsigned int const &id) const;
