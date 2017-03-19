@@ -58,6 +58,8 @@ void UserInterface::run() {
             changeToSubRegion();
         } else if (command == "X") {
             keepGoing = false;
+        } else if (command == "V") {
+            printAll();
         }
     }
 }
@@ -179,6 +181,10 @@ void UserInterface::remove() {
 void UserInterface::print() {
     m_currentRegion->displaySubLevel(std::cout, 0, true);
 };
+
+void UserInterface::printAll() {
+    m_currentRegion->displayAll(std::cout, 0);
+}
 
 void UserInterface::changeToSubRegion() {
     std::string input = getStringInput("Which region would you work with (enter the id):");

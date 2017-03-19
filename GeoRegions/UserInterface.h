@@ -46,6 +46,8 @@ protected:
 
     virtual void print();
 
+    virtual void printAll();
+
     virtual void changeToSubRegion();
 };
 
