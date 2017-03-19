@@ -91,7 +91,9 @@ public:
 
     void list(std::ostream &out);
 
-    void display(std::ostream &out, unsigned int displayLevel, bool showChild);
+    void displayAll(std::ostream &out, unsigned int displayLevel);
+
+    void displaySubLevel(std::ostream &out, unsigned int displayLevel, bool showChildren);
 
     void save(std::ostream &out);
 

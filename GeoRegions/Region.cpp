@@ -151,11 +151,11 @@ void Region::list(std::ostream &out) {
 
     // TODO: test
     for (auto &&r : m_subRegions) {
-        if (r != nullptr) r->list(out);
+        out << r->getId() << " " << r->getName() << std::endl;
     }
 }
 
-void Region::display(std::ostream &out, unsigned int displayLevel, bool showChild) {
+void Region::displayAll(std::ostream &out, unsigned int displayLevel) {
     if (displayLevel > 0) {
         out << std::setw(displayLevel * TAB_SIZE) << " ";
     }
@@ -170,10 +170,33 @@ void Region::display(std::ostream &out, unsigned int displayLevel, bool showChil
         << ", area=" << area
         << ", density=" << density << std::endl;
 
-    if (showChild) {
+
+    // TODO: test me
+    for (auto &&r : m_subRegions) {
+        if (r != nullptr) r->displayAll(out, displayLevel + 1);
+    }
+
+}
+
+void Region::displaySubLevel(std::ostream &out, unsigned int displayLevel, bool showChildren) {
+    if (displayLevel > 0) {
+        out << std::setw(displayLevel * TAB_SIZE) << " ";
+    }
+
+    unsigned totalPopulation = computeTotalPopulation();
+    double area = getArea();
+    double density = (double) totalPopulation / area;
+
+    out << std::setw(6) << getId() << "  "
+        << getName() << ", population="
+        << totalPopulation
+        << ", area=" << area
+        << ", density=" << density << std::endl;
+
+    if (showChildren) {
         // TODO: test me
         for (auto &&r : m_subRegions) {
-            if (r != nullptr) r->display(out, displayLevel + 1, showChild);
+            if (r != nullptr) r->displaySubLevel(out, displayLevel + 1, showChildren);
         }
     }
 }

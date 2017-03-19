@@ -100,7 +100,7 @@ void UserInterface::edit() {
 
             if (region != nullptr) {
                 std::cout << "Editing: ";
-                region->display(std::cout, 0, false);
+                region->displaySubLevel(std::cout, 0, false);
                 editName(region);
                 editPopulation(region);
                 editArea(region);
@@ -177,7 +177,7 @@ void UserInterface::remove() {
 }
 
 void UserInterface::print() {
-    m_currentRegion->display(std::cout, 0, true);
+    m_currentRegion->displaySubLevel(std::cout, 0, true);
 };
 
 void UserInterface::changeToSubRegion() {
