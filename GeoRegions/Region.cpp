@@ -196,7 +196,7 @@ void Region::displaySubLevel(std::ostream &out, unsigned int displayLevel, bool 
     if (showChildren) {
         // TODO: test me
         for (auto &&r : m_subRegions) {
-            if (r != nullptr) r->displaySubLevel(out, displayLevel + 1, showChildren);
+            if (r != nullptr) r->displaySubLevel(out, displayLevel + 1, false);
         }
     }
 }
