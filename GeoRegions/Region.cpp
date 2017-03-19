@@ -11,6 +11,7 @@
 #include "City.h"
 
 #include <iomanip>
+#include <cmath>
 
 const std::string regionDelimiter = "^^^";
 const int TAB_SIZE = 4;
@@ -224,12 +225,12 @@ unsigned int Region::getNextId() {
 Region *Region::findSubRegion(unsigned int const &id) const {
     if (id < 0 || id > m_nextId) return nullptr;
 
-    int mid = (int) (m_subRegions.size() / 2);
+    int mid = (int) std::floor(m_subRegions.size() / 2);
 
 
     if (m_subRegions[mid] != nullptr && m_subRegions[mid]->getId() == id) return m_subRegions[mid];
 
-    if (m_subRegions[mid]->getId() < id) {
+    if (m_subRegions[mid]->getId() > id) {
         return binaryFindSubRegion(0, mid - 1, id);
     } else {
         return binaryFindSubRegion(mid + 1, (int) m_subRegions.size(), id);
@@ -242,6 +243,7 @@ bool Region::removeSubRegion(unsigned int const &id) {
     if (m_subRegions[id] != nullptr) {
         delete m_subRegions[id];
         m_subRegions[id] = nullptr;
+        m_subRegions.erase(m_subRegions.begin() + id - 1);
         return true;
     }
     return false;
@@ -266,12 +268,18 @@ Region *Region::binaryFindSubRegion(int const start, int const end, int const ta
 
     int mid = (start + end) / 2;
 
-    if (m_subRegions[mid]->getId() == target) return m_subRegions[mid];
+    if (mid >= m_subRegions.size() || mid < 0) return nullptr;
 
-    if (m_subRegions[mid]->getId() < target) {
-        return binaryFindSubRegion(start, mid - 1, target);
-    } else {
-        return binaryFindSubRegion(mid + 1, end, target);
-    }
+    if (m_subRegions[mid] != nullptr) {
+
+        if (m_subRegions[mid]->getId() == target) return m_subRegions[mid];
+
+        if (m_subRegions[mid]->getId() < target) {
+            return binaryFindSubRegion(start, mid - 1, target);
+        } else {
+            return binaryFindSubRegion(mid + 1, end, target);
+        }
+
+    } else return nullptr;
 
 }

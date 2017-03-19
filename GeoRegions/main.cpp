@@ -4,9 +4,6 @@
 #include "World.h"
 #include "WorldUserInterface.h"
 
-// TODO: fix the way indexing works when accessing subRegions (make the ID correspond to the subRegion)
-        // TODO: fix removing elements from m_subRegions to fully delete and resize the vector using vector.erase
-                // this will make much easier the binary search for Region IDs in findSubRegion
 // TODO: write all necessary test cases under Testing folder
 int main() {
     std::cout << "Welcome to the GeoRegions system" << std::endl << std::endl;
