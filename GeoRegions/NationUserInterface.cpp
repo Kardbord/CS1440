@@ -22,5 +22,6 @@ void NationUserInterface::setupMenu() {
     m_menu->addOption("E", "Edit a state");
     m_menu->addOption("D", "Delete a state");
     m_menu->addOption("P", "Print a report containing all states in this nation");
+    m_menu->addOption("V", "View a report containing all states and their sub-regions");
     m_menu->addOption("M", "Move into the context of a state");
 }
