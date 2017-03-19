@@ -227,7 +227,6 @@ Region *Region::findSubRegion(unsigned int const &id) const {
 
     int mid = (int) std::floor(m_subRegions.size() / 2);
 
-
     if (m_subRegions[mid] != nullptr && m_subRegions[mid]->getId() == id) return m_subRegions[mid];
 
     if (m_subRegions[mid]->getId() > id) {
@@ -262,7 +261,6 @@ void Region::addSubRegion(Region *region) {
 }
 
 
-// TODO: verify that the vector index is not null before accessing it
 Region *Region::binaryFindSubRegion(int const start, int const end, int const target) const {
     if (start < 0 || start > end || end > m_subRegions.size()) return nullptr;
 
