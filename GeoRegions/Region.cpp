@@ -13,6 +13,7 @@
 #include <iomanip>
 #include <cmath>
 #include <typeinfo>
+#include <iostream>
 
 const std::string regionDelimiter = "^^^";
 const int TAB_SIZE = 4;
@@ -231,7 +232,10 @@ void Region::loadChildren(std::istream &in) {
         } else {
             Region *child = create(line);
             if (child != nullptr) {
-                addSubRegion(child);
+                if (!addSubRegion(child)) {
+                    std::cerr << "Input file passed to Region::loadChildren is improperly formatted.\n"
+                              << child->getName() << "not added to subRegions\n";
+                }
                 child->loadChildren(in);
             }
         }
