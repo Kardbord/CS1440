@@ -231,7 +231,7 @@ void Region::loadChildren(std::istream &in) {
         } else {
             Region *child = create(line);
             if (child != nullptr) {
-                m_subRegions.push_back(child);
+                addSubRegion(child);
                 child->loadChildren(in);
             }
         }
