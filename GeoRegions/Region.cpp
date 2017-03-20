@@ -249,7 +249,6 @@ unsigned int Region::getNextId() {
     return m_nextId++;
 }
 
-// TODO: verify that the vector index is not null before accessing it
 Region *Region::findSubRegion(unsigned int const &id) const {
     if (id < 0 || id >= m_nextId) return nullptr;
 
