@@ -12,6 +12,7 @@
 
 #include <iomanip>
 #include <cmath>
+#include <typeinfo>
 
 const std::string regionDelimiter = "^^^";
 const int TAB_SIZE = 4;
@@ -278,9 +279,35 @@ void Region::removeSubRegions() {
 }
 
 void Region::addSubRegion(Region *region) {
-    if (region != nullptr) {
-        m_subRegions.push_back(region);
+    if (region == nullptr) return;
+
+    switch (this->getType()) {
+        case WorldType:
+            if (region->getType() == NationType) {
+                m_subRegions.push_back(region);
+            }
+            break;
+        case NationType:
+            if (region->getType() == StateType) {
+                m_subRegions.push_back(region);
+            }
+            break;
+        case StateType:
+            if (region->getType() == CountyType || region->getType() == CityType) {
+                m_subRegions.push_back(region);
+            }
+            break;
+        case CountyType:
+            if (region->getType() == CityType) {
+                m_subRegions.push_back(region);
+            }
+            break;
+        case CityType:
+            break;
+        default:
+            break;
     }
+    return;
 }
 
 
