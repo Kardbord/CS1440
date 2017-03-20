@@ -85,7 +85,11 @@ public:
 
     Region *findSubRegion(unsigned int const &id) const;
 
-    void addSubRegion(Region* region);
+    /**
+     * @param region is the Region to potentially be appended to the Region::m_subRegions vector
+     * @return true if region is sucessfully added, false if it is not
+     */
+    bool addSubRegion(Region* region);
 
     unsigned int computeTotalPopulation();
 

@@ -278,36 +278,39 @@ void Region::removeSubRegions() {
     }
 }
 
-void Region::addSubRegion(Region *region) {
-    if (region == nullptr) return;
+bool Region::addSubRegion(Region *region) {
+    if (region == nullptr) return false;
 
     switch (this->getType()) {
         case WorldType:
             if (region->getType() == NationType) {
                 m_subRegions.push_back(region);
+                return true;
             }
-            break;
+            return false;
         case NationType:
             if (region->getType() == StateType) {
                 m_subRegions.push_back(region);
+                return true;
             }
-            break;
+            return false;
         case StateType:
             if (region->getType() == CountyType || region->getType() == CityType) {
                 m_subRegions.push_back(region);
+                return true;
             }
-            break;
+            return false;
         case CountyType:
             if (region->getType() == CityType) {
                 m_subRegions.push_back(region);
+                return true;
             }
-            break;
+            return false;
         case CityType:
-            break;
+            return false;
         default:
-            break;
+            return false;
     }
-    return;
 }
 
 
