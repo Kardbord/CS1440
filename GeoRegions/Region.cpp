@@ -259,9 +259,9 @@ Region *Region::findSubRegion(unsigned int const &id) const {
         if (m_subRegions[mid]->getId() == id) return m_subRegions[mid];
 
         if (m_subRegions[mid]->getId() > id) {
-            return binaryFindSubRegion(0, mid - 1, id);
+            return binaryFindSubRegion(0, mid - 1, id); // TODO: Tentative fix to above: send mid instead of mid - 1
         } else {
-            return binaryFindSubRegion(mid + 1, (int) m_subRegions.size(), id);
+            return binaryFindSubRegion(mid + 1, (int) m_subRegions.size(), id); // TODO: Tentative fix to above: send mid instead of mid + 1
         }
     } else return nullptr;
 }
