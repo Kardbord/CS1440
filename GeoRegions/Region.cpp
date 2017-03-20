@@ -251,18 +251,19 @@ unsigned int Region::getNextId() {
 
 // TODO: verify that the vector index is not null before accessing it
 Region *Region::findSubRegion(unsigned int const &id) const {
-    if (id < 0 || id > m_nextId) return nullptr;
+    if (id < 0 || id >= m_nextId) return nullptr;
 
     int mid = (int) std::floor(m_subRegions.size() / 2);
 
-    if (m_subRegions[mid] != nullptr && m_subRegions[mid]->getId() == id) return m_subRegions[mid];
+    if (m_subRegions[mid] != nullptr) {
+        if (m_subRegions[mid]->getId() == id) return m_subRegions[mid];
 
-    if (m_subRegions[mid]->getId() > id) {
-        return binaryFindSubRegion(0, mid - 1, id);
-    } else {
-        return binaryFindSubRegion(mid + 1, (int) m_subRegions.size(), id);
-    }
-
+        if (m_subRegions[mid]->getId() > id) {
+            return binaryFindSubRegion(0, mid - 1, id);
+        } else {
+            return binaryFindSubRegion(mid + 1, (int) m_subRegions.size(), id);
+        }
+    } else return nullptr;
 }
 
 bool Region::removeSubRegion(unsigned int const &id) {
