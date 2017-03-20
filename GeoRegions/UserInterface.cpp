@@ -73,8 +73,9 @@ void UserInterface::add() {
         if (data != "") {
             Region *region = Region::create(m_subRegionType, data);
             if (region != nullptr) {
-                m_currentRegion->addSubRegion(region); // TODO verify this is correct
-                std::cout << Region::regionLabel(m_subRegionType) << " added" << std::endl;
+                if (m_currentRegion->addSubRegion(region)) { // TODO verify this is correct
+                    std::cout << Region::regionLabel(m_subRegionType) << " added" << std::endl;
+                } else std::cout << "Invalid data - no region created" << std::endl;
             } else {
                 std::cout << "Invalid data - no region created" << std::endl;
             }
