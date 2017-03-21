@@ -515,5 +515,5 @@ void RegionTester::testComputeTotalPopulation() {
     }
 
 
-    // TODO: Add test cases for computeTotalPopulation
+    // TODO: Add test cases for computeTotalPopulation - test lower levels
 }
