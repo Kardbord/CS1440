@@ -129,7 +129,9 @@ Region::~Region() {
             r = nullptr;
         }
     }
-    m_subRegions.clear();
+    if (m_subRegions.size() != 0) {
+        m_subRegions.clear();
+    }
 }
 
 std::string Region::getRegionLabel() const {
@@ -262,7 +264,6 @@ Region *Region::findSubRegion(unsigned int const &id) const {
 }
 
 // TODO: test me
-// TODO: fix bug, Davis County deletion crashes program --- WHY?!?!?!?!
 bool Region::removeSubRegion(unsigned int const &id) {
     if (id < 0 || id > m_nextId) return false;
 
@@ -270,11 +271,25 @@ bool Region::removeSubRegion(unsigned int const &id) {
 
     if (delRegion == nullptr) return false;
 
+    if (delRegion->m_superIndex != nullptr) {
+        m_subRegions[*delRegion->m_superIndex] = nullptr;
+
+        // iterate through m_subRegions and update m_superIndex for each of them
+        bool nullFound = false;
+        for (int i = 0; i < m_subRegions.size(); ++i) {
+            if (m_subRegions[i] == nullptr) {
+                m_subRegions.erase(m_subRegions.begin() + i);
+                nullFound = true;
+            }
+            if (nullFound && i < m_subRegions.size()) {
+                delete m_subRegions[i]->m_superIndex;
+                m_subRegions[i]->m_superIndex = new int(i);
+            }
+        }
+    }
+
     delete delRegion;
 
-    if (delRegion->m_superIndex != nullptr) {
-        m_subRegions.erase(m_subRegions.begin() + *delRegion->m_superIndex);
-    }
     return true;
 }
 
