@@ -22,6 +22,12 @@ protected:
     double m_area = 0;
     bool m_isValid = false;
 
+    /**
+     * m_superIndex is the Region's index in its parent's m_subRegions vector
+     * m_superIndex == nullptr if it is the root of all other regions
+     */
+    int *m_superIndex = nullptr;
+
     std::vector<Region *> m_subRegions;
 
 private:

@@ -151,7 +151,6 @@ void Region::list(std::ostream &out) {
     out << std::endl;
     out << getName() << ":" << std::endl;
 
-    // TODO: test
     for (auto &&r : m_subRegions) {
         out << r->getId() << " " << r->getName() << std::endl;
     }
@@ -172,8 +171,6 @@ void Region::displayAll(std::ostream &out, unsigned int displayLevel) {
         << ", area=" << area
         << ", density=" << density << std::endl;
 
-
-    // TODO: test me
     for (auto &&r : m_subRegions) {
         if (r != nullptr) r->displayAll(out, displayLevel + 1);
     }
@@ -196,7 +193,6 @@ void Region::displaySubLevel(std::ostream &out, unsigned int displayLevel, bool 
         << ", density=" << density << std::endl;
 
     if (showChildren) {
-        // TODO: test me
         for (auto &&r : m_subRegions) {
             if (r != nullptr) r->displaySubLevel(out, displayLevel + 1, false);
         }
@@ -265,15 +261,20 @@ Region *Region::findSubRegion(unsigned int const &id) const {
     } else return nullptr;
 }
 
+// TODO: test me
 bool Region::removeSubRegion(unsigned int const &id) {
     if (id < 0 || id > m_subRegions.size()) return false;
-    if (m_subRegions[id] != nullptr) {
-        delete m_subRegions[id];
-        m_subRegions[id] = nullptr;
-        m_subRegions.erase(m_subRegions.begin() + id - 1);
-        return true;
+
+    Region *delRegion = findSubRegion(id);
+
+    if (delRegion == nullptr) return false;
+
+    delete delRegion;
+
+    if (delRegion->m_superIndex != nullptr) {
+        m_subRegions.erase(m_subRegions.begin() + *delRegion->m_superIndex);
     }
-    return false;
+    return true;
 }
 
 void Region::removeSubRegions() {
@@ -289,24 +290,28 @@ bool Region::addSubRegion(Region *region) {
         case WorldType:
             if (region->getType() == NationType) {
                 m_subRegions.push_back(region);
+                m_subRegions.back()->m_superIndex = new int((int) (m_subRegions.size() - 1));
                 return true;
             }
             return false;
         case NationType:
             if (region->getType() == StateType) {
                 m_subRegions.push_back(region);
+                m_subRegions.back()->m_superIndex = new int((int) (m_subRegions.size() - 1));
                 return true;
             }
             return false;
         case StateType:
             if (region->getType() == CountyType || region->getType() == CityType) {
                 m_subRegions.push_back(region);
+                m_subRegions.back()->m_superIndex = new int((int) (m_subRegions.size() - 1));
                 return true;
             }
             return false;
         case CountyType:
             if (region->getType() == CityType) {
                 m_subRegions.push_back(region);
+                m_subRegions.back()->m_superIndex = new int((int) (m_subRegions.size() - 1));
                 return true;
             }
             return false;
