@@ -51,7 +51,8 @@ void RegionTester::testCreateFromStream() {
             return;
         }
 
-        for (unsigned int nationIndex = 0; nationIndex < world->getSubRegionCount(); nationIndex++) {
+        // Note that this only works because the input file is made up entirely of nations and the world has id 1
+        for (unsigned int nationIndex = 2; nationIndex < world->getSubRegionCount(); nationIndex++) {
             Region *nation = world->findSubRegion(nationIndex);
             if (nation->getType() != Region::RegionType::NationType) {
                 std::cout << "Failed to create correct type of sub-region in the world from " << inputFile << std::endl;
