@@ -53,13 +53,13 @@ void UserInterface::run() {
         } else if (command == "D") {
             remove();
         } else if (command == "P") {
-            print();
+            printAll();
         } else if (command == "M") {
             changeToSubRegion();
         } else if (command == "X") {
             keepGoing = false;
         } else if (command == "V") {
-            printAll();
+            print();
         }
     }
 }
