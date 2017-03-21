@@ -452,7 +452,12 @@ void RegionTester::testComputeTotalPopulation() {
         std::ifstream inputStream(inputFile);
         Region *region = Region::create(inputStream);
         if (region == nullptr) {
-            std::cout << "Failed to create a region from " << inputFile << std::endl;
+            std::cout << "testComputeTotalPopulation failed to create a region from " << inputFile << std::endl;
+            return;
+        }
+
+        if (region->computeTotalPopulation() != 7324782225) {
+            std::cout << "Failure in testComputeTotalPopulation with " << inputFile << std::endl;
             return;
         }
 
@@ -464,7 +469,12 @@ void RegionTester::testComputeTotalPopulation() {
         std::ifstream inputStream(inputFile);
         Region *world = Region::create(inputStream);
         if (world == nullptr) {
-            std::cout << "Failed to create a region from " << inputFile << std::endl;
+            std::cout << "testComputeTotalPopulation failed to create a region from " << inputFile << std::endl;
+            return;
+        }
+
+        if (world->computeTotalPopulation() != 7324782225 + 324118787 + 82175700 + 54786300 + 23519518) {
+            std::cout << "Failure in testComputeTotalPopulation with " << inputFile << std::endl;
             return;
         }
     }
@@ -475,9 +485,15 @@ void RegionTester::testComputeTotalPopulation() {
         std::ifstream inputStream(inputFile);
         Region *world = Region::create(inputStream);
         if (world == nullptr) {
-            std::cout << "Failed to create a region from " << inputFile << std::endl;
+            std::cout << "testComputeTotalPopulation failed to create a region from " << inputFile << std::endl;
             return;
         }
+
+        if (world->computeTotalPopulation() !=
+            7324782225 + 324118787 + 3051217 + 39250017 + 1683140 + 2940058 + 82175700 + 54786300 + 23519518) {
+            std::cout << "Failure in testComputeTotalPopulation with " << inputFile << std::endl;
+            return;
+    }
     }
 
     // another scope for sampleData-4
@@ -486,7 +502,13 @@ void RegionTester::testComputeTotalPopulation() {
         std::ifstream inputStream(inputFile);
         Region *world = Region::create(inputStream);
         if (world == nullptr) {
-            std::cout << "Failed to create a region from " << inputFile << std::endl;
+            std::cout << "testComputeTotalPopulation failed to create a region from " << inputFile << std::endl;
+            return;
+        }
+
+        if (world->computeTotalPopulation() !=
+            0 + 64363 + 425 + 116909 + 48913 + 9659 + 22620 + 263640 + 3252 + 62 + 2352 + 3523523 + 3525) {
+            std::cout << "Failure in testComputeTotalPopulation with " << inputFile << std::endl;
             return;
         }
     }
