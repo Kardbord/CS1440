@@ -22,14 +22,11 @@ protected:
     double m_area = 0;
     bool m_isValid = false;
 
-    // TODO: Add data members to manage sub-region
     std::vector<Region *> m_subRegions;
 
 private:
     static unsigned int m_nextId;
     int subRegionsAlloc = 10;
-
-    Region* binaryFindSubRegion(int const start, int const end, int const target) const;
 
 public:
     static Region *create(std::istream &in);
@@ -81,8 +78,6 @@ public:
 
     unsigned long long int getSubRegionCount() { return m_subRegions.size(); }
 
-    // TODO: Add methods to manage sub-regions
-
     Region *findSubRegion(unsigned int const &id) const;
 
     /**
@@ -108,7 +103,7 @@ protected:
 
     static unsigned int getNextId();
 
-    // TODO: add whatever other helper methods you might need
+    Region* binaryFindSubRegion(int const start, int const end, int const target) const;
 };
 
 
