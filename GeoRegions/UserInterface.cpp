@@ -73,7 +73,7 @@ void UserInterface::add() {
         if (data != "") {
             Region *region = Region::create(m_subRegionType, data);
             if (region != nullptr) {
-                if (m_currentRegion->addSubRegion(region)) { // TODO verify this is correct
+                if (m_currentRegion->addSubRegion(region)) {
                     std::cout << Region::regionLabel(m_subRegionType) << " added" << std::endl;
                 } else std::cout << "Invalid data - no region created" << std::endl;
             } else {
@@ -194,9 +194,7 @@ void UserInterface::changeToSubRegion() {
         unsigned int id = convertStringToUnsignedInt(input, &valid);
         if (valid && id > 0) {
             Region *region;
-            // TODO: verify this is correct
-            auto index = id;
-            region = m_currentRegion->findSubRegion(index);
+            region = m_currentRegion->findSubRegion(id);
             if (region != nullptr) {
                 UserInterface *nextUI = nullptr;
                 if (region->getType() == Region::CountyType) {
