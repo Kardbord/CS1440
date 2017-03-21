@@ -249,7 +249,6 @@ unsigned int Region::getNextId() {
     return m_nextId++;
 }
 
-// TODO: fix bug where some regions aren't found (California id=9)
 Region *Region::findSubRegion(unsigned int const &id) const {
     if (id < 0 || id >= m_nextId) return nullptr;
 
@@ -259,9 +258,9 @@ Region *Region::findSubRegion(unsigned int const &id) const {
         if (m_subRegions[mid]->getId() == id) return m_subRegions[mid];
 
         if (m_subRegions[mid]->getId() > id) {
-            return binaryFindSubRegion(0, mid - 1, id); // TODO: Tentative fix to above: send mid instead of mid - 1
+            return binaryFindSubRegion(0, mid - 1, id);
         } else {
-            return binaryFindSubRegion(mid + 1, (int) m_subRegions.size(), id); // TODO: Tentative fix to above: send mid instead of mid + 1
+            return binaryFindSubRegion(mid + 1, (int) m_subRegions.size() - 1, id);
         }
     } else return nullptr;
 }
@@ -330,7 +329,7 @@ Region *Region::binaryFindSubRegion(int const start, int const end, int const ta
 
         if (m_subRegions[mid]->getId() == target) return m_subRegions[mid];
 
-        if (m_subRegions[mid]->getId() < target) {
+        if (m_subRegions[mid]->getId() > target) {
             return binaryFindSubRegion(start, mid - 1, target);
         } else {
             return binaryFindSubRegion(mid + 1, end, target);

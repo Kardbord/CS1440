@@ -12,9 +12,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63cdb798-da35-4f5e-aaf2-6acc4cbc9337" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Region.cpp" afterPath="$PROJECT_DIR$/Region.cpp" />
-    </list>
+    <list default="true" id="63cdb798-da35-4f5e-aaf2-6acc4cbc9337" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,10 +57,13 @@
       <file leaf-file-name="Region.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Region.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="333" column="49" lean-forward="false" selection-start-line="333" selection-start-column="49" selection-end-line="333" selection-end-column="49" />
+            <state relative-caret-position="458">
+              <caret line="266" column="1" lean-forward="true" selection-start-line="266" selection-start-column="1" selection-end-line="266" selection-end-column="1" />
               <folding>
                 <element signature="e#46#65#0" expanded="true" />
+                <element signature="e#7141#7467#0" expanded="false" />
+                <element signature="e#7469#7613#0" expanded="false" />
+                <element signature="e#7615#8631#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -427,12 +428,12 @@
       <workItem from="1489871332443" duration="5773000" />
       <workItem from="1489877364272" duration="2969000" />
       <workItem from="1489893981412" duration="5841000" />
-      <workItem from="1490043621400" duration="3980000" />
+      <workItem from="1490043621400" duration="4176000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80439000" />
+    <option name="totallyTimeSpent" value="80635000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -454,9 +455,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32616082" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.86296713" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.86296713" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4733862" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -823,10 +824,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Region.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="333" column="49" lean-forward="false" selection-start-line="333" selection-start-column="49" selection-end-line="333" selection-end-column="49" />
+        <state relative-caret-position="458">
+          <caret line="266" column="1" lean-forward="true" selection-start-line="266" selection-start-column="1" selection-end-line="266" selection-end-column="1" />
           <folding>
             <element signature="e#46#65#0" expanded="true" />
+            <element signature="e#7141#7467#0" expanded="false" />
+            <element signature="e#7469#7613#0" expanded="false" />
+            <element signature="e#7615#8631#0" expanded="false" />
           </folding>
         </state>
       </provider>
