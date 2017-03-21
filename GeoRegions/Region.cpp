@@ -295,8 +295,8 @@ bool Region::removeSubRegion(unsigned int const &id) {
 
 // TODO: test me
 void Region::removeSubRegions() {
-    for (auto &&r : m_subRegions) {
-        removeSubRegion(r->getId());
+    while (m_subRegions.size() != 0) {
+        removeSubRegion(m_subRegions[0]->getId());
     }
 }
 
