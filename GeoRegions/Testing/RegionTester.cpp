@@ -446,5 +446,51 @@ void RegionTester::testSubRegions() {
 void RegionTester::testComputeTotalPopulation() {
     std::cout << "RegionTester::testComputeTotalPopulation" << std::endl;
 
+    // just defining a scope, don't mind me. sampleData-1
+    {
+        std::string inputFile = "SampleData/sampleData-1.txt";
+        std::ifstream inputStream(inputFile);
+        Region *region = Region::create(inputStream);
+        if (region == nullptr) {
+            std::cout << "Failed to create a region from " << inputFile << std::endl;
+            return;
+        }
+
+    }
+
+    // another scope for sampleData-2
+    {
+        std::string inputFile = "SampleData/sampleData-2.txt";
+        std::ifstream inputStream(inputFile);
+        Region *world = Region::create(inputStream);
+        if (world == nullptr) {
+            std::cout << "Failed to create a region from " << inputFile << std::endl;
+            return;
+        }
+    }
+
+    // another scope for sampleData-3
+    {
+        std::string inputFile = "SampleData/sampleData-3.txt";
+        std::ifstream inputStream(inputFile);
+        Region *world = Region::create(inputStream);
+        if (world == nullptr) {
+            std::cout << "Failed to create a region from " << inputFile << std::endl;
+            return;
+        }
+    }
+
+    // another scope for sampleData-4
+    {
+        std::string inputFile = "SampleData/sampleData-4.txt";
+        std::ifstream inputStream(inputFile);
+        Region *world = Region::create(inputStream);
+        if (world == nullptr) {
+            std::cout << "Failed to create a region from " << inputFile << std::endl;
+            return;
+        }
+    }
+
+
     // TODO: Add test cases for computeTotalPopulation
 }
