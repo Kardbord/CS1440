@@ -22,6 +22,7 @@ void WorldUserInterface::setupMenu() {
     m_menu->addOption("V", "View a report containing all nations");
     m_menu->addOption("P", "View a report containing all nations and their sub-regions");
     m_menu->addOption("M", "Move into the context of a nation");
+    m_menu->addOption("R", "Recursively delete all sub-regions and their sub-regions");
 }
 
 

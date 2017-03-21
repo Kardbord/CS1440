@@ -44,6 +44,8 @@ protected:
 
     virtual void remove();
 
+    void removeAll();
+
     virtual void print();
 
     virtual void printAll();

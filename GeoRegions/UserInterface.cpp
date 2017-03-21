@@ -60,6 +60,8 @@ void UserInterface::run() {
             keepGoing = false;
         } else if (command == "V") {
             print();
+        } else if (command == "R") {
+            removeAll();
         }
     }
 }
@@ -177,6 +179,14 @@ void UserInterface::remove() {
     } else {
         std::cout << "No id entered - nothing removed" << std::endl;
     }
+}
+
+void UserInterface::removeAll() {
+
+    m_currentRegion->removeSubRegions();
+
+    std::cout << "Deleted!" << std::endl;
+
 }
 
 void UserInterface::print() {

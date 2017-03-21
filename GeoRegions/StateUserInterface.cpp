@@ -37,5 +37,6 @@ void StateUserInterface::setupMenu() {
     m_menu->addOption("V", "View a report containing all counties or cities in this state");
     m_menu->addOption("P", "View a report containing all counties or cities and their sub-regions");
     m_menu->addOption("M", "Move into the context of a county or city");
+    m_menu->addOption("R", "Recursively delete all sub-regions and their sub-regions");
 }
 

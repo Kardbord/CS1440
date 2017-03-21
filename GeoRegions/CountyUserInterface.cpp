@@ -20,5 +20,6 @@ void CountyUserInterface::setupMenu() {
     m_menu->addOption("E", "Edit a city");
     m_menu->addOption("P", "Print a report containing all cities in this county");
     m_menu->addOption("D", "Delete a city");
+    m_menu->addOption("R", "Recursively delete all sub-regions and their sub-regions");
 }
 
