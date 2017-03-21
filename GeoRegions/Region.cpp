@@ -262,8 +262,9 @@ Region *Region::findSubRegion(unsigned int const &id) const {
 }
 
 // TODO: test me
+// TODO: fix bug, Davis County deletion crashes program --- WHY?!?!?!?!
 bool Region::removeSubRegion(unsigned int const &id) {
-    if (id < 0 || id > m_subRegions.size()) return false;
+    if (id < 0 || id > m_nextId) return false;
 
     Region *delRegion = findSubRegion(id);
 
