@@ -317,6 +317,8 @@ bool Region::addSubRegion(Region *region) {
             return false;
         case CityType:
             return false;
+        case UnknownRegionType:
+            return false;
         default:
             return false;
     }
