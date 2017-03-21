@@ -5,6 +5,7 @@
 #include "WorldUserInterface.h"
 
 // TODO: write all necessary test cases under Testing folder
+// TODO: update UML
 int main() {
     std::cout << "Welcome to the GeoRegions system" << std::endl << std::endl;
 
