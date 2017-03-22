@@ -72,6 +72,7 @@ unsigned int convertStringToUnsignedInt(const std::string &s, bool *valid) {
             std::string trimmedString = trim(s);
             if (trimmedString.substr(0, 1) != "-") {
                 unsigned long tmp = std::stoul(trimmedString, &numberOfConvertedCharacters); // TODO: population bug tracked to here...
+                                                                                             // TODO: unsigned long doesn't have enough bits for sample-Data-1 world's population
                 if (tmp <= UINT32_MAX) {
                     result = (unsigned int) tmp;
                     if (valid != nullptr && numberOfConvertedCharacters == trimmedString.length())
