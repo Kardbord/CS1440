@@ -10,6 +10,7 @@
 class World : public Region {
 public:
     World();
+    World(const std::string data[]);
 };
 
 

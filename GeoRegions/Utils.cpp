@@ -61,7 +61,6 @@ int convertStringToInt(const std::string &s, bool *valid) {
     return result;
 }
 
-// TODO: bug tracked to this point for sampleData-1, s is 0 which is incorrect
 unsigned int convertStringToUnsignedInt(const std::string &s, bool *valid) {
     unsigned int result = 0;
     if (valid != nullptr)
@@ -72,7 +71,7 @@ unsigned int convertStringToUnsignedInt(const std::string &s, bool *valid) {
         try {
             std::string trimmedString = trim(s);
             if (trimmedString.substr(0, 1) != "-") {
-                unsigned long tmp = std::stoul(trimmedString, &numberOfConvertedCharacters);
+                unsigned long tmp = std::stoul(trimmedString, &numberOfConvertedCharacters); // TODO: population bug tracked to here...
                 if (tmp <= UINT32_MAX) {
                     result = (unsigned int) tmp;
                     if (valid != nullptr && numberOfConvertedCharacters == trimmedString.length())

@@ -59,7 +59,7 @@ Region *Region::create(RegionType regionType, const std::string &data) {
         // Create the region based on type
         switch (regionType) {
             case WorldType:
-                region = new World();
+                region = new World(fields);
                 break;
             case NationType:
                 region = new Nation(fields);

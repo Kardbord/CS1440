@@ -10,3 +10,8 @@ const std::string worldData[3] = {"World", "0", "510100000.0"};
 World::World() : Region(WorldType, worldData) {
     validate();
 }
+
+World::World(const std::string data[]) : Region(WorldType, data) {
+    validate();
+}
+
