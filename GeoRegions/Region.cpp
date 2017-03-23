@@ -262,7 +262,6 @@ Region *Region::getSubRegion(unsigned int const &id) const {
     } else return nullptr;
 }
 
-// TODO: test me
 bool Region::removeSubRegion(unsigned int const &id) {
     if (id < 0 || id > m_nextId) return false;
 
@@ -292,7 +291,6 @@ bool Region::removeSubRegion(unsigned int const &id) {
     return true;
 }
 
-// TODO: test me
 void Region::removeAllSubRegions() {
     while (m_subRegions.size() != 0) {
         removeSubRegion(m_subRegions[0]->getId());
