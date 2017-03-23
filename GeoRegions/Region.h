@@ -96,7 +96,7 @@ public:
 
     /**
      * @param region is the Region to potentially be appended to the Region::m_subRegions vector
-     * @return true if region is sucessfully added, false if it is not
+     * @return true if region is successfully added, false if it is not
      */
     bool addSubRegion(Region *region);
 
