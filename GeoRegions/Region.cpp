@@ -246,7 +246,7 @@ unsigned int Region::getNextId() {
     return m_nextId++;
 }
 
-Region *Region::findSubRegion(unsigned int const &id) const {
+Region *Region::getSubRegion(unsigned int const &id) const {
     if (id < 0 || id >= m_nextId) return nullptr;
 
     int mid = (int) std::floor(m_subRegions.size() / 2);
@@ -266,7 +266,7 @@ Region *Region::findSubRegion(unsigned int const &id) const {
 bool Region::removeSubRegion(unsigned int const &id) {
     if (id < 0 || id > m_nextId) return false;
 
-    Region *delRegion = findSubRegion(id);
+    Region *delRegion = getSubRegion(id);
 
     if (delRegion == nullptr) return false;
 
@@ -293,7 +293,7 @@ bool Region::removeSubRegion(unsigned int const &id) {
 }
 
 // TODO: test me
-void Region::removeSubRegions() {
+void Region::removeAllSubRegions() {
     while (m_subRegions.size() != 0) {
         removeSubRegion(m_subRegions[0]->getId());
     }
@@ -360,4 +360,16 @@ Region *Region::binaryFindSubRegion(int const start, int const end, int const ta
 
     } else return nullptr;
 
+}
+
+unsigned long long int Region::getTotalSubRegionCount() {
+    auto totalSubRegions = m_subRegions.size();
+
+    for (auto &&r : m_subRegions) {
+        if (r != nullptr) {
+            totalSubRegions += r->getTotalSubRegionCount();
+        }
+    }
+
+    return totalSubRegions;
 }

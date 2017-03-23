@@ -80,17 +80,25 @@ public:
     /**
      * Removes all sub-Regions of the Region
      */
-    void removeSubRegions();
+    void removeAllSubRegions();
 
-    unsigned long long int getSubRegionCount() { return m_subRegions.size(); }
+    /**
+     * @return the count of immediate subregions of the current region - ex: if current region is a world, return count of nations
+     */
+    unsigned long long int getImmediateSubRegionCount() { return m_subRegions.size(); }
 
-    Region *findSubRegion(unsigned int const &id) const;
+    /**
+     * @return the count of immediate subregions of the current region and those subregions' subregions
+     */
+    unsigned long long int getTotalSubRegionCount();
+
+    Region *getSubRegion(unsigned int const &id) const;
 
     /**
      * @param region is the Region to potentially be appended to the Region::m_subRegions vector
      * @return true if region is sucessfully added, false if it is not
      */
-    bool addSubRegion(Region* region);
+    bool addSubRegion(Region *region);
 
     unsigned long long int computeTotalPopulation();
 
@@ -109,7 +117,7 @@ protected:
 
     static unsigned int getNextId();
 
-    Region* binaryFindSubRegion(int const start, int const end, int const target) const;
+    Region *binaryFindSubRegion(int const start, int const end, int const target) const;
 };
 
 

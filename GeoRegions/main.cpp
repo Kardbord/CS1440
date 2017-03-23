@@ -19,7 +19,7 @@ int main() {
         Region *region = Region::create(inputStream);
         if (region != nullptr && region->getType() == Region::WorldType) {
             world = (World *) region;
-            std::cout << "Loaded a world and " << world->getSubRegionCount() << " nations from Nations.txt"
+            std::cout << "Loaded a world and " << world->getImmediateSubRegionCount() << " nations from Nations.txt"
                       << std::endl;
         } else {
             world = new World();

@@ -101,7 +101,7 @@ void UserInterface::edit() {
         if (valid && id > 0) {
             Region *region = nullptr;
             auto index = id;
-            region = m_currentRegion->findSubRegion(index);
+            region = m_currentRegion->getSubRegion(index);
 
             if (region != nullptr) {
                 std::cout << "Editing: ";
@@ -183,7 +183,7 @@ void UserInterface::remove() {
 
 void UserInterface::removeAll() {
 
-    m_currentRegion->removeSubRegions();
+    m_currentRegion->removeAllSubRegions();
 
     std::cout << "Deleted!" << std::endl;
 
@@ -204,7 +204,7 @@ void UserInterface::changeToSubRegion() {
         unsigned int id = convertStringToUnsignedInt(input, &valid);
         if (valid && id > 0) {
             Region *region;
-            region = m_currentRegion->findSubRegion(id);
+            region = m_currentRegion->getSubRegion(id);
             if (region != nullptr) {
                 UserInterface *nextUI = nullptr;
                 if (region->getType() == Region::CountyType) {
