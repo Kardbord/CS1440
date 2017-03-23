@@ -45,15 +45,15 @@ void RegionTester::testCreateFromStream() {
             return;
         }
 
-        if (world->getSubRegionCount() != 4) {
+        if (world->getImmediateSubRegionCount() != 4) {
             std::cout << "Failed to load the four expected nations from " << inputFile << std::endl;
-            std::cout << "\tExpected 4 nations, but loaded a " << world->getSubRegionCount() << std::endl;
+            std::cout << "\tExpected 4 nations, but loaded a " << world->getImmediateSubRegionCount() << std::endl;
             return;
         }
 
         // Note that this only works because the input file is made up entirely of nations and the world has id 1
-        for (unsigned int nationIndex = 2; nationIndex < world->getSubRegionCount(); nationIndex++) {
-            Region *nation = world->findSubRegion(nationIndex);
+        for (unsigned int nationIndex = 2; nationIndex < world->getImmediateSubRegionCount(); nationIndex++) {
+            Region *nation = world->getSubRegion(nationIndex);
             if (nation->getType() != Region::RegionType::NationType) {
                 std::cout << "Failed to create correct type of sub-region in the world from " << inputFile << std::endl;
                 std::cout << "\tExpected nation sub-region type, but created a " << nation->getRegionLabel()
@@ -440,7 +440,130 @@ void RegionTester::testGettersAndSetters() {
 void RegionTester::testSubRegions() {
     std::cout << "RegionTester::testSubRegions" << std::endl;
 
-    // TODO: Add test cases for managing sub-regions
+    // sampleData-2
+
+    std::string inputFile = "SampleData/sampleData-2.txt";
+    std::ifstream inputStream(inputFile);
+    Region *world = Region::create(inputStream);
+    if (world == nullptr) {
+        std::cout << "testSubRegions failed to create a region from " << inputFile << std::endl;
+        return;
+    }
+
+    // Test the 2 getSubRegionCount methods
+    if (world->getImmediateSubRegionCount() != 4) {
+        std::cout << "Failure in world->getImmediateSubRegionCount with " << inputFile << std::endl;
+        return;
+    }
+
+    if (world->getTotalSubRegionCount() != 4) {
+        std::cout << "Failure in world->getImmediateSubRegionCount with " << inputFile << std::endl;
+        return;
+    }
+
+    auto nation = world->getSubRegion(18); // 18 due to Region::m_nextId being a static variable
+
+    if (nation == nullptr) {
+        std::cout << "testSubRegions failed to create a nation from world->getSubRegion(18)" << std::endl;
+        return;
+    }
+
+    if (nation->getImmediateSubRegionCount() != 0) {
+        std::cout << "Failure in nation->getImmediateSubRegionCount with " << inputFile << ", result should be 0"
+                  << std::endl;
+        return;
+    }
+
+    if (nation->getTotalSubRegionCount() != 0) {
+        std::cout << "Failure in nation->getImmediateSubRegionCount with " << inputFile << ", result should be 0"
+                  << std::endl;
+        return;
+    }
+
+    // Test addSubRegion
+    std::string inputString = "2,Tiny Country,30,20";
+    Region *newNation = Region::create(inputString);
+    if (!world->addSubRegion(newNation)) {
+        std::cout << "Failure in world->addRegion(newNation) with" << inputFile << std::endl;
+        return;
+    }
+
+    if (world->getImmediateSubRegionCount() != 5) {
+        std::cout << "Failure in world->getImmediateSubRegionCount after adding newNation with " << inputFile
+                  << std::endl;
+        return;
+    }
+
+    if (world->getTotalSubRegionCount() != 5) {
+        std::cout << "Failure in world->getImmediateSubRegionCount after adding newNation with " << inputFile
+                  << std::endl;
+        return;
+    }
+
+    std::string inputString2 = "3,Tiny State,30,20";
+    Region *newState = Region::create(inputString2);
+    if (!nation->addSubRegion(newState)) {
+        std::cout << "Failure in nation->addRegion(newState) with " << inputFile << std::endl;
+        return;
+    }
+
+    if (world->getImmediateSubRegionCount() != 5) {
+        std::cout << "Failure in world->getImmediateSubRegionCount after adding newState with " << inputFile
+                  << ", result should be 5" << std::endl;
+        return;
+    }
+
+    if (world->getTotalSubRegionCount() != 6) {
+        std::cout << "Failure in world->getImmediateSubRegionCount after adding newState with " << inputFile
+                  << ", result should be 6" << std::endl;
+        return;
+    }
+
+    if (nation->getImmediateSubRegionCount() != 1) {
+        std::cout << "Failure in nation->getImmediateSubRegionCount with " << inputFile << ", result should be 1"
+                  << std::endl;
+        return;
+    }
+
+    if (nation->getTotalSubRegionCount() != 1) {
+        std::cout << "Failure in nation->getImmediateSubRegionCount with " << inputFile << ", result should be 1"
+                  << std::endl;
+        return;
+    }
+
+    if (!world->removeSubRegion(19)) {
+        std::cout << "Failure in world->removeSubRegion(19) with " << inputFile << std::endl;
+        return;
+    }
+
+    if (world->getImmediateSubRegionCount() != 4) {
+        std::cout << "Failure in world->getImmediateSubRegionCount after world->removeSubRegion(19) " << inputFile
+                  << ", result should be 4" << std::endl;
+        return;
+    }
+
+    if (world->getTotalSubRegionCount() != 5) {
+        std::cout << "Failure in world->getImmediateSubRegionCount after world->removeSubRegion(19) " << inputFile
+                  << ", result should be 5" << std::endl;
+        return;
+    }
+
+    if (!world->removeSubRegion(18)) {
+        std::cout << "Failure in world->removeSubRegion(18) with " << inputFile << std::endl;
+        return;
+    }
+
+    if (world->getImmediateSubRegionCount() != 3) {
+        std::cout << "Failure in world->getImmediateSubRegionCount after world->removeSubRegion(19) " << inputFile
+                  << ", result should be 4" << std::endl;
+        return;
+    }
+
+    if (world->getTotalSubRegionCount() != 3) {
+        std::cout << "Failure in world->getImmediateSubRegionCount after world->removeSubRegion(19) " << inputFile
+                  << ", result should be 5" << std::endl;
+        return;
+    }
 }
 
 void RegionTester::testComputeTotalPopulation() {
