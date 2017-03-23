@@ -194,7 +194,7 @@ void UtilsTester::testConvertToUnsignedInt() {
     // Check good numbers
 
     std::string s = "123";
-    unsigned int result = convertStringToUnsignedInt(s, &isValid);
+    unsigned long long int result = convertStringToUnsignedInt(s, &isValid);
     if (result != 123 || !isValid) {
         std::cout << "Failure in convertStringToUnsignedInt(s, &isValid) for s=\"" << s
                   << "\" result=" << result << " isValid=" << isValid << std::endl;
@@ -269,7 +269,7 @@ void UtilsTester::testConvertToUnsignedInt() {
 
     s = "12372355225233333223";
     result = convertStringToUnsignedInt(s, &isValid);
-    if (result != 0 || isValid) {
+    if (result != 12372355225233333223 || !isValid) {
         std::cout << "Failure in convertStringToUnsignedInt(s, &isValid) for s=\"" << s
                   << "\" result=" << result << " isValid=" << isValid << std::endl;
         return;

@@ -14,7 +14,7 @@ bool split(const std::string &s, char delimiter, std::string elements[], int exp
 
 int convertStringToInt(const std::string &s, bool *valid = nullptr);
 
-unsigned int convertStringToUnsignedInt(const std::string &s, bool *valid = nullptr);
+unsigned long long int convertStringToUnsignedInt(const std::string &s, bool *valid = nullptr);
 
 double convertStringToDouble(const std::string &s, bool *valid = nullptr);
 

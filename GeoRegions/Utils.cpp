@@ -61,8 +61,8 @@ int convertStringToInt(const std::string &s, bool *valid) {
     return result;
 }
 
-unsigned int convertStringToUnsignedInt(const std::string &s, bool *valid) {
-    unsigned int result = 0;
+unsigned long long int convertStringToUnsignedInt(const std::string &s, bool *valid) {
+    unsigned long long int result = 0;
     if (valid != nullptr)
         *valid = false;
 
@@ -71,10 +71,9 @@ unsigned int convertStringToUnsignedInt(const std::string &s, bool *valid) {
         try {
             std::string trimmedString = trim(s);
             if (trimmedString.substr(0, 1) != "-") {
-                unsigned long tmp = std::stoul(trimmedString, &numberOfConvertedCharacters); // TODO: population bug tracked to here...
-                                                                                             // TODO: unsigned long doesn't have enough bits for sample-Data-1 world's population
-                if (tmp <= UINT32_MAX) {
-                    result = (unsigned int) tmp;
+                unsigned long long tmp = std::stoull(trimmedString, &numberOfConvertedCharacters);
+                if (tmp <= UINT64_MAX) {
+                    result = tmp;
                     if (valid != nullptr && numberOfConvertedCharacters == trimmedString.length())
                         *valid = true;
                     else if (numberOfConvertedCharacters != trimmedString.length())
@@ -82,7 +81,8 @@ unsigned int convertStringToUnsignedInt(const std::string &s, bool *valid) {
                 }
             }
         }
-        catch (std::exception) {
+        catch (std::exception e) {
+            e.what();
             // do nothing, let the result remain 0 and the valid flag false
         }
     }

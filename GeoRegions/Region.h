@@ -18,7 +18,7 @@ protected:
     unsigned int m_id = 0;
     RegionType m_regionType = UnknownRegionType;
     std::string m_name;
-    unsigned int m_population = 0;
+    unsigned long long int m_population = 0;
     double m_area = 0;
     bool m_isValid = false;
 
