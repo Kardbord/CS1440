@@ -61,9 +61,9 @@ public:
 
     void setName(const std::string &name) { m_name = name; }
 
-    unsigned int getPopulation() const { return m_population; }
+    unsigned long long int getPopulation() const { return m_population; }
 
-    void setPopulation(unsigned int population) { m_population = population; }
+    void setPopulation(unsigned long long int population) { m_population = population; }
 
     double getArea() const { return m_area; }
 
@@ -92,7 +92,7 @@ public:
      */
     bool addSubRegion(Region* region);
 
-    unsigned int computeTotalPopulation();
+    unsigned long long int computeTotalPopulation();
 
     void list(std::ostream &out);
 
