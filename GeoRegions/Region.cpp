@@ -143,7 +143,7 @@ unsigned long long int Region::computeTotalPopulation() {
     unsigned long long int population = m_population;
     for (auto &&r : m_subRegions) {
         if (r != nullptr) {
-            population += r->getPopulation();
+            population += r->computeTotalPopulation();
         }
     }
     return population;
