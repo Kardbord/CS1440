@@ -12,10 +12,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63cdb798-da35-4f5e-aaf2-6acc4cbc9337" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing/RegionTester.cpp" afterPath="$PROJECT_DIR$/Testing/RegionTester.cpp" />
-    </list>
+    <list default="true" id="63cdb798-da35-4f5e-aaf2-6acc4cbc9337" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,19 +34,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="RegionTester.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RegionTester.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Testing/RegionTester.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2795">
-              <caret line="561" column="48" lean-forward="false" selection-start-line="561" selection-start-column="48" selection-end-line="561" selection-end-column="48" />
+            <state relative-caret-position="264">
+              <caret line="439" column="36" lean-forward="false" selection-start-line="439" selection-start-column="36" selection-end-line="439" selection-end-column="36" />
               <folding>
                 <element signature="e#0#2#0" expanded="false" />
                 <element signature="e#138#2592#0" expanded="false" />
                 <element signature="e#2594#9100#0" expanded="false" />
                 <element signature="e#9102#15740#0" expanded="false" />
                 <element signature="e#15742#18261#0" expanded="false" />
-                <element signature="e#23529#26265#0" expanded="false" />
+                <element signature="e#18263#22977#0" expanded="false" />
+                <element signature="e#22979#25715#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Region.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Region.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="209" column="7" lean-forward="false" selection-start-line="209" selection-start-column="7" selection-end-line="209" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,7 +154,6 @@
         <option value="$PROJECT_DIR$/State.h" />
         <option value="$PROJECT_DIR$/Nation.h" />
         <option value="$PROJECT_DIR$/County.h" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/UserInterface.h" />
         <option value="$PROJECT_DIR$/WorldUserInterface.cpp" />
         <option value="$PROJECT_DIR$/StateUserInterface.cpp" />
@@ -149,9 +166,10 @@
         <option value="$PROJECT_DIR$/Testing/SampleData/sampleData-1.txt" />
         <option value="$PROJECT_DIR$/Testing/UtilsTester.cpp" />
         <option value="$PROJECT_DIR$/Utils.cpp" />
-        <option value="$PROJECT_DIR$/Region.cpp" />
         <option value="$PROJECT_DIR$/Region.h" />
         <option value="$PROJECT_DIR$/Testing/RegionTester.cpp" />
+        <option value="$PROJECT_DIR$/Region.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -473,12 +491,12 @@
       <workItem from="1490214627062" duration="5605000" />
       <workItem from="1490221635623" duration="1676000" />
       <workItem from="1490244879489" duration="1934000" />
-      <workItem from="1490288836226" duration="3685000" />
+      <workItem from="1490288836226" duration="3893000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110531000" />
+    <option name="totallyTimeSpent" value="110739000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -504,7 +522,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3250283" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4733862" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4733862" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -549,13 +567,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Testing/RegionTester.cpp</url>
-          <line>453</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -862,14 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UserInterface.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-228">
@@ -894,14 +897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Region.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4532">
-          <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Testing/SampleData/sampleData-2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -912,16 +907,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Testing/RegionTester.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2795">
-          <caret line="561" column="48" lean-forward="false" selection-start-line="561" selection-start-column="48" selection-end-line="561" selection-end-column="48" />
+        <state relative-caret-position="264">
+          <caret line="439" column="36" lean-forward="false" selection-start-line="439" selection-start-column="36" selection-end-line="439" selection-end-column="36" />
           <folding>
             <element signature="e#0#2#0" expanded="false" />
             <element signature="e#138#2592#0" expanded="false" />
             <element signature="e#2594#9100#0" expanded="false" />
             <element signature="e#9102#15740#0" expanded="false" />
             <element signature="e#15742#18261#0" expanded="false" />
-            <element signature="e#23529#26265#0" expanded="false" />
+            <element signature="e#18263#22977#0" expanded="false" />
+            <element signature="e#22979#25715#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Region.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="209" column="7" lean-forward="false" selection-start-line="209" selection-start-column="7" selection-end-line="209" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
