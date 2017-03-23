@@ -139,7 +139,6 @@ std::string Region::getRegionLabel() const {
 }
 
 unsigned long long int Region::computeTotalPopulation() {
-    // TODO: test me
     unsigned long long int population = m_population;
     for (auto &&r : m_subRegions) {
         if (r != nullptr) {

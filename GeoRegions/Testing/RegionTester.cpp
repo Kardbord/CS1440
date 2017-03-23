@@ -443,7 +443,6 @@ void RegionTester::testSubRegions() {
     // TODO: Add test cases for managing sub-regions
 }
 
-// TODO: find the bug in computeTotalPopulation
 void RegionTester::testComputeTotalPopulation() {
     std::cout << "RegionTester::testComputeTotalPopulation" << std::endl;
 
