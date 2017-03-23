@@ -81,8 +81,7 @@ unsigned long long int convertStringToUnsignedInt(const std::string &s, bool *va
                 }
             }
         }
-        catch (std::exception e) {
-            e.what();
+        catch (std::exception) {
             // do nothing, let the result remain 0 and the valid flag false
         }
     }
