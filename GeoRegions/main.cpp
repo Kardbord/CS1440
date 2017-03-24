@@ -4,7 +4,6 @@
 #include "World.h"
 #include "WorldUserInterface.h"
 
-// TODO: check all files for warnings
 // TODO: update UML
 int main() {
     std::cout << "Welcome to the GeoRegions system" << std::endl << std::endl;
