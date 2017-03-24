@@ -32,7 +32,6 @@ protected:
 
 private:
     static unsigned int m_nextId;
-    int subRegionsAlloc = 10;
 
 public:
     static Region *create(std::istream &in);
