@@ -207,7 +207,6 @@ void Region::save(std::ostream &out) {
         << "," << getArea()
         << std::endl;
 
-    // TODO: test this
     for (auto &&r : m_subRegions) {
         if (r != nullptr) r->save(out);
     }
