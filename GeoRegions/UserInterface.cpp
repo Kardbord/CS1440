@@ -97,7 +97,7 @@ void UserInterface::edit() {
     std::string input = getStringInput("Which region would you like to edit? Enter the id:");
     if (input != "") {
         bool valid;
-        unsigned int id = convertStringToUnsignedInt(input, &valid);
+        unsigned int id = (unsigned int) convertStringToUnsignedInt(input, &valid);
         if (valid && id > 0) {
             Region *region = nullptr;
             auto index = id;
@@ -134,7 +134,7 @@ void UserInterface::editPopulation(Region *region) {
     std::string population = getStringInput("Enter an updated population (<enter> to keep current value):");
     if (population != "") {
         bool valid;
-        unsigned int newPopulation = convertStringToUnsignedInt(population, &valid);
+        unsigned long long int newPopulation = convertStringToUnsignedInt(population, &valid);
         if (valid) {
             region->setPopulation(newPopulation);
             std::cout << "Population updated" << std::endl;
@@ -168,7 +168,7 @@ void UserInterface::remove() {
     std::string input = getStringInput("Which region would you like to remove? Enter the id:");
     if (input != "") {
         bool valid;
-        unsigned int id = convertStringToUnsignedInt(input, &valid);
+        unsigned int id = (unsigned int) convertStringToUnsignedInt(input, &valid);
         if (valid && id > 0) {
             auto index = id;
             m_currentRegion->removeSubRegion(index);
@@ -201,7 +201,7 @@ void UserInterface::changeToSubRegion() {
     std::string input = getStringInput("Which region would you work with (enter the id):");
     if (input != "") {
         bool valid;
-        unsigned int id = convertStringToUnsignedInt(input, &valid);
+        unsigned int id = (unsigned int) convertStringToUnsignedInt(input, &valid);
         if (valid && id > 0) {
             Region *region;
             region = m_currentRegion->getSubRegion(id);
