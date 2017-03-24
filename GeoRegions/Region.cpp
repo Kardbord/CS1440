@@ -122,7 +122,6 @@ Region::Region(RegionType type, const std::string data[]) :
 }
 
 Region::~Region() {
-    // TODO: verify this is correct...
     for (auto &&r : m_subRegions) {
         if (r != nullptr) {
             delete r; // call the destructor to delete any subRegions of the subRegion
