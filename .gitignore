@@ -31,7 +31,7 @@
 =======
 #ignore .idea
 **/.idea/tasks.xml
-**/.idea/Triangles/inspectionProfiles
+**/Triangles/.idea/inspectionProfiles/
 
 #ignore thumbnails created by windows
 **/Thumbs.db
