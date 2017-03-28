@@ -6,8 +6,14 @@
 #define GENERICDICTIONARY_DICTIONARYTESTER_H
 
 
-class DictionaryTester {
+#include <ostream>
 
+class DictionaryTester {
+public:
+    void testConstructor(std::ostream &out);
+    DictionaryTester(){}
+
+private:
 };
 
 

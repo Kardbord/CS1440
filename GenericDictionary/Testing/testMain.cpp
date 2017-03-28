@@ -6,7 +6,10 @@
 //
 
 #include <iostream>
+#include "DictionaryTester.h"
 
 int main() {
+    DictionaryTester dictionaryTester;
+    dictionaryTester.testConstructor(std::cout);
     return EXIT_SUCCESS;
 }
