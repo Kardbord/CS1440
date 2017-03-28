@@ -16,7 +16,7 @@ private:
 };
 
 template<typename Comparable, typename ValType>
-KeyValue<Comparable, ValType>::KeyValue(Comparable const &key, ValType const &value): m_key(key), m_value(value) {};
+KeyValue<Comparable, ValType>::KeyValue(Comparable const &key, ValType const &value): m_key(key), m_value(value) {}
 
 
 #endif //GENERICDICTIONARY_KEYVALUE_H
