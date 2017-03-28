@@ -98,6 +98,7 @@ void Dictionary<Comparable, ValType>::sortKeyValPairs() {
         return *a < *b;
     });
 
+    // TODO: is there a better way to do this?
     for (int i = 0; i < m_numKeyVals + 1; ++i) {
         m_keyValPairs[i] = myVector[i];
     }
