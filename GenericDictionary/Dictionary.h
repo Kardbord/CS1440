@@ -24,6 +24,8 @@ private:
     unsigned int m_sizeAlloc;
     unsigned int m_numKeyVals;
     unsigned int m_nextEmpty;
+
+    void reAlloc();
 };
 
 template<typename Comparable, typename ValType>
@@ -42,13 +44,27 @@ Dictionary::~Dictionary() {
         delete m_keyValPairs[i];
         m_keyValPairs[i] = nullptr;
     }
-    delete m_keyValPairs;
+    delete [] m_keyValPairs;
     m_keyValPairs = nullptr;
 }
 
 template<typename Comparable, typename ValType>
 bool Dictionary<Comparable, ValType>::addKeyValue(const Comparable &key, const ValType &value) {
     return false;
+}
+
+template<typename Comparable, typename ValType>
+void Dictionary::reAlloc() {
+    auto temp = m_keyValPairs;
+    m_sizeAlloc *= 2;
+    m_keyValPairs = new KeyValue<Comparable, ValType> *[m_sizeAlloc];
+    for (int i = 0; i < m_sizeAlloc; ++i) {
+        m_keyValPairs[i] = nullptr;
+        if (i < m_numKeyVals && temp[i] != nullptr) {
+            m_keyValPairs[i] = temp[i];
+        }
+    }
+
 }
 
 
