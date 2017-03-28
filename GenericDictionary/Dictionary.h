@@ -75,7 +75,7 @@ bool Dictionary<Comparable, ValType>::addKeyValue(const Comparable &key, const V
 template<typename Comparable, typename ValType>
 void Dictionary::reAlloc() {
     auto temp = m_keyValPairs;
-    m_sizeAlloc *= 2;
+    m_sizeAlloc *= m_sizeAlloc;
     m_keyValPairs = new KeyValue<Comparable, ValType> *[m_sizeAlloc];
     for (int i = 0; i < m_sizeAlloc; ++i) {
         m_keyValPairs[i] = nullptr;
@@ -83,8 +83,6 @@ void Dictionary::reAlloc() {
             m_keyValPairs[i] = temp[i];
         }
     }
-    // TODO: figure out if I need to delete temp and its contents
-    // I don't think I do... because it's a pointer to an array of pointers that is also pointed to by m_keyValPairs
 }
 
 template<typename Comparable, typename ValType>
