@@ -10,6 +10,10 @@ class KeyValue {
 public:
     KeyValue(Comparable const &key, ValType const &value);
 
+    Comparable getKey() { return m_key; }
+
+    ValType getValue() { return m_value; }
+
 private:
     Comparable m_key;
     ValType m_value;
