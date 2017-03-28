@@ -60,7 +60,7 @@ bool KeyValue<Comparable, ValType>::operator>=(KeyValue<Comparable, ValType> con
 
 template<typename Comparable, typename ValType>
 bool KeyValue<Comparable, ValType>::operator==(KeyValue<Comparable, ValType> const &rhs) const {
-    return (this->getKey() >= rhs.getKey());
+    return (this->getKey() == rhs.getKey());
 }
 
 
