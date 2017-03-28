@@ -9,5 +9,5 @@ set(SOURCE_FILES
 add_executable(GenericDictionary main.cpp ${SOURCE_FILES})
 
 set(TEST_FILES
-        )
+        Testing/DictionaryTester.cpp Testing/DictionaryTester.h Testing/KeyValueTester.cpp Testing/KeyValueTester.h)
 add_executable(Test Testing/testMain.cpp ${TEST_FILES} ${SOURCE_FILES})
