@@ -21,7 +21,7 @@ public:
 
     unsigned long long int getSize() { return m_numKeyVals; }
 
-    KeyValue getByKey(Comparable const &key);
+    //KeyValue getByKey(Comparable const &key);
 
 private:
     KeyValue<Comparable, ValType> **m_keyValPairs;
@@ -47,7 +47,7 @@ Dictionary<Comparable, ValType>::Dictionary(unsigned int const &size) : m_sizeAl
 
 // TODO: delete any dynamically allocated memory
 template<typename Comparable, typename ValType>
-Dictionary::~Dictionary() {
+Dictionary<Comparable, ValType>::~Dictionary() {
     for (int i = 0; i < m_sizeAlloc; ++i) {
         delete m_keyValPairs[i];
         m_keyValPairs[i] = nullptr;
@@ -63,17 +63,17 @@ bool Dictionary<Comparable, ValType>::addKeyValue(const Comparable &key, const V
 
     // TODO: check if key exists already - if so return false
 
-    // TODO: sort on add
-
     assert(m_keyValPairs[m_nextEmpty] == nullptr);
     m_keyValPairs[m_nextEmpty++] = new KeyValue<Comparable, ValType>(key, value);
+    sortKeyValPairs();
+    ++m_numKeyVals;
 
     return true;
 }
 
 // TODO: test me
 template<typename Comparable, typename ValType>
-void Dictionary::reAlloc() {
+void Dictionary<Comparable, ValType>::reAlloc() {
     auto temp = m_keyValPairs;
     m_sizeAlloc *= m_sizeAlloc;
     m_keyValPairs = new KeyValue<Comparable, ValType> *[m_sizeAlloc];
@@ -85,6 +85,7 @@ void Dictionary::reAlloc() {
     }
 }
 
+// TODO: test me
 template<typename Comparable, typename ValType>
 void Dictionary<Comparable, ValType>::sortKeyValPairs() {
 
@@ -92,13 +93,17 @@ void Dictionary<Comparable, ValType>::sortKeyValPairs() {
     std::vector<KeyValue<Comparable, ValType> *> myVector(m_keyValPairs, m_keyValPairs + m_numKeyVals);
 
     // sort the vector
-    std::sort(myVector.begin(), myVector.end(), comparePointers);
+    std::sort(myVector.begin(), myVector.end(), comparePointers); // TODO: it doesn't like comparePointers...
+
+    for (int i = 0; i < m_numKeyVals; ++i) {
+        m_keyValPairs[i] = myVector[i];
+    }
 }
 
 template<typename Comparable, typename ValType>
 bool Dictionary<Comparable, ValType>::comparePointers(KeyValue<Comparable, ValType> *a,
                                                       KeyValue<Comparable, ValType> *b) const {
-    return (*a < *b);
+    return *a < *b;
 }
 
 
