@@ -32,8 +32,6 @@ private:
     void reAlloc();
 
     void sortKeyValPairs();
-
-    bool comparePointers(KeyValue<Comparable, ValType> *a, KeyValue<Comparable, ValType> *b) const;
 };
 
 template<typename Comparable, typename ValType>
@@ -49,8 +47,10 @@ Dictionary<Comparable, ValType>::Dictionary(unsigned int const &size) : m_sizeAl
 template<typename Comparable, typename ValType>
 Dictionary<Comparable, ValType>::~Dictionary() {
     for (int i = 0; i < m_sizeAlloc; ++i) {
-        delete m_keyValPairs[i];
-        m_keyValPairs[i] = nullptr;
+        if (m_keyValPairs[i] != nullptr) {
+            delete m_keyValPairs[i];
+            m_keyValPairs[i] = nullptr;
+        }
     }
     delete[] m_keyValPairs;
     m_keyValPairs = nullptr;
@@ -90,20 +90,17 @@ template<typename Comparable, typename ValType>
 void Dictionary<Comparable, ValType>::sortKeyValPairs() {
 
     // place all KeyValues pointers into a vector for sorting
-    std::vector<KeyValue<Comparable, ValType> *> myVector(m_keyValPairs, m_keyValPairs + m_numKeyVals);
+    std::vector<KeyValue<Comparable, ValType> *> myVector(m_keyValPairs, m_keyValPairs + m_numKeyVals + 1);
 
     // sort the vector
-    std::sort(myVector.begin(), myVector.end(), comparePointers); // TODO: it doesn't like comparePointers...
+    std::sort(myVector.begin(), myVector.end(), [](KeyValue<Comparable, ValType> *a, KeyValue<Comparable, ValType> *b) {
+        if (!a || !b) return false;
+        return *a < *b;
+    });
 
-    for (int i = 0; i < m_numKeyVals; ++i) {
+    for (int i = 0; i < m_numKeyVals + 1; ++i) {
         m_keyValPairs[i] = myVector[i];
     }
-}
-
-template<typename Comparable, typename ValType>
-bool Dictionary<Comparable, ValType>::comparePointers(KeyValue<Comparable, ValType> *a,
-                                                      KeyValue<Comparable, ValType> *b) const {
-    return *a < *b;
 }
 
 
