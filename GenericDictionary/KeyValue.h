@@ -7,7 +7,10 @@
 
 template <typename Comparable, typename ValType>
 class KeyValue {
-
+public:
+private:
+    Comparable m_key;
+    ValType m_value;
 };
 
 

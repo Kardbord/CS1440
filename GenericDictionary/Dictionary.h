@@ -9,8 +9,6 @@ template <typename Comparable, typename ValType>
 class Dictionary {
 public:
 private:
-    Comparable m_key;
-    ValType m_value;
 };
 
 
