@@ -5,6 +5,7 @@
 #ifndef GENERICDICTIONARY_KEYVALUE_H
 #define GENERICDICTIONARY_KEYVALUE_H
 
+// TODO: test operator overloads (they work, but write test cases)
 template<typename Comparable, typename ValType>
 class KeyValue {
 public:
