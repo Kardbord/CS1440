@@ -11,16 +11,34 @@
 template <typename Comparable, typename ValType>
 class Dictionary {
 public:
-    Dictionary(int const &size = 10);
+    Dictionary(unsigned int const &size = 10);
+    ~Dictionary();
 
-    unsigned long long int getSize() { return m_keyValPairs.size(); }
+    unsigned long long int getSize() { return m_numKeyVals; }
 private:
-    std::vector<KeyValue<Comparable, ValType>> m_keyValPairs;
+    KeyValue<Comparable, ValType>** m_keyValPairs;
+    unsigned int m_sizeAlloc;
+    unsigned int m_numKeyVals;
 };
 
-// TODO: eliminate the silly requirement that the vector memory be allocated right off the bat
 template <typename Comparable, typename ValType>
-Dictionary<Comparable, ValType>::Dictionary(int const &size): m_keyValPairs((unsigned long long int) size) {}
+Dictionary<Comparable, ValType>::Dictionary(unsigned int const &size) : m_sizeAlloc(size), m_numKeyVals(0) {
+    m_keyValPairs = new KeyValue<Comparable, ValType>*[m_sizeAlloc];
+    for (int i = 0; i < m_sizeAlloc; ++i) {
+        m_keyValPairs[i] = nullptr;
+    }
+}
+
+// TODO: delete any dynamically allocated memory
+template <typename Comparable, typename ValType>
+Dictionary::~Dictionary() {
+    for (int i = 0; i < m_sizeAlloc; ++i) {
+        delete m_keyValPairs[i];
+        m_keyValPairs[i] = nullptr;
+    }
+    delete m_keyValPairs;
+    m_keyValPairs = nullptr;
+}
 
 
 #endif //GENERICDICTIONARY_DICTIONARY_H

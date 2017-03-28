@@ -8,5 +8,4 @@
 
 void DictionaryTester::testConstructor(std::ostream &out) {
     Dictionary<int, int> dictionary;
-    out << "Made it!";
 }
