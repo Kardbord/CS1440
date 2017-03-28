@@ -58,6 +58,8 @@ bool Dictionary<Comparable, ValType>::addKeyValue(const Comparable &key, const V
 
     // TODO: check if key exists already - if so return false
 
+    // TODO: sort on add
+
     assert(m_keyValPairs[m_nextEmpty] == nullptr);
     m_keyValPairs[m_nextEmpty++] = new KeyValue<Comparable, ValType>(key, value);
 
