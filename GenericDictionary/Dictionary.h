@@ -20,6 +20,8 @@ public:
 
     unsigned long long int getSize() { return m_numKeyVals; }
 
+    KeyValue getByKey(Comparable const & key);
+
 private:
     KeyValue<Comparable, ValType> **m_keyValPairs;
     unsigned int m_sizeAlloc;
