@@ -15,7 +15,7 @@ public:
 
     unsigned long long int getSize() { return m_keyValPairs.size(); }
 private:
-    std::vector<ValType> m_keyValPairs;
+    std::vector<KeyValue<Comparable, ValType>> m_keyValPairs;
 };
 
 // TODO: eliminate the silly requirement that the vector memory be allocated right off the bat
