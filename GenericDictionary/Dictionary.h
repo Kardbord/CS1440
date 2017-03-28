@@ -1,0 +1,14 @@
+//
+// Created by Tanner on 3/27/2017.
+//
+
+#ifndef GENERICDICTIONARY_DICTIONARY_H
+#define GENERICDICTIONARY_DICTIONARY_H
+
+
+class Dictionary {
+
+};
+
+
+#endif //GENERICDICTIONARY_DICTIONARY_H
