@@ -6,6 +6,7 @@
 #define GENERICDICTIONARY_DICTIONARY_H
 
 #include <vector>
+#include <cassert>
 #include "KeyValue.h"
 
 template<typename Comparable, typename ValType>
@@ -50,7 +51,14 @@ Dictionary::~Dictionary() {
 
 template<typename Comparable, typename ValType>
 bool Dictionary<Comparable, ValType>::addKeyValue(const Comparable &key, const ValType &value) {
-    return false;
+    if (m_nextEmpty + 1 == m_sizeAlloc) reAlloc();
+
+    // TODO: check if key exists already - if so return false
+
+    assert(m_keyValPairs[m_nextEmpty] == nullptr);
+    m_keyValPairs[m_nextEmpty++] = new KeyValue<Comparable, ValType>(key, value);
+
+    return true;
 }
 
 template<typename Comparable, typename ValType>
