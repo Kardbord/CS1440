@@ -64,7 +64,8 @@ void Dictionary::reAlloc() {
             m_keyValPairs[i] = temp[i];
         }
     }
-
+    // TODO: figure out if I need to delete temp and its contents
+    // I don't think I do... because it's a pointer to an array of pointers that is also pointed to by m_keyValPairs
 }
 
 
