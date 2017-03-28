@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <cassert>
+#include <algorithm>
 #include "KeyValue.h"
 
 template<typename Comparable, typename ValType>
@@ -20,7 +21,7 @@ public:
 
     unsigned long long int getSize() { return m_numKeyVals; }
 
-    KeyValue getByKey(Comparable const & key);
+    KeyValue getByKey(Comparable const &key);
 
 private:
     KeyValue<Comparable, ValType> **m_keyValPairs;
@@ -29,6 +30,10 @@ private:
     unsigned int m_nextEmpty;
 
     void reAlloc();
+
+    void sortKeyValPairs();
+
+    bool comparePointers(KeyValue<Comparable, ValType> *a, KeyValue<Comparable, ValType> *b) const;
 };
 
 template<typename Comparable, typename ValType>
@@ -47,7 +52,7 @@ Dictionary::~Dictionary() {
         delete m_keyValPairs[i];
         m_keyValPairs[i] = nullptr;
     }
-    delete [] m_keyValPairs;
+    delete[] m_keyValPairs;
     m_keyValPairs = nullptr;
 }
 
@@ -80,6 +85,22 @@ void Dictionary::reAlloc() {
     }
     // TODO: figure out if I need to delete temp and its contents
     // I don't think I do... because it's a pointer to an array of pointers that is also pointed to by m_keyValPairs
+}
+
+template<typename Comparable, typename ValType>
+void Dictionary<Comparable, ValType>::sortKeyValPairs() {
+
+    // place all KeyValues pointers into a vector for sorting
+    std::vector<KeyValue<Comparable, ValType> *> myVector(m_keyValPairs, m_keyValPairs + m_numKeyVals);
+
+    // sort the vector
+    std::sort(myVector.begin(), myVector.end(), comparePointers);
+}
+
+template<typename Comparable, typename ValType>
+bool Dictionary<Comparable, ValType>::comparePointers(KeyValue<Comparable, ValType> *a,
+                                                      KeyValue<Comparable, ValType> *b) const {
+    return (*a < *b);
 }
 
 
