@@ -10,8 +10,12 @@
 
 class DictionaryTester {
 public:
+    DictionaryTester() {}
+
     void testConstructor(std::ostream &out);
-    DictionaryTester(){}
+
+    void testAddKeyValue(std::ostream &out);
+
 
 private:
 };

@@ -6,7 +6,13 @@
 #include "DictionaryTester.h"
 #include "../Dictionary.h"
 
+// TODO: finish me
 void DictionaryTester::testConstructor(std::ostream &out) {
+    Dictionary<int, int> dictionary;
+}
+
+// TODO: finish me
+void DictionaryTester::testAddKeyValue(std::ostream &out) {
     Dictionary<int, int> dictionary;
     dictionary.addKeyValue(6, 6);
     dictionary.addKeyValue(5, 5);
