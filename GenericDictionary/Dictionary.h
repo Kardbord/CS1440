@@ -113,10 +113,7 @@ KeyValue Dictionary<Comparable, ValType>::getByKey(const Comparable &key) const 
         throw "Invalid Key";
     }
 
-    int mid = (int) m_validKeys.size() / 2;
-    if (m_keyValPairs[mid]->getKey() == key) {
-        return *m_keyValPairs[mid];
-    }
+    return binaryFindByKey(0, (const int &) m_validKeys.size(), key);
 }
 
 template<typename Comparable, typename ValType>
