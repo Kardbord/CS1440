@@ -33,7 +33,7 @@ private:
 
     void sortKeyValPairs();
 
-    KeyValue binaryFindByKey(int const &start, int const &end, Comparable const &target) const;
+    KeyValue binaryFindByKey(int const &start, int const &end, Comparable const &key) const;
 };
 
 template<typename Comparable, typename ValType>
@@ -116,10 +116,25 @@ KeyValue Dictionary<Comparable, ValType>::getByKey(const Comparable &key) const 
     return binaryFindByKey(0, (const int &) m_validKeys.size(), key);
 }
 
+// TODO: test me
 template<typename Comparable, typename ValType>
 KeyValue
-Dictionary<Comparable, ValType>::binaryFindByKey(int const &start, int const &end, const Comparable &target) const {
+Dictionary<Comparable, ValType>::binaryFindByKey(int const &start, int const &end, const Comparable &key) const {
+    if (end < start || start < 0) throw "Key not found";
+    if (end >= m_validKeys.size() || start < 0) throw "Invalid boundaries";
 
+    int mid = ((end - start) / 2) + start;
+
+    if (m_keyValPairs[mid] == nullptr) throw "Hit nullptr";
+
+    // Found target KeyValue
+    if (*m_keyValPairs[mid] == key) return *m_keyValPairs[mid];
+
+    // Target KeyValue is larger than m_keyValPairs[mid]
+    if (key > *m_keyValPairs[mid]) return binaryFindByKey(mid + 1, end, key);
+
+    // Target KeyValue is smaller than m_keyValPairs[mid]
+    else return binaryFindByKey(start, mid - 1, key);
 }
 
 
