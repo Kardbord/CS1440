@@ -61,9 +61,13 @@ Dictionary<Comparable, ValType>::~Dictionary() {
 // TODO: test me
 template<typename Comparable, typename ValType>
 bool Dictionary<Comparable, ValType>::addKeyValue(const Comparable &key, const ValType &value) {
-    if (m_nextEmpty + 1 == m_sizeAlloc) reAlloc();
 
-    // TODO: check if key exists already - if so return false
+    // Check if key exists already - if so return false
+    if (std::find(m_validKeys.begin(), m_validKeys.end(), key) != m_validKeys.end()) {
+        return false;
+    }
+
+    if (m_nextEmpty + 1 == m_sizeAlloc) reAlloc();
 
     assert(m_keyValPairs[m_nextEmpty] == nullptr);
     m_validKeys.push_back(key);
@@ -71,6 +75,7 @@ bool Dictionary<Comparable, ValType>::addKeyValue(const Comparable &key, const V
     sortKeyValPairs();
 
     return true;
+
 }
 
 // TODO: test me
