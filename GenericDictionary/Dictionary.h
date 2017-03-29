@@ -19,16 +19,15 @@ public:
 
     bool addKeyValue(Comparable const &key, ValType const &value);
 
-    unsigned long long int getSize() const { return m_numKeyVals; }
+    unsigned long long int getSize() const { return m_validKeys.size(); }
 
     KeyValue getByKey(Comparable const &key) const;
 
 private:
     KeyValue<Comparable, ValType> **m_keyValPairs;
     unsigned int m_sizeAlloc;
-    unsigned int m_numKeyVals; // TODO: decide whether or not to replace this in all cases with m_validKeys.size()
     unsigned int m_nextEmpty;
-    std::vector<Comparable *> m_validKeys;
+    std::vector<Comparable> m_validKeys;
 
     void reAlloc();
 
@@ -38,8 +37,8 @@ private:
 };
 
 template<typename Comparable, typename ValType>
-Dictionary<Comparable, ValType>::Dictionary(unsigned int const &size) : m_sizeAlloc(size), m_numKeyVals(0),
-                                                                        m_nextEmpty(0), m_validKeys() {
+Dictionary<Comparable, ValType>::Dictionary(unsigned int const &size) : m_sizeAlloc(size), m_nextEmpty(0),
+                                                                        m_validKeys() {
     m_keyValPairs = new KeyValue<Comparable, ValType> *[m_sizeAlloc];
     for (int i = 0; i < m_sizeAlloc; ++i) {
         m_keyValPairs[i] = nullptr;
@@ -70,7 +69,6 @@ bool Dictionary<Comparable, ValType>::addKeyValue(const Comparable &key, const V
     m_validKeys.push_back(key);
     m_keyValPairs[m_nextEmpty++] = new KeyValue<Comparable, ValType>(key, value);
     sortKeyValPairs();
-    ++m_numKeyVals;
 
     return true;
 }
@@ -83,7 +81,7 @@ void Dictionary<Comparable, ValType>::reAlloc() {
     m_keyValPairs = new KeyValue<Comparable, ValType> *[m_sizeAlloc];
     for (int i = 0; i < m_sizeAlloc; ++i) {
         m_keyValPairs[i] = nullptr;
-        if (i < m_numKeyVals && temp[i] != nullptr) {
+        if (i < m_validKeys.size() && temp[i] != nullptr) {
             m_keyValPairs[i] = temp[i];
         }
     }
@@ -94,7 +92,7 @@ template<typename Comparable, typename ValType>
 void Dictionary<Comparable, ValType>::sortKeyValPairs() {
 
     // place all KeyValues pointers into a vector for sorting
-    std::vector<KeyValue<Comparable, ValType> *> myVector(m_keyValPairs, m_keyValPairs + m_numKeyVals + 1);
+    std::vector<KeyValue<Comparable, ValType> *> myVector(m_keyValPairs, m_keyValPairs + m_validKeys.size() + 1);
 
     // sort the vector
     std::sort(myVector.begin(), myVector.end(), [](KeyValue<Comparable, ValType> *a, KeyValue<Comparable, ValType> *b) {
@@ -103,7 +101,7 @@ void Dictionary<Comparable, ValType>::sortKeyValPairs() {
     });
 
     // TODO: is there a better way to do this?
-    for (int i = 0; i < m_numKeyVals + 1; ++i) {
+    for (int i = 0; i < m_validKeys.size() + 1; ++i) {
         m_keyValPairs[i] = myVector[i];
     }
 }
@@ -111,11 +109,11 @@ void Dictionary<Comparable, ValType>::sortKeyValPairs() {
 template<typename Comparable, typename ValType>
 KeyValue Dictionary<Comparable, ValType>::getByKey(const Comparable &key) const {
 
-    if (std::find(m_validKeys.begin(), m_validKeys.end(), key) == m_validKeys.end()){
+    if (std::find(m_validKeys.begin(), m_validKeys.end(), key) == m_validKeys.end()) {
         throw "Invalid Key";
     }
 
-    int mid = m_numKeyVals / 2;
+    int mid = (int) m_validKeys.size() / 2;
     if (m_keyValPairs[mid]->getKey() == key) {
         return *m_keyValPairs[mid];
     }
