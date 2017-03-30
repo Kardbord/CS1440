@@ -90,7 +90,6 @@ void Dictionary<Comparable, ValType>::reAlloc() {
     }
 }
 
-// TODO: test me
 template<typename Comparable, typename ValType>
 void Dictionary<Comparable, ValType>::sortKeyValPairs() {
 
@@ -109,6 +108,7 @@ void Dictionary<Comparable, ValType>::sortKeyValPairs() {
     }
 }
 
+// TODO: test me
 template<typename Comparable, typename ValType>
 KeyValue<Comparable, ValType> Dictionary<Comparable, ValType>::getByKey(const Comparable &key) const {
 
