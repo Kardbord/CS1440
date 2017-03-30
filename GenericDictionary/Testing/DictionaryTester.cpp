@@ -11,6 +11,9 @@ void DictionaryTester::testConstructor(std::ostream &out) {
     out << "DictionaryTester::testConstructor" << std::endl;
 
     Dictionary<int, int> dictionary;
+    if (dictionary.getSize() != 0) {
+        out << "Failure in DictionaryTester::testConstructor -- size should be 0";
+    }
 }
 
 void DictionaryTester::testAddKeyValue(std::ostream &out) {
