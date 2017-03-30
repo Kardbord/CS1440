@@ -58,7 +58,6 @@ Dictionary<Comparable, ValType>::~Dictionary() {
     m_keyValPairs = nullptr;
 }
 
-// TODO: test me
 template<typename Comparable, typename ValType>
 bool Dictionary<Comparable, ValType>::addKeyValue(const Comparable &key, const ValType &value) {
 
@@ -78,7 +77,6 @@ bool Dictionary<Comparable, ValType>::addKeyValue(const Comparable &key, const V
 
 }
 
-// TODO: test me
 template<typename Comparable, typename ValType>
 void Dictionary<Comparable, ValType>::reAlloc() {
     auto temp = m_keyValPairs;

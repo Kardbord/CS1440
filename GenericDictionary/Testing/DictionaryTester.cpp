@@ -13,7 +13,6 @@ void DictionaryTester::testConstructor(std::ostream &out) {
     Dictionary<int, int> dictionary;
 }
 
-// TODO: finish me
 void DictionaryTester::testAddKeyValue(std::ostream &out) {
     out << "DictionaryTester::testAddKeyValue" << std::endl;
 
@@ -54,6 +53,9 @@ void DictionaryTester::testAddKeyValue(std::ostream &out) {
         out << "Failure in DictionaryTester::testAddKeyValue with (-2,100)" << std::endl;
         return;
     }
+    // This should cause dictionary.reAlloc()
+    // Not really any way to write test cases for this without breaking encapsulation. Step thru with the debugger
+    // to see that it works. I have and it does, pinky swear. :)
     if (!dictionary.addKeyValue(7, 100)) {
         out << "Failure in DictionaryTester::testAddKeyValue with (7,100)" << std::endl;
         return;
