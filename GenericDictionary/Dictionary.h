@@ -39,6 +39,7 @@ private:
 template<typename Comparable, typename ValType>
 Dictionary<Comparable, ValType>::Dictionary(unsigned int const &size) : m_sizeAlloc(size), m_nextEmpty(0),
                                                                         m_validKeys() {
+    if (m_sizeAlloc < 1) m_sizeAlloc = 1; // in case an invalid value is specified
     m_keyValPairs = new KeyValue<Comparable, ValType> *[m_sizeAlloc];
     for (int i = 0; i < m_sizeAlloc; ++i) {
         m_keyValPairs[i] = nullptr;
