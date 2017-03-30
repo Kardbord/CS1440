@@ -10,9 +10,25 @@
 void DictionaryTester::testConstructor(std::ostream &out) {
     out << "DictionaryTester::testConstructor" << std::endl;
 
+    // No way to test that allocation is working properly without breaking encapsulation
+    // Use debugger to step thru constructor and see that it is working properly
     Dictionary<int, int> dictionary;
+    Dictionary<int, int> dictionary1(20);
+    Dictionary<int, int> dictionary2(1);
+    Dictionary<int, int> dictionary3(200);
+    Dictionary<int, int> dictionary4(0);
+
     if (dictionary.getSize() != 0) {
-        out << "Failure in DictionaryTester::testConstructor -- size should be 0";
+        out << "Failure in DictionaryTester::testConstructor -- size should be 0" << std::endl;
+    }
+    if (dictionary1.getSize() != 0) {
+        out << "Failure in DictionaryTester::testConstructor -- size should be 0" << std::endl;
+    }
+    if (dictionary2.getSize() != 0) {
+        out << "Failure in DictionaryTester::testConstructor -- size should be 0" << std::endl;
+    }
+    if (dictionary3.getSize() != 0) {
+        out << "Failure in DictionaryTester::testConstructor -- size should be 0" << std::endl;
     }
 }
 
@@ -80,5 +96,14 @@ void DictionaryTester::testAddKeyValue(std::ostream &out) {
         out << "Failure in DictionaryTester::testAddKeyValue with (-2,300) - no duplicate keys should be allowed"
             << std::endl;
         return;
+    }
+
+    Dictionary<int, int> dictionary1(0);
+
+    if (dictionary1.getSize() != 0) {
+        out << "Failure in DictionaryTester::testAddKeyValue -- dictionary1.size should be 0" << std::endl;
+    }
+    if (!dictionary1.addKeyValue(1, 1)) {
+        out << "Failure in DictionaryTester::testAddKeyValue dictionary1 with (1,1)" << std::endl;
     }
 }

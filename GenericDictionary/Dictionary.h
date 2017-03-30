@@ -66,7 +66,7 @@ bool Dictionary<Comparable, ValType>::addKeyValue(const Comparable &key, const V
         return false;
     }
 
-    if (m_nextEmpty + 1 == m_sizeAlloc) reAlloc();
+    if (m_nextEmpty + 1 >= m_sizeAlloc) reAlloc();
 
     assert(m_keyValPairs[m_nextEmpty] == nullptr);
     m_validKeys.push_back(key);
@@ -80,7 +80,8 @@ bool Dictionary<Comparable, ValType>::addKeyValue(const Comparable &key, const V
 template<typename Comparable, typename ValType>
 void Dictionary<Comparable, ValType>::reAlloc() {
     auto temp = m_keyValPairs;
-    m_sizeAlloc *= m_sizeAlloc;
+    if (m_sizeAlloc < 3) m_sizeAlloc = 10;
+    else m_sizeAlloc *= m_sizeAlloc;
     m_keyValPairs = new KeyValue<Comparable, ValType> *[m_sizeAlloc];
     for (int i = 0; i < m_sizeAlloc; ++i) {
         m_keyValPairs[i] = nullptr;
