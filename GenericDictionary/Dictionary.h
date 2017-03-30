@@ -21,7 +21,7 @@ public:
 
     unsigned long long int getSize() const { return m_validKeys.size(); }
 
-    KeyValue getByKey(Comparable const &key) const;
+    KeyValue<Comparable, ValType> getByKey(Comparable const &key) const;
 
 private:
     KeyValue<Comparable, ValType> **m_keyValPairs;
@@ -33,7 +33,7 @@ private:
 
     void sortKeyValPairs();
 
-    KeyValue binaryFindByKey(int const &start, int const &end, Comparable const &key) const;
+    KeyValue<Comparable, ValType> binaryFindByKey(int const &start, int const &end, Comparable const &key) const;
 };
 
 template<typename Comparable, typename ValType>
@@ -112,7 +112,7 @@ void Dictionary<Comparable, ValType>::sortKeyValPairs() {
 }
 
 template<typename Comparable, typename ValType>
-KeyValue Dictionary<Comparable, ValType>::getByKey(const Comparable &key) const {
+KeyValue<Comparable, ValType> Dictionary<Comparable, ValType>::getByKey(const Comparable &key) const {
 
     if (std::find(m_validKeys.begin(), m_validKeys.end(), key) == m_validKeys.end()) {
         throw "Invalid Key";
@@ -123,7 +123,7 @@ KeyValue Dictionary<Comparable, ValType>::getByKey(const Comparable &key) const 
 
 // TODO: test me
 template<typename Comparable, typename ValType>
-KeyValue
+KeyValue<Comparable, ValType>
 Dictionary<Comparable, ValType>::binaryFindByKey(int const &start, int const &end, const Comparable &key) const {
     if (end < start || start < 0) throw "Key not found";
     if (end >= m_validKeys.size() || start < 0) throw "Invalid boundaries";
