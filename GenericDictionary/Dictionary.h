@@ -72,7 +72,7 @@ bool Dictionary<Comparable, ValType>::addKeyValue(const Comparable &key, const V
     assert(m_keyValPairs[m_nextEmpty] == nullptr);
     m_validKeys.push_back(key);
     m_keyValPairs[m_nextEmpty++] = new KeyValue<Comparable, ValType>(key, value);
-    sortKeyValPairs();
+    sortKeyValPairs(); // TODO: there's a bug with sort where sometimes a value is placed in m_keyValPairs[m_nextEmpty]
 
     return true;
 
@@ -136,9 +136,9 @@ Dictionary<Comparable, ValType>::binaryFindByKey(int const &start, int const &en
     if (*m_keyValPairs[mid] == key) return *m_keyValPairs[mid];
 
     // Target KeyValue is larger than m_keyValPairs[mid]
-    if (*m_keyValPairs[mid] < key ) return binaryFindByKey(mid + 1, end, key);
+    if (*m_keyValPairs[mid] < key) return binaryFindByKey(mid + 1, end, key);
 
-    // Target KeyValue is smaller than m_keyValPairs[mid]
+        // Target KeyValue is smaller than m_keyValPairs[mid]
     else return binaryFindByKey(start, mid - 1, key);
 }
 

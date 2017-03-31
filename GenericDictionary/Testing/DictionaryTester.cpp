@@ -108,18 +108,21 @@ void DictionaryTester::testAddKeyValue(std::ostream &out) {
 }
 
 void DictionaryTester::testGetByKey(std::ostream &out) {
+
+    out << "DictionaryTester::testGetByKey" << std::endl;
+
     Dictionary<int, char> dictionary(26);
 
     char c = 'a';
-    for (int i = 0; i < dictionary.getSize(); ++i, ++c) {
-        dictionary.addKeyValue((const int &) (dictionary.getSize() - i), c);
+    for (int i = 0; i < 25; ++i, ++c) {
+        dictionary.addKeyValue((const int &) (25 - i), c);
     }
 
     c = 'z';
     for (int i = 0; i < dictionary.getSize(); ++i, --c) {
         if (dictionary.getByKey(i).getValue() != c) {
             std::cout << "Failure in DictionaryTester::testGetByKey, " << dictionary.getByKey(i).getValue()
-                      << " should be " << c;
+                      << " should be " << c << std::endl;
             return;
         }
     }
