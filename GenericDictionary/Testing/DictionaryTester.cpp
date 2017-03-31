@@ -6,7 +6,6 @@
 #include "DictionaryTester.h"
 #include "../Dictionary.h"
 
-// TODO: finish me
 void DictionaryTester::testConstructor(std::ostream &out) {
     out << "DictionaryTester::testConstructor" << std::endl;
 
@@ -106,4 +105,23 @@ void DictionaryTester::testAddKeyValue(std::ostream &out) {
     if (!dictionary1.addKeyValue(1, 1)) {
         out << "Failure in DictionaryTester::testAddKeyValue dictionary1 with (1,1)" << std::endl;
     }
+}
+
+void DictionaryTester::testGetByKey(std::ostream &out) {
+    Dictionary<int, char> dictionary(26);
+
+    char c = 'a';
+    for (int i = 0; i < dictionary.getSize(); ++i, ++c) {
+        dictionary.addKeyValue((const int &) (dictionary.getSize() - i), c);
+    }
+
+    c = 'z';
+    for (int i = 0; i < dictionary.getSize(); ++i, --c) {
+        if (dictionary.getByKey(i).getValue() != c) {
+            std::cout << "Failure in DictionaryTester::testGetByKey, " << dictionary.getByKey(i).getValue()
+                      << " should be " << c;
+            return;
+        }
+    }
+
 }

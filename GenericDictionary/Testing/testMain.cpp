@@ -12,5 +12,6 @@ int main() {
     DictionaryTester dictionaryTester;
     dictionaryTester.testConstructor(std::cout);
     dictionaryTester.testAddKeyValue(std::cout);
+    dictionaryTester.testGetByKey(std::cout);
     return EXIT_SUCCESS;
 }

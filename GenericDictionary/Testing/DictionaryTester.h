@@ -16,6 +16,7 @@ public:
 
     void testAddKeyValue(std::ostream &out);
 
+    void testGetByKey(std::ostream &out);
 
 private:
 };
