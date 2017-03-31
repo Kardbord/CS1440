@@ -125,8 +125,12 @@ KeyValue<Comparable, ValType> Dictionary<Comparable, ValType>::getByKey(const Co
 template<typename Comparable, typename ValType>
 KeyValue<Comparable, ValType>
 Dictionary<Comparable, ValType>::binaryFindByKey(int const &start, int const &end, const Comparable &key) const {
-    if (end < start || start < 0) throw "Key not found";
-    if (end >= m_validKeys.size() || start < -1) throw "Invalid boundaries";
+    if (end < start || start < 0) {
+        throw "Key not found";
+    }
+    if (end >= m_validKeys.size() || start < -1) {
+        throw "Invalid boundaries";
+    }
 
     int mid = ((end - start) / 2) + start;
 
