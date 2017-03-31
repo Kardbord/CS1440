@@ -122,13 +122,33 @@ void DictionaryTester::testGetByKey(std::ostream &out) {
         c = 'z';
         for (int i = 0; i < dictionary.getSize(); ++i, --c) {
             if (dictionary.getByKey(i).getValue() != c) {
-                std::cout << "Failure in DictionaryTester::testGetByKey, dictionary.getByKey(" << i << ").getValue()="
+                out << "Failure in DictionaryTester::testGetByKey, dictionary.getByKey(" << i << ").getValue()="
                           << dictionary.getByKey(i).getValue() << " should be " << c << std::endl;
                 return;
             }
         }
+
+        dictionary.addKeyValue(-1, '!');
+        if (dictionary.getByKey(-1).getValue() != '!') {
+            out << "Failure in DictionaryTester::testGetByKey, dictionary.getByKey(-1).getValue()="
+                << dictionary.getByKey(-1).getValue() << " should be " << '!' << std::endl;
+        }
+
+        dictionary.addKeyValue(100, '@');
+        if (dictionary.getByKey(100).getValue() != '@') {
+            out << "Failure in DictionaryTester::testGetByKey, dictionary.getByKey(100).getValue()="
+                << dictionary.getByKey(100).getValue() << " should be " << '@' << std::endl;
+        }
+
+        dictionary.addKeyValue(-100, '#');
+        if (dictionary.getByKey(-100).getValue() != '#') {
+            out << "Failure in DictionaryTester::testGetByKey, dictionary.getByKey(-1).getValue()="
+                << dictionary.getByKey(-100).getValue() << " should be " << '#' << std::endl;
+        }
+
     } catch (const char *msg) {
         std::cerr << msg << std::endl;
+        out << "Failure in DictionaryTester::testGetByKey, threw an exception." << std::endl;
     }
 
 }
