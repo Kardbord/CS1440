@@ -72,7 +72,7 @@ bool Dictionary<Comparable, ValType>::addKeyValue(const Comparable &key, const V
     assert(m_keyValPairs[m_nextEmpty] == nullptr);
     m_validKeys.push_back(key);
     m_keyValPairs[m_nextEmpty++] = new KeyValue<Comparable, ValType>(key, value);
-    sortKeyValPairs(); // TODO: there's a bug with sort where sometimes a value is placed in m_keyValPairs[m_nextEmpty]
+    sortKeyValPairs();
 
     return true;
 
@@ -110,7 +110,6 @@ void Dictionary<Comparable, ValType>::sortKeyValPairs() {
     }
 }
 
-// TODO: test me
 template<typename Comparable, typename ValType>
 KeyValue<Comparable, ValType> Dictionary<Comparable, ValType>::getByKey(const Comparable &key) const {
 
@@ -121,7 +120,6 @@ KeyValue<Comparable, ValType> Dictionary<Comparable, ValType>::getByKey(const Co
     return binaryFindByKey(0, (const int &) m_validKeys.size() - 1, key);
 }
 
-// TODO: test me
 template<typename Comparable, typename ValType>
 KeyValue<Comparable, ValType>
 Dictionary<Comparable, ValType>::binaryFindByKey(int const &start, int const &end, const Comparable &key) const {

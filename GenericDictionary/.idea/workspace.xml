@@ -12,10 +12,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b90c9ec-d030-4202-987d-3d373f0dd0c0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing/DictionaryTester.cpp" afterPath="$PROJECT_DIR$/Testing/DictionaryTester.cpp" />
-    </list>
+    <list default="true" id="4b90c9ec-d030-4202-987d-3d373f0dd0c0" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,8 +52,8 @@
       <file leaf-file-name="DictionaryTester.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Testing/DictionaryTester.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="131" column="95" lean-forward="false" selection-start-line="131" selection-start-column="95" selection-end-line="131" selection-end-column="95" />
+            <state relative-caret-position="2709">
+              <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
               <folding>
                 <element signature="e#42#61#0" expanded="true" />
                 <element signature="e#120#1177#0" expanded="false" />
@@ -445,12 +442,12 @@
       <workItem from="1490820653445" duration="152000" />
       <workItem from="1490820823978" duration="4883000" />
       <workItem from="1490828451099" duration="8111000" />
-      <workItem from="1490996234483" duration="7268000" />
+      <workItem from="1490996234483" duration="7563000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37990000" />
+    <option name="totallyTimeSpent" value="38285000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -943,8 +940,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Testing/DictionaryTester.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="131" column="95" lean-forward="false" selection-start-line="131" selection-start-column="95" selection-end-line="131" selection-end-column="95" />
+        <state relative-caret-position="2709">
+          <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
           <folding>
             <element signature="e#42#61#0" expanded="true" />
             <element signature="e#120#1177#0" expanded="false" />
