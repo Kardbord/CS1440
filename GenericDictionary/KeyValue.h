@@ -33,6 +33,20 @@ public:
 
     bool operator==(KeyValue<Comparable, ValType> const &rhs) const;
 
+    bool operator!=(KeyValue<Comparable, ValType> const &rhs) const;
+
+    bool operator<(Comparable const &key) const;
+
+    bool operator>(Comparable const &key) const;
+
+    bool operator==(Comparable const &key) const;
+
+    bool operator<=(Comparable const &key) const;
+
+    bool operator>=(Comparable const &key) const;
+
+    bool operator!=(Comparable const &key) const;
+
     void operator=(KeyValue<Comparable, ValType> const &rhs) const;
 
 private:
@@ -75,6 +89,41 @@ template<typename Comparable, typename ValType>
 void KeyValue<Comparable, ValType>::operator=(KeyValue<Comparable, ValType> const &rhs) const {
     m_key = rhs.getKey();
     m_value = rhs.getValue();
+}
+
+template<typename Comparable, typename ValType>
+bool KeyValue<Comparable, ValType>::operator!=(KeyValue<Comparable, ValType> const &rhs) const {
+    return this->getKey() != rhs.getKey();
+}
+
+template<typename Comparable, typename ValType>
+bool KeyValue<Comparable, ValType>::operator<(const Comparable &key) const {
+    return this->getKey() < key;
+}
+
+template<typename Comparable, typename ValType>
+bool KeyValue<Comparable, ValType>::operator>(const Comparable &key) const {
+    return this->getKey() > key;
+}
+
+template<typename Comparable, typename ValType>
+bool KeyValue<Comparable, ValType>::operator==(const Comparable &key) const {
+    return this->getKey() == key;
+}
+
+template<typename Comparable, typename ValType>
+bool KeyValue<Comparable, ValType>::operator<=(const Comparable &key) const {
+    return this->getKey() <= key;
+}
+
+template<typename Comparable, typename ValType>
+bool KeyValue<Comparable, ValType>::operator>=(const Comparable &key) const {
+    return this->getKey() >= key;
+}
+
+template<typename Comparable, typename ValType>
+bool KeyValue<Comparable, ValType>::operator!=(const Comparable &key) const {
+    return this->getKey() != key;
 }
 
 
