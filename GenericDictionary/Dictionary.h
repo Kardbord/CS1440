@@ -136,7 +136,7 @@ Dictionary<Comparable, ValType>::binaryFindByKey(int const &start, int const &en
     if (*m_keyValPairs[mid] == key) return *m_keyValPairs[mid];
 
     // Target KeyValue is larger than m_keyValPairs[mid]
-    if (key > *m_keyValPairs[mid]) return binaryFindByKey(mid + 1, end, key);
+    if (*m_keyValPairs[mid] < key ) return binaryFindByKey(mid + 1, end, key);
 
     // Target KeyValue is smaller than m_keyValPairs[mid]
     else return binaryFindByKey(start, mid - 1, key);
