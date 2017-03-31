@@ -96,7 +96,7 @@ template<typename Comparable, typename ValType>
 void Dictionary<Comparable, ValType>::sortKeyValPairs() {
 
     // place all KeyValues pointers into a vector for sorting
-    std::vector<KeyValue<Comparable, ValType> *> myVector(m_keyValPairs, m_keyValPairs + m_validKeys.size() + 1);
+    std::vector<KeyValue<Comparable, ValType> *> myVector(m_keyValPairs, m_keyValPairs + m_validKeys.size());
 
     // sort the vector
     std::sort(myVector.begin(), myVector.end(), [](KeyValue<Comparable, ValType> *a, KeyValue<Comparable, ValType> *b) {
@@ -105,7 +105,7 @@ void Dictionary<Comparable, ValType>::sortKeyValPairs() {
     });
 
     // TODO: is there a better way to do this?
-    for (int i = 0; i < m_validKeys.size() + 1; ++i) {
+    for (int i = 0; i < m_validKeys.size(); ++i) {
         m_keyValPairs[i] = myVector[i];
     }
 }
