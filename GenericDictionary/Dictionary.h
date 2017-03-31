@@ -118,7 +118,7 @@ KeyValue<Comparable, ValType> Dictionary<Comparable, ValType>::getByKey(const Co
         throw "Invalid Key";
     }
 
-    return binaryFindByKey(0, (const int &) m_validKeys.size(), key);
+    return binaryFindByKey(0, (const int &) m_validKeys.size() - 1, key);
 }
 
 // TODO: test me
