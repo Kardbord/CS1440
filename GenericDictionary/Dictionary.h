@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <cassert>
+#include <stdexcept>
 #include <algorithm>
 #include "KeyValue.h"
 
@@ -24,6 +25,8 @@ public:
     unsigned long long int getSize() const { return m_validKeys.size(); }
 
     KeyValue<Comparable, ValType> getByKey(Comparable const &key) const;
+
+    KeyValue operator[](int const & index);
 
 private:
     KeyValue<Comparable, ValType> **m_keyValPairs;
@@ -144,6 +147,15 @@ Dictionary<Comparable, ValType>::binaryFindByKey(int const &start, int const &en
 
         // Target KeyValue is smaller than m_keyValPairs[mid]
     else return binaryFindByKey(start, mid - 1, key);
+}
+
+template<typename Comparable, typename ValType>
+KeyValue Dictionary<Comparable, ValType>::operator[](int const &index) {
+    if (index < 0 || index >= m_validKeys.size()){
+        throw std::out_of_range(index + " is an invalid index");
+    }
+
+    return *m_keyValPairs[index];
 }
 
 
