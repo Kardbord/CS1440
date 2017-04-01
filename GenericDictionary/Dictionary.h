@@ -11,8 +11,6 @@
 #include <algorithm>
 #include "KeyValue.h"
 
-// TODO: implement item 6 in the assignment description
-
 template<typename Comparable, typename ValType>
 class Dictionary {
 public:
