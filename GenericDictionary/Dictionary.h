@@ -24,7 +24,7 @@ public:
 
     KeyValue<Comparable, ValType> getByKey(Comparable const &key) const;
 
-    KeyValue getByIndex(int const &index) const;
+    KeyValue<Comparable, ValType> getByIndex(int const &index) const;
 
 private:
     KeyValue<Comparable, ValType> **m_keyValPairs;
@@ -149,7 +149,7 @@ Dictionary<Comparable, ValType>::binaryFindByKey(int const &start, int const &en
 
 // TODO: test me
 template<typename Comparable, typename ValType>
-KeyValue Dictionary<Comparable, ValType>::getByIndex(int const &index) const {
+KeyValue<Comparable, ValType> Dictionary<Comparable, ValType>::getByIndex(int const &index) const {
     if (index < 0 || index >= m_validKeys.size()) {
         throw std::out_of_range(index + " is an invalid index");
     }

@@ -123,7 +123,7 @@ void DictionaryTester::testGetByKey(std::ostream &out) {
         for (int i = 0; i < dictionary.getSize(); ++i, --c) {
             if (dictionary.getByKey(i).getValue() != c) {
                 out << "Failure in DictionaryTester::testGetByKey, dictionary.getByKey(" << i << ").getValue()="
-                          << dictionary.getByKey(i).getValue() << " should be " << c << std::endl;
+                    << dictionary.getByKey(i).getValue() << " should be " << c << std::endl;
                 return;
             }
         }
@@ -154,6 +154,31 @@ void DictionaryTester::testGetByKey(std::ostream &out) {
 
     } catch (const char *msg) {
         std::cerr << msg << std::endl;
+        out << "Failure in DictionaryTester::testGetByKey, threw an exception." << std::endl;
+    }
+
+}
+
+void DictionaryTester::testGetByIndex(std::ostream &out) {
+    out << "DictionaryTester::testGetByIndex" << std::endl;
+
+    Dictionary<int, char> dictionary(26);
+
+    char c = 'a';
+    for (int i = 0; i < 26; ++i, ++c) {
+        dictionary.addKeyValue(i, c);
+    }
+
+    c = 'a';
+    try {
+        for (int i = 0; i < dictionary.getSize(); ++i, ++c) {
+            if (dictionary.getByIndex(i).getValue() != c) {
+                out << "Failure in DictionaryTester::testGetByIndex, dictionary.getByIndex(" << i << ").getValue()="
+                    << dictionary.getByIndex(i).getValue() << " should be " << c << std::endl;
+            }
+        }
+    } catch (std::out_of_range e) {
+        std::cerr << e.what() << std::endl;
         out << "Failure in DictionaryTester::testGetByKey, threw an exception." << std::endl;
     }
 

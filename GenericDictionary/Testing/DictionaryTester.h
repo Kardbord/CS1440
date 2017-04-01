@@ -18,6 +18,8 @@ public:
 
     void testGetByKey(std::ostream &out);
 
+    void testGetByIndex(std::ostream &out);
+
 private:
 };
 

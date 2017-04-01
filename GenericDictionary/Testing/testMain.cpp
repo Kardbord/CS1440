@@ -13,5 +13,6 @@ int main() {
     dictionaryTester.testConstructor(std::cout);
     dictionaryTester.testAddKeyValue(std::cout);
     dictionaryTester.testGetByKey(std::cout);
+    dictionaryTester.testGetByIndex(std::cout);
     return EXIT_SUCCESS;
 }
