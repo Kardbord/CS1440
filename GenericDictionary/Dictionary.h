@@ -147,6 +147,7 @@ Dictionary<Comparable, ValType>::binaryFindByKey(int const &start, int const &en
     else return binaryFindByKey(start, mid - 1, key);
 }
 
+// TODO: test me
 template<typename Comparable, typename ValType>
 KeyValue Dictionary<Comparable, ValType>::operator[](int const &index) {
     if (index < 0 || index >= m_validKeys.size()){
