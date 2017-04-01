@@ -146,6 +146,12 @@ void DictionaryTester::testGetByKey(std::ostream &out) {
                 << dictionary.getByKey(-100).getValue() << " should be " << '#' << std::endl;
         }
 
+        auto keyval = dictionary.getByKey(25);
+        if (keyval.getValue() != 'a') {
+            out << "Failure in DictionaryTester::testGetByKey, dictionary.getByKey(25).getValue()='"
+                << keyval.getValue() << "' should be " << "'a'" << std::endl;
+        }
+
     } catch (const char *msg) {
         std::cerr << msg << std::endl;
         out << "Failure in DictionaryTester::testGetByKey, threw an exception." << std::endl;
