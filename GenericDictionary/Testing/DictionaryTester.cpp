@@ -182,4 +182,31 @@ void DictionaryTester::testGetByIndex(std::ostream &out) {
         out << "Failure in DictionaryTester::testGetByKey, threw an exception." << std::endl;
     }
 
+    try {
+        dictionary.getByIndex(30); // this line should throw an exception
+        out << "Failure in DictionaryTester::testGetByIndex, dictionary.getByIndex(30) should have thrown out_of_range"
+            << std::endl;
+        return;
+    } catch (std::out_of_range) {}
+
+    try {
+        dictionary.getByIndex(-20); // this line should throw an exception
+        out << "Failure in DictionaryTester::testGetByIndex, dictionary.getByIndex(-20) should have thrown out_of_range"
+            << std::endl;
+        return;
+    } catch (std::out_of_range) {}
+
+    try {
+        dictionary.getByIndex(-1); // this line should throw an exception
+        out << "Failure in DictionaryTester::testGetByIndex, dictionary.getByIndex(-1) should have thrown out_of_range"
+            << std::endl;
+        return;
+    } catch (std::out_of_range) {}
+
+    try {
+        dictionary.getByIndex(27); // this line should throw an exception
+        out << "Failure in DictionaryTester::testGetByIndex, dictionary.getByIndex(27) should have thrown out_of_range"
+            << std::endl;
+    } catch (std::out_of_range) {}
+
 }
