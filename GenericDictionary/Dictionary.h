@@ -26,7 +26,7 @@ public:
 
     KeyValue<Comparable, ValType> getByIndex(int const &index) const;
 
-    bool removeByKey(Comparable const &key);
+    void removeByKey(Comparable const &key);
 
 private:
     KeyValue<Comparable, ValType> **m_keyValPairs;
@@ -134,12 +134,12 @@ Dictionary<Comparable, ValType>::binaryFindByKey(int const &start, int const &en
         throw "Key not found";
     }
     if (end >= m_validKeys.size() || start < -1) {
-        throw "Invalid boundaries";
+        throw "Invalid boundaries while searching for key";
     }
 
     int mid = ((end - start) / 2) + start;
 
-    if (m_keyValPairs[mid] == nullptr) throw "Hit nullptr";
+    if (m_keyValPairs[mid] == nullptr) throw "Hit nullptr while searching for key";
 
     // Found target KeyValue
     if (*m_keyValPairs[mid] == key) return m_keyValPairs[mid];
@@ -162,18 +162,14 @@ KeyValue<Comparable, ValType> Dictionary<Comparable, ValType>::getByIndex(int co
 
 // TODO: test me
 template<typename Comparable, typename ValType>
-bool Dictionary<Comparable, ValType>::removeByKey(const Comparable &key) {
+void Dictionary<Comparable, ValType>::removeByKey(const Comparable &key) {
     if (std::find(m_validKeys.begin(), m_validKeys.end(), key) == m_validKeys.end()) {
         throw "Invalid Key";
     }
 
     int keyValIndex;
-    // Find the index of the KeyValue in m_keyValPairs
-    try {
-        keyValIndex = binaryFindIndex(0, (const int &) m_validKeys.size(), key);
-    } catch (char const *msg) {
-        return false;
-    }
+
+    keyValIndex = binaryFindIndex(0, (const int &) m_validKeys.size(), key);
 
     // Remove the key from the list of valid keys
     m_validKeys.erase(m_validKeys.begin() + std::find(m_validKeys.begin(), m_validKeys.end(), key));
@@ -188,7 +184,7 @@ bool Dictionary<Comparable, ValType>::removeByKey(const Comparable &key) {
         m_keyValPairs[i] = temp;
     }
 
-    return true;
+    return;
 
 }
 
@@ -199,12 +195,12 @@ int Dictionary<Comparable, ValType>::binaryFindIndex(int const &start, int const
         throw "Key not found";
     }
     if (end >= m_validKeys.size() || start < -1) {
-        throw "Invalid boundaries";
+        throw "Invalid boundaries while searching for key";
     }
 
     int mid = ((end - start) / 2) + start;
 
-    if (m_keyValPairs[mid] == nullptr) throw "Hit nullptr";
+    if (m_keyValPairs[mid] == nullptr) throw "Hit nullptr while searching for key";
 
     // Found target KeyValue
     if (*m_keyValPairs[mid] == key) return mid;
