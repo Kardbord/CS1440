@@ -26,6 +26,8 @@ public:
 
     KeyValue<Comparable, ValType> getByIndex(int const &index) const;
 
+    void removeByKey(Comparable const &key);
+
 private:
     KeyValue<Comparable, ValType> **m_keyValPairs;
     unsigned int m_sizeAlloc;
@@ -36,7 +38,7 @@ private:
 
     void sortKeyValPairs();
 
-    KeyValue<Comparable, ValType> binaryFindByKey(int const &start, int const &end, Comparable const &key) const;
+    KeyValue<Comparable, ValType>* binaryFindByKey(int const &start, int const &end, Comparable const &key) const;
 };
 
 template<typename Comparable, typename ValType>
@@ -120,11 +122,11 @@ KeyValue<Comparable, ValType> Dictionary<Comparable, ValType>::getByKey(const Co
         throw "Invalid Key";
     }
 
-    return binaryFindByKey(0, (const int &) m_validKeys.size() - 1, key);
+    return *binaryFindByKey(0, (const int &) m_validKeys.size() - 1, key);
 }
 
 template<typename Comparable, typename ValType>
-KeyValue<Comparable, ValType>
+KeyValue<Comparable, ValType>*
 Dictionary<Comparable, ValType>::binaryFindByKey(int const &start, int const &end, const Comparable &key) const {
     if (end < start || start < 0) {
         throw "Key not found";
@@ -138,7 +140,7 @@ Dictionary<Comparable, ValType>::binaryFindByKey(int const &start, int const &en
     if (m_keyValPairs[mid] == nullptr) throw "Hit nullptr";
 
     // Found target KeyValue
-    if (*m_keyValPairs[mid] == key) return *m_keyValPairs[mid];
+    if (*m_keyValPairs[mid] == key) return m_keyValPairs[mid];
 
     // Target KeyValue is larger than m_keyValPairs[mid]
     if (*m_keyValPairs[mid] < key) return binaryFindByKey(mid + 1, end, key);
@@ -154,6 +156,20 @@ KeyValue<Comparable, ValType> Dictionary<Comparable, ValType>::getByIndex(int co
     }
 
     return *m_keyValPairs[index];
+}
+
+template<typename Comparable, typename ValType>
+void Dictionary<Comparable, ValType>::removeByKey(const Comparable &key) {
+    if (std::find(m_validKeys.begin(), m_validKeys.end(), key) == m_validKeys.end()) {
+        throw "Invalid Key";
+    }
+
+    // TODO: remove the key from m_validKeys
+
+    KeyValue<Comparable, ValType>* keyValue = binaryFindByKey(0, (const int &) m_validKeys.size() - 1, key);
+
+    // TODO: call delete on keyValue, assign it to be a nullptr, and then somehow remove that null from m_keyValPairs
+
 }
 
 
