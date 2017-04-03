@@ -160,7 +160,6 @@ KeyValue<Comparable, ValType> Dictionary<Comparable, ValType>::getByIndex(int co
     return *m_keyValPairs[index];
 }
 
-// TODO: test me
 template<typename Comparable, typename ValType>
 void Dictionary<Comparable, ValType>::removeByKey(const Comparable &key) {
     // This compiles fine (gcc), it is a bug with CLion
@@ -194,7 +193,6 @@ void Dictionary<Comparable, ValType>::removeByKey(const Comparable &key) {
 
 }
 
-// TODO: test me
 template<typename Comparable, typename ValType>
 int Dictionary<Comparable, ValType>::binaryFindIndex(int const &start, int const &end, const Comparable &key) {
     if (end < start || start < 0) {
