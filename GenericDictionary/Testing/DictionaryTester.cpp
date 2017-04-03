@@ -153,7 +153,7 @@ void DictionaryTester::testGetByKey(std::ostream &out) {
         }
 
     } catch (const char *msg) {
-        std::cerr << msg << std::endl;
+        out << msg << std::endl;
         out << "Failure in DictionaryTester::testGetByKey, threw an exception." << std::endl;
     }
 
@@ -178,7 +178,7 @@ void DictionaryTester::testGetByIndex(std::ostream &out) {
             }
         }
     } catch (std::out_of_range e) {
-        std::cerr << e.what() << std::endl;
+        out << e.what() << std::endl;
         out << "Failure in DictionaryTester::testGetByKey, threw an exception." << std::endl;
     }
 
@@ -224,7 +224,7 @@ void DictionaryTester::testRemoveByIndex(std::ostream &out) {
     try {
         dictionary.removeByKey(0);
     } catch (const char *msg) {
-        std::cerr << msg << std::endl;
+        out << msg << std::endl;
         out << "Failure in dictionary.removeByKey(0) -- threw an exception" << std::endl;
         return;
     }
@@ -238,7 +238,7 @@ void DictionaryTester::testRemoveByIndex(std::ostream &out) {
     try {
         dictionary.removeByKey(24);
     } catch (const char *msg) {
-        std::cerr << msg << std::endl;
+        out << msg << std::endl;
         out << "Failure in dictionary.removeByKey(24) -- threw an exception" << std::endl;
         return;
     }
@@ -252,7 +252,7 @@ void DictionaryTester::testRemoveByIndex(std::ostream &out) {
     try {
         dictionary.removeByKey(10);
     } catch (const char *msg) {
-        std::cerr << msg << std::endl;
+        out << msg << std::endl;
         out << "Failure in dictionary.removeByKey(10) -- threw an exception" << std::endl;
         return;
     }
