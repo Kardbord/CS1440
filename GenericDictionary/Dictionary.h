@@ -28,6 +28,8 @@ public:
 
     void removeByKey(Comparable const &key);
 
+    void removeByIndex(int const &index);
+
 private:
     KeyValue<Comparable, ValType> **m_keyValPairs;
     unsigned int m_sizeAlloc;
@@ -41,6 +43,8 @@ private:
     KeyValue<Comparable, ValType> *binaryFindByKey(int const &start, int const &end, Comparable const &key) const;
 
     int binaryFindIndex(int const &start, int const &end, Comparable const &key);
+
+    void pushNullOut(int const &nullIndex);
 };
 
 template<typename Comparable, typename ValType>
@@ -107,8 +111,7 @@ void Dictionary<Comparable, ValType>::sortKeyValPairs() {
 
     // sort the vector
     std::sort(myVector.begin(), myVector.end(), [](KeyValue<Comparable, ValType> *a, KeyValue<Comparable, ValType> *b) {
-        if (!a || !b) return false;
-        return *a < *b;
+        return !(!a || !b) && *a < *b;
     });
 
     // TODO: is there a better way to do this?
@@ -183,11 +186,7 @@ void Dictionary<Comparable, ValType>::removeByKey(const Comparable &key) {
     delete m_keyValPairs[keyValIndex];
     m_keyValPairs[keyValIndex] = nullptr;
 
-    for (int i = keyValIndex; m_keyValPairs[i + 1] != nullptr; ++i) {
-        auto temp = m_keyValPairs[i + 1];
-        m_keyValPairs[i + 1] = m_keyValPairs[i];
-        m_keyValPairs[i] = temp;
-    }
+    pushNullOut(keyValIndex);
 
     return;
 
@@ -214,6 +213,41 @@ int Dictionary<Comparable, ValType>::binaryFindIndex(int const &start, int const
 
         // Target KeyValue is smaller than m_keyValPairs[mid]
     else return binaryFindIndex(start, mid - 1, key);
+}
+
+template<typename Comparable, typename ValType>
+void Dictionary<Comparable, ValType>::removeByIndex(int const &index) {
+    if (index < 0 || index >= m_validKeys.size()) {
+        throw std::out_of_range("Cannot remove KeyValue -- invalid index");
+    }
+
+    if (m_keyValPairs[index] == nullptr) {
+        throw std::invalid_argument("Cannot remove KeyValue -- specified index follows nullptr");
+    }
+
+    auto key = m_keyValPairs[index]->getKey();
+
+    // Remove the key from the list of valid keys
+    // This says it's an error but compiles fine (gcc)
+    auto foundKey = std::find(m_validKeys.begin(), m_validKeys.end(), key);
+    m_validKeys.erase(foundKey);
+
+    // Remove the KeyValue at the specified index
+    delete m_keyValPairs[index];
+    m_keyValPairs[index] = nullptr;
+
+    pushNullOut(index);
+
+    return;
+}
+
+template<typename Comparable, typename ValType>
+void Dictionary<Comparable, ValType>::pushNullOut(int const &nullIndex) {
+    for (int i = nullIndex; m_keyValPairs[i + 1] != nullptr; ++i) {
+        auto temp = m_keyValPairs[i + 1];
+        m_keyValPairs[i + 1] = m_keyValPairs[i];
+        m_keyValPairs[i] = temp;
+    }
 }
 
 
