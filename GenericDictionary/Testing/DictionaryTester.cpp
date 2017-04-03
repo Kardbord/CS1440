@@ -258,7 +258,7 @@ void DictionaryTester::testRemoveByKey(std::ostream &out) {
     }
 
     try {
-        dictionary.getByKey(24);
+        dictionary.getByKey(10);
         out << "Failure in dictionary.removeByKey(10), 10 was found after removal" << std::endl;
         return;
     } catch (const char *msg) {}
@@ -287,4 +287,85 @@ void DictionaryTester::testRemoveByKey(std::ostream &out) {
         return;
     } catch (const char *msg) {}
 
+}
+
+void DictionaryTester::testRemoveByIndex(std::ostream &out) {
+    out << "DictionaryTester::testRemoveByIndex" << std::endl;
+
+    Dictionary<int, char> dictionary(26);
+
+    char c = 'a';
+    for (int i = 0; i < 26; ++i, ++c) {
+        dictionary.addKeyValue(i, c);
+    }
+
+    try {
+        dictionary.removeByIndex(0);
+    } catch (std::exception e) {
+        out << e.what() << std::endl;
+        out << "Failure in dictionary.removeByIndex(0) -- threw an exception" << std::endl;
+        return;
+    }
+
+    try {
+        dictionary.getByIndex(0);
+    } catch (std::exception e) {
+        out << "Failure in dictionary.removeByIndex(10), 10 should have been found after removal (due to shifting)"
+            << std::endl;
+        return;
+    }
+
+    try {
+        dictionary.removeByIndex(24);
+    } catch (std::exception e) {
+        out << e.what() << std::endl;
+        out << "Failure in dictionary.removeByIndex(24) -- threw an exception" << std::endl;
+        return;
+    }
+
+    try {
+        dictionary.getByIndex(24);
+        out << "Failure in dictionary.removeByIndex(24), 24 (end of container) was found after removal" << std::endl;
+        return;
+    } catch (std::exception e) {}
+
+    try {
+        dictionary.removeByIndex(10);
+    } catch (std::exception e) {
+        out << e.what() << std::endl;
+        out << "Failure in dictionary.removeByIndex(10) -- threw an exception" << std::endl;
+        return;
+    }
+
+    try {
+        dictionary.getByIndex(10);
+    } catch (std::exception e) {
+        out << "Failure in dictionary.removeByIndex(10), 10 should have been found after removal (due to shifting)"
+            << std::endl;
+        return;
+    }
+
+    try {
+        dictionary.removeByIndex(50);
+        out << "Failure in dictionary.removeByIndex(50), 50 was \"removed\" but never existed" << std::endl;
+        return;
+    } catch (std::exception e) {}
+
+    try {
+        dictionary.removeByIndex(-1);
+        out << "Failure in dictionary.removeByIndex(-1), -1 was \"removed\" but never existed" << std::endl;
+        return;
+    } catch (std::exception e) {}
+
+    try {
+        dictionary.removeByIndex(-50);
+        out << "Failure in dictionary.removeByIndex(-50), -50 was \"removed\" but never existed" << std::endl;
+        return;
+    } catch (std::exception e) {}
+
+    try {
+        dictionary.removeByIndex(26);
+        out << "Failure in dictionary.removeByIndex(26), 26 was \"removed\" but never existed" << std::endl;
+        return;
+    } catch (std::exception e) {}
 }

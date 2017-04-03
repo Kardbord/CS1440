@@ -11,6 +11,7 @@
 #include <algorithm>
 #include "KeyValue.h"
 
+// TODO: Make sure I'm always throwing something from std::exception
 template<typename Comparable, typename ValType>
 class Dictionary {
 public:
@@ -218,7 +219,7 @@ int Dictionary<Comparable, ValType>::binaryFindIndex(int const &start, int const
 template<typename Comparable, typename ValType>
 void Dictionary<Comparable, ValType>::removeByIndex(int const &index) {
     if (index < 0 || index >= m_validKeys.size()) {
-        throw std::out_of_range("Cannot remove KeyValue -- invalid index");
+        throw std::out_of_range(index + " is an invalid index");
     }
 
     if (m_keyValPairs[index] == nullptr) {
