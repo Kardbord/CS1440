@@ -163,16 +163,22 @@ KeyValue<Comparable, ValType> Dictionary<Comparable, ValType>::getByIndex(int co
 // TODO: test me
 template<typename Comparable, typename ValType>
 void Dictionary<Comparable, ValType>::removeByKey(const Comparable &key) {
-    if (std::find(m_validKeys.begin(), m_validKeys.end(), key) == m_validKeys.end()) {
+    // This compiles fine (GCC), it is a bug with CLion
+    auto position = std::find(m_validKeys.begin(), m_validKeys.end(), key);
+
+    // 'position' variable is the position in m_validKeys of the Key which we are trying to delete.
+    // if it is equal to m_validKeys.end(), then it was not found and is an invalid key.
+
+    if (position == m_validKeys.end()) {
         throw "Invalid Key";
     }
 
     int keyValIndex;
 
-    keyValIndex = binaryFindIndex(0, (const int &) m_validKeys.size(), key);
+    keyValIndex = binaryFindIndex(0, (const int &) m_validKeys.size() - 1, key);
 
     // Remove the key from the list of valid keys
-    m_validKeys.erase(m_validKeys.begin() + std::find(m_validKeys.begin(), m_validKeys.end(), key));
+    m_validKeys.erase(position); // This compiles fine (GCC), it is a bug with CLion
 
     // Call delete on the found keyValue, assign it to be a nullptr, and then remove that null from m_keyValPairs
     delete m_keyValPairs[keyValIndex];

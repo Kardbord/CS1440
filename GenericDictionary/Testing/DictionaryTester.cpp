@@ -210,3 +210,81 @@ void DictionaryTester::testGetByIndex(std::ostream &out) {
     } catch (std::out_of_range) {}
 
 }
+
+void DictionaryTester::testRemoveByIndex(std::ostream &out) {
+    out << "DictionaryTester::testRemoveByIndex" << std::endl;
+
+    Dictionary<int, char> dictionary(26);
+
+    char c = 'a';
+    for (int i = 0; i < 26; ++i, ++c) {
+        dictionary.addKeyValue(i, c);
+    }
+
+    try {
+        dictionary.removeByKey(0);
+    } catch (const char *msg) {
+        std::cerr << msg << std::endl;
+        out << "Failure in dictionary.removeByKey(0) -- threw an exception" << std::endl;
+        return;
+    }
+
+    try {
+        dictionary.getByKey(0);
+        out << "Failure in dictionary.removeByKey(0), 0 was found after removal" << std::endl;
+        return;
+    } catch (const char *msg) {}
+
+    try {
+        dictionary.removeByKey(24);
+    } catch (const char *msg) {
+        std::cerr << msg << std::endl;
+        out << "Failure in dictionary.removeByKey(24) -- threw an exception" << std::endl;
+        return;
+    }
+
+    try {
+        dictionary.getByKey(24);
+        out << "Failure in dictionary.removeByKey(24), 24 was found after removal" << std::endl;
+        return;
+    } catch (const char *msg) {}
+
+    try {
+        dictionary.removeByKey(10);
+    } catch (const char *msg) {
+        std::cerr << msg << std::endl;
+        out << "Failure in dictionary.removeByKey(10) -- threw an exception" << std::endl;
+        return;
+    }
+
+    try {
+        dictionary.getByKey(24);
+        out << "Failure in dictionary.removeByKey(10), 10 was found after removal" << std::endl;
+        return;
+    } catch (const char *msg) {}
+
+    try {
+        dictionary.removeByKey(50);
+        out << "Failure in dictionary.removeByKey(50), 50 was \"removed\" but never existed" << std::endl;
+        return;
+    } catch (const char *msg) {}
+
+    try {
+        dictionary.removeByKey(-1);
+        out << "Failure in dictionary.removeByKey(-1), -1 was \"removed\" but never existed" << std::endl;
+        return;
+    } catch (const char *msg) {}
+
+    try {
+        dictionary.removeByKey(-50);
+        out << "Failure in dictionary.removeByKey(-50), -50 was \"removed\" but never existed" << std::endl;
+        return;
+    } catch (const char *msg) {}
+
+    try {
+        dictionary.removeByKey(26);
+        out << "Failure in dictionary.removeByKey(26), 26 was \"removed\" but never existed" << std::endl;
+        return;
+    } catch (const char *msg) {}
+
+}
