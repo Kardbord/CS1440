@@ -20,6 +20,8 @@ public:
 
     void testGetByIndex(std::ostream &out);
 
+    void testRemoveByKey(std::ostream &out);
+
     void testRemoveByIndex(std::ostream &out);
 
 private:

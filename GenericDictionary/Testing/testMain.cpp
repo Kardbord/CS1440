@@ -14,6 +14,6 @@ int main() {
     dictionaryTester.testAddKeyValue(std::cout);
     dictionaryTester.testGetByKey(std::cout);
     dictionaryTester.testGetByIndex(std::cout);
-    dictionaryTester.testRemoveByIndex(std::cout);
+    dictionaryTester.testRemoveByKey(std::cout);
     return EXIT_SUCCESS;
 }

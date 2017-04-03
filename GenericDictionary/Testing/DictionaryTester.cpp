@@ -211,8 +211,8 @@ void DictionaryTester::testGetByIndex(std::ostream &out) {
 
 }
 
-void DictionaryTester::testRemoveByIndex(std::ostream &out) {
-    out << "DictionaryTester::testRemoveByIndex" << std::endl;
+void DictionaryTester::testRemoveByKey(std::ostream &out) {
+    out << "DictionaryTester::testRemoveByKey" << std::endl;
 
     Dictionary<int, char> dictionary(26);
 
