@@ -16,6 +16,8 @@ class Dictionary {
 public:
     Dictionary(unsigned int const &size = 10);
 
+    Dictionary(Dictionary<Comparable, ValType> const &rhs);
+
     ~Dictionary();
 
     bool addKeyValue(Comparable const &key, ValType const &value);
@@ -59,6 +61,13 @@ Dictionary<Comparable, ValType>::Dictionary(unsigned int const &size) : m_sizeAl
     for (int i = 0; i < m_sizeAlloc; ++i) {
         m_keyValPairs[i] = nullptr;
     }
+}
+
+template<typename Comparable, typename ValType>
+Dictionary<Comparable, ValType>::Dictionary(Dictionary<Comparable, ValType> const &rhs): m_validKeys(
+        rhs.getValidKeys()), m_nextEmpty((unsigned int) rhs.getValidKeys().size()), m_sizeAlloc(
+        rhs.getSizeAllocation()) {
+    // TODO: get m_keyValPairs taken care of, efficiently if possible..
 }
 
 // TODO: delete any dynamically allocated memory
