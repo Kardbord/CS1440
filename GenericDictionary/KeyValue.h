@@ -6,7 +6,6 @@
 #define GENERICDICTIONARY_KEYVALUE_H
 
 // TODO: test operator overloads (they work, but write test cases)
-// TODO: test copy constructor
 template<typename Comparable, typename ValType>
 class KeyValue {
 public:

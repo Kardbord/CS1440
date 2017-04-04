@@ -12,6 +12,7 @@
 int main() {
     KeyValueTester keyValueTester;
     keyValueTester.testConstructorAndGetters(std::cout);
+    keyValueTester.testCopyConstructor(std::cout);
 
     DictionaryTester dictionaryTester;
     dictionaryTester.testConstructor(std::cout);
