@@ -16,7 +16,7 @@ class Dictionary {
 public:
     Dictionary(unsigned int const &size = 10);
 
-    Dictionary(Dictionary<Comparable, ValType> const &rhs);
+    Dictionary(Dictionary<Comparable, ValType> const &d);
 
     ~Dictionary();
 
@@ -64,14 +64,14 @@ Dictionary<Comparable, ValType>::Dictionary(unsigned int const &size) : m_sizeAl
 }
 
 template<typename Comparable, typename ValType>
-Dictionary<Comparable, ValType>::Dictionary(Dictionary<Comparable, ValType> const &rhs): m_validKeys(
-        rhs.getValidKeys()), m_nextEmpty((unsigned int) rhs.getValidKeys().size()), m_sizeAlloc(
-        rhs.getSizeAllocation()) {
+Dictionary<Comparable, ValType>::Dictionary(Dictionary<Comparable, ValType> const &d): m_validKeys(
+        d.getValidKeys()), m_nextEmpty((unsigned int) d.getValidKeys().size()), m_sizeAlloc(
+        d.getSizeAllocation()) {
     m_keyValPairs = new KeyValue<Comparable, ValType> *[m_sizeAlloc];
     for (int i = 0; i < m_sizeAlloc; ++i) {
-        if (i < rhs.getValidKeys().size()) {
-            m_keyValPairs[i] = new KeyValue<Comparable, ValType>(rhs.getValidKeys()[i],
-                                                              rhs.getByKey(rhs.getValidKeys()[i]).getValue());
+        if (i < d.getValidKeys().size()) {
+            m_keyValPairs[i] = new KeyValue<Comparable, ValType>(d.getValidKeys()[i],
+                                                              d.getByKey(d.getValidKeys()[i]).getValue());
         } else {
             m_keyValPairs[i] = nullptr;
         }
