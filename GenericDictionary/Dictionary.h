@@ -63,11 +63,21 @@ Dictionary<Comparable, ValType>::Dictionary(unsigned int const &size) : m_sizeAl
     }
 }
 
+// TODO: test me
 template<typename Comparable, typename ValType>
 Dictionary<Comparable, ValType>::Dictionary(Dictionary<Comparable, ValType> const &rhs): m_validKeys(
         rhs.getValidKeys()), m_nextEmpty((unsigned int) rhs.getValidKeys().size()), m_sizeAlloc(
         rhs.getSizeAllocation()) {
-    // TODO: get m_keyValPairs taken care of, efficiently if possible..
+    m_keyValPairs = new KeyValue<Comparable, ValType> *[m_sizeAlloc];
+    for (int i = 0; i < m_sizeAlloc; ++i) {
+        if (i < rhs.getValidKeys().size()) {
+            m_keyValPairs[i] = new KeyValue<Comparable, ValType>(rhs.getValidKeys()[i],
+                                                              rhs.getByKey(rhs.getValidKeys()[i]).getValue());
+        } else {
+            m_keyValPairs[i] = nullptr;
+        }
+    }
+    sortKeyValPairs();
 }
 
 // TODO: delete any dynamically allocated memory
