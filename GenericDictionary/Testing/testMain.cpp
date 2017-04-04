@@ -7,8 +7,12 @@
 
 #include <iostream>
 #include "DictionaryTester.h"
+#include "KeyValueTester.h"
 
 int main() {
+    KeyValueTester keyValueTester;
+    keyValueTester.testConstructorAndGetters(std::cout);
+
     DictionaryTester dictionaryTester;
     dictionaryTester.testConstructor(std::cout);
     dictionaryTester.testAddKeyValue(std::cout);

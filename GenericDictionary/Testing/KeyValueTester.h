@@ -6,8 +6,12 @@
 #define GENERICDICTIONARY_KEYVALUETESTER_H
 
 
-class KeyValueTester {
+#include <iosfwd>
 
+class KeyValueTester {
+public:
+    KeyValueTester(){}
+    void testConstructorAndGetters(std::ostream &out);
 };
 
 
