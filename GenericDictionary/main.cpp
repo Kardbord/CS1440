@@ -5,7 +5,7 @@
 // TODO: write an example in main
 int main() {
 
-    Dictionary dictionary()
+    Dictionary dictionary();
 
     return EXIT_SUCCESS;
 }
