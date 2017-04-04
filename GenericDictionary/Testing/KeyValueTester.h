@@ -10,8 +10,11 @@
 
 class KeyValueTester {
 public:
-    KeyValueTester(){}
+    KeyValueTester() {}
+
     void testConstructorAndGetters(std::ostream &out);
+
+    void testCopyConstructor(std::ostream &out);
 };
 
 
