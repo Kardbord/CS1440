@@ -258,4 +258,22 @@ void KeyValueTester::testOperatorOverloads(std::ostream &out) {
             return;
         }
     }
+
+    {
+        KeyValue<std::string, int> keyValue("one", 156);
+        KeyValue<std::string, int> keyValue1("two", -64);
+
+        if (keyValue == keyValue1) {
+            out << "Failure in keyValue == keyValue1 -- should be false" << std::endl;
+            return;
+        }
+
+        keyValue1 = keyValue;
+
+        if (!(keyValue == keyValue1)) {
+            out << "Failure in !(keyValue == keyValue1) after = operation -- should be false" << std::endl;
+            return;
+        }
+
+    }
 }
