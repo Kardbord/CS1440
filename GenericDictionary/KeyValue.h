@@ -47,7 +47,7 @@ public:
 
     bool operator!=(Comparable const &key) const;
 
-    void operator=(KeyValue<Comparable, ValType> const &rhs) const;
+    void operator=(KeyValue<Comparable, ValType> const &rhs);
 
 private:
     Comparable m_key;
@@ -86,9 +86,9 @@ bool KeyValue<Comparable, ValType>::operator==(KeyValue<Comparable, ValType> con
 }
 
 template<typename Comparable, typename ValType>
-void KeyValue<Comparable, ValType>::operator=(KeyValue<Comparable, ValType> const &rhs) const {
-    m_key = rhs.getKey();
-    m_value = rhs.getValue();
+void KeyValue<Comparable, ValType>::operator=(KeyValue<Comparable, ValType> const &rhs) {
+    this->m_key = rhs.getKey();
+    this->m_value = rhs.getValue();
 }
 
 template<typename Comparable, typename ValType>
