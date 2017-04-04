@@ -24,6 +24,8 @@ public:
 
     void testRemoveByIndex(std::ostream &out);
 
+    void testCopyConstructor(std::ostream &out);
+
 private:
 };
 

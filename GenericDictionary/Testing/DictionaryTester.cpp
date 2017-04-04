@@ -152,8 +152,8 @@ void DictionaryTester::testGetByKey(std::ostream &out) {
                 << keyval.getValue() << "' should be " << "'a'" << std::endl;
         }
 
-    } catch (const char *msg) {
-        out << msg << std::endl;
+    } catch (std::exception e) {
+        out << e.what() << std::endl;
         out << "Failure in DictionaryTester::testGetByKey, threw an exception." << std::endl;
     }
 
@@ -223,8 +223,8 @@ void DictionaryTester::testRemoveByKey(std::ostream &out) {
 
     try {
         dictionary.removeByKey(0);
-    } catch (const char *msg) {
-        out << msg << std::endl;
+    } catch (std::exception e) {
+        out << e.what() << std::endl;
         out << "Failure in dictionary.removeByKey(0) -- threw an exception" << std::endl;
         return;
     }
@@ -233,12 +233,12 @@ void DictionaryTester::testRemoveByKey(std::ostream &out) {
         dictionary.getByKey(0);
         out << "Failure in dictionary.removeByKey(0), 0 was found after removal" << std::endl;
         return;
-    } catch (const char *msg) {}
+    } catch (std::exception e) {}
 
     try {
         dictionary.removeByKey(24);
-    } catch (const char *msg) {
-        out << msg << std::endl;
+    } catch (std::exception e) {
+        out << e.what() << std::endl;
         out << "Failure in dictionary.removeByKey(24) -- threw an exception" << std::endl;
         return;
     }
@@ -247,12 +247,12 @@ void DictionaryTester::testRemoveByKey(std::ostream &out) {
         dictionary.getByKey(24);
         out << "Failure in dictionary.removeByKey(24), 24 was found after removal" << std::endl;
         return;
-    } catch (const char *msg) {}
+    } catch (std::exception e) {}
 
     try {
         dictionary.removeByKey(10);
-    } catch (const char *msg) {
-        out << msg << std::endl;
+    } catch (std::exception e) {
+        out << e.what() << std::endl;
         out << "Failure in dictionary.removeByKey(10) -- threw an exception" << std::endl;
         return;
     }
@@ -261,31 +261,31 @@ void DictionaryTester::testRemoveByKey(std::ostream &out) {
         dictionary.getByKey(10);
         out << "Failure in dictionary.removeByKey(10), 10 was found after removal" << std::endl;
         return;
-    } catch (const char *msg) {}
+    } catch (std::exception e) {}
 
     try {
         dictionary.removeByKey(50);
         out << "Failure in dictionary.removeByKey(50), 50 was \"removed\" but never existed" << std::endl;
         return;
-    } catch (const char *msg) {}
+    } catch (std::exception e) {}
 
     try {
         dictionary.removeByKey(-1);
         out << "Failure in dictionary.removeByKey(-1), -1 was \"removed\" but never existed" << std::endl;
         return;
-    } catch (const char *msg) {}
+    } catch (std::exception e) {}
 
     try {
         dictionary.removeByKey(-50);
         out << "Failure in dictionary.removeByKey(-50), -50 was \"removed\" but never existed" << std::endl;
         return;
-    } catch (const char *msg) {}
+    } catch (std::exception e) {}
 
     try {
         dictionary.removeByKey(26);
         out << "Failure in dictionary.removeByKey(26), 26 was \"removed\" but never existed" << std::endl;
         return;
-    } catch (const char *msg) {}
+    } catch (std::exception e) {}
 
 }
 
@@ -368,4 +368,87 @@ void DictionaryTester::testRemoveByIndex(std::ostream &out) {
         out << "Failure in dictionary.removeByIndex(26), 26 was \"removed\" but never existed" << std::endl;
         return;
     } catch (std::exception e) {}
+}
+
+void DictionaryTester::testCopyConstructor(std::ostream &out) {
+    out << "DictionaryTester::testCopyConstructor" << std::endl;
+
+    // A scope for some test cases
+    {
+        Dictionary<int, char> dictionary(26);
+
+        char c = 'a';
+        for (int i = 0; i < 26; ++i, ++c) {
+            dictionary.addKeyValue(i, c);
+        }
+
+        Dictionary<int, char> dictionary1(dictionary);
+
+        c = 'a';
+        for (int i = 0; i < dictionary.getSize(); ++i, ++c) {
+            try {
+                if (dictionary.getByIndex(i) != dictionary1.getByIndex(i) ||
+                    dictionary.getByIndex(i).getValue() != dictionary1.getByIndex(i).getValue()) {
+                    out << "Failure in copy constructor, the new dictionary should be identical to the constructed one"
+                        << std::endl;
+                    return;
+                }
+            } catch (std::exception e) {
+                out << e.what() << std::endl;
+                out << "Failure in copy constructor -- not all KeyVals were copied" << std::endl;
+                return;
+            }
+        }
+
+        c = 'a';
+        dictionary.addKeyValue(26, '$');
+        for (int i = 0; i < dictionary.getSize(); ++i, ++c) {
+            try {
+                if (i == 26 && dictionary.getByIndex(i) == dictionary1.getByIndex(i)) {
+                    out << "Failure! Dictionaries are identical after adding KeyVal to only one." << std::endl;
+                    return;
+                } else if (dictionary.getByIndex(i) != dictionary1.getByIndex(i) ||
+                           dictionary.getByIndex(i).getValue() != dictionary1.getByIndex(i).getValue()) {
+                    out << "Failure in copy constructor, the new dictionary should be identical to the constructed one"
+                        << std::endl;
+                    return;
+                }
+            } catch (std::exception e) {}
+        }
+    }
+
+    // Another scope for more test cases
+    {
+        Dictionary<std::string, int> dictionary(1);
+        Dictionary<std::string, int> dictionary1(dictionary);
+
+        for (int i = 0; i < dictionary.getSize(); ++i) {
+            try {
+                if (dictionary.getByIndex(i) != dictionary1.getByIndex(i) ||
+                    dictionary.getByIndex(i).getValue() != dictionary1.getByIndex(i).getValue()) {
+                    out << "Failure in copy constructor, the comparison shouldn't be able to be made"
+                        << std::endl;
+                    return;
+                }
+            } catch (std::exception e) {}
+        }
+
+        dictionary.addKeyValue("one", 1);
+        Dictionary<std::string, int> dictionary2(dictionary);
+
+        for (int i = 0; i < dictionary.getSize(); ++i) {
+            try {
+                if (dictionary.getByIndex(i) != dictionary2.getByIndex(i) ||
+                    dictionary.getByIndex(i).getValue() != dictionary2.getByIndex(i).getValue()) {
+                    out << "Failure in copy constructor, the new dictionary should be identical to the constructed one"
+                        << std::endl;
+                    return;
+                }
+            } catch (std::exception e) {
+                out << e.what() << std::endl;
+                out << "Failure in copy constructor -- not all KeyVals were copied" << std::endl;
+                return;
+            }
+        }
+    }
 }
