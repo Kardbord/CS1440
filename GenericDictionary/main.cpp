@@ -9,7 +9,6 @@ std::stringstream toUpper(std::string const &s);
 std::string prompt(bool &cont);
 
 // TODO: write UML
-// TODO: write an example in main
 int main() {
 
     // A non-comprehensive list of nations in the world
