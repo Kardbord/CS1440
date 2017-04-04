@@ -79,7 +79,6 @@ Dictionary<Comparable, ValType>::Dictionary(Dictionary<Comparable, ValType> cons
     sortKeyValPairs();
 }
 
-// TODO: delete any dynamically allocated memory
 template<typename Comparable, typename ValType>
 Dictionary<Comparable, ValType>::~Dictionary() {
     for (int i = 0; i < m_sizeAlloc; ++i) {
@@ -136,7 +135,6 @@ void Dictionary<Comparable, ValType>::sortKeyValPairs() {
         return !(!a || !b) && *a < *b;
     });
 
-    // TODO: is there a better way to do this?
     for (int i = 0; i < m_validKeys.size(); ++i) {
         m_keyValPairs[i] = myVector[i];
     }
