@@ -51,3 +51,211 @@ void KeyValueTester::testCopyConstructor(std::ostream &out) {
         return;
     }
 }
+
+void KeyValueTester::testOperatorOverloads(std::ostream &out) {
+    out << "KeyValueTester::testOperatorOverloads" << std::endl;
+
+    {
+        KeyValue<std::string, int> keyValue("one", 1);
+        KeyValue<std::string, int> keyValue1("one", 1);
+
+        if (keyValue != keyValue1) {
+            out << "Failure in keyValue != to keyValue1 -- should be false" << std::endl;
+            return;
+        }
+
+        if (!(keyValue == keyValue1)) {
+            out << "Failure in !(keyValue == keyValue1) -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue < keyValue1) {
+            out << "Failure in keyValue < keyValue1 -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue > keyValue1) {
+            out << "Failure in keyValue > keyValue1 -- should be false" << std::endl;
+            return;
+        }
+
+        if (!(keyValue >= keyValue1)) {
+            out << "Failure in !(keyValue >= keyValue1) -- should be false" << std::endl;
+            return;
+        }
+
+        if (!(keyValue <= keyValue1)) {
+            out << "Failure in !(keyValue <= keyValue1) -- should be false" << std::endl;
+            return;
+        }
+
+        //*******************************************************************************//
+        // Test operator overloads with keys
+
+        if (keyValue != "one") {
+            out << "Failure in keyValue != to \"one\" -- should be false" << std::endl;
+            return;
+        }
+
+        if (!(keyValue == "one")) {
+            out << "Failure in !(keyValue == \"one\") -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue < "one") {
+            out << "Failure in keyValue < \"one\" -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue > "one") {
+            out << "Failure in keyValue > \"one\" -- should be false" << std::endl;
+            return;
+        }
+
+        if (!(keyValue >= "one")) {
+            out << "Failure in !(keyValue >= \"one\") -- should be false" << std::endl;
+            return;
+        }
+
+        if (!(keyValue <= "one")) {
+            out << "Failure in !(keyValue <= \"one\") -- should be false" << std::endl;
+            return;
+        }
+    }
+
+    {
+        KeyValue<std::string, int> keyValue("one", 1);
+        KeyValue<std::string, int> keyValue1("two", 1);
+
+        if (!(keyValue != keyValue1)) {
+            out << "Failure in !(keyValue != keyValue1) -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue == keyValue1) {
+            out << "Failure in keyValue == keyValue1 -- should be false" << std::endl;
+            return;
+        }
+
+        if (!(keyValue < keyValue1)) {
+            out << "Failure in !(keyValue < keyValue1) -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue > keyValue1) {
+            out << "Failure in keyValue > keyValue1 -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue >= keyValue1) {
+            out << "Failure in keyValue >= keyValue1 -- should be false" << std::endl;
+            return;
+        }
+
+        if (!(keyValue <= keyValue1)) {
+            out << "Failure in !(keyValue <= keyValue1) -- should be false" << std::endl;
+            return;
+        }
+
+        //*******************************************************************************//
+        // Test operator overloads with keys
+
+        if (!(keyValue != "two")) {
+            out << "Failure in !(keyValue != \"two\") -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue == "two") {
+            out << "Failure in keyValue == \"two\" -- should be false" << std::endl;
+            return;
+        }
+
+        if (!(keyValue < "two")) {
+            out << "Failure in keyValue < \"two\" -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue > "two") {
+            out << "Failure in keyValue > \"two\" -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue >= "two") {
+            out << "Failure in keyValue >= \"two\" -- should be false" << std::endl;
+            return;
+        }
+
+        if (!(keyValue <= "two")) {
+            out << "Failure in !(keyValue <= \"two\") -- should be false" << std::endl;
+            return;
+        }
+    }
+
+    {
+        KeyValue<std::string, int> keyValue("one", 156);
+        KeyValue<std::string, int> keyValue1("two", -64);
+
+        if (!(keyValue != keyValue1)) {
+            out << "Failure in !(keyValue != keyValue1) -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue == keyValue1) {
+            out << "Failure in keyValue == keyValue1 -- should be false" << std::endl;
+            return;
+        }
+
+        if (!(keyValue < keyValue1)) {
+            out << "Failure in !(keyValue < keyValue1) -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue > keyValue1) {
+            out << "Failure in keyValue > keyValue1 -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue >= keyValue1) {
+            out << "Failure in keyValue >= keyValue1 -- should be false" << std::endl;
+            return;
+        }
+
+        if (!(keyValue <= keyValue1)) {
+            out << "Failure in !(keyValue <= keyValue1) -- should be false" << std::endl;
+            return;
+        }
+
+        //*******************************************************************************//
+        // Test operator overloads with keys
+
+        if (!(keyValue != "two")) {
+            out << "Failure in keyValue != to \"two\" -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue == "two") {
+            out << "Failure in keyValue == \"two\" -- should be false" << std::endl;
+            return;
+        }
+
+        if (!(keyValue < "two")) {
+            out << "Failure in keyValue < \"two\" -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue > "two") {
+            out << "Failure in keyValue > \"two\" -- should be false" << std::endl;
+            return;
+        }
+
+        if (keyValue >= "two") {
+            out << "Failure in keyValue >= \"one\" -- should be false" << std::endl;
+            return;
+        }
+
+        if (!(keyValue <= "two")) {
+            out << "Failure in !(keyValue <= \"two\") -- should be false" << std::endl;
+            return;
+        }
+    }
+}

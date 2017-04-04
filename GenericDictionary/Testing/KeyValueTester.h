@@ -15,6 +15,8 @@ public:
     void testConstructorAndGetters(std::ostream &out);
 
     void testCopyConstructor(std::ostream &out);
+
+    void testOperatorOverloads(std::ostream &out);
 };
 
 
