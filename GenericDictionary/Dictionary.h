@@ -26,6 +26,10 @@ public:
 
     KeyValue<Comparable, ValType> getByIndex(int const &index) const;
 
+    std::vector<Comparable> getValidKeys() const { return m_validKeys; }
+
+    unsigned int getSizeAllocation() const { return m_sizeAlloc; }
+
     void removeByKey(Comparable const &key);
 
     void removeByIndex(int const &index);
