@@ -11,7 +11,6 @@
 #include <algorithm>
 #include "KeyValue.h"
 
-// TODO: Make sure I'm always throwing something from std::exception
 template<typename Comparable, typename ValType>
 class Dictionary {
 public:
