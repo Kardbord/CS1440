@@ -63,7 +63,6 @@ Dictionary<Comparable, ValType>::Dictionary(unsigned int const &size) : m_sizeAl
     }
 }
 
-// TODO: test me
 template<typename Comparable, typename ValType>
 Dictionary<Comparable, ValType>::Dictionary(Dictionary<Comparable, ValType> const &rhs): m_validKeys(
         rhs.getValidKeys()), m_nextEmpty((unsigned int) rhs.getValidKeys().size()), m_sizeAlloc(
