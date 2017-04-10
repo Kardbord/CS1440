@@ -23,9 +23,9 @@ double Configuration::getParamAsDouble(std::string const &key) const {
     }
 }
 
-unsigned long Configuration::getParamAsInt(std::string const &key) const {
+unsigned long long Configuration::getParamAsInt(std::string const &key) const {
     try {
-        return std::stoul(m_configParameters.at(key));
+        return std::stoull(m_configParameters.at(key));
     } catch (std::exception e) {
         // Throw my own exception with my own message for greater clarity as to where things went wrong
         throw std::out_of_range("Invalid key or no valid conversion in Configuration::getParamAsInt()");

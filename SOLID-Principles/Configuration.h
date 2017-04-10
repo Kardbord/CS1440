@@ -21,7 +21,7 @@ public:
 
     double getParamAsDouble(std::string const &key) const;
 
-    unsigned long getParamAsInt(std::string const &key) const;
+    unsigned long long getParamAsInt(std::string const &key) const;
 
 private:
     std::map<std::string, std::string> m_configParameters;
