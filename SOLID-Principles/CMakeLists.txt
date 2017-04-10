@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.7)
+project(SOLID_Principles)
+
+set(CMAKE_CXX_STANDARD 11)
+
+set(TEST_FILES Testing/AnalyserTester.cpp Testing/AnalyserTester.h
+        Testing/ConfigurationTester.cpp Testing/ConfigurationTester.h
+        Testing/DenailOfServiceAnalyzerTester.cpp Testing/DenailOfServiceAnalyzerTester.h
+        Testing/PortScanAnalyserTester.cpp Testing/PortScanAnalyserTester.h
+        Testing/ResultSetTester.cpp Testing/ResultSetTester.h)
+
+add_executable(Test Testing/testMain.cpp ${TEST_FILES})
+
+set(SOURCE_FILES Analyser.cpp Analyser.h
+        DenialOfServiceAnalyser.cpp DenialOfServiceAnalyser.h
+        PortScanAnalyser.cpp PortScanAnalyser.h
+        Configuration.cpp Configuration.h
+        ResultSet.cpp ResultSet.h)
+add_executable(SOLID_Principles main.cpp ${SOURCE_FILES})
