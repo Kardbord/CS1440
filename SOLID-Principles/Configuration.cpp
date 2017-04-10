@@ -37,6 +37,6 @@ bool Configuration::addParameter(std::string const &key, std::string const &valu
 }
 
 bool Configuration::removeParemeter(std::string const &key) {
-    unsigned int numRemoved = (int) m_configParameters.erase(key);
+    unsigned int numRemoved = (unsigned int) m_configParameters.erase(key);
     return numRemoved == 1;
 }
