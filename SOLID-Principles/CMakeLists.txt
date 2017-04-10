@@ -11,9 +11,9 @@ set(TEST_FILES Testing/AnalyserTester.cpp Testing/AnalyserTester.h
 
 add_executable(Test Testing/testMain.cpp ${TEST_FILES})
 
-set(SOURCE_FILES Analyser.cpp Analyser.h
-        DenialOfServiceAnalyser.cpp DenialOfServiceAnalyser.h
-        PortScanAnalyser.cpp PortScanAnalyser.h
+set(SOURCE_FILES Analyzer.cpp Analyzer.h
+        DenialOfServiceAnalyzer.cpp DenialOfServiceAnalyzer.h
+        PortScanAnalyzer.cpp PortScanAnalyzer.h
         Configuration.cpp Configuration.h
         ResultSet.cpp ResultSet.h)
 add_executable(SOLID_Principles main.cpp ${SOURCE_FILES})

@@ -6,8 +6,12 @@
 #define SOLID_PRINCIPLES_ANALYSER_H
 
 
-class Analyser {
+#include <iosfwd>
+#include "ResultSet.h"
 
+class Analyzer {
+public:
+    virtual ResultSet run(std::istream & in) = 0;
 };
 
 

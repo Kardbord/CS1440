@@ -2,4 +2,4 @@
 // Created by Tanner on 4/10/2017.
 //
 
-#include "DenialOfServiceAnalyser.h"
+#include "Analyzer.h"
