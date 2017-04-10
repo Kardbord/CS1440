@@ -9,11 +9,11 @@ set(TEST_FILES Testing/AnalyserTester.cpp Testing/AnalyserTester.h
         Testing/PortScanAnalyserTester.cpp Testing/PortScanAnalyserTester.h
         Testing/ResultSetTester.cpp Testing/ResultSetTester.h)
 
-add_executable(Test Testing/testMain.cpp ${TEST_FILES})
-
 set(SOURCE_FILES Analyzer.cpp Analyzer.h
         DenialOfServiceAnalyzer.cpp DenialOfServiceAnalyzer.h
         PortScanAnalyzer.cpp PortScanAnalyzer.h
         Configuration.cpp Configuration.h
         ResultSet.cpp ResultSet.h)
+
+add_executable(Test Testing/testMain.cpp ${TEST_FILES} ${SOURCE_FILES})
 add_executable(SOLID_Principles main.cpp ${SOURCE_FILES})
