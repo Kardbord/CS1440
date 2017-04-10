@@ -19,7 +19,10 @@ public:
      */
     bool addParameter(std::string const &key, std::string const &value);
 
-    // TODO: implement
+    /**
+     * @param key of std::pair to be removed
+     * @return true if the pair was found and deleted
+     */
     bool removeParemeter(std::string const &key);
 
     std::string getParamAsString(std::string const &key) const;

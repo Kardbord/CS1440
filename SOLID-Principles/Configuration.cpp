@@ -35,3 +35,8 @@ unsigned long long Configuration::getParamAsInt(std::string const &key) const {
 bool Configuration::addParameter(std::string const &key, std::string const &value) {
     return m_configParameters.insert(std::pair<std::string, std::string>(key, value)).second;
 }
+
+bool Configuration::removeParemeter(std::string const &key) {
+    unsigned int numRemoved = (int) m_configParameters.erase(key);
+    return numRemoved == 1;
+}
