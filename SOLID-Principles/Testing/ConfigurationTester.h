@@ -6,8 +6,17 @@
 #define SOLID_PRINCIPLES_CONFIGURATIONTESTER_H
 
 
-class ConfigurationTester {
+#include <ostream>
 
+class ConfigurationTester {
+public:
+    ConfigurationTester() {}
+
+    void testAddParameter(std::ostream &out);
+
+    void testGetters(std::ostream &out);
+
+    void testRemoveParameter(std::ostream &out);
 };
 
 

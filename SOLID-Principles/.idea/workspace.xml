@@ -14,9 +14,6 @@
   <component name="ChangeListManager">
     <list default="true" id="09858ade-5e57-4609-aa28-30b422d00c13" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GenericDictionary/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../GenericDictionary/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Configuration.cpp" afterPath="$PROJECT_DIR$/Configuration.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Configuration.h" afterPath="$PROJECT_DIR$/Configuration.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,7 +29,7 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="0">
               <caret line="18" column="57" lean-forward="false" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
               <folding />
             </state>
@@ -52,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Configuration.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Configuration.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Configuration.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="462">
@@ -64,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Configuration.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Configuration.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Configuration.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="706">
-              <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+            <state relative-caret-position="685">
+              <caret line="40" column="27" lean-forward="true" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
               <folding>
                 <element signature="e#42#62#0" expanded="true" />
               </folding>
@@ -87,8 +84,9 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Analyser.h" />
         <option value="$PROJECT_DIR$/Analyzer.h" />
-        <option value="$PROJECT_DIR$/Configuration.cpp" />
         <option value="$PROJECT_DIR$/Configuration.h" />
+        <option value="$PROJECT_DIR$/ResultSet.h" />
+        <option value="$PROJECT_DIR$/Configuration.cpp" />
       </list>
     </option>
   </component>
@@ -380,12 +378,12 @@
       <updated>1491838063027</updated>
       <workItem from="1491838067828" duration="893000" />
       <workItem from="1491839015379" duration="3999000" />
-      <workItem from="1491856410989" duration="3258000" />
+      <workItem from="1491856410989" duration="3849000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8150000" />
+    <option name="totallyTimeSpent" value="8741000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -508,13 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ResultSet.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Testing/testMain.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -594,7 +585,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="0">
           <caret line="18" column="57" lean-forward="false" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
           <folding />
         </state>
@@ -611,13 +602,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Configuration.cpp">
+    <entry file="file://$PROJECT_DIR$/ResultSet.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-          <folding>
-            <element signature="e#42#62#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="147">
+          <caret line="7" column="80" lean-forward="false" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -627,6 +616,16 @@
           <caret line="22" column="44" lean-forward="false" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
           <folding>
             <element signature="e#125#142#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Configuration.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="685">
+          <caret line="40" column="27" lean-forward="true" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+          <folding>
+            <element signature="e#42#62#0" expanded="true" />
           </folding>
         </state>
       </provider>
