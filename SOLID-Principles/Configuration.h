@@ -14,10 +14,14 @@ public:
 
     // TODO: implement these
     bool addParameter();
+
     bool removeParemeter();
-    std::string getParameter(std::string const &key) const;
-    double getParameter(std::string const &key);
-    // TODO: add function to getParameter as an int (what size int?)
+
+    std::string getParamAsString(std::string const &key) const;
+
+    double getParamAsDouble(std::string const &key) const;
+
+    unsigned long getParamAsInt(std::string const &key) const;
 
 private:
     std::map<std::string, std::string> m_configParameters;
