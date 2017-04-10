@@ -31,3 +31,7 @@ unsigned long long Configuration::getParamAsInt(std::string const &key) const {
         throw std::out_of_range("Invalid key or no valid conversion in Configuration::getParamAsInt()");
     }
 }
+
+bool Configuration::addParameter(std::string const &key, std::string const &value) {
+    return m_configParameters.insert(std::pair<std::string, std::string>(key, value)).second;
+}

@@ -12,10 +12,15 @@ class Configuration {
 public:
     Configuration() : m_configParameters() {}
 
-    // TODO: implement these
-    bool addParameter();
+    /**
+     * @param key for the std::pair
+     * @param value for the std::pair
+     * @return true if the new pair was added, false if the key already existed
+     */
+    bool addParameter(std::string const &key, std::string const &value);
 
-    bool removeParemeter();
+    // TODO: implement
+    bool removeParemeter(std::string const &key);
 
     std::string getParamAsString(std::string const &key) const;
 
