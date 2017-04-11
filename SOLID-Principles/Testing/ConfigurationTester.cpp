@@ -113,6 +113,12 @@ void ConfigurationTester::testGetters(std::ostream &out) {
 
     // **************************getParamAsInt()***********************************************************************
     try {
+        configuration.addParameter("hat", "-20");
+
+        if (configuration.getParamAsInt("hat") != -20) {
+            out << "Failure! configuration.getParamAsInt(\"hat\") != -20) should be false" << std::endl;
+        }
+
         if (configuration.getParamAsInt("a") != 0) {
             out << "Failure! configuration.getParamAsInt(\"a\") != 0) should be false" << std::endl;
         }
@@ -143,7 +149,7 @@ void ConfigurationTester::testGetters(std::ostream &out) {
 
         try {
             configuration.getParamAsInt("1");
-            out << "Failure! configuration.getParamAsString(\"1\") should have thrown std::out_of_range" << std::endl;
+            out << "Failure! configuration.getParamAsInt(\"1\") should have thrown std::out_of_range" << std::endl;
             return;
         } catch (std::exception e) {
             // do nothing, this is correct
@@ -151,7 +157,7 @@ void ConfigurationTester::testGetters(std::ostream &out) {
 
         try {
             configuration.getParamAsInt("!");
-            out << "Failure! configuration.getParamAsString(\"!\") should have thrown std::out_of_range" << std::endl;
+            out << "Failure! configuration.getParamAsInt(\"!\") should have thrown std::out_of_range" << std::endl;
             return;
         } catch (std::exception e) {
             // do nothing, this is correct
@@ -159,7 +165,7 @@ void ConfigurationTester::testGetters(std::ostream &out) {
 
         try {
             configuration.getParamAsInt("$^");
-            out << "Failure! configuration.getParamAsString(\"$^\") should have thrown std::out_of_range" << std::endl;
+            out << "Failure! configuration.getParamAsInt(\"$^\") should have thrown std::out_of_range" << std::endl;
             return;
         } catch (std::exception e) {
             // do nothing, this is correct
@@ -167,7 +173,7 @@ void ConfigurationTester::testGetters(std::ostream &out) {
 
         try {
             configuration.getParamAsInt("asdf");
-            out << "Failure! configuration.getParamAsString(\"asdf\") should have thrown std::out_of_range"
+            out << "Failure! configuration.getParamAsInt(\"asdf\") should have thrown std::out_of_range"
                 << std::endl;
             return;
         } catch (std::exception e) {
@@ -180,7 +186,85 @@ void ConfigurationTester::testGetters(std::ostream &out) {
         return;
     }
 
+    // **************************getParamAsDouble()***********************************************************************
+    try {
+        configuration.addParameter("blah", "16.2");
+        configuration.addParameter("yo", "-10.6");
 
+        if (configuration.getParamAsDouble("blah") != 16.2) {
+            out << "Failure! configuration.getParamAsDouble(\"blah\") != 16.2) should be false" << std::endl;
+        }
+
+        if (configuration.getParamAsDouble("yo") != -10.6) {
+            out << "Failure! configuration.getParamAsDouble(\"blah\") != -10.6) should be false" << std::endl;
+        }
+
+        if (configuration.getParamAsDouble("a") != 0) {
+            out << "Failure! configuration.getParamAsDouble(\"a\") != 0) should be false" << std::endl;
+        }
+
+        if (configuration.getParamAsDouble("q") != 16) {
+            out << "Failure! configuration.getParamAsDouble(\"q\") != 16) should be false" << std::endl;
+        }
+
+        if (configuration.getParamAsDouble("q") == '1') {
+            out << "Failure! configuration.getParamAsDouble(\"q\") == 1) should be false" << std::endl;
+        }
+
+        if (configuration.getParamAsDouble("q") == 30) {
+            out << "Failure! configuration.getParamAsDouble(\"q\") == 30) should be false" << std::endl;
+        }
+
+        if (configuration.getParamAsDouble("q") == -16) {
+            out << "Failure! configuration.getParamAsDouble(\"q\") == -16) should be false" << std::endl;
+        }
+
+        if (configuration.getParamAsDouble("q") == -12) {
+            out << "Failure! configuration.getParamAsDouble(\"q\") == -12) should be false" << std::endl;
+        }
+
+        if (configuration.getParamAsDouble("q") == 2) {
+            out << "Failure! configuration.getParamAsDouble(\"q\") == 2) should be false" << std::endl;
+        }
+
+        try {
+            configuration.getParamAsDouble("1");
+            out << "Failure! configuration.getParamAsDouble(\"1\") should have thrown std::out_of_range" << std::endl;
+            return;
+        } catch (std::exception e) {
+            // do nothing, this is correct
+        }
+
+        try {
+            configuration.getParamAsDouble("!");
+            out << "Failure! configuration.getParamAsDouble(\"!\") should have thrown std::out_of_range" << std::endl;
+            return;
+        } catch (std::exception e) {
+            // do nothing, this is correct
+        }
+
+        try {
+            configuration.getParamAsDouble("$^");
+            out << "Failure! configuration.getParamAsDouble(\"$^\") should have thrown std::out_of_range" << std::endl;
+            return;
+        } catch (std::exception e) {
+            // do nothing, this is correct
+        }
+
+        try {
+            configuration.getParamAsDouble("asdf");
+            out << "Failure! configuration.getParamAsDouble(\"asdf\") should have thrown std::out_of_range"
+                << std::endl;
+            return;
+        } catch (std::exception e) {
+            // do nothing, this is correct
+        }
+
+    } catch (std::exception e) {
+        out << "Failure in testGetters while testing getParamAsDouble:" << std::endl;
+        out << "\t" << e.what() << std::endl;
+        return;
+    }
 }
 
 Configuration ConfigurationTester::setUp(std::ostream &out) {
