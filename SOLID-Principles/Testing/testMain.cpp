@@ -12,4 +12,5 @@ int main() {
     ConfigurationTester configurationTester;
     configurationTester.testAddParameter(std::cout);
     configurationTester.testGetters(std::cout);
+    configurationTester.testRemoveParameter(std::cout);
 }

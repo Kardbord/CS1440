@@ -280,3 +280,70 @@ Configuration ConfigurationTester::setUp(std::ostream &out) {
     }
     return configuration;
 }
+
+void ConfigurationTester::testRemoveParameter(std::ostream &out) {
+    out << "ConfigurationTester::testRemoveParameter" << std::endl;
+
+    Configuration configuration = setUp(out);
+
+    if (!configuration.removeParemeter("a")) {
+        out << "Failure in removeParameter(\"a\"), should have returned true" << std::endl;
+        return;
+    }
+
+    try {
+        configuration.getParamAsString("a");
+        out << "Failure in removeParameter(\"a\"), key was found after deletion" << std::endl;
+        return;
+    } catch (std::exception e) {
+        // Do nothing, this is expected behavior
+    }
+
+    if (configuration.removeParemeter("a")) {
+        out << "Failure in removeParameter(\"a\"), it was removed successfully after already being removed"
+            << std::endl;
+        return;
+    }
+
+    if (!configuration.removeParemeter("h")) {
+        out << "Failure in removeParameter(\"h\"), should have returned true" << std::endl;
+        return;
+    }
+
+    try {
+        configuration.getParamAsString("a");
+        out << "Failure in removeParameter(\"h\"), key was found after deletion" << std::endl;
+        return;
+    } catch (std::exception e) {
+        // Do nothing, this is expected behavior
+    }
+
+    if (configuration.removeParemeter("h")) {
+        out << "Failure in removeParameter(\"h\"), it was removed successfully after already being removed"
+            << std::endl;
+        return;
+    }
+
+    if (!configuration.removeParemeter("z")) {
+        out << "Failure in removeParameter(\"z\"), should have returned true" << std::endl;
+        return;
+    }
+
+    try {
+        configuration.getParamAsString("z");
+        out << "Failure in removeParameter(\"z\"), key was found after deletion" << std::endl;
+        return;
+    } catch (std::exception e) {
+        // Do nothing, this is expected behavior
+    }
+
+    if (configuration.removeParemeter("z")) {
+        out << "Failure in removeParameter(\"z\"), it was removed successfully after already being removed"
+            << std::endl;
+        return;
+    }
+
+    if (configuration.removeParemeter("asdf")) {
+        out << "Failure in removeParameter(\"asdf\"), should have returned false" << std::endl;
+    }
+}
