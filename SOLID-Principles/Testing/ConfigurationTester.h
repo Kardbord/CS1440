@@ -7,6 +7,7 @@
 
 
 #include <ostream>
+#include "../Configuration.h"
 
 class ConfigurationTester {
 public:
@@ -17,6 +18,9 @@ public:
     void testGetters(std::ostream &out);
 
     void testRemoveParameter(std::ostream &out);
+
+private:
+    Configuration setUp(std::ostream &out);
 };
 
 

@@ -45,3 +45,22 @@ void ConfigurationTester::testAddParameter(std::ostream &out) {
         return;
     }
 }
+
+void ConfigurationTester::testGetters(std::ostream &out) {
+    out << "ConfigurationTester::testGetters" << std::endl;
+
+    Configuration configuration = setUp(out);
+}
+
+Configuration ConfigurationTester::setUp(std::ostream &out) {
+    Configuration configuration;
+    char k = 'a';
+
+    for (int i = 0; i < 26; ++i, ++k) {
+        std::string key = std::string(1, k);
+        if (!configuration.addParameter(key, key)) {
+            out << "Failure in ConfigurationTester::setUp" << std::endl;
+        }
+    }
+    return configuration;
+}
