@@ -12,7 +12,7 @@ void ConfigurationTester::testAddParameter(std::ostream &out) {
     char k = 'a';
 
     for (int i = 0; i < 26; ++i, ++k) {
-        std::string key = std::to_string(k);
+        std::string key = std::string(1, k);
         if (!configuration.addParameter(key, key)) {
             out << "Failure in configuration.addParameter(" << key << ", " << key << "), should have returned true."
                 << std::endl;
