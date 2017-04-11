@@ -10,18 +10,16 @@ void ConfigurationTester::testAddParameter(std::ostream &out) {
 
     Configuration configuration;
     char k = 'a';
-    char v = 'z';
 
-    for (int i = 0; i < 20; ++i, ++k, --v) {
+    for (int i = 0; i < 26; ++i, ++k) {
         std::string key = std::to_string(k);
-        std::string val = std::to_string(v);
-        if (!configuration.addParameter(key, val)) {
-            out << "Failure in configuration.addParameter(" << key << ", " << val << "), should have returned true."
+        if (!configuration.addParameter(key, key)) {
+            out << "Failure in configuration.addParameter(" << key << ", " << key << "), should have returned true."
                 << std::endl;
             return;
         }
     }
-    
+
     if (configuration.addParameter("a", "u")) {
         out << "Failure in configuration.addParameter(\"a\", \"u\"), should have returned false." << std::endl;
         return;
