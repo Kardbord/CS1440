@@ -16,8 +16,6 @@ public:
     // TODO: remove this constructor if I don't write a method to add individual results
     ResultSet() : m_results() {}
 
-    ResultSet(std::vector<std::pair<std::string, std::vector<std::string>>> const &results);
-
     ResultSet(std::map<std::string, std::vector<std::string>> const &map);
 
     void print(std::ostream &out) const;
