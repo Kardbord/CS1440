@@ -10,9 +10,10 @@
 #include <string>
 #include <vector>
 
-// TODO: decide if I want/need a getter
+// TODO: decide if I want/need a getter and/or a method for adding individual results
 class ResultSet {
 public:
+    // TODO: remove this constructor if I don't write a method to add individual results
     ResultSet() : m_results() {}
 
     ResultSet(std::vector<std::pair<std::string, std::vector<std::string>>> const &results);
