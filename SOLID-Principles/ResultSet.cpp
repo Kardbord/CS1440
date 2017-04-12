@@ -16,3 +16,12 @@ void ResultSet::print(std::ostream &out) const {
 
 // TODO: test me
 ResultSet::ResultSet(std::map<std::string, std::vector<std::string>> const &map) :m_results(map) {}
+
+std::vector<std::string> ResultSet::getResults(std::string const &key) const {
+    try {
+        return m_results.at(key);
+    } catch (std::out_of_range e) {
+        // Throw my own exception for greater clarity
+        throw std::out_of_range("Invalid key queried in ResultSet::getResults -- queried: " + key);
+    }
+}

@@ -20,6 +20,8 @@ public:
 
     void print(std::ostream &out) const;
 
+    std::vector<std::string> getResults(std::string const &key) const;
+
 private:
     std::map<std::string, std::vector<std::string>> m_results;
 };
