@@ -19,4 +19,5 @@ int main() {
 
     ResultSetTester resultSetTester;
     resultSetTester.testConstructorInheritance(std::cout);
+    resultSetTester.testPrint(std::cout);
 }

@@ -2,6 +2,7 @@
 // Created by Tanner on 4/10/2017.
 //
 
+#include <fstream>
 #include "ResultSetTester.h"
 
 
@@ -52,4 +53,39 @@ void ResultSetTester::testConstructorInheritance(std::ostream &out) const {
         out << "Failure! first.at(\"c\") != second.at(\"c\") should be false" << std::endl;
     }
 
+}
+
+void ResultSetTester::testPrint(std::ostream &out) const {
+    out << "ResultSetTester::testPrint -- see printTest.txt" << std::endl;
+
+    std::vector<std::string> container;
+    char filler = 'a';
+    for (int i = 0; i < 26; ++i, ++filler) {
+        container.push_back(std::string(1, filler));
+    }
+
+    std::vector<std::string> container1;
+    for (int i = 0; i < 26; ++i, ++filler) {
+        container1.push_back(std::string(1, filler));
+    }
+
+    std::vector<std::string> container2;
+    for (int i = 0; i < 26; ++i, ++filler) {
+        container2.push_back(std::string(1, filler));
+    }
+
+    ResultSet resultSet;
+
+    resultSet["a"] = container;
+    resultSet["b"] = container1;
+    resultSet["c"] = container2;
+
+    std::ofstream fout("printTest.txt");
+    if (!fout) {
+        out << "Failure in creating output file in testPrint" << std::endl;
+        return;
+    }
+
+    resultSet.print(fout);
+    fout.close();
 }

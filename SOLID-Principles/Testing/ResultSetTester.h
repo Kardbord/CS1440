@@ -14,6 +14,8 @@ public:
     ResultSetTester() {}
 
     void testConstructorInheritance(std::ostream &out) const;
+
+    void testPrint(std::ostream &out) const;
 };
 
 
