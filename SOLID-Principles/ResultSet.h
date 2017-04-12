@@ -12,8 +12,6 @@
 
 class ResultSet : public std::map<std::string, std::vector<std::string>> {
 public:
-    // TODO: make sure I properly inherit constructors...
-
     virtual void print(std::ostream &out);
 };
 

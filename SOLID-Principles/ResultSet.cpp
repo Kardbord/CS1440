@@ -4,7 +4,6 @@
 
 #include "ResultSet.h"
 
-// TODO: test me
 void ResultSet::print(std::ostream &out) {
     for (auto &&pair : *this) {
         out << pair.first << std::endl;
