@@ -4,7 +4,7 @@
 
 #include "ConfigurationTester.h"
 
-void ConfigurationTester::testAddParameter(std::ostream &out) {
+void ConfigurationTester::testAddParameter(std::ostream &out) const {
     out << "ConfigurationTester::testAddParameter" << std::endl;
 
     Configuration configuration;
@@ -45,7 +45,7 @@ void ConfigurationTester::testAddParameter(std::ostream &out) {
     }
 }
 
-void ConfigurationTester::testGetters(std::ostream &out) {
+void ConfigurationTester::testGetters(std::ostream &out) const {
     out << "ConfigurationTester::testGetters" << std::endl;
 
     Configuration configuration = setUp(out);
@@ -281,7 +281,7 @@ Configuration ConfigurationTester::setUp(std::ostream &out) {
     return configuration;
 }
 
-void ConfigurationTester::testRemoveParameter(std::ostream &out) {
+void ConfigurationTester::testRemoveParameter(std::ostream &out) const {
     out << "ConfigurationTester::testRemoveParameter" << std::endl;
 
     Configuration configuration = setUp(out);

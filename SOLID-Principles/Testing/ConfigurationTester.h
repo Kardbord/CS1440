@@ -13,11 +13,11 @@ class ConfigurationTester {
 public:
     ConfigurationTester() {}
 
-    void testAddParameter(std::ostream &out);
+    void testAddParameter(std::ostream &out) const;
 
-    void testGetters(std::ostream &out);
+    void testGetters(std::ostream &out) const;
 
-    void testRemoveParameter(std::ostream &out);
+    void testRemoveParameter(std::ostream &out) const;
 
 private:
     Configuration setUp(std::ostream &out);
