@@ -17,6 +17,8 @@ public:
 
     ResultSet(std::vector<std::pair<std::string, std::vector<std::string>>> const &results);
 
+    ResultSet(std::map<std::string, std::vector<std::string>> const &map);
+
     void print(std::ostream &out) const;
 
 private:

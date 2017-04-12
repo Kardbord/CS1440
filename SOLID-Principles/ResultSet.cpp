@@ -20,3 +20,6 @@ ResultSet::ResultSet(std::vector<std::pair<std::string, std::vector<std::string>
         m_results.insert(pair);
     }
 }
+
+// TODO: test me
+ResultSet::ResultSet(std::map<std::string, std::vector<std::string>> const &map) :m_results(map) {}
