@@ -10,7 +10,7 @@ void ResultSetTester::testConstructorInheritance(std::ostream &out) const {
     out << "ResultSetTester::testConstructorInheritance" << std::endl;
 
     std::vector<std::string> container;
-    char filler = 'a';
+    char filler = '!';
     for (int i = 0; i < 26; ++i, ++filler) {
         container.push_back(std::string(1, filler));
     }
@@ -59,7 +59,7 @@ void ResultSetTester::testPrint(std::ostream &out) const {
     out << "ResultSetTester::testPrint -- see printTest.txt" << std::endl;
 
     std::vector<std::string> container;
-    char filler = 'a';
+    char filler = '!';
     for (int i = 0; i < 26; ++i, ++filler) {
         container.push_back(std::string(1, filler));
     }
@@ -80,7 +80,8 @@ void ResultSetTester::testPrint(std::ostream &out) const {
     resultSet["b"] = container1;
     resultSet["c"] = container2;
 
-    std::ofstream fout("printTest.txt");
+    std::ofstream fout;
+    fout.open("Testing/printTest.txt");
     if (!fout) {
         out << "Failure in creating output file in testPrint" << std::endl;
         return;
