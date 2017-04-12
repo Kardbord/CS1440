@@ -7,10 +7,16 @@
 
 #include <iostream>
 #include "ConfigurationTester.h"
+#include "ResultSetTester.h"
 
 int main() {
     ConfigurationTester configurationTester;
     configurationTester.testAddParameter(std::cout);
     configurationTester.testGetters(std::cout);
     configurationTester.testRemoveParameter(std::cout);
+
+    std::cout << std::endl;
+
+    ResultSetTester resultSetTester;
+    resultSetTester.testConstructorInheritance(std::cout);
 }
