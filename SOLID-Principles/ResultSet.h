@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 
-// TODO: this class is a map iwth a string as a key and a container as the value
+// TODO: decide if I want/need a getter
 class ResultSet {
 public:
     ResultSet() : m_results() {}
