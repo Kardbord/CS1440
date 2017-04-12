@@ -10,22 +10,11 @@
 #include <string>
 #include <vector>
 
-// TODO: decide if I want/need a getter and/or a method for adding individual results
-class ResultSet {
+class ResultSet : public std::map<std::string, std::vector<std::string>> {
 public:
-    // TODO: remove this constructor if I don't write a method to add individual results
-    ResultSet() : m_results() {}
+    // TODO: make sure I properly inherit constructors...
 
-    ResultSet(std::map<std::string, std::vector<std::string>> const &map);
-
-    void print(std::ostream &out) const;
-
-    std::vector<std::string> getResults(std::string const &key) const;
-
-    std::map<std::string, std::vector<std::string>> getAllResults() const { return m_results; }
-
-private:
-    std::map<std::string, std::vector<std::string>> m_results;
+    virtual void print(std::ostream &out);
 };
 
 
