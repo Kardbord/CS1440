@@ -17,6 +17,7 @@ void ResultSet::print(std::ostream &out) const {
 // TODO: test me
 ResultSet::ResultSet(std::map<std::string, std::vector<std::string>> const &map) :m_results(map) {}
 
+// TODO: test me
 std::vector<std::string> ResultSet::getResults(std::string const &key) const {
     try {
         return m_results.at(key);
