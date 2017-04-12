@@ -22,6 +22,8 @@ public:
 
     std::vector<std::string> getResults(std::string const &key) const;
 
+    std::map<std::string, std::vector<std::string>> getAllResults() const { return m_results; }
+
 private:
     std::map<std::string, std::vector<std::string>> m_results;
 };
