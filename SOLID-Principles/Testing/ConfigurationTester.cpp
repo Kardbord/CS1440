@@ -267,7 +267,7 @@ void ConfigurationTester::testGetters(std::ostream &out) const {
     }
 }
 
-Configuration ConfigurationTester::setUp(std::ostream &out) {
+Configuration ConfigurationTester::setUp(std::ostream &out) const {
     Configuration configuration;
     char k = 'a';
 

@@ -20,7 +20,7 @@ public:
     void testRemoveParameter(std::ostream &out) const;
 
 private:
-    Configuration setUp(std::ostream &out);
+    Configuration setUp(std::ostream &out) const;
 };
 
 
