@@ -13,3 +13,10 @@ void ResultSet::print(std::ostream &out) const {
         }
     }
 }
+
+// TODO: decide if I even need this, test if so
+ResultSet::ResultSet(std::vector<std::pair<std::string, std::vector<std::string>>> const &results) :m_results() {
+    for (auto &&pair : results) {
+        m_results.insert(pair);
+    }
+}

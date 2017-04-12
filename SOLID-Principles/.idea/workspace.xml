@@ -15,6 +15,7 @@
     <list default="true" id="09858ade-5e57-4609-aa28-30b422d00c13" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GenericDictionary/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../GenericDictionary/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ResultSet.cpp" afterPath="$PROJECT_DIR$/ResultSet.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ResultSet.h" afterPath="$PROJECT_DIR$/ResultSet.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -32,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/ResultSet.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+              <caret line="17" column="92" lean-forward="true" selection-start-line="17" selection-start-column="92" selection-end-line="17" selection-end-column="92" />
               <folding>
                 <element signature="e#117#131#0" expanded="true" />
               </folding>
@@ -43,8 +44,8 @@
       <file leaf-file-name="ResultSet.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ResultSet.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            <state relative-caret-position="378">
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -368,12 +369,12 @@
       <workItem from="1491856410989" duration="6047000" />
       <workItem from="1491927292238" duration="6308000" />
       <workItem from="1492011935150" duration="112000" />
-      <workItem from="1492012124094" duration="414000" />
+      <workItem from="1492012124094" duration="1164000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17773000" />
+    <option name="totallyTimeSpent" value="18523000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -428,7 +429,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
           <folding>
-            <element signature="e#76#95#0" expanded="true" />
+            <element signature="e#76#95#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -456,7 +457,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="19" lean-forward="true" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
           <folding>
-            <element signature="e#76#95#0" expanded="true" />
+            <element signature="e#76#95#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -481,7 +482,7 @@
         <state relative-caret-position="315">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="e#138#156#0" expanded="true" />
+            <element signature="e#138#156#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -499,7 +500,7 @@
         <state relative-caret-position="252">
           <caret line="12" column="52" lean-forward="false" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
           <folding>
-            <element signature="e#76#95#0" expanded="true" />
+            <element signature="e#76#95#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -695,7 +696,7 @@
         <state relative-caret-position="399">
           <caret line="19" column="48" lean-forward="true" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
           <folding>
-            <element signature="e#138#156#0" expanded="true" />
+            <element signature="e#138#156#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -723,7 +724,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
           <folding>
-            <element signature="e#76#95#0" expanded="true" />
+            <element signature="e#76#95#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -731,7 +732,7 @@
     <entry file="file://$PROJECT_DIR$/ResultSet.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <caret line="17" column="92" lean-forward="true" selection-start-line="17" selection-start-column="92" selection-end-line="17" selection-end-column="92" />
           <folding>
             <element signature="e#117#131#0" expanded="true" />
           </folding>
@@ -740,8 +741,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ResultSet.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        <state relative-caret-position="378">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
           <folding />
         </state>
       </provider>

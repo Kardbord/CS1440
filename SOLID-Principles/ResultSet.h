@@ -15,6 +15,8 @@ class ResultSet {
 public:
     ResultSet() : m_results() {}
 
+    ResultSet(std::vector<std::pair<std::string, std::vector<std::string>>> const &results);
+
     void print(std::ostream &out) const;
 
 private:
