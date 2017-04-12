@@ -3,3 +3,11 @@
 //
 
 #include "ResultSetTester.h"
+
+void ResultSetTester::testConstructors(std::ostream &out) {
+    out << "ResultSetTester::testConstructors" << std::endl;
+
+    {
+        ResultSet resultSet;
+    }
+}
