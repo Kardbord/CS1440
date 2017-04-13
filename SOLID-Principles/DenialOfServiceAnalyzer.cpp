@@ -13,10 +13,3 @@ void DenialOfServiceAnalyzer::configure() {
     m_configuration["Likely Attack Message Count"] = "";
     m_configuration["Possible Attack Message Count"] = "";
 }
-
-// TODO: test me
-void DenialOfServiceAnalyzer::configure(Configuration const &config) {
-    for (auto &&pair : config){
-        m_configuration[pair.first] = pair.second;
-    }
-}

@@ -16,11 +16,9 @@ public:
 
     virtual ResultSet run(std::istream &in) = 0;
 
-    virtual void configure(Configuration const &config) = 0;
-
+protected:
     virtual void configure() = 0;
 
-protected:
     Configuration m_configuration;
 };
 
