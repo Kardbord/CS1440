@@ -6,7 +6,7 @@
 #define SOLID_PRINCIPLES_DENAILOFSERVICEANALYZERTESTER_H
 
 
-class DenailOfServiceAnalyzerTester {
+class DenialOfServiceAnalyzerTester {
 
 };
 
