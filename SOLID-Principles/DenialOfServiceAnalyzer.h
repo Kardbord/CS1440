@@ -5,9 +5,15 @@
 #ifndef SOLID_PRINCIPLES_DENIALOFSERVICEANALYSER_H
 #define SOLID_PRINCIPLES_DENIALOFSERVICEANALYSER_H
 
+#include "Analyzer.h"
 
-class DenialOfServiceAnalyser {
+class DenialOfServiceAnalyser : public Analyzer {
+public:
+    ResultSet run(std::istream &in);
 
+    void configure(Configuration const &config);
+
+    void configure();
 };
 
 
