@@ -4,47 +4,6 @@
 
 #include "ConfigurationTester.h"
 
-void ConfigurationTester::testAddParameter(std::ostream &out) const {
-    out << "ConfigurationTester::testAddParameter" << std::endl;
-
-    Configuration configuration;
-    char k = 'a';
-
-    for (int i = 0; i < 26; ++i, ++k) {
-        std::string key = std::string(1, k);
-        if (!configuration.addParameter(key, key)) {
-            out << "Failure in configuration.addParameter(" << key << ", " << key << "), should have returned true."
-                << std::endl;
-            return;
-        }
-    }
-
-    if (configuration.addParameter("a", "u")) {
-        out << "Failure in configuration.addParameter(\"a\", \"u\"), should have returned false." << std::endl;
-        return;
-    }
-
-    if (configuration.addParameter("a", "z")) {
-        out << "Failure in configuration.addParameter(\"a\", \"z\"), should have returned false." << std::endl;
-        return;
-    }
-
-    if (configuration.addParameter("g", "asdf")) {
-        out << "Failure in configuration.addParameter(\"a\", \"asdf\"), should have returned false." << std::endl;
-        return;
-    }
-
-    if (!configuration.addParameter("asdf", "z")) {
-        out << "Failure in configuration.addParameter(\"asdf\", \"z\"), should have returned true." << std::endl;
-        return;
-    }
-
-    if (!configuration.addParameter("!#$%!", "z")) {
-        out << "Failure in configuration.addParameter(\"!#$%!\", \"z\"), should have returned true." << std::endl;
-        return;
-    }
-}
-
 void ConfigurationTester::testGetters(std::ostream &out) const {
     out << "ConfigurationTester::testGetters" << std::endl;
 
@@ -113,7 +72,7 @@ void ConfigurationTester::testGetters(std::ostream &out) const {
 
     // **************************getParamAsInt()***********************************************************************
     try {
-        configuration.addParameter("hat", "-20");
+        configuration.insert(std::pair<std::string, std::string>("hat", "-20"));
 
         if (configuration.getParamAsInt("hat") != -20) {
             out << "Failure! configuration.getParamAsInt(\"hat\") != -20) should be false" << std::endl;
@@ -188,8 +147,8 @@ void ConfigurationTester::testGetters(std::ostream &out) const {
 
     // **************************getParamAsDouble()***********************************************************************
     try {
-        configuration.addParameter("blah", "16.2");
-        configuration.addParameter("yo", "-10.6");
+        configuration.insert(std::pair<std::string, std::string>("blah", "16.2"));
+        configuration.insert(std::pair<std::string, std::string>("yo", "-10.6"));
 
         if (configuration.getParamAsDouble("blah") != 16.2) {
             out << "Failure! configuration.getParamAsDouble(\"blah\") != 16.2) should be false" << std::endl;
@@ -273,77 +232,7 @@ Configuration ConfigurationTester::setUp(std::ostream &out) const {
 
     for (int i = 0; i < 26; ++i, ++k) {
         std::string key = std::string(1, k);
-        if (!configuration.addParameter(key, std::to_string(i))) {
-            out << "Failure in ConfigurationTester::setUp" << std::endl;
-            exit(1);
-        }
+        configuration.insert(std::pair<std::string, std::string>(key, std::to_string(i)));
     }
     return configuration;
-}
-
-void ConfigurationTester::testRemoveParameter(std::ostream &out) const {
-    out << "ConfigurationTester::testRemoveParameter" << std::endl;
-
-    Configuration configuration = setUp(out);
-
-    if (!configuration.removeParemeter("a")) {
-        out << "Failure in removeParameter(\"a\"), should have returned true" << std::endl;
-        return;
-    }
-
-    try {
-        configuration.getParamAsString("a");
-        out << "Failure in removeParameter(\"a\"), key was found after deletion" << std::endl;
-        return;
-    } catch (std::exception e) {
-        // Do nothing, this is expected behavior
-    }
-
-    if (configuration.removeParemeter("a")) {
-        out << "Failure in removeParameter(\"a\"), it was removed successfully after already being removed"
-            << std::endl;
-        return;
-    }
-
-    if (!configuration.removeParemeter("h")) {
-        out << "Failure in removeParameter(\"h\"), should have returned true" << std::endl;
-        return;
-    }
-
-    try {
-        configuration.getParamAsString("a");
-        out << "Failure in removeParameter(\"h\"), key was found after deletion" << std::endl;
-        return;
-    } catch (std::exception e) {
-        // Do nothing, this is expected behavior
-    }
-
-    if (configuration.removeParemeter("h")) {
-        out << "Failure in removeParameter(\"h\"), it was removed successfully after already being removed"
-            << std::endl;
-        return;
-    }
-
-    if (!configuration.removeParemeter("z")) {
-        out << "Failure in removeParameter(\"z\"), should have returned true" << std::endl;
-        return;
-    }
-
-    try {
-        configuration.getParamAsString("z");
-        out << "Failure in removeParameter(\"z\"), key was found after deletion" << std::endl;
-        return;
-    } catch (std::exception e) {
-        // Do nothing, this is expected behavior
-    }
-
-    if (configuration.removeParemeter("z")) {
-        out << "Failure in removeParameter(\"z\"), it was removed successfully after already being removed"
-            << std::endl;
-        return;
-    }
-
-    if (configuration.removeParemeter("asdf")) {
-        out << "Failure in removeParameter(\"asdf\"), should have returned false" << std::endl;
-    }
 }
