@@ -20,6 +20,7 @@ public:
     virtual std::vector<std::string> getConfigKeys() const { return m_configKeys; }
 
 protected:
+    virtual Configuration getConfiguration() const { return m_configuration; }
     void configure();
 
     std::vector<std::string> m_configKeys;
