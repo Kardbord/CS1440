@@ -26,7 +26,7 @@ std::pair<std::string, std::string> DenialOfServiceAnalyzer::getConfigPair(std::
     auto pair = m_configuration.find(key);
 
     if (pair == m_configuration.end()) {
-        throw std::domain_error("Invalid key in DenialOfServiceAnalyzer::getConfigPair");
+        throw std::out_of_range("Invalid key in DenialOfServiceAnalyzer::getConfigPair");
     }
 
     return *pair;

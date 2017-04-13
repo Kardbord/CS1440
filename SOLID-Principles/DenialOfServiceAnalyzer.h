@@ -6,6 +6,7 @@
 #define SOLID_PRINCIPLES_DENIALOFSERVICEANALYSER_H
 
 #include "Analyzer.h"
+#include <stdexcept>
 
 class DenialOfServiceAnalyzer : public Analyzer {
 public:
