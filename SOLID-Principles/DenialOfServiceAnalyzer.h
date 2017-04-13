@@ -14,8 +14,6 @@ public:
 
     ResultSet run(std::istream &in);
 
-    // TODO: add methods to modify each config param
-
 protected:
     void configure();
 };
