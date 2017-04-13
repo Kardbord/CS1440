@@ -12,11 +12,12 @@
 
 class Analyzer {
 public:
-    Analyzer() : m_configuration() {}
 
     virtual ResultSet run(std::istream &in) = 0;
 
 protected:
+    Analyzer() : m_configuration() {}
+
     virtual void configure() = 0;
 
     Configuration m_configuration;
