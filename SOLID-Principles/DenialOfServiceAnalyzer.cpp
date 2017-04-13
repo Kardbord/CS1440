@@ -20,5 +20,11 @@ void DenialOfServiceAnalyzer::configure() {
 }
 
 std::pair<std::string, std::string> DenialOfServiceAnalyzer::getConfigPair(std::string const &key) const {
-    return *m_configuration.find(key);
+    auto pair = m_configuration.find(key);
+
+    if (pair == m_configuration.end()) {
+        throw std::domain_error("Invalid key in DenialOfServiceAnalyzer::getConfigPair");
+    }
+
+    return *pair;
 }
