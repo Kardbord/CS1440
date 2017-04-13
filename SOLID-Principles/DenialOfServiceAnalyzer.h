@@ -14,7 +14,7 @@ public:
 
     ResultSet run(std::istream &in);
 
-    // TODO: write getters for each config param
+    std::pair<std::string, std::string> getConfigPair(std::string const &key) const;
 
 protected:
     void configure();

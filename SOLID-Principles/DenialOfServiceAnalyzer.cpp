@@ -18,3 +18,7 @@ void DenialOfServiceAnalyzer::configure() {
     m_configuration["Likely Attack Message Count"] = "";
     m_configuration["Possible Attack Message Count"] = "";
 }
+
+std::pair<std::string, std::string> DenialOfServiceAnalyzer::getConfigPair(std::string const &key) const {
+    return *m_configuration.find(key);
+}
