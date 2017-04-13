@@ -14,10 +14,14 @@ public:
 
     ResultSet run(std::istream &in);
 
-    std::pair<std::string, std::string> getConfigPair(std::string const &key) const;
+    virtual std::pair<std::string, std::string> getConfigPair(std::string const &key) const;
+
+    virtual std::vector<std::string> getConfigKeys() const { return m_configKeys; }
 
 protected:
     void configure();
+
+    std::vector<std::string> m_configKeys;
 };
 
 

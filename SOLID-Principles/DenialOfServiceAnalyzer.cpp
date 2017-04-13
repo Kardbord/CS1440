@@ -14,6 +14,9 @@ DenialOfServiceAnalyzer::DenialOfServiceAnalyzer(std::string const &timeframe,
 }
 
 void DenialOfServiceAnalyzer::configure() {
+    m_configKeys.push_back("Timeframe");
+    m_configKeys.push_back("Likely Attack Message Count");
+    m_configKeys.push_back("Possible Attack Message Count");
     m_configuration["Timeframe"] = "";
     m_configuration["Likely Attack Message Count"] = "";
     m_configuration["Possible Attack Message Count"] = "";

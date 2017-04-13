@@ -15,6 +15,7 @@
     <list default="true" id="09858ade-5e57-4609-aa28-30b422d00c13" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DenialOfServiceAnalyzer.cpp" afterPath="$PROJECT_DIR$/DenialOfServiceAnalyzer.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DenialOfServiceAnalyzer.h" afterPath="$PROJECT_DIR$/DenialOfServiceAnalyzer.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,8 +41,8 @@
       <file leaf-file-name="DenialOfServiceAnalyzer.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DenialOfServiceAnalyzer.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="16" column="84" lean-forward="true" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
+            <state relative-caret-position="378">
+              <caret line="18" column="83" lean-forward="true" selection-start-line="18" selection-start-column="83" selection-end-line="18" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -50,8 +51,8 @@
       <file leaf-file-name="DenialOfServiceAnalyzer.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DenialOfServiceAnalyzer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+            <state relative-caret-position="672">
+              <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -111,10 +112,10 @@
         <option value="$PROJECT_DIR$/Testing/ConfigurationTester.cpp" />
         <option value="$PROJECT_DIR$/Testing/DenailOfServiceAnalyzerTester.h" />
         <option value="$PROJECT_DIR$/Testing/DenialOfServiceAnalyzerTester.h" />
-        <option value="$PROJECT_DIR$/DenialOfServiceAnalyzer.h" />
         <option value="$PROJECT_DIR$/Analyzer.h" />
         <option value="$PROJECT_DIR$/Testing/DenialOfServiceAnalyzerTester.cpp" />
         <option value="$PROJECT_DIR$/DenialOfServiceAnalyzer.cpp" />
+        <option value="$PROJECT_DIR$/DenialOfServiceAnalyzer.h" />
       </list>
     </option>
   </component>
@@ -411,12 +412,12 @@
       <workItem from="1491927292238" duration="6308000" />
       <workItem from="1492011935150" duration="112000" />
       <workItem from="1492012124094" duration="3689000" />
-      <workItem from="1492101101493" duration="1702000" />
+      <workItem from="1492101101493" duration="2442000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38912000" />
+    <option name="totallyTimeSpent" value="39652000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -815,14 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DenialOfServiceAnalyzer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="84" lean-forward="true" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Testing/DenialOfServiceAnalyzerTester.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -841,10 +834,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DenialOfServiceAnalyzer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="83" lean-forward="true" selection-start-line="18" selection-start-column="83" selection-end-line="18" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DenialOfServiceAnalyzer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        <state relative-caret-position="672">
+          <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
           <folding />
         </state>
       </provider>
