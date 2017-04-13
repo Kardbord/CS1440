@@ -14,6 +14,8 @@ public:
 
     ResultSet run(std::istream &in);
 
+    // TODO: write getters for each config param
+
 protected:
     void configure();
 };
