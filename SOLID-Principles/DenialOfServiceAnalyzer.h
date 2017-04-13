@@ -7,9 +7,9 @@
 
 #include "Analyzer.h"
 
-class DenialOfServiceAnalyser : public Analyzer {
+class DenialOfServiceAnalyzer : public Analyzer {
 public:
-    DenialOfServiceAnalyser();
+    DenialOfServiceAnalyzer();
 
     ResultSet run(std::istream &in);
 
