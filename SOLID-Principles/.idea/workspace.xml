@@ -14,7 +14,6 @@
   <component name="ChangeListManager">
     <list default="true" id="09858ade-5e57-4609-aa28-30b422d00c13" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DenialOfServiceAnalyzer.h" afterPath="$PROJECT_DIR$/DenialOfServiceAnalyzer.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -405,12 +404,12 @@
       <workItem from="1491927292238" duration="6308000" />
       <workItem from="1492011935150" duration="112000" />
       <workItem from="1492012124094" duration="3689000" />
-      <workItem from="1492101101493" duration="5427000" />
+      <workItem from="1492101101493" duration="5678000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42637000" />
+    <option name="totallyTimeSpent" value="42888000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

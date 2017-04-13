@@ -16,7 +16,7 @@ public:
     // TODO: implement me
     ResultSet run(std::istream &in) {}
 
-    // TODO: decide whether or not to replace this with a getConfiguration() return m_configuration;
+    // TODO: just give them the damn configurations, then do away with m_configKeys
     virtual std::pair<std::string, std::string> getConfigPair(std::string const &key) const;
 
     virtual std::vector<std::string> getConfigKeys() const { return m_configKeys; }
