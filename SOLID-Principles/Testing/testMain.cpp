@@ -8,6 +8,7 @@
 #include <iostream>
 #include "ConfigurationTester.h"
 #include "ResultSetTester.h"
+#include "DenialOfServiceAnalyzerTester.h"
 
 int main() {
     ConfigurationTester configurationTester;
@@ -18,4 +19,9 @@ int main() {
     ResultSetTester resultSetTester;
     resultSetTester.testConstructorInheritance(std::cout);
     resultSetTester.testPrint(std::cout);
+
+    std::cout << std::endl;
+
+    DenialOfServiceAnalyzerTester denialOfServiceAnalyzerTester;
+    denialOfServiceAnalyzerTester.testConstructorAndGetters(std::cout);
 }

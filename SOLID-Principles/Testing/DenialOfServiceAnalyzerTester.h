@@ -6,9 +6,11 @@
 #define SOLID_PRINCIPLES_DENAILOFSERVICEANALYZERTESTER_H
 
 #include <ostream>
+#include <stdexcept>
 #include "../DenialOfServiceAnalyzer.h"
 
 class DenialOfServiceAnalyzerTester {
+public:
     DenialOfServiceAnalyzerTester() {}
 
     void testConstructorAndGetters(std::ostream &out);

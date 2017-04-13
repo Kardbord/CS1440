@@ -13,7 +13,8 @@ public:
     DenialOfServiceAnalyzer(std::string const &timeframe, std::string const &likely_attack_message_count,
                             std::string const &possible_attack_message_count);
 
-    ResultSet run(std::istream &in);
+    // TODO: implement me
+    ResultSet run(std::istream &in) {}
 
     virtual std::pair<std::string, std::string> getConfigPair(std::string const &key) const;
 
