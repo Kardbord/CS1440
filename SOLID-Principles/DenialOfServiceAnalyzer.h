@@ -16,6 +16,7 @@ public:
     // TODO: implement me
     ResultSet run(std::istream &in) {}
 
+    // TODO: decide whether or not to replace this with a getConfiguration() return m_configuration;
     virtual std::pair<std::string, std::string> getConfigPair(std::string const &key) const;
 
     virtual std::vector<std::string> getConfigKeys() const { return m_configKeys; }
