@@ -3,3 +3,10 @@
 //
 
 #include "DenialOfServiceAnalyzerTester.h"
+
+void DenialOfServiceAnalyzerTester::testConstructorAndGetters(std::ostream &out) {
+    out << "DenialOfServiceAnalyzerTester::testConstructorAndGetters" << std::endl;
+
+    DenialOfServiceAnalyzer analyzer("20", "30", "40");
+
+}
