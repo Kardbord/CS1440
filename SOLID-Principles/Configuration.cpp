@@ -19,5 +19,9 @@ double Configuration::getParamAsDouble(std::string const &key) const {
 }
 
 unsigned long long Configuration::getParamAsInt(std::string const &key) const {
-        return std::stoull(this->at(key));
+    return std::stoull(this->at(key));
+}
+
+void Configuration::addPair(std::string const &key, std::string const &param) {
+    this->insert(std::pair<std::string, std::string>(key, param));
 }

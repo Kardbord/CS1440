@@ -12,6 +12,8 @@
 class Configuration : public std::map<std::string, std::string> {
 public:
 
+    void addPair(std::string const &key, std::string const &param);
+
     std::string getParamAsString(std::string const &key) const;
 
     double getParamAsDouble(std::string const &key) const;
