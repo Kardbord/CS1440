@@ -9,10 +9,13 @@
 
 class DenialOfServiceAnalyser : public Analyzer {
 public:
+    DenialOfServiceAnalyser();
+
     ResultSet run(std::istream &in);
 
     void configure(Configuration const &config);
 
+private:
     void configure();
 };
 

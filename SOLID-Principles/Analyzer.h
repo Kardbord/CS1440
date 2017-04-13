@@ -12,6 +12,8 @@
 
 class Analyzer {
 public:
+    Analyzer() : m_configuration() {}
+
     virtual ResultSet run(std::istream &in) = 0;
 
     virtual void configure(Configuration const &config) = 0;
