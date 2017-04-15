@@ -14,6 +14,8 @@ DenialOfServiceAnalyzer::DenialOfServiceAnalyzer(std::string const &timeframe,
 }
 
 void DenialOfServiceAnalyzer::configure() {
+    // the [] operator on a map (and its subclasses) inserts the new std::pair element if it does not already exist
+    // using the value's default constructor, see http://www.cplusplus.com/reference/map/map/operator[]/
     m_configuration["Timeframe"] = "";
     m_configuration["Likely Attack Message Count"] = "";
     m_configuration["Possible Attack Message Count"] = "";
@@ -21,7 +23,7 @@ void DenialOfServiceAnalyzer::configure() {
 
 ResultSet DenialOfServiceAnalyzer::run(std::istream &fin) {
 
-    std::map<std::string, std::map<std::string, unsigned long long>> addressToSummary;
+    std::map<std::string, std::map<std::string, unsigned long>> addressToSummary;
 
     // Data loading phase
     {
@@ -44,6 +46,36 @@ ResultSet DenialOfServiceAnalyzer::run(std::istream &fin) {
 
         }
     }
+
+    // Attack detection phase
+    ResultSet results;
+    unsigned long long likelyThreshold;
+    unsigned long long possibleThreshold;
+
+    try {
+        // the [] operator on a map (and its subclasses) inserts the new std::pair element if it does not already exist
+        // using the value's default constructor, see http://www.cplusplus.com/reference/map/map/operator[]/
+        results["Likely Attackers"];
+        results["Possible Attackers"];
+        results["Attack Periods"];
+        results["Timeframe"] = std::vector<std::string>(1, m_configuration.getParamAsString("Timeframe"));
+        likelyThreshold = m_configuration.getParamAsInt("Likely Attack Message Count");
+        possibleThreshold = m_configuration.getParamAsInt("Possible Attack Message Count");
+    } catch (std::exception) {
+        throw std::out_of_range(
+                "Failure in DenialOfServiceAnalyzer::run when accessing configuration parameters during attack detection phase");
+    }
+
+    // For every address...
+    for (auto &&addressSummaryPair : addressToSummary) {
+        // For every timestamp that address did something...
+        for (auto &&timeStampCountPair : addressSummaryPair.second) {
+            unsigned long long startTime = std::stoull(timeStampCountPair.first);
+            unsigned int count = timeStampCountPair.second;
+
+        }
+    }
+
 
     return ResultSet();
 }
