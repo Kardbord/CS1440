@@ -66,6 +66,7 @@ ResultSet DenialOfServiceAnalyzer::run(std::istream &fin) {
                 "Failure in DenialOfServiceAnalyzer::run when accessing configuration parameters during attack detection phase");
     }
 
+    // TODO: finish the Attack Detection phase
     // For every address...
     for (auto &&addressSummaryPair : addressToSummary) {
         // For every timestamp that address did something...
