@@ -14,7 +14,7 @@ public:
                             std::string const &possible_attack_message_count);
 
     // TODO: implement me
-    ResultSet run(std::istream &in) {}
+    ResultSet run(std::istream &fin);
 
     virtual Configuration getConfiguration() const { return m_configuration; }
 

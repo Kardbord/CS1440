@@ -18,3 +18,32 @@ void DenialOfServiceAnalyzer::configure() {
     m_configuration["Likely Attack Message Count"] = "";
     m_configuration["Possible Attack Message Count"] = "";
 }
+
+ResultSet DenialOfServiceAnalyzer::run(std::istream &fin) {
+
+    std::map<std::string, std::map<std::string, unsigned long long>> addressToSummary;
+
+    // Data loading phase
+    {
+        std::string timestamp;
+        std::string srcAddress;
+        std::string srcPort;
+        std::string destPort;
+
+        while (!fin.eof()) {
+            std::getline(fin, timestamp, ',');
+            std::getline(fin, srcAddress, ',');
+            std::getline(fin, srcPort, ',');
+            std::getline(fin, destPort);
+
+            if (addressToSummary[srcAddress].count(timestamp) > 0) {
+                ++addressToSummary[srcAddress][timestamp];
+            } else {
+                addressToSummary[srcAddress][timestamp] = 1;
+            }
+
+        }
+    }
+
+    return ResultSet();
+}
