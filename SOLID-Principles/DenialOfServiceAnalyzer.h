@@ -16,16 +16,12 @@ public:
     // TODO: implement me
     ResultSet run(std::istream &in) {}
 
-    // TODO: just give them the damn configurations, then do away with m_configKeys
-    virtual std::pair<std::string, std::string> getConfigPair(std::string const &key) const;
-
-    virtual std::vector<std::string> getConfigKeys() const { return m_configKeys; }
+    virtual Configuration getConfiguration() const { return m_configuration; }
 
 protected:
     void configure();
-
-    std::vector<std::string> m_configKeys;
 };
+
 
 
 #endif //SOLID_PRINCIPLES_DENIALOFSERVICEANALYSER_H

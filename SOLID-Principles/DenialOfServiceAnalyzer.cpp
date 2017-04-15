@@ -14,20 +14,7 @@ DenialOfServiceAnalyzer::DenialOfServiceAnalyzer(std::string const &timeframe,
 }
 
 void DenialOfServiceAnalyzer::configure() {
-    m_configKeys.push_back("Timeframe");
-    m_configKeys.push_back("Likely Attack Message Count");
-    m_configKeys.push_back("Possible Attack Message Count");
     m_configuration["Timeframe"] = "";
     m_configuration["Likely Attack Message Count"] = "";
     m_configuration["Possible Attack Message Count"] = "";
-}
-
-std::pair<std::string, std::string> DenialOfServiceAnalyzer::getConfigPair(std::string const &key) const {
-    auto pair = m_configuration.find(key);
-
-    if (pair == m_configuration.end()) {
-        throw std::out_of_range("Invalid key in DenialOfServiceAnalyzer::getConfigPair");
-    }
-
-    return *pair;
 }
