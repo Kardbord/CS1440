@@ -15,6 +15,8 @@ public:
 
     void testGetters(std::ostream &out) const;
 
+    void testAddPair(std::ostream &out) const;
+
 private:
     Configuration setUp(std::ostream &out) const;
 };

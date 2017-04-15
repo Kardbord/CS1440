@@ -13,6 +13,7 @@
 int main() {
     ConfigurationTester configurationTester;
     configurationTester.testGetters(std::cout);
+    configurationTester.testAddPair(std::cout);
 
     std::cout << std::endl;
 

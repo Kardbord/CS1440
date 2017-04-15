@@ -236,3 +236,24 @@ Configuration ConfigurationTester::setUp(std::ostream &out) const {
     }
     return configuration;
 }
+
+void ConfigurationTester::testAddPair(std::ostream &out) const {
+    out << "ConfigurationTester::testAddPair" << std::endl;
+
+    Configuration configuration;
+    char k = 'a';
+
+
+    for (int i = 0; i < 26; ++i, ++k) {
+        std::string key = std::string(1, k);
+        if (!configuration.addPair(key, std::to_string(i))) {
+            out << "Failure! Should have been able to add all keys in for loop" << std::endl;
+            return;
+        }
+    }
+
+    if (configuration.addPair("a", "test")) {
+        out << "Failure! Successfully added duplicate key \"a\"" << std::endl;
+        return;
+    }
+}
