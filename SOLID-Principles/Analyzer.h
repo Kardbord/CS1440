@@ -13,7 +13,7 @@
 class Analyzer {
 public:
 
-    virtual ResultSet run(std::istream &in) = 0;
+    virtual ResultSet run(std::istream &fin) = 0;
 
 protected:
     Analyzer() : m_configuration() {}
