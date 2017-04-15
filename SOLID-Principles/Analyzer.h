@@ -6,7 +6,7 @@
 #define SOLID_PRINCIPLES_ANALYSER_H
 
 
-#include <iosfwd>
+#include <istream>
 #include "ResultSet.h"
 #include "Configuration.h"
 
