@@ -6,8 +6,19 @@
 #define SOLID_PRINCIPLES_PORTSCANANALYSER_H
 
 
-class PortScanAnalyser {
+#include "Analyzer.h"
 
+class PortScanAnalyser : public Analyzer {
+public:
+    PortScanAnalyser(std::string const &likely_attack_port_count, std::string const &possible_attack_port_count);
+
+    // TODO: implement me
+    ResultSet run(std::istream &fin);
+
+    virtual Configuration getConfiguration() const { return m_configuration; }
+
+protected:
+    void configure();
 };
 
 
