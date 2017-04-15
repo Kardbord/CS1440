@@ -6,8 +6,12 @@
 #define SOLID_PRINCIPLES_PORTSCANANALYSERTESTER_H
 
 
-class PortScanAnalyserTester {
+#include <ostream>
 
+class PortScanAnalyserTester {
+public:
+    PortScanAnalyserTester() {}
+    void testConstructorAndGetters(std::ostream &out);
 };
 
 
