@@ -8,7 +8,6 @@
 #include <string>
 #include <map>
 
-// TODO: test me
 class Configuration : public std::map<std::string, std::string> {
 public:
 
