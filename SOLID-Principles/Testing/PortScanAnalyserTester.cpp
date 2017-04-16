@@ -9,14 +9,14 @@ void PortScanAnalyserTester::testConstructorAndGetters(std::ostream &out) {
     out << "PortScanAnalyserTester::testConstructorAndGetters" << std::endl;
 
     try {
-        PortScanAnalyser analyser("40", "50");
+        PortScanAnalyzer analyser("40", "50");
         out << "Failure in PortScanAnalyzer constructor, failed to verify inputs" << std::endl;
     } catch (std::logic_error e) {
         // do nothing, this is expected behavior
     }
 
     try {
-        PortScanAnalyser analyzer("40", "30");
+        PortScanAnalyzer analyzer("40", "30");
 
         Configuration analyzerConfig = analyzer.getConfiguration();
 
