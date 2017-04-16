@@ -7,6 +7,7 @@
 
 
 #include "Analyzer.h"
+#include <stdexcept>
 
 class PortScanAnalyser : public Analyzer {
 public:
