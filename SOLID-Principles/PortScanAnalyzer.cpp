@@ -56,7 +56,6 @@ ResultSet PortScanAnalyzer::run(std::istream &fin) {
     // using the value's default constructor, see http://www.cplusplus.com/reference/map/map/operator[]/
     results["Likely Attackers"];
     results["Possible Attackers"];
-    // TODO: decide what to actually do with port count since he never specifies
     results["Port Count"];
     unsigned long likelyThreshold;
     unsigned long possibleThreshold;
@@ -70,21 +69,18 @@ ResultSet PortScanAnalyzer::run(std::istream &fin) {
 
     std::string src;
     unsigned long long uniqueAddresses = 0;
-    unsigned long long portsScannedByLikelyOrPossibleAttackers = 0;
     for (auto &&addressSummaryPair : addressToSummary) {
         src = addressSummaryPair.first;
         uniqueAddresses = addressSummaryPair.second.size();
 
         if (uniqueAddresses >= likelyThreshold) {
             results["Likely Attackers"].push_back(src);
-            portsScannedByLikelyOrPossibleAttackers += uniqueAddresses;
+            results["Port Count"].push_back(src + ": " + std::to_string(uniqueAddresses));
         } else if (uniqueAddresses >= possibleThreshold) {
             results["Possible Attackers"].push_back(src);
-            portsScannedByLikelyOrPossibleAttackers += uniqueAddresses;
+            results["Port Count"].push_back(src + ": " + std::to_string(uniqueAddresses));
         }
     }
-
-    results["Port Count"].push_back(std::to_string(portsScannedByLikelyOrPossibleAttackers));
 
     return results;
 }
