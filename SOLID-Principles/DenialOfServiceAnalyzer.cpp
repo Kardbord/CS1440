@@ -49,16 +49,17 @@ ResultSet DenialOfServiceAnalyzer::run(std::istream &fin) {
 
     // Attack detection phase
     ResultSet results;
+    // the [] operator on a map (and its subclasses) inserts the new std::pair element if it does not already exist
+    // using the value's default constructor, see http://www.cplusplus.com/reference/map/map/operator[]/
+    results["Likely Attackers"];
+    results["Possible Attackers"];
+    results["Attack Periods"];
+    results["Timeframe"] = std::vector<std::string>(1, m_configuration.getParamAsString("Timeframe"));
+
     unsigned long long likelyThreshold;
     unsigned long long possibleThreshold;
 
     try {
-        // the [] operator on a map (and its subclasses) inserts the new std::pair element if it does not already exist
-        // using the value's default constructor, see http://www.cplusplus.com/reference/map/map/operator[]/
-        results["Likely Attackers"];
-        results["Possible Attackers"];
-        results["Attack Periods"];
-        results["Timeframe"] = std::vector<std::string>(1, m_configuration.getParamAsString("Timeframe"));
         likelyThreshold = m_configuration.getParamAsInt("Likely Attack Message Count");
         possibleThreshold = m_configuration.getParamAsInt("Possible Attack Message Count");
     } catch (std::exception) {
