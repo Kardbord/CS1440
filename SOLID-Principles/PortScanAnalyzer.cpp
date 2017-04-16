@@ -5,18 +5,18 @@
 #include "PortScanAnalyzer.h"
 #include <algorithm>
 
-PortScanAnalyser::PortScanAnalyser(std::string const &likely_attack_port_count,
-                                   std::string const &possible_attack_port_count) : Analyzer() {
+PortScanAnalyser::PortScanAnalyser(std::string const &likely_attack_port_threshold,
+                                   std::string const &possible_attack_port_threshold) : Analyzer() {
     configure();
-    m_configuration["Likely Attack Port Count"] = likely_attack_port_count;
-    m_configuration["Possible Attack Port Count"] = possible_attack_port_count;
+    m_configuration["Likely Attack Port Threshold"] = likely_attack_port_threshold;
+    m_configuration["Possible Attack Port Threshold"] = possible_attack_port_threshold;
 }
 
 void PortScanAnalyser::configure() {
     // the [] operator on a map (and its subclasses) inserts the new std::pair element if it does not already exist
     // using the value's default constructor, see http://www.cplusplus.com/reference/map/map/operator[]/
-    m_configuration["Likely Attack Port Count"] = "";
-    m_configuration["Possible Attack Port Count"] = "";
+    m_configuration["Likely Attack Port Threshold"] = "";
+    m_configuration["Possible Attack Port Threshold"] = "";
 }
 
 ResultSet PortScanAnalyser::run(std::istream &fin) {
@@ -54,8 +54,8 @@ ResultSet PortScanAnalyser::run(std::istream &fin) {
     unsigned long likelyThreshold;
     unsigned long possibleThreshold;
     try {
-        likelyThreshold = std::stoul(m_configuration.at("Likely Attack Port Count"));
-        possibleThreshold = std::stoul(m_configuration.at("Possible Attack Port Count"));
+        likelyThreshold = std::stoul(m_configuration.at("Likely Attack Port Threshold"));
+        possibleThreshold = std::stoul(m_configuration.at("Possible Attack Port Threshold"));
     } catch (std::exception e) {
         throw std::out_of_range(
                 "Failure in PortScanAnalyzer::run when accessing configuration parameters during attack detection phase");
