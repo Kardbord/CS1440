@@ -7,12 +7,19 @@
 void DenialOfServiceAnalyzerTester::testConstructorAndGetters(std::ostream &out) {
     out << "DenialOfServiceAnalyzerTester::testConstructorAndGetters" << std::endl;
 
-    DenialOfServiceAnalyzer analyzer("20", "30", "40");
-
-    Configuration analyzerConfig = analyzer.getConfiguration();
+    try {
+        DenialOfServiceAnalyzer analyzer("100", "20", "30");
+        out << "Failure in DOSAnalyzer constructor, failed to verify inputs" << std::endl;
+    } catch (std::logic_error e) {
+        // do nothing, this is expected behavior
+    }
 
     try {
-        if (analyzerConfig.getParamAsString("Timeframe") != "20") {
+        DenialOfServiceAnalyzer analyzer("100", "30", "20");
+
+        Configuration analyzerConfig = analyzer.getConfiguration();
+
+        if (analyzerConfig.getParamAsString("Timeframe") != "100") {
             out << "Failure in constructor, values are not as assigned" << std::endl;
             return;
         }
@@ -22,7 +29,7 @@ void DenialOfServiceAnalyzerTester::testConstructorAndGetters(std::ostream &out)
             return;
         }
 
-        if (analyzerConfig.getParamAsString("Possible Attack Message Threshold") != "40") {
+        if (analyzerConfig.getParamAsString("Possible Attack Message Threshold") != "20") {
             out << "Failure in constructor, values are not as assigned" << std::endl;
             return;
         }

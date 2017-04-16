@@ -7,6 +7,11 @@
 DenialOfServiceAnalyzer::DenialOfServiceAnalyzer(std::string const &timeframe,
                                                  std::string const &likely_attack_message_threshold,
                                                  std::string const &possible_attack_message_threshold) : Analyzer() {
+    if (std::stoull(likely_attack_message_threshold) < std::stoull(possible_attack_message_threshold)) {
+        throw std::logic_error(
+                "Failure in constructing DOSAnalyzer: likely_attack_threshold should be greater than possible_attack_threshold");
+    }
+
     configure();
     m_configuration["Timeframe"] = timeframe;
     m_configuration["Likely Attack Message Threshold"] = likely_attack_message_threshold;
