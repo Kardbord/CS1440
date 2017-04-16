@@ -10,8 +10,8 @@
 
 class DenialOfServiceAnalyzer : public Analyzer {
 public:
-    DenialOfServiceAnalyzer(std::string const &timeframe, std::string const &likely_attack_message_count,
-                            std::string const &possible_attack_message_count);
+    DenialOfServiceAnalyzer(std::string const &timeframe, std::string const &likely_attack_message_threshold,
+                            std::string const &possible_attack_message_threshold);
 
     // TODO: implement me
     ResultSet run(std::istream &fin);

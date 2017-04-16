@@ -5,12 +5,12 @@
 #include "DenialOfServiceAnalyzer.h"
 
 DenialOfServiceAnalyzer::DenialOfServiceAnalyzer(std::string const &timeframe,
-                                                 std::string const &likely_attack_message_count,
-                                                 std::string const &possible_attack_message_count) : Analyzer() {
+                                                 std::string const &likely_attack_message_threshold,
+                                                 std::string const &possible_attack_message_threshold) : Analyzer() {
     configure();
     m_configuration["Timeframe"] = timeframe;
-    m_configuration["Likely Attack Message Count"] = likely_attack_message_count;
-    m_configuration["Possible Attack Message Count"] = possible_attack_message_count;
+    m_configuration["Likely Attack Message Count"] = likely_attack_message_threshold;
+    m_configuration["Possible Attack Message Count"] = possible_attack_message_threshold;
 }
 
 void DenialOfServiceAnalyzer::configure() {
