@@ -8,12 +8,19 @@
 void PortScanAnalyserTester::testConstructorAndGetters(std::ostream &out) {
     out << "PortScanAnalyserTester::testConstructorAndGetters" << std::endl;
 
-    PortScanAnalyser analyzer("20", "30");
-
-    Configuration analyzerConfig = analyzer.getConfiguration();
+    try {
+        PortScanAnalyser analyser("40", "50");
+        out << "Failure in PortScanAnalyzer constructor, failed to verify inputs" << std::endl;
+    } catch (std::logic_error e) {
+        // do nothing, this is expected behavior
+    }
 
     try {
-        if (analyzerConfig.getParamAsString("Likely Attack Port Threshold") != "20") {
+        PortScanAnalyser analyzer("40", "30");
+
+        Configuration analyzerConfig = analyzer.getConfiguration();
+
+        if (analyzerConfig.getParamAsString("Likely Attack Port Threshold") != "40") {
             out << "Failure in constructor, values are not as assigned" << std::endl;
             return;
         }

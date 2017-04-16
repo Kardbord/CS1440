@@ -7,6 +7,12 @@
 
 PortScanAnalyser::PortScanAnalyser(std::string const &likely_attack_port_threshold,
                                    std::string const &possible_attack_port_threshold) : Analyzer() {
+
+    if (std::stoull(likely_attack_port_threshold) < std::stoull(possible_attack_port_threshold)) {
+        throw std::logic_error(
+                "Failure in constructing PortScanAnalyzer: likely_attack_threshold should be greater than possible_attack_threshold");
+    }
+
     configure();
     m_configuration["Likely Attack Port Threshold"] = likely_attack_port_threshold;
     m_configuration["Possible Attack Port Threshold"] = possible_attack_port_threshold;
