@@ -3,7 +3,7 @@ project(SOLID_Principles)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(TEST_FILES Testing/AnalyserTester.cpp Testing/AnalyserTester.h
+set(TEST_FILES
         Testing/ConfigurationTester.cpp Testing/ConfigurationTester.h
         Testing/DenialOfServiceAnalyzerTester.cpp Testing/DenialOfServiceAnalyzerTester.h
         Testing/PortScanAnalyserTester.cpp Testing/PortScanAnalyserTester.h
