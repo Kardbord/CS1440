@@ -5,7 +5,7 @@
 #include "PortScanAnalyzer.h"
 #include <algorithm>
 
-PortScanAnalyser::PortScanAnalyser(std::string const &likely_attack_port_threshold,
+PortScanAnalyzer::PortScanAnalyzer(std::string const &likely_attack_port_threshold,
                                    std::string const &possible_attack_port_threshold) : Analyzer() {
 
     if (std::stoull(likely_attack_port_threshold) < std::stoull(possible_attack_port_threshold)) {
@@ -18,14 +18,14 @@ PortScanAnalyser::PortScanAnalyser(std::string const &likely_attack_port_thresho
     m_configuration["Possible Attack Port Threshold"] = possible_attack_port_threshold;
 }
 
-void PortScanAnalyser::configure() {
+void PortScanAnalyzer::configure() {
     // the [] operator on a map (and its subclasses) inserts the new std::pair element if it does not already exist
     // using the value's default constructor, see http://www.cplusplus.com/reference/map/map/operator[]/
     m_configuration["Likely Attack Port Threshold"] = "";
     m_configuration["Possible Attack Port Threshold"] = "";
 }
 
-ResultSet PortScanAnalyser::run(std::istream &fin) {
+ResultSet PortScanAnalyzer::run(std::istream &fin) {
 
     std::map<std::string, std::vector<unsigned long>> addressToSummary;
 

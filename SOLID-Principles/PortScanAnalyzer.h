@@ -9,9 +9,9 @@
 #include "Analyzer.h"
 #include <stdexcept>
 
-class PortScanAnalyser : public Analyzer {
+class PortScanAnalyzer : public Analyzer {
 public:
-    PortScanAnalyser(std::string const &likely_attack_port_threshold, std::string const &possible_attack_port_threshold);
+    PortScanAnalyzer(std::string const &likely_attack_port_threshold, std::string const &possible_attack_port_threshold);
 
     // TODO: test me
     ResultSet run(std::istream &fin);
