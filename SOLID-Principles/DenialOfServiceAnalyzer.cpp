@@ -9,16 +9,16 @@ DenialOfServiceAnalyzer::DenialOfServiceAnalyzer(std::string const &timeframe,
                                                  std::string const &possible_attack_message_threshold) : Analyzer() {
     configure();
     m_configuration["Timeframe"] = timeframe;
-    m_configuration["Likely Attack Message Count"] = likely_attack_message_threshold;
-    m_configuration["Possible Attack Message Count"] = possible_attack_message_threshold;
+    m_configuration["Likely Attack Message Threshold"] = likely_attack_message_threshold;
+    m_configuration["Possible Attack Message Threshold"] = possible_attack_message_threshold;
 }
 
 void DenialOfServiceAnalyzer::configure() {
     // the [] operator on a map (and its subclasses) inserts the new std::pair element if it does not already exist
     // using the value's default constructor, see http://www.cplusplus.com/reference/map/map/operator[]/
     m_configuration["Timeframe"] = "";
-    m_configuration["Likely Attack Message Count"] = "";
-    m_configuration["Possible Attack Message Count"] = "";
+    m_configuration["Likely Attack Message Threshold"] = "";
+    m_configuration["Possible Attack Message Threshold"] = "";
 }
 
 ResultSet DenialOfServiceAnalyzer::run(std::istream &fin) {

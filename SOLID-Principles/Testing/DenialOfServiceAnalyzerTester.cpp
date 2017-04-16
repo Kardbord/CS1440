@@ -17,12 +17,12 @@ void DenialOfServiceAnalyzerTester::testConstructorAndGetters(std::ostream &out)
             return;
         }
 
-        if (analyzerConfig.getParamAsString("Likely Attack Message Count") != "30") {
+        if (analyzerConfig.getParamAsString("Likely Attack Message Threshold") != "30") {
             out << "Failure in constructor, values are not as assigned" << std::endl;
             return;
         }
 
-        if (analyzerConfig.getParamAsString("Possible Attack Message Count") != "40") {
+        if (analyzerConfig.getParamAsString("Possible Attack Message Threshold") != "40") {
             out << "Failure in constructor, values are not as assigned" << std::endl;
             return;
         }
