@@ -13,7 +13,7 @@ class PortScanAnalyser : public Analyzer {
 public:
     PortScanAnalyser(std::string const &likely_attack_port_threshold, std::string const &possible_attack_port_threshold);
 
-    // TODO: implement me
+    // TODO: test me
     ResultSet run(std::istream &fin);
 
     virtual Configuration getConfiguration() const { return m_configuration; }

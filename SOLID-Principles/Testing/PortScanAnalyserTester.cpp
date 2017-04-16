@@ -13,12 +13,12 @@ void PortScanAnalyserTester::testConstructorAndGetters(std::ostream &out) {
     Configuration analyzerConfig = analyzer.getConfiguration();
 
     try {
-        if (analyzerConfig.getParamAsString("Likely Attack Port Count") != "20") {
+        if (analyzerConfig.getParamAsString("Likely Attack Port Threshold") != "20") {
             out << "Failure in constructor, values are not as assigned" << std::endl;
             return;
         }
 
-        if (analyzerConfig.getParamAsString("Possible Attack Port Count") != "30") {
+        if (analyzerConfig.getParamAsString("Possible Attack Port Threshold") != "30") {
             out << "Failure in constructor, values are not as assigned" << std::endl;
             return;
         }
