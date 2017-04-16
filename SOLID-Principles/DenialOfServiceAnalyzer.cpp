@@ -79,5 +79,5 @@ ResultSet DenialOfServiceAnalyzer::run(std::istream &fin) {
     }
 
 
-    return ResultSet();
+    return results;
 }
