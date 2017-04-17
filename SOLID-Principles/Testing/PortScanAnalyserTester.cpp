@@ -78,5 +78,63 @@ void PortScanAnalyserTester::testRun(std::ostream &out) {
         }
     }
 
+    // Analyzer 2
+    {
+        const int NUM_LIKELY = 1;
+        const int NUM_POSS = 1;
 
+        std::ifstream fin("Testing/testData1.txt");
+
+        if (!fin) {
+            out << "Failed to open input file!" << std::endl;
+            return;
+        }
+
+        PortScanAnalyzer analyzer2("5", "2");
+        ResultSet results = analyzer2.run(fin);
+
+        try {
+            if (results.at("Likely Attackers").size() != NUM_LIKELY) {
+                out << "Failure! analyzer2 did not detect all likely attackers" << std::endl;
+                return;
+            }
+
+            if (results.at("Possible Attackers").size() != NUM_POSS) {
+                out << "Failure! analyzer2 did not detect all possible attackers" << std::endl;
+                return;
+            }
+        } catch (std::exception) {
+            out << "Failure while testing analyzer2, threw unexpected exception" << std::endl;
+        }
+    }
+
+    // Analyzer 3
+    {
+        const int NUM_LIKELY = 1;
+        const int NUM_POSS = 0;
+
+        std::ifstream fin("Testing/testData1.txt");
+
+        if (!fin) {
+            out << "Failed to open input file!" << std::endl;
+            return;
+        }
+
+        PortScanAnalyzer analyzer3("5", "3");
+        ResultSet results = analyzer3.run(fin);
+
+        try {
+            if (results.at("Likely Attackers").size() != NUM_LIKELY) {
+                out << "Failure! analyzer3 did not detect all likely attackers" << std::endl;
+                return;
+            }
+
+            if (results.at("Possible Attackers").size() != NUM_POSS) {
+                out << "Failure! analyzer3 did not detect all possible attackers" << std::endl;
+                return;
+            }
+        } catch (std::exception) {
+            out << "Failure while testing analyzer3, threw unexpected exception" << std::endl;
+        }
+    }
 }
