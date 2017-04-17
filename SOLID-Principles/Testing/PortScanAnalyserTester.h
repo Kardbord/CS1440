@@ -12,6 +12,7 @@ class PortScanAnalyserTester {
 public:
     PortScanAnalyserTester() {}
     void testConstructorAndGetters(std::ostream &out);
+    void testRun(std::ostream &out);
 };
 
 

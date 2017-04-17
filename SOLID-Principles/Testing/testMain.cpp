@@ -25,5 +25,7 @@ int main() {
     
     PortScanAnalyserTester portScanAnalyzerTester;
     portScanAnalyzerTester.testConstructorAndGetters(std::cout);
+    portScanAnalyzerTester.testRun(std::cout);
     
+    return EXIT_SUCCESS;
 }

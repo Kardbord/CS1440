@@ -2,6 +2,7 @@
 // Created by Tanner on 4/10/2017.
 //
 
+#include <fstream>
 #include "PortScanAnalyserTester.h"
 #include "../PortScanAnalyzer.h"
 
@@ -42,4 +43,33 @@ void PortScanAnalyserTester::testConstructorAndGetters(std::ostream &out) {
         out << "Failure in testConstructorAndGetters, threw unexpected exception" << std::endl;
     }
 
+}
+
+void PortScanAnalyserTester::testRun(std::ostream &out) {
+    out << "PortScanAnalyserTester::testRun" << std::endl;
+
+    {
+        const int NUM_LIKELY = 1;
+        const int NUM_POSS = 0;
+
+        std::ifstream fin("Testing/testData1.txt");
+
+        if (!fin) {
+            out << "Failed to open input file!" << std::endl;
+            return;
+        }
+
+        PortScanAnalyzer analyzer1("2", "1");
+        ResultSet results = analyzer1.run(fin);
+
+        if (results.at("Likely Attackers").size() != NUM_LIKELY) {
+            out << "Failure! analyzer1 did not detect all likely attackers" << std::endl;
+            return;
+        }
+
+        if (results.at("Possible Attackers").size() != NUM_POSS) {
+            out << "Failure! analyzer1 did not detect all possible attackers" << std::endl;
+            return;
+        }
+    }
 }
