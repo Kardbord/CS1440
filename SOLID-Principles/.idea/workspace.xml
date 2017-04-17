@@ -12,13 +12,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09858ade-5e57-4609-aa28-30b422d00c13" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing/PortScanAnalyserTester.cpp" afterPath="$PROJECT_DIR$/Testing/PortScanAnalyserTester.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing/PortScanAnalyserTester.h" afterPath="$PROJECT_DIR$/Testing/PortScanAnalyserTester.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing/testData1.txt" afterPath="$PROJECT_DIR$/Testing/testData1.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Testing/testMain.cpp" afterPath="$PROJECT_DIR$/Testing/testMain.cpp" />
-    </list>
+    <list default="true" id="09858ade-5e57-4609-aa28-30b422d00c13" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,8 +60,8 @@
       <file leaf-file-name="testData1.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Testing/testData1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="29" lean-forward="true" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+            <state relative-caret-position="21">
+              <caret line="1" column="29" lean-forward="true" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -121,8 +115,8 @@
         <option value="$PROJECT_DIR$/PortScanResults.txt" />
         <option value="$PROJECT_DIR$/Testing/testMain.cpp" />
         <option value="$PROJECT_DIR$/Testing/PortScanAnalyserTester.h" />
-        <option value="$PROJECT_DIR$/Testing/testData1.txt" />
         <option value="$PROJECT_DIR$/Testing/PortScanAnalyserTester.cpp" />
+        <option value="$PROJECT_DIR$/Testing/testData1.txt" />
       </list>
     </option>
   </component>
@@ -424,12 +418,12 @@
       <workItem from="1492271484871" duration="2225000" />
       <workItem from="1492275123102" duration="954000" />
       <workItem from="1492303285584" duration="13190000" />
-      <workItem from="1492446382861" duration="2130000" />
+      <workItem from="1492446382861" duration="2205000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73780000" />
+    <option name="totallyTimeSpent" value="73855000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -449,7 +443,7 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272933" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21804512" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -851,8 +845,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Testing/testData1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="true" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+        <state relative-caret-position="21">
+          <caret line="1" column="29" lean-forward="true" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
           <folding />
         </state>
       </provider>

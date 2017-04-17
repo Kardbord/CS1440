@@ -48,9 +48,10 @@ void PortScanAnalyserTester::testConstructorAndGetters(std::ostream &out) {
 void PortScanAnalyserTester::testRun(std::ostream &out) {
     out << "PortScanAnalyserTester::testRun" << std::endl;
 
+    // Analyzer 1
     {
-        const int NUM_LIKELY = 1;
-        const int NUM_POSS = 0;
+        const int NUM_LIKELY = 2;
+        const int NUM_POSS = 2;
 
         std::ifstream fin("Testing/testData1.txt");
 
@@ -62,14 +63,20 @@ void PortScanAnalyserTester::testRun(std::ostream &out) {
         PortScanAnalyzer analyzer1("2", "1");
         ResultSet results = analyzer1.run(fin);
 
-        if (results.at("Likely Attackers").size() != NUM_LIKELY) {
-            out << "Failure! analyzer1 did not detect all likely attackers" << std::endl;
-            return;
-        }
+        try {
+            if (results.at("Likely Attackers").size() != NUM_LIKELY) {
+                out << "Failure! analyzer1 did not detect all likely attackers" << std::endl;
+                return;
+            }
 
-        if (results.at("Possible Attackers").size() != NUM_POSS) {
-            out << "Failure! analyzer1 did not detect all possible attackers" << std::endl;
-            return;
+            if (results.at("Possible Attackers").size() != NUM_POSS) {
+                out << "Failure! analyzer1 did not detect all possible attackers" << std::endl;
+                return;
+            }
+        } catch (std::exception) {
+            out << "Failure while testing analyzer1, threw unexpected exception" << std::endl;
         }
     }
+
+
 }
