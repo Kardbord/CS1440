@@ -1,5 +1,6 @@
 #include <iostream>
 #include "PortScanAnalyzer.h"
+#include "DenialOfServiceAnalyzer.h"
 #include <fstream>
 #include <cassert>
 
@@ -10,6 +11,8 @@ bool isValidThreshold(std::string const &threshold);
 bool putResultsToScreen();
 
 void runPortScanAnalyzer(bool toScreen);
+
+void runDOSAnalyzer(bool toScreen);
 
 // TODO: write UML
 int main() {
@@ -35,7 +38,7 @@ int main() {
                 break;
             case 'D':
             case 'd':
-                // TODO: run DOS Analyzer
+                runDOSAnalyzer(willPrintToScreen);
                 break;
             case 'E':
             case 'e':
@@ -45,6 +48,40 @@ int main() {
                 break;
         }
     }
+}
+
+void runDOSAnalyzer(bool toScreen) {
+    std::string likelyThreshold = "";
+    std::string possibleThreshold = "";
+    std::string timeframe = "";
+
+    std::cout << "Please enter a timeframe for the DOS Analyzer: ";
+    std::cin >> timeframe;
+
+    while (!isValidThreshold(timeframe)) {
+        std::cout << "Please enter a valid timeframe for the DOS Analyzer: ";
+        std::cin >> timeframe;
+    }
+
+    getThresholdInput(likelyThreshold, possibleThreshold, "DOS Analyzer");
+
+    DenialOfServiceAnalyzer denialOfServiceAnalyzer(timeframe, likelyThreshold, possibleThreshold);
+
+    std::ifstream fin("./SampleData.csv");
+    if (!fin) {
+        std::cout << "Could not open input file. Shutting down..." << std::endl;
+        std::exit(1);
+    }
+
+    if (toScreen) {
+        denialOfServiceAnalyzer.run(fin).print(std::cout);
+    } else {
+        std::ofstream fout("DOS_Scan_Results.txt");
+        assert(fout);
+        denialOfServiceAnalyzer.run(fin).print(fout);
+        fout.close();
+    }
+    fin.close();
 }
 
 void runPortScanAnalyzer(bool toScreen) {
@@ -58,6 +95,7 @@ void runPortScanAnalyzer(bool toScreen) {
     std::ifstream fin("./SampleData.csv");
     if (!fin) {
         std::cout << "Could not open input file. Shutting down..." << std::endl;
+        std::exit(1);
     }
 
     if (toScreen) {

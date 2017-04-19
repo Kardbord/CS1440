@@ -70,8 +70,8 @@ ResultSet DenialOfServiceAnalyzer::run(std::istream &fin) {
     unsigned long long possibleThreshold;
 
     try {
-        likelyThreshold = m_configuration.getParamAsInt("Likely Attack Message Count");
-        possibleThreshold = m_configuration.getParamAsInt("Possible Attack Message Count");
+        likelyThreshold = m_configuration.getParamAsInt("Likely Attack Message Threshold");
+        possibleThreshold = m_configuration.getParamAsInt("Possible Attack Message Threshold");
     } catch (std::exception) {
         throw std::out_of_range(
                 "Failure in DenialOfServiceAnalyzer::run when accessing configuration parameters during attack detection phase");
