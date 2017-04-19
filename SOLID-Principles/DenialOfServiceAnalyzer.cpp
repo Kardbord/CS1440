@@ -30,6 +30,7 @@ ResultSet DenialOfServiceAnalyzer::run(std::istream &fin) {
 
     std::map<std::string, std::map<std::string, unsigned long>> addressToSummary;
 
+    std::map<std::string, unsigned long> addressToMinTimestamp;
     // Data loading phase
     {
         std::string timestamp;
@@ -45,8 +46,12 @@ ResultSet DenialOfServiceAnalyzer::run(std::istream &fin) {
 
             if (addressToSummary[srcAddress].count(timestamp) > 0) {
                 ++addressToSummary[srcAddress][timestamp];
+                if (addressToMinTimestamp[srcAddress] > std::stoul(timestamp)) {
+                    addressToMinTimestamp[srcAddress] = std::stoul(timestamp);
+                }
             } else {
                 addressToSummary[srcAddress][timestamp] = 1;
+                addressToMinTimestamp[srcAddress] = std::stoul(timestamp);
             }
 
         }
@@ -72,14 +77,32 @@ ResultSet DenialOfServiceAnalyzer::run(std::istream &fin) {
                 "Failure in DenialOfServiceAnalyzer::run when accessing configuration parameters during attack detection phase");
     }
 
-    // TODO: finish the Attack Detection phase
     // For every address...
     for (auto &&addressSummaryPair : addressToSummary) {
-        // For every timestamp that address did something...
+        // For every timestamp at which that address did something...
+        unsigned long long startTime;
+        try {
+            startTime = addressToMinTimestamp.at(addressSummaryPair.first);
+        } catch (std::exception) {
+            throw std::out_of_range("Failure in DOSAnalyzer::run when accessing addressToMinTimeStamp");
+        }
+        unsigned int count = 0;
         for (auto &&timeStampCountPair : addressSummaryPair.second) {
-            unsigned long long startTime = std::stoull(timeStampCountPair.first);
-            unsigned int count = timeStampCountPair.second;
+            if (std::stoul(timeStampCountPair.first) < startTime + m_configuration.getParamAsDouble("Timeframe")) {
+                count += timeStampCountPair.second;
+            }
+        }
 
+        if (count >= likelyThreshold) {
+            results.at("Likely Attackers").push_back(addressSummaryPair.first);
+            results.at("Attack Periods").push_back(
+                    addressSummaryPair.first + ": " + std::to_string(startTime) + " to " + std::to_string(
+                            startTime + m_configuration.getParamAsDouble("Timeframe")));
+        } else if (count >= possibleThreshold) {
+            results.at("Possible Attackers").push_back(addressSummaryPair.first);
+            results.at("Attack Periods").push_back(
+                    addressSummaryPair.first + ": " + std::to_string(startTime) + " to " + std::to_string(
+                            startTime + m_configuration.getParamAsDouble("Timeframe")));
         }
     }
 

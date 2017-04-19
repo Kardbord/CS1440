@@ -13,7 +13,7 @@ public:
     DenialOfServiceAnalyzer(std::string const &timeframe, std::string const &likely_attack_message_threshold,
                             std::string const &possible_attack_message_threshold);
 
-    // TODO: implement me
+    // TODO: test me
     ResultSet run(std::istream &fin);
 
     virtual Configuration getConfiguration() const { return m_configuration; }
