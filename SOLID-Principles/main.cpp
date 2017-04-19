@@ -11,6 +11,7 @@ bool putResultsToScreen();
 
 void runPortScanAnalyzer(bool toScreen);
 
+// TODO: write UML
 int main() {
     std::cout << "Welcome to the Hacker Attack Analyzer." << std::endl << std::endl;
 
