@@ -14,6 +14,8 @@ public:
     DenialOfServiceAnalyzerTester() {}
 
     void testConstructorAndGetters(std::ostream &out);
+
+    void testRun(std::ostream &out);
 };
 
 

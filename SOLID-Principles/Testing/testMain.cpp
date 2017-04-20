@@ -22,6 +22,7 @@ int main() {
 
     DenialOfServiceAnalyzerTester denialOfServiceAnalyzerTester;
     denialOfServiceAnalyzerTester.testConstructorAndGetters(std::cout);
+    denialOfServiceAnalyzerTester.testRun(std::cout);
     
     PortScanAnalyserTester portScanAnalyzerTester;
     portScanAnalyzerTester.testConstructorAndGetters(std::cout);
