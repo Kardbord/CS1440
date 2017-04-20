@@ -54,7 +54,7 @@ void DenialOfServiceAnalyzerTester::testRun(std::ostream &out) {
     // Analyzer 1
     {
         const int NUM_LIKELY = 1;
-        const int NUM_POSS = 1;
+        const int NUM_POSS = 0;
 
         std::ifstream fin("Testing/testData2.txt");
 
@@ -83,7 +83,7 @@ void DenialOfServiceAnalyzerTester::testRun(std::ostream &out) {
 
     // Analyzer 2
     {
-        const int NUM_LIKELY = 2;
+        const int NUM_LIKELY = 1;
         const int NUM_POSS = 0;
 
         std::ifstream fin("Testing/testData2.txt");
